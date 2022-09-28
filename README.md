@@ -1,2 +1,6 @@
-# BongsikB.github.io
-TIL
+# BongsikB.githu 
+#TIL | Today I Learn
+
+<hr>
+
+
