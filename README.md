@@ -1,5 +1,8 @@
 ### BongsikB.github.io
+<br>
 # ✏️ TIL | Today I Learn
+
+>What you think you become
 
 <hr>
 
