@@ -2,7 +2,7 @@
 # ✏️ TIL | Today I Learn
 
 <hr>
-## 🌱 Javascript 
+## 🌱 Javascript  
 
 <hr>
 
