@@ -4,7 +4,7 @@
 
 # TIL | Today I Learn
 
->*What you think you become
+>*What you think you become*
 
 
 ## 📌 Javascript
