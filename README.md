@@ -4,7 +4,7 @@
 <hr>
 
 ## 🌱 Javascript
-* Logical Operation 
+* Logical Operation  <http://google.com/>
 
 <hr>
 
