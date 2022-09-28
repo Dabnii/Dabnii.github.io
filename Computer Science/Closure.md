@@ -220,3 +220,19 @@ num | 5
 난이도가 있는 '클로저 은닉화', '클로저 반복문'은 담지 못하였지만 가까운 미래에 다시 업로드 하겠습니다!
 
 3355 화이팅! 늘 좋은 자극을 주어서 감사해요.
+
+<br>
+<hr>
+
+  출처
+ - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#어휘적_범위_지정lexical_scoping](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures#%EC%96%B4%ED%9C%98%EC%A0%81_%EB%B2%94%EC%9C%84_%EC%A7%80%EC%A0%95lexical_scoping)
+- [https://www.youtube.com/watch?v=MbYShFxp-j0](https://www.youtube.com/watch?v=MbYShFxp-j0)
+- [https://stackoverflow.com/questions/1047454/what-is-lexical-scope](https://stackoverflow.com/questions/1047454/what-is-lexical-scope)
+- [https://hyunseob.github.io/2016/08/30/javascript-closure/](https://hyunseob.github.io/2016/08/30/javascript-closure/)
+- [https://poiemaweb.com/js-scope](https://poiemaweb.com/js-scope)
+- [https://developer.mozilla.org/ko/docs/Glossary/Scope](https://developer.mozilla.org/ko/docs/Glossary/Scope)
+- [https://ko.wikipedia.org/wiki/변수_영역](https://ko.wikipedia.org/wiki/%EB%B3%80%EC%88%98_%EC%98%81%EC%97%AD)
+- [https://velog.io/@xedni/Scope](https://velog.io/@xedni/Scope)
+- [https://poiemaweb.com/js-scope#:~:text=자바스크립트는 렉시컬,는 전역에 선언되었다](https://poiemaweb.com/js-scope#:~:text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94%20%EB%A0%89%EC%8B%9C%EC%BB%AC,%EB%8A%94%20%EC%A0%84%EC%97%AD%EC%97%90%20%EC%84%A0%EC%96%B8%EB%90%98%EC%97%88%EB%8B%A4).
+- [https://www.youtube.com/watch?v=3a0I8ICR1Vg](https://www.youtube.com/watch?v=3a0I8ICR1Vg)
+- [https://ljtaek2.tistory.com/140](https://ljtaek2.tistory.com/140)
