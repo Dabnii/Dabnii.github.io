@@ -8,7 +8,7 @@
 
 ## 🌱 Javascript
 * Logical Operation
-* For Loop
+* For Loop 
 <hr>
 
 ## 💻 Computer Science
