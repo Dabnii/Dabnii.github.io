@@ -5,8 +5,7 @@
 
 ## 🌱 Javascript
 * Logical Operation
-* https://google.com 
-
+* For Loop
 <hr>
 
 ## 💻 Computer Science
