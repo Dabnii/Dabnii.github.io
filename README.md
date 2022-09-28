@@ -1,4 +1,4 @@
-# BongsikB.githu 
+# BongsikB.github.io
 # ✏️ TIL | Today I Learn
 
 <hr>
