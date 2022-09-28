@@ -4,7 +4,8 @@
 <hr>
 
 ## 🌱 Javascript
-* Logical Operation  <http://google.com/>
+* Logical Operation
+* [googlelink]: https://google.com "Go google"
 
 <hr>
 
