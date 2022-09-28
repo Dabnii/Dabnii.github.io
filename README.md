@@ -5,8 +5,7 @@
 
 ## 🌱 Javascript
 * Logical Operation
-* Link: [Google][googlelink]
-[googlelink]: https://google.com "Go google"
+* https://google.com 
 
 <hr>
 
