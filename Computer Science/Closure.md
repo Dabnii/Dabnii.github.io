@@ -1,4 +1,4 @@
-# <span style="color:orange"> Closure & Lexical & Scope
+# Closure & Lexical & Scope
 
 생소하지만, 알고 보면 우리 가까이에 있던 클로져. <br>
 작동원리를 알아보도록 하겠습니다. 
@@ -9,7 +9,7 @@
 <br>
 
 
-## 🔭<span style="color:orange"> <strong> Scope | 스코프 </strong> </span>
+## 🔭 <strong> Scope | 스코프 </strong> </span>
 > -  <strong> `유효범위` </span></strong>
 > - <strong> `전역스코프, 지역스코프, 전역변수, 지역변수 `</strong> 네 가지로 구분
 > - 함수가 실행될 때 생성되는 값, 표현식을 찾을때 참고하는 <strong>`표`</span> </strong>와 유사
@@ -22,7 +22,7 @@
 <br>
 <br>
 
-## <span style="color:orange"> <strong> 🌎 전역스코프 & 🏠 지역스코프</strong> </span>
+## <strong> 🌎 전역스코프 & 🏠 지역스코프</strong> </span>
 
 
 &#32;|🌎 전역스코프 Global Scope | 🏠 지역스코프 Local Scope
@@ -57,7 +57,7 @@ Eng| `Lexical scope` &#124;&#124; `Static scope` | Dynamic scope
     함수가 정의(선언) 되는 시점에 정적스코프 (렉시컬 스코프) 또는 동적 스코프로 정의 됩니다. 
 <br><br>
 
-## <span style="color:orange"> <strong> 🌎 전역스코프 & 🏠 지역스코프 Sample code_ Fruits </strong> </span>
+## <strong> 🌎 전역스코프 & 🏠 지역스코프 Code sample_Fruits </strong> </span>
 
 ```java script
 const x = 'Apple';  //🌎전역스코프 
@@ -78,7 +78,7 @@ fruits() // 'kiwi'
 ```
 <br>
 
-## ✨ 스코프 참조 방향 : `하위`&#8594;`상위` &#124;&#124; `내부`&#8594;`외부`
+## ✨ <strong> 스코프 참조 방향 : `하위`&#8594;`상위` &#124;&#124; `내부`&#8594;`외부` </strong>
 반대의 경우 성립하지 않음 (상위 &#8594; 하위 불가)
 
 &#91;상위&#93; 전역 스코프|&#32;
@@ -100,7 +100,7 @@ outer의 내부 함수인 inner가 전역에 선언된 x = 'Apple'이 아닌 <br
 즉 내부 함수에서 값을 찾았기에 전역 함수로 진행하지 않은 것 입니다.<br>
 &#32;+ 🤫 전역에서 x를 호출하면 'Apple'이라는 값을 받을 수 있습니다. <br><br>
 
-## <span style="color:orange"> <strong> 🌎 전역스코프 & 🏠 지역스코프 Sample code_outer&inner </strong> </span>
+## <strong> 🌎 전역스코프 & 🏠 지역스코프 Code sample_outer&inner </strong> </span>
 
 ```java script
 var x = '나는 전역 X야';
@@ -165,7 +165,7 @@ inner 지역 스코프|&#32;
 <hr>
 <br>
 
-## ✍️  <span style="color:orange"> <strong> Lexical Environment | 렉시컬 환경 (어휘적 환경) </strong> </span>
+## ✍️ <strong> Lexical Environment | 렉시컬 환경 (어휘적 환경) </strong>
 > - 어떠한 코드가 어디에서 실행 되는 등 대체적인 `정보를 담고 있는 환경`
 > - 포함하는 식별자, 식별자에 바인딩 된 값,  `상위 렉시컬 환경에 대한 참조를 담은 하나의 자료 구조 `
 >   - 함수가 실행되는 즉시 Lexical 환경 생성
@@ -195,20 +195,46 @@ addOne | funcion obj
 ---|---
 num | 5 
 
+
+
+## ✍️ <strong> Closure Code sample </strong>
+
+가장 흔하게 언급되는 클로져 예제
+
+```javascript
+function outerFunction(outerVariavle) {
+  return function innerFunction(innerVariable) {
+    console.log("outerVariavle: " + outerVariavle);
+    console.log("innerVariable: " + innerVariable);
+  };
+}
+
+const newFunction = outerFunction("outside");
+newFunction("inner");
+//outerVariavle: outside
+//innerVariable: inner
+
+//https://www.youtube.com/watch?v=3a0I8ICR1Vg
+```
 <br>
 
-## 📌 <span style="color:orange"> <strong> Closure | 클로져 </strong> </span>
+- outerFunction ('outside')은 변수 "newFunction"에 할당되면 즉시 호출됩니다.<br>
+- 호출되면 outerFunction은 변수 "newFunction"을 outerFunction(outerVariable)이 아닌<br> <span>     InnerFunction(innerVariable)으로 재할당하는 함수 `"innerFunction(innerVariable)"을 반환`합니다.<br>
+- 그런 다음 변수를 newFunction('inside')으로 호출하여 console.log 코드를 실행하는 innerFunction('inside')을 호출합니다. 결론은 innerFunction이 outerFunction으로 `원래 설정한 outerVariable 파라미터('outside')를 기억하고 액세스할 수 있다는 것입니다. 따라서 console.log는 'outside'와 'inside'를 모두 사용할 수 있다.`
+- 소멸 한 함수의 스코프는 `기억` 되어 액세스 할 수 있습니다.
+
+
+
+<br><br>
+
+# 📌 <strong> Closure | 클로져 </strong>
 > -  `함수 와 렉시컬 환경의 조합` </span>입니다. <br>
 > -  `내부 함수가 소멸된 외부 함수에 접근`할 때 `내부 함수를 클로져` </span> </strong> 라고 합니다.
 
 <br>
 
     클로져는 소멸한 함수에도 접근할 수 있음을 뜻합니다. (대부분의 함수는 1회 실행 후 다시 접근할 수 없습니다.)
-    외관이 망가진 차량이 있지만 내부의 엔진이 살아 있다면 접근할 수 있는 것과 비유하면 조금 더 이해가 쉬우실 것 같습니다. :)
-    함수가 소멸되어도 스코프는 '기억' 되어 접근할 수 있습니다.
-    
-
-
+    외관이 망가진 차량의 내부의 엔진이 살아 있다면 접근할 수 있는 것과 비유하면 조금 더 이해가 쉬우실 것 같습니다. :)    
 <br>
 
 
