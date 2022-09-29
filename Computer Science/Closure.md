@@ -151,7 +151,7 @@ inner 지역 스코프|&#32;
 
 1. outer() 호출 &#8594; outer 함수 실행
 1. outer 함수 y = '나는 outer 함수의 지역 y야' 
-1. Outer 함수는 `전역 스코프로 접근 &#8594; var x = '나는 전역 x야' 값을 참조`
+1. Outer 함수는 `전역 스코프로 접근 var x = '나는 전역 x야' 값을 참조`
 2. inner() 실행 &#8594; x = 'inner함수의 지역x야' 라는 값을 갖게 됨
 2. inner 함수내의 y는 없으므로 &#8594;  inner함수의 상위 함수인 outer 함수에 접근
 3. inner함수는 outer 함수의 x 값인 `'나는 outer 함수의 지역 y야' 라는 값을 참조`
