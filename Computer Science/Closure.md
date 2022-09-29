@@ -80,16 +80,16 @@ fruits() // 'kiwi'
 ## ✨ 스코프 참조 방향 : <span style="color:orange">하위 &#8594; 상위 &#124;&#124; 내부&#8594;외부
 반대의 경우 성립하지 않음 (상위 &#8594; 하위 불가)
 
-상위|전역 스코프|&#32;
----|---|---
-&#32;| X | 'Apple'
+&#91;상위&#93; 전역 스코프|&#32;
+---|---
+ X | 'Apple'
 
 &#8593; 참조방향
 
 
-하위|지역 스코프|&#32;
----|---|---
-&#32;| X | 'Kiwi'
+&#91;하위&#93; 지역 스코프|&#32;
+---|---
+X | 'Kiwi'
 
 <br>
 🤔 어떻게 전역에 선언된 🍎 'Apple' 아닌 🥝 <strong>'Kiwi' </strong>가 나왔을까요?<br>
@@ -163,7 +163,7 @@ inner 지역 스코프|&#32;
 <hr>
 <br>
 
-## ✍️  <span style="color:orange"> <strong> Lexical Environment | 렉시컬 환경 (어휘점 환경) </strong> </span>
+## ✍️  <span style="color:orange"> <strong> Lexical Environment | 렉시컬 환경 (어휘적 환경) </strong> </span>
 > - 어떠한 코드가 어디에서 실행 되는 등 대체적인  <span style="color:orange">정보를 담고 있는 환경
 > - 포함하는 식별자, 식별자에 바인딩 된 값,  <span style="color:orange">상위 렉시컬 환경에 대한 참조를 담은 하나의 자료 구조 
 >   - 함수가 실행되는 즉시 Lexical 환경 생성
