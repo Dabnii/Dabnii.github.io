@@ -197,7 +197,7 @@ num | 5
 <br>
 
 ## 📌 <span style="color:orange"> <strong> Closure | 클로져 </strong> </span>
-> -  `함수 와 렉시컬 환경의 조합` </span> `입니다. <br>
+> -  `함수 와 렉시컬 환경의 조합` </span>입니다. <br>
 > -  `내부 함수가 소멸된 외부 함수에 접근`할 때 `내부 함수를 클로져` </span> </strong> 라고 합니다.
 
 <br>
