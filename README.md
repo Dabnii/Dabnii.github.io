@@ -11,4 +11,4 @@
 # 💻 Computer Science
 
 - 웹 브라우저의 동작 원리
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md">Clousre, Lexical, Scope </a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md">Closure, Lexical, Scope </a>
