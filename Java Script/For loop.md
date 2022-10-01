@@ -1,6 +1,3 @@
-# Code tests & quick review
-+) `Pseudocode`를 생활화!
-
 <br>
 
 # For loop
@@ -55,6 +52,9 @@ for ( let i =10; i <= 100; i *=10) {
 <br>
 
 ---
+# Code tests & quick review
++) `Pseudocode`를 생활화!
+
 <br>
 
 ### 자, 이제 기본은 끝. 실전 코드로 돌입! 🔥
