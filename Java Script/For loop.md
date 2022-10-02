@@ -128,7 +128,7 @@ function getAllLetters(str) {
 - 0 = '안녕하세요'
 - 1 = '또 만나네요'
 - Empty array `result` + `push` string
-- if 0 = 'Hi' else = 'again'
+- `if 0 = 'Hi'` `else = 'again'`
 
 ```Java script
 let group1 = [0,1,1,0,0]
