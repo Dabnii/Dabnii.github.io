@@ -2,7 +2,7 @@
 
 > _What you think you become_
 
-# 💡 Web Project
+# 👩‍💻 Web Project
 - <a href="https://bongsikb.github.io/My-site/">Home page</a>
 
 # 📌 JavaScript
