@@ -1,8 +1,3 @@
-# Code tests & quick review
-+) `Pseudocode`를 생활화!
-
-<br>
-
 # For loop
 ## Loops allow us to repeat code
 
@@ -55,7 +50,8 @@ for ( let i =10; i <= 100; i *=10) {
 <br>
 
 ---
-<br>
+# Code tests & quick review
++) `Pseudocode`를 생활화!
 
 ### 자, 이제 기본은 끝. 실전 코드로 돌입! 🔥
 <br>
@@ -86,11 +82,6 @@ console.log(removeGerm(basket))
 //매개변수 arr로 작성하는 것이 중요💡
 ```
 
- [ i ] | [ j ] | &#32;
----|---|---
-'양파'| 곰팡이
- '곰팡이' | '빵' | '딸기잼'
- '귤' | '곰팡이' | '사과'
 
 
 ```java script
@@ -137,7 +128,7 @@ function getAllLetters(str) {
 - 0 = '안녕하세요'
 - 1 = '또 만나네요'
 - Empty array `result` + `push` string
-- if 0 = 'Hi' else = 'again'
+- `if 0 = 'Hi'` `else = 'again'`
 
 ```Java script
 let group1 = [0,1,1,0,0]
