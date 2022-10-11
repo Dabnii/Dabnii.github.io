@@ -1,6 +1,6 @@
 # 🧩 TIL | Today I Learn
 
-> 오늘의 공부가 큰 퍼즐이 될 때 까지- I live, I learn, I move on.
+> 오늘의 공부가 하나의 퍼즐이 될 때 까지- I live, I learn, I move on.
 
 # 👩‍💻 Web Project
 - <a href="https://bongsikb.github.io/my-homepage/">Home page</a>
