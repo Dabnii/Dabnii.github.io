@@ -9,7 +9,7 @@
 
 - <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/bf12c76e3adf1502f8ec6e7f80f35fa1ecb84340/JavaScript/Logical%20Operation.md"> Logical Operation </a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
-- <a href="https://github.com/BongsikB/BongsikB.github.io/commit/f1e3a6b7eaac12f8b11ba069421c8d1638a6868a?short_path=34bd9c9#diff-34bd9c90be3fb8b149c293ed00ea216f53edad542d74813434e19c3f6b63d208">Object</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/365657f81bbe5dcd7fac889c053b56d18aae3416/Java%20Script/Object%20%26%20Array.md">Object</a>
 
 # 💻 Computer Science
 
