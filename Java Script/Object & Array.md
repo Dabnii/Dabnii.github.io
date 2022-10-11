@@ -2,15 +2,15 @@
 
 ### 📎 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합 `[]` 대괄호
 
+### 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티집합`
+
+<br>
 <br>
 
-### 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티 집합`
+## 💡 `{ Key : Property }`
 
-<hr>
-
-## `{ Key : Property }`
-
-Key 값과 Value 값을 쌍으로 가지며, 배열과는 다르게 순서가 중요하지 않습니다.
+Key 값과 Value 값을 쌍으로 가지며, <br>
+배열과는 다르게 순서가 중요하지 않습니다.
 
 ## { Key : Property `,` Key : Property }
 
@@ -18,8 +18,10 @@ Key 값과 Value 값을 쌍으로 가지며, 배열과는 다르게 순서가 �
 
 ## 📌 객체리터럴 Object Literal
 
-- 배열과 객체를 혼합하여 사용하는 경우가 많음
-- 나란히 사용할 때 강력해 짐
+> 깨알 tip:
+>
+> - 배열과 객체를 혼합하여 사용하는 경우가 많습니다.
+> - 나란히 사용할 때 강력해 집니다
 
 ```Java script
 let person1 = {
@@ -31,6 +33,7 @@ let person1 = {
 ```
 
 <br>
+<br>
 
 # 🎫 객체의 Properties에 접근하자!
 
@@ -39,8 +42,8 @@ let person1 = {
 - Property identifies can only be alphanumeric (and `_` and `$`)
 - Property identifiers cannot start with a number.
 - Property identifiers cannot contain variables.
-- OK — `obj.prop_1`, `obj.prop$`
-- Not OK — `obj.1prop`, `obj.prop name`
+- OK 👍 — `obj.prop_1`, `obj.prop$`
+- Not OK 🙅‍♀️ — `obj.1prop`, `obj.prop name`
 
 ```Java script
 let myself = {
@@ -53,15 +56,17 @@ let myself = {
 
 let myKey = 'cat'
 
-console.log(myself[cats]) // 	cats: ['냥','냥냥'],
+console.log(myself[cats]) // cats: ['냥','냥냥'],
 soncole.log(myself.myKey) // 'Hello' Dot은 변수사용 불가 -> key로 인식
 ```
+
+<br>
 
 ## 2️⃣ Bracket Notation `{ }`
 
 - Property identifiers have to be a String or a variable that references a String.
 - It is okay to use variables, spaces, and Strings that start with numbers
-- OK — `obj["1prop"]`, `obj["prop name"]`
+- OK 👍 — `obj["1prop"]`, `obj["prop name"]`
 
 ```Java script
 myself['name'] // 'Code kim'
@@ -83,10 +88,25 @@ person['fistName']
 "Mick"
 //위의 두가지 버전은 유효함
 
-🙅 person[firstName] //따옴표가 없어서 유효하지 않음
+❌ person[firstName] //따옴표가 없어서 유효하지 않음
 ```
 
+<br>
+<hr>
+<br>
+
 ## ✏️ 객체 수정하기 | Upadte & Edit
+
+```Java script
+const obj = {oldKey: 'value'};
+
+obj['newKey'] = obj['oldKey'];
+delete obj['oldKey'];
+
+console.log(obj); // 👉️ {newKey: 'value'}
+
+// https://bobbyhadz.com/blog/javascript-rename-object-key
+```
 
 ```Java script
 const midterms = {danielle;96, thomas:78}
@@ -113,12 +133,16 @@ function updateObject() {
 }
 ```
 
+<br>
+
 ## 🆕 객체 속성 추가
 
 ```Java script
 obj.key3 = "value3";
 obj["key3"] = "value3";
 ```
+
+<br>
 
 ## ✂️ 객체 속성 삭제
 
@@ -145,7 +169,9 @@ function deleteProperty() {
 }
 ```
 
+<br>
 <hr>
+<br>
 
 ## 💻 Code test
 
@@ -184,7 +210,9 @@ function accessObject() {
 > 4. bracket notation 으로 글로브박스 접근
 > 5. 성공! 👍
 
+<br>
 <hr>
+<br>
 
 ### 📚 객체 안의 배열 접근
 
@@ -231,8 +259,14 @@ let foundValue = myPlants[1] //
 > 3. 배열 이므로 `["trees"]` 사용 불가.
 > 4. 배열로 접근 및 성공 👍
 
+<br>
 <hr>
+<br>
 
-- Pseudo code로 접근하여 머리속으로 코드를 짤 수 있어 논리적 접근이 자연스러워졌다.<br>
-- 객체와 오브젝트의 차이를 확실히 이해했다.<br>
+Quik review:
+
+- Pseudo code 덕분에 논리적 접근이 자연스러워졌다.<br>
+- 객체와 오브젝트의 차이를 확실히 이해<br>
 - 앞으로의 goal: 노트하고 복기하기!<br>
+
+F.I.N 💪
