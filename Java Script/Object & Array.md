@@ -258,7 +258,7 @@ let foundValue = myPlants[1] //
 <hr>
 <br>
 
-Quik review:
+Quick review:
 
 - Pseudo code 덕분에 논리적 접근이 자연스러워졌다.<br>
 - 객체와 오브젝트의 차이를 확실히 이해<br>
