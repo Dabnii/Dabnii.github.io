@@ -1,6 +1,6 @@
 # 🌱 TIL | Today I Learn
 
-> _What you think you become_
+> 공부의 조각들이 모여 퍼즐이 되는 중입니다
 
 # 👩‍💻 Web Project
 - <a href="https://bongsikb.github.io/My-site/">Home page</a>
