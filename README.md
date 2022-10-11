@@ -1,6 +1,6 @@
 # 🧩 TIL | Today I Learn
 
-> 공부 조각을 모아 퍼즐을 맞추고 있습니다💪
+> 오늘의 공부가 큰 퍼즐이 될 때 까지- I live, I learn, I move on.
 
 # 👩‍💻 Web Project
 - <a href="https://bongsikb.github.io/my-homepage/">Home page</a>
