@@ -1,16 +1,15 @@
-# 🌱 TIL | Today I Learn
+# 🧩 TIL | Today I Learn
 
-> _What you think you become_
+> 공부 조각을 모아 퍼즐을 맞추고 있습니다💪
 
 # 👩‍💻 Web Project
-- <a href="https://bongsikb.github.io/My-site/">Home page</a>
+- <a href="https://bongsikb.github.io/my-homepage/">Home page</a>
 
 # 📌 JavaScript
 
 - <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/bf12c76e3adf1502f8ec6e7f80f35fa1ecb84340/JavaScript/Logical%20Operation.md"> Logical Operation </a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
 
-<hr>
 
 # 💻 Computer Science
 
