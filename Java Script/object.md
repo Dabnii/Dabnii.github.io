@@ -1,10 +1,14 @@
 # 💡 Object
 
-📎 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합 `[]` 대괄호
+### 📎 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합 `[]` 대괄호
 
-💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티 집합`
+<br>
 
-## { Key : Property }
+### 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티 집합`
+
+<hr>
+
+## `{ Key : Property }`
 
 Key 값과 Value 값을 쌍으로 가지며, 배열과는 다르게 순서가 중요하지 않습니다.
 
@@ -25,6 +29,8 @@ let person1 = {
   favoriteCoffee: '아이스아메리카노'
 }
 ```
+
+<br>
 
 # 🎫 객체의 Properties에 접근하자!
 
@@ -143,7 +149,7 @@ function deleteProperty() {
 
 ## 💻 Code test
 
-### 객체 안의 객체 접근
+### 📚 객체 안의 객체 접근
 
 ```Java script
 // 맞는 풀이
@@ -178,11 +184,9 @@ function accessObject() {
 > 4. bracket notation 으로 글로브박스 접근
 > 5. 성공! 👍
 
-<br>
-
 <hr>
 
-### 객체 안의 배열 접근
+### 📚 객체 안의 배열 접근
 
 ```Java script
 function accessArray() {
