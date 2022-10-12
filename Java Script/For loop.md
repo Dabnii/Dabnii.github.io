@@ -107,6 +107,7 @@ function getAllLetters(str) {
   }
 
   return strArray;
+// ['R', 'a', 'd', 'a', 'g', 'a', 's', 't']
 }
 ```
 > 간단하지만 많은 시간을 허비 한 구간. <br> 
