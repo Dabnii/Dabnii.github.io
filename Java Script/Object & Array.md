@@ -43,13 +43,13 @@ let myself = {
 	name : 'Code Kim',
 	Country: 'South Korea',
 	age: 30,
-	cats: ['냥','냥냥'],
+	cats: ['루이','나비'],
 	myKey: 'Hello'
 }
 
 let myKey = 'cat'
 
-console.log(myself[cats]) // cats: ['냥','냥냥'],
+console.log(myself[cats]) // cats: ['루이','나비']
 console.log(myself.myKey) // 'Hello' Dot은 변수사용 불가 -> key로 인식
 ```
 
@@ -75,10 +75,10 @@ console.log(myCats)
 const person= {firstName: "Mick", lastName: "Jagger"}
 
 person.firstName
-"Mick"
-or
+//"Mick"
+//or
 person['fistName']
-"Mick"
+//"Mick"
 //위의 두가지 버전은 유효함
 
 ❌ person[firstName] //따옴표가 없어서 유효하지 않음
@@ -263,3 +263,8 @@ Quick review:
 - 앞으로의 goal: 노트하고 복기하기!<br>
 
 F.I.N 💪
+
+<hr>
+출처
+
+- https://codeburst.io/javascript-quickie-dot-notation-vs-bracket-notation-333641c0f781
