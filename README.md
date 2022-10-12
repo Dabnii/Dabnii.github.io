@@ -1,5 +1,4 @@
 # 🧩 TIL | Today I Learn
-![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/last-update/BongsikB?style=flat-square)
 
 > 오늘의 공부가 하나의 퍼즐이 될 때 까지- I live, I learn, I move on
 
