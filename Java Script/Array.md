@@ -224,8 +224,6 @@ console.log(filtered())
 
 ### Filter 2
 
-> filter hard class
-
 ```Java script
 let courses = [
 {level:'easy', subject: "English" },
@@ -250,6 +248,11 @@ console.log(filtered())
 - 인덱스 위치에 있는 항목 제거하기
 
 ```java script
+//Splice syntax
+array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+```
+
+```java script
 let basket = [['양파','곰팡이'],['곰팡이','빵','딸기잼'],['귤','곰팡이','사과']];
 
 function removeGerm(arr) {
@@ -267,11 +270,6 @@ console.log(removeGerm(basket))
 //매개변수 arr로 작성하는 것이 중요💡
 ```
 
-```java script
-//Splice
-array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
-```
-
 ## 💡 핵심 코드
 
 ```java script
@@ -283,11 +281,13 @@ arr[i].splice(j, 1)
 
 ## Object 객체와 배열의 차이점
 
-| 객체(Object)                       | 배열(Array)              |
-| ---------------------------------- | ------------------------ |
-| {Key:value}를 가진 Property의 집합 | 데이터타입 : 순서로 나열 |
-| `{ }`                              | `[ ]`                    |
-| 순서가 없다                        | 순서가 있다              |
+| 객체(Object)                       | 배열(Array)                   |
+| ---------------------------------- | ----------------------------- |
+| {Key:value}를 가진 Property의 집합 | 데이터타입 : 순서로 나열      |
+| `{ }` 중괄호                       | `[ ]` 대괄호                  |
+| 순서가 없다                        | 순서가 있다 (순서가 중요하다) |
+
+<br>
 
 <hr>
 
