@@ -12,7 +12,7 @@
 - <a href="https://bongsikb.github.io/my-homepage/">Home page</a>
 
 # 📌 JavaScript
-- <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/bf12c76e3adf1502f8ec6e7f80f35fa1ecb84340/JavaScript/Logical%20Operation.md"> Logical Operation </a>
+- <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Logical%20Operation.md"> Logical Operation </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">Array</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object%20&%20Array.md">Object</a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
