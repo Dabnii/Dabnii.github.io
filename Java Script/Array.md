@@ -2,6 +2,8 @@
 
 ## 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합
 
+> 📎 배열과 객체의 차이
+
 - Java Script의 `데이터 구조`
 - `[]` 사이에 존재
 - `순서`를 가짐
@@ -20,9 +22,9 @@ let lottoNums = [19,22,56,12,51];
 let stuff = [ture, 67, 'cat', null];
 ```
 
-## Array의 기본 형태
+## Array의 기본 형태 ✅
 
-- 0부터 시작합니다
+- 0부터 시작
 - `[N]`
 
 ```Java script
@@ -32,7 +34,7 @@ let solfege =
 ```
 
 ```Java script
-days [Monday. Tuesday, Wednesday];
+days [Monday, Tuesday, Wednesday];
 "monday"[0] //m
 days // 0Monday 1Tuesday 2Wednesday
 days [0] // Monday
@@ -50,7 +52,7 @@ colors[3] = 'green';
 colors[4] =; //undefined
 colors[5] = 'blue';
 
-//cna change like this 배열 []을 사용하면 요소를 바꿀 수 있음
+//배열 []을 사용하여 요소를 바꿀 수 있음
 let colors = ['rad', 'orange', 'yalloww'];
 colors [0] = 'red' //변경가능
 
@@ -93,14 +95,15 @@ let num = [[11, 12, 13], [14, 15, 16], [17, 18, 19]];
 function makeNewArr () {
   return num[0].concat(num[1],num[2]) 👍👍👍
 }
-//0번 배열에 num 0  + num 1 concat
+//0번 배열에 num 1  + num 2 concat
 
 console.log(makeNewArr())
 ```
 
 ### Inclues ➕
 
-불리언 메서드 `True` or `false`
+- boolean method
+- `True` or `false`
 
 ```java script
 let cats = ["Kitty", "meow"];
@@ -130,12 +133,13 @@ let dogs= ['dal','bong'];
 cats.indexOf("kitty");
 // 0
 
-cats.indexOf("wow") - 1; //none
+cats.indexOf("wow")
+// - 1 none
 ```
 
 ### Reverse 🔁
 
-원본 배열을 변경함
+- 원본 배열을 변경함
 
 ```Java script
 let cats= ['Kitty','meow'];
@@ -151,8 +155,8 @@ cats.reverse()
 
 - `배열의 일부를 복사` 하는 방법
 - 원본 배열 변경
-- 정수는 정방향
-- 음수는 역방향
+- 정수는 `정방향`
+- 음수는 `역방향`
 
 ```Java script
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
@@ -176,6 +180,18 @@ console.log(animals.slice());
 // expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
 ```
 
+```java script
+const findFruits = () => {
+  let foodBox = ['🍕', '🍤','🍇' ,'🥝','🍒','🍉','🍗', '🍟' ];
+  let bye = foodBox.slice(2,6);
+  //or
+  //let bye = foodBox.slice(-6,-2);
+
+  return bye;
+}
+// [ '🍇', '🥝', '🍒', '🍉' ]
+```
+
 ```Java script
 const airplaneSeats = [
     ['Ruth', 'Anthony', 'Stevie'],
@@ -186,7 +202,7 @@ const airplaneSeats = [
 ];
 
 airplaneSeats [3] [1] = 'Hugo';
-// 3번쨰 배열의 1번을 휴고로 변경
+// 3번쨰 배열의 1번을 Hugo로 변경
 ```
 
 ### Filter
@@ -248,7 +264,30 @@ function removeGerm(arr) {
 
 console.log(removeGerm(basket))
 // [ [ '양파' ], [ '빵', '딸기잼' ], [ '귤', '사과' ] ];
+//매개변수 arr로 작성하는 것이 중요💡
 ```
+
+```java script
+//Splice
+array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+```
+
+## 💡 핵심 코드
+
+```java script
+arr[i].splice(j, 1)
+// arr[i]의 j를 1개 삭제
+```
+
+<br>
+
+## Object 객체와 배열의 차이점
+
+| 객체(Object)                       | 배열(Array)              |
+| ---------------------------------- | ------------------------ |
+| {Key:value}를 가진 Property의 집합 | 데이터타입 : 순서로 나열 |
+| `{ }`                              | `[ ]`                    |
+| 순서가 없다                        | 순서가 있다              |
 
 <hr>
 
