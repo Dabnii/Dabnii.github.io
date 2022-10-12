@@ -1,5 +1,5 @@
 # 🧩 TIL | Today I Learn
-
+<img src="https://img.shields.io/galaxytoolshed/created-date/BongsikB.github.io/BongsikB?style=for-the-badge">
 > 오늘의 공부가 하나의 퍼즐이 될 때 까지- I live, I learn, I move on
 
 # 👩‍💻 Web Project
