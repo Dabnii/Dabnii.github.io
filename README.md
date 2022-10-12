@@ -14,7 +14,7 @@
 # 📌 JavaScript
 - <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Logical%20Operation.md"> Logical Operation </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">Array</a>
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object%20&%20Array.md">Object</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">Object</a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
 
 # 💻 Computer Science
