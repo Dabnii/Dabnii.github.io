@@ -1,13 +1,11 @@
-# 💡 Object
-
-## 💡 `{ Key : Property }`
+# Object `{ Key : Property }`
 
 ## 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티집합`
 
 - Key 값과 Value 값을 쌍으로 가지며, <br>
 - 배열과는 다르게 순서가 중요하지 않습니다.
 
-## { Key : Property `,` Key : Property }
+### { Key : Property `,` Key : Property }
 
 - 쉼표를 사용하여 구분합니다.
 
@@ -52,12 +50,12 @@ let myself = {
 let myKey = 'cat'
 
 console.log(myself[cats]) // cats: ['냥','냥냥'],
-soncole.log(myself.myKey) // 'Hello' Dot은 변수사용 불가 -> key로 인식
+console.log(myself.myKey) // 'Hello' Dot은 변수사용 불가 -> key로 인식
 ```
 
 <br>
 
-## 2️⃣ Bracket Notation `{ }`
+## 2️⃣ Bracket Notation `[ ]`
 
 - Property identifiers have to be a String or a variable that references a String.
 - It is okay to use variables, spaces, and Strings that start with numbers
@@ -68,7 +66,7 @@ myself['name'] // 'Code kim'
 myself['age'] // 30
 
 //e.g.
-let myCats= myself['cats']
+let myCats = myself['cats']
 console.log(myCats)
 // cats: ['냥','냥냥']
 ```
