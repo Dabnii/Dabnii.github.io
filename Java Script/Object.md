@@ -1,5 +1,7 @@
 # Object `{ Key : Property }`
 
+<a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">📎 Array 포스트</a>
+
 ## 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티집합`
 
 - Key 값과 Value 값을 쌍으로 가지며, <br>
