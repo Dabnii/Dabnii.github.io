@@ -102,7 +102,10 @@ console.log(makeNewArr())
 
 불리언 메서드 `True` or `false`
 
-```jsx
+```java script
+let cats = ["Kitty", "meow"];
+let dogs = ["dal", "bong"];
+
 cats.includes("kitty");
 //true;
 
@@ -121,6 +124,9 @@ arr.indexOf(searchElement[, fromIndex])
 ```
 
 ```Java script
+let cats= ['Kitty','meow'];
+let dogs= ['dal','bong'];
+
 cats.indexOf("kitty");
 // 0
 
@@ -132,6 +138,9 @@ cats.indexOf("wow") - 1; //none
 원본 배열을 변경함
 
 ```Java script
+let cats= ['Kitty','meow'];
+let dogs= ['dal','bong'];
+
 cats.reverse()
 ['meow','kitty']
 ```
@@ -140,7 +149,7 @@ cats.reverse()
 
 `arr.slice([*begin*[, *end*]])`
 
-- 배열의 일부를 복사 하는 방법
+- `배열의 일부를 복사` 하는 방법
 - 원본 배열 변경
 - 정수는 정방향
 - 음수는 역방향
@@ -176,7 +185,7 @@ const airplaneSeats = [
     ['Rin', 'Sakura', 'Francisco']
 ];
 
-airplaneSeats [3] [1] ='Hugo';
+airplaneSeats [3] [1] = 'Hugo';
 // 3번쨰 배열의 1번을 휴고로 변경
 ```
 
