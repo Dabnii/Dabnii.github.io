@@ -1,17 +1,29 @@
-# JS-Logical-operators
+# JS-Logical-operators | 논리 연산자
 
-## JS Logical operators 논리연산자
-
-<hr>
-
-### Logical operators (논리연산자)
+## Logical operators (논리연산자)
 
 논리 연산자는 보통 불리언(논리) 값과 함께 사용해서 불리언 값을 반환합니다.<br>
-실제로는 <span style="color:tomato"> `FALSY VALUES` </span> 와 <span style="color:orange"> `TRUTHY VALUES` </span> 의 값중 하나를 반환 하는 것이므로, 둘 중 하나가 불리언 값이 아니라면 논리 연산자의 반환 값도 불리언 값이 아닐 수 있습니다.
+실제로는 `FALSY VALUES`와 `TRUTHY VALUES` 의 값중 하나를 반환 하는 것이므로,<br>
+둘 중 하나가 불리언 값이 아니라면 논리 연산자의 반환 값도 불리언 값이 아닐 수 있습니다.
 
-### <span style="color:orange">TRUTHY</span> AND <span style="color:tomato">FALSY </span>VALUES
 
-<span style="color:tomato"> `FALSY VALUES` </span>
+연산자| 사용법 |설명
+|---|-----|---|
+`논리 AND` | `&&` | expr1 && expr2 expr1을 false로 변환할 수 있으면 expr1을 반환합니다. 그 외의 경우에는 expr2를 반환합니다. 따라서 불리언 값과 함께 사용한 경우, 둘 다 참일 때 true를, 그 외에는 false를 반환합니다.
+`논리 OR` | ` II` | expr1  expr2 expr1을 true로 변환할 수 있으면 expr1을 반환합니다. 그 외의 경우에는 expr2를 반환합니다. 따라서 불리언 값과 함께 사용한 경우, 둘 중 하나가 참일 때 true를, 그 외에는 false를 반환합니다.
+`논리 NOT` | `!` | !expr 단일 피연산자를 true로 변환할 수 있으면 false를 반환합니다. 그 외에는 true를 반환합니다.
+
+> false로 변환할 수 있는 표현식은 평가 결과가 null, 0, NaN, 빈 문자열(""), undefined인 경우입니다.
+
+
+### 논리연산자의 실행 순서
+>  `&& AND` ➡️ `|| OR`
+
+<br>
+
+# 💡 `TRUTHY` AND `FALSY VALUES`
+
+## `FALSY VALUES` 🤔
 
     - false
     - 0
@@ -20,23 +32,19 @@
     - Undefined
     - NaN
 
-<span style="color:orange"> `TRUTHY VALUES` </span>
+## `TRUTHY VALUES` 🙆‍♀️
 
     - Everything else is truthy!
 
+<br>
 <hr>
+<br>
 
-## 논리연산자의 실행 순서
 
-<span style="color:orange"> `&& AND` </span>
-가 먼저 실행 되며 <span style="color:orange"> `|| OR` </span>
-가 나중에 실행됩니다.
 
-<hr>
+## 💡 `&& AND` 
 
-<span style="color:orange"> `&& AND` </span>
-Only both sides is true
-두가지가 참이어야 참으로 성립
+### `두가지가 참이어야 참`으로 성립 
 
 ```java script
 true && true -> true
@@ -46,7 +54,6 @@ false && false -> false
 1 <= 4 && 'a' === 'a' // T
 9 > 10 && 9 <= 9; //F
 'abc'.length === 3 && 1+1 === 4; //F
-
 ```
 
 ```java script
@@ -61,15 +68,13 @@ if (password >= 6 && password.indexOf('') === -1) {
 } else {
  console.log ("INCORRECT FORMAT FOR PASSWORD!");
 }
-
 ```
 
 <hr>
 
-<span style="color:orange"> `|| OR` </span>
+## 💡 `|| OR` 
 
-If one side is true, the entire thing is true <br>
-어느 한 쪽이 true라면, 모두가 true가 됨.
+### 어느 한 쪽이 `true라면, 모두가 true`가 됨
 
 ```java script
 //only one side needs to be true!
@@ -103,10 +108,10 @@ if ((age >= 0 && age < 5) || age >= 65) {
 
 <hr>
 
-<span style="color:orange"> `! NOT` </span>
+## `! NOT`
 
-! Expression returns true if expression is false <br>
-거짓인 표현식 앞에 넣으면 결과가 참으로 나옴
+### ! Expression returns true if expression is false <br>
+### `거짓인 표현식 앞에 넣으면 결과가 참`으로 나옴
 
 ```java script
 !null //true
@@ -141,7 +146,6 @@ isEitherEvenAndLessThan9(9,10)//false
 // 우선 두 숫자 중 적어도 하나가 짝수인지 확인합니다.
 // 그리고 두 숫자 모두 9보다 작은지를 확인합니다.
 // 두 조건을 모두 만족하는 경우만 true를 반환합니다.
-
 ```
 
 ```java script
@@ -153,8 +157,42 @@ function isEitherEvenAndLessThan9(num1, num2) {
     return false;
   }
 }
-
 isEitherEvenAndLessThan9(8,8)
+```
+<br>
+<br>
+
+## 💡 `조건 (삼항) 연산자`
+
+- JavaScript에서 세 개의 피연산자를 취할 수 있는 유일한 연산자
+- 맨 앞에 조건문 들어가고. 그 뒤로 물음표(`?`)와 조건이 참`truthy`이라면 실행할 식이 물음표 뒤로 들어갑니다. 
+- 바로 뒤로 콜론(`:`)이 들어가며 조건이 거짓`falsy`이라면 실행할 식이 마지막에 들어갑니다. 
+- 보통 `if`명령문의 단축 형태로 쓰입니다.
+
+```java script
+condition ? exprIfTrue : exprIfFalse
+```
+
+```java script
+var status = age >= 18 ? '성인' : '미성년자';
+//위의 명령문은 age가 18 이상이라면 status 변수에 "성인"을 할당하고, 그렇지 않으면 "미성년자"를 할당합니다.
+```
+
+```java script
+function evenOrOdd(num) {
+  return (num % 2)? "Odd":"Even";
+}
+```
+
+```java script
+const isSnakeEyes = (die1, die2) => {
+	return dies1+die2 ===2 ? "Snake eyes!" : "not Snake eyes!"
+}
 ```
 
 <hr>
+출처:
+
+- https://poiemaweb.com/js-operator
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%85%BC%EB%A6%AC_%EC%97%B0%EC%82%B0%EC%9E%90
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator

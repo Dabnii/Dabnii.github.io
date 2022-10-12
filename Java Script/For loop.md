@@ -1,12 +1,14 @@
 # For loop
-## Loops allow us to repeat code
+
+## 🔁 Loops allow us to repeat code
 
 - print ‘hello’ 10 times
 - Sum all numbers in an array
 
 <br>
 
-### 자바스크립트가 지원하는 반복문 
+## 자바스크립트가 지원하는 반복문
+
 1. for 문
 1. do...while 문
 1. while 문
@@ -16,8 +18,9 @@
 1. for...in 문
 1. for...of 문
 
-### 기본 구문
-``` java script
+## ✅ 기본 구문
+
+```java script
 for (
 		[initialExpression];
 		[condition];
@@ -47,20 +50,21 @@ for ( let i =10; i <= 100; i *=10) {
 	console.log(i);
 }
 ```
+
 <br>
 
----
 # Code tests & quick review
+
 +) `Pseudocode`를 생활화!
 
 ### 자, 이제 기본은 끝. 실전 코드로 돌입! 🔥
-<br>
-
->시장을 봐왔는데 바구니를 보니 곰팡이가 피어있습니다.
-바구니에서 곰팡이를 제거하는 함수를 작성해주세요!
 
 <br>
 
+> 시장을 봐왔는데 바구니를 보니 곰팡이가 피어있습니다. <br>
+> 바구니에서 곰팡이를 제거하는 함수를 작성해주세요!
+
+<br>
 
 ## 💻 For loop test #1
 
@@ -82,8 +86,6 @@ console.log(removeGerm(basket))
 //매개변수 arr로 작성하는 것이 중요💡
 ```
 
-
-
 ```java script
 //Splice
 array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
@@ -98,6 +100,7 @@ arr[i].splice(j, 1)
 <hr>
 
 ## 💻 For loop test #2
+
 ```java script
 function getAllLetters(str) {
   let strArray = [];
@@ -110,10 +113,11 @@ function getAllLetters(str) {
 // ['R', 'a', 'd', 'a', 'g', 'a', 's', 't']
 }
 ```
-> 간단하지만 많은 시간을 허비 한 구간. <br> 
-핵심은 `strArray.push(str[i])` <br>
+
+> 간단하지만 많은 시간을 허비 한 구간. <br>
+> 핵심은 `strArray.push(str[i])` <br>
 > 간단하지만 기본을 놓쳐서 아쉬움이 컸다.<br>
-⏰ 시간을 더 효율적으로 쓰자!
+> ⏰ 시간을 더 효율적으로 쓰자!
 
 <br>
 <hr>
@@ -122,6 +126,7 @@ function getAllLetters(str) {
 ## 💻 For loop test #3
 
 💡 pseudocode
+
 - HelloBot 함수를 사용
 - For문 사용
 - result 배열에 greetings에 들어있는 인삿말을 채우기
@@ -143,16 +148,19 @@ const helloBot = people => {
       result.push('또 만나네요')
     }
   } return result;
-} 
+}
 
 console.log(helloBot(group1))
 ```
+
 > pseudocode코드로 정리하고 도전하여 두 번 만에 test pass! 👏 <br>
 > people는 매개변수 이름이다. 🤫
+>
 > > 첫 시도에 무작정 group1 배열을 넣어 불완전했음.
-<br>
+> > <br>
+
 <hr>
 
-### 오늘의 교훈: 코드를 무작정 쓰지 말고 `pseudocode`로 논리를 정리하자. 
+### 오늘의 교훈: 코드를 무작정 쓰지 말고 `pseudocode`로 논리를 정리하자.
 
 끗-.
