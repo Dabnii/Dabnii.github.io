@@ -1,6 +1,6 @@
-# Object `{ Key : Property }`
+# <p align=center> Object `{ Key : Property }`
 
-## 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티집합`
+## <p align=center> 💡 객체 Object : `Key` 값과 `Value`값을 가진 `프로퍼티집합`
 
 - Key 값과 Value 값을 쌍으로 가지며, <br>
 - 배열과는 다르게 순서가 중요하지 않습니다.
