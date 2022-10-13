@@ -1,6 +1,4 @@
-# JS-Logical-operators | 논리 연산자
-
-## Logical operators (논리연산자)
+# <p align="center"> JS-Logical-operators | 논리 연산자
 
 논리 연산자는 보통 불리언(논리) 값과 함께 사용해서 불리언 값을 반환합니다.<br>
 실제로는 `FALSY VALUES`와 `TRUTHY VALUES` 의 값중 하나를 반환 하는 것이므로,<br>
