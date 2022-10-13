@@ -1,4 +1,4 @@
-# For loop
+# <p align="center"> 🔁 For loop
 
 ## 🔁 Loops allow us to repeat code
 
