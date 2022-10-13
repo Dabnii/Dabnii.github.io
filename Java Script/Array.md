@@ -1,4 +1,4 @@
-# Array `[A,r,r,a,y]`
+# <p align="center"> Array `[A,r,r,a,y]`
 
 ## 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합
 
