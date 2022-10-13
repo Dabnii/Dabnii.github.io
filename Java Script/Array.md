@@ -1,6 +1,6 @@
 # <p align="center"> Array `[A,r,r,a,y]`
 
-## 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합
+## <p align=center> 배열 Array : 여러개의 `데이터`가 `순서`를 가지고 나열 된 집합
 
 <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md#object-%EA%B0%9D%EC%B2%B4%EC%99%80-%EB%B0%B0%EC%97%B4%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90">📎 배열과 객체의 차이</a> <br>
 <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">📎 Object 객체 포스트 </a>
