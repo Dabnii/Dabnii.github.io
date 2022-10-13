@@ -23,6 +23,7 @@
 >
 > - 배열과 객체를 혼합하여 사용하는 경우가 많습니다.
 > - 나란히 사용할 때 강력해 집니다
+
 ```Java script
 let person1 = {
   name: '김익명',
@@ -190,7 +191,8 @@ function accessObject() {
 > 3. inside에 들어가서 ~~0번 인덱스인 글로브 박스를 꺼낸다.~~ 🤦‍♀️ 객체 이므로 인덱스불가.
 > 4. bracket notation 으로 글로브박스 접근
 > 5. 성공! 👍
-<br>
+>    <br>
+
 <hr>
 <br>
 
@@ -234,7 +236,8 @@ let foundValue = myPlants[1] //
 > 2. ~~인덱스[1]로 접근?no. type["trees"].list[1]~~
 > 3. 배열 이므로 `["trees"]` 사용 불가.
 > 4. 배열로 접근 및 성공 👍
-<br>
+>    <br>
+
 <hr>
 <br>
 
