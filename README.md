@@ -1,7 +1,7 @@
-# 🧩 TIL | Today I Learn
+# <p align="center"> 🧩 TIL | Today I Learn
 
-> 오늘의 공부가 하나의 퍼즐이 될 때 까지- 
-> I live, I learn, I move on
+<p align="center"> 오늘의 공부가 하나의 퍼즐이 될 때 까지- 
+<p align="center"> I live, I learn, I move on
 
 <p align="center">
   <img src="https://img.shields.io/github/last-commit/BongsikB/BongsikB.github.io?style=flat-square">
