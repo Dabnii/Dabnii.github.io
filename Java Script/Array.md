@@ -31,7 +31,7 @@ let stuff = [ture, 67, 'cat', null];
 ```Java script
 let solfege =
 ['Do','re','Mi','fa']
-// 0---1---2---3---4
+// 0----1----2----3
 ```
 
 ```Java script
