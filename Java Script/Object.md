@@ -73,7 +73,7 @@ myself['age'] // 30
 //e.g.
 let myCats = myself['cats']
 console.log(myCats)
-// cats: ['냥','냥냥']
+// cats: ['루이','나비']
 ```
 
 ```Java script
