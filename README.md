@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/github/last-commit/BongsikB/BongsikB.github.io?style=flat-square">
 </p>
 
-# 🧩 Today I Learn
+# 📚 Today I Learn
 - CSS & HTML
 
 # 👩‍💻 Web Project
