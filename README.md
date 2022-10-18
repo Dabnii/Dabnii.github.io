@@ -8,13 +8,13 @@
 </p>
 
 # 📚 Today I Learn
-- Semantic Web & Semantic Tag
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
 
 # 👩‍💻 Web Project
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
 
 # 📌 JavaScript
-- <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Logical%20Operation.md"> Logical Operation </a>
+- <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Logical%20Operation.md">Logical Operation </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">Array</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">Object</a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
