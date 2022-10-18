@@ -7,6 +7,8 @@
   <img src="https://img.shields.io/github/last-commit/BongsikB/BongsikB.github.io?style=flat-square">
 </p>
 
+# 🧩 Today I Learn
+- CSS & HTML
 
 # 👩‍💻 Web Project
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
