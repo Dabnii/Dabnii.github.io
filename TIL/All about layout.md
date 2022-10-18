@@ -48,8 +48,9 @@ top: 0;
 
 🏷 inline tag
 
-| `<span>`   | inline요소들을 그룹화하거나 영역을 나눌때 사용하는 태그입니다.         |
+| Tag        | 설명                                                                   |
 | ---------- | ---------------------------------------------------------------------- |
+| `<span>`   | inline요소들을 그룹화하거나 영역을 나눌때 사용하는 태그입니다.         |
 | `<a>`      | 링크를 통해 다른페이지, 문서 등을 연결해주는 태그입니다.               |
 | `<img>`    | 이미지를 삽입하는 태그로 지정한 이미지경로를 통해 이미지를 불러옵니다. |
 | `<button>` | 클릭할 수 있는 버튼을 생성하는 태그입니다.                             |
@@ -73,8 +74,9 @@ top: 0;
 
 🏷 Block tag
 
-| `<div>`  | 영역을 나눌때 사용하는 태그 입니다            |
+| Tag      | 설명                                          |
 | -------- | --------------------------------------------- |
+| `<div>`  | 영역을 나눌때 사용하는 태그 입니다            |
 | `<p>`    | 문단 또는 문장을 나눌때 사용 <br>             |
 | `<form>` | 사용자가 입력한 데이터를 서버로 전송하기 위함 |
 
@@ -127,23 +129,13 @@ h1 {
 
 # 🔁 Flex-box
 
-플렉스박스(Flexbox)는 요소를 단일 차원(행 또는 열)에 배치합니다. <br>
-Flexbox is one-dimensional layout method for laying out items in rows or columns
-
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="adLPwv" data-user="enxaneta" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/enxaneta/pen/adLPwv">
-  Flexbox playground</a> by Gabi (<a href="https://codepen.io/enxaneta">@enxaneta</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-<br>
-<hr>
-<br>
-
-💡 `Flexbox` :✨MAIN AXIS (본축) & CROSS AXIS (교차)✨ 하는 두 축으로 구성\*\*
-
-✔️ 본축의 기본 방향은 왼쪽에서 오른쪽
+- 플렉스박스(Flexbox)는 요소를 단일 차원(행 또는 열)에 배치합니다. <br>
+- 💡 `Flexbox` :✨MAIN AXIS (본축) & CROSS AXIS (교차)✨ 하는 두 축으로 구성
+- ✔️ 본축의 기본 방향은 왼쪽에서 오른쪽
+- Flexbox is one-dimensional layout method for laying out items in rows or columns
+  - 깨알 팁 💡 `grid`
+    - grid는 2차원 레이아웃 시스템(수직, 수평 둘 다 가능)으로 분류
+    - grid는 항목을 두 방향으로 레이아웃 할 수있는 반면 flex는 한 방향만 가능
 
 ## `Flex direction`
 
@@ -179,7 +171,7 @@ flex-wrap: wrap-reverse;
 flex-wrap: nowrap;
 ```
 
-### ALIGN ITEMS | 교차축을 따라 아이템을 배열
+### `ALIGN ITEMS` | 교차축을 따라 아이템을 배열
 
 **flex 컨테이너** 에 지정하는 속성이며, 교차축을 따라 **flex 항목**열을 정렬하는 방식을 지정합니다.
 
@@ -189,7 +181,7 @@ align-tiems: flex-end;
 align-items: baseline; /*텍스트라인에 정렬*/
 ```
 
-### ALIGN CONTENT |
+### `ALIGN CONTENT`
 
 행이나 열이 여러 개일 때 교차축을 중심으로 정렬하는 align-content
 
