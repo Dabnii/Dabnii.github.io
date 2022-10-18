@@ -1,4 +1,4 @@
-# 📍 All about Position & inline
+# 📍 All about Position & display(inline)
 
 - position 속성
 
