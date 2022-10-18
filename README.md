@@ -8,7 +8,7 @@
 </p>
 
 # 📚 Today I Learn
-- CSS & HTML
+- Semantic Web & Semantic Tag
 
 # 👩‍💻 Web Project
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
