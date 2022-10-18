@@ -34,9 +34,9 @@ relating to meaning in language or logic.
 </div>
 ```
 
-<!-- 시맨틱 태그 사용 예 -->
 
 ```html
+<!-- 시맨틱 태그 사용 예 -->
 <header>
   <h1>오늘은 월요일 입니다</h1>
 </header>
@@ -96,7 +96,9 @@ a {
 
 <hr>
 출처:
-
+  
+- https://poiemaweb.com/html5-semantic-web
+  
 - https://chanho-yoon.github.io/web/web-semanticWeb-semanticTag/
 
 - https://velog.io/@anhesu11/%EC%8B%9C%EB%A7%A8%ED%8B%B1-%EC%9B%B9%EA%B3%BC-%EC%8B%9C%EB%A9%98%ED%8B%B1-%ED%8B%B0%EA%B7%B8
