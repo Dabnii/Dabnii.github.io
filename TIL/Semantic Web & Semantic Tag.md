@@ -17,7 +17,7 @@ relating to meaning in language or logic.
 👆 '의미론적인 웹' 이라는 뜻으로. <br>
 기계가 이해할 수 있는 형태로 제작된 웹을 의미합니다.
 
-시맨틱 웹의 목표는 데이터의 의미에 대한 기계 이해 가능한 설명을 위한 수단을 정확하게 제공하는 것입니다. <br>
+`시맨틱 웹`의 목표는 데이터의 의미와 관련성를 부여하며, 나아가 기계(컴퓨터)가 이해 가능한 설명을 위한 수단을 정확하게 제공하는 것입니다. <br>
 
 > The goal of the Semantic Web is exactly to provide means for machine understandable description of the meaning of data <br>
 > finally, the Semantic Web is not really about the Web/HTML, it's about data - and in particular describing the meaning of data in a formal/unambiguous way <br>
@@ -26,6 +26,10 @@ relating to meaning in language or logic.
 
 브라우저, 검색엔진, 개발자 모두에게 컨텐츠의 의미를 명확하게 전달하여 <br> `의미론 적` 으로 문서의 정보를 전달합니다.<br>
 또한 검색엔진에 시맨틱 요소를 이용하여 효과적인 크롤링과 인덱싱에 용이하게 하는 기술입니다.
+
+웹에 존재하는 수많은 웹페이지들에 `메타데이터(Metadata)`를 부여하여,<br> 
+기존의 잡다한 데이터 집합이었던 웹페이지를 `의미`와 `관련성`을 가지는 거대한 데이터베이스로 구축하고자 하는 발상이다.
+> https://poiemaweb.com/html5-semantic-web
 
 ```html
 <!-- 의미 없는 요소 사용 예 -->
@@ -42,7 +46,7 @@ relating to meaning in language or logic.
 </header>
 ```
 
-컴퓨터, 인간 모두가 쉽게 이해할 수 있도록 작성하는 것이 시멘틱 입니다.
+즉, 컴퓨터와 인간 모두가 `쉽게 이해할 수 있도록 작성하는 것이 시멘틱` 입니다.
 
 ## Semantic Elements in HTML
 
@@ -50,7 +54,9 @@ relating to meaning in language or logic.
 
 HTML은 시멘틱 요소들이 웹페이지의 각 구간을 명확하게 설명하는 도구로 사용됩니다.
 
-### HTML의 시멘틱 요소
+### HTML의 시멘틱 요소 (tag) 🏷
+
+💡 `form`, `table`, `img` 등이 있으며 이들 태그는 content의 의미를 명확히 설명한다.
 
 - `<article>`
 - `<details>`
@@ -65,6 +71,11 @@ HTML은 시멘틱 요소들이 웹페이지의 각 구간을 명확하게 설명
 - `<section>`
 - `<summary>`
 - `<time>`
+
+### non-semantic 요소
+
+💡 `<div>`, `span`등 content에 대하여 어떠한 설명도 하지 않는다
+
 
 ## 시멘틱 태그와 시멘틱 웹의 차이
 
