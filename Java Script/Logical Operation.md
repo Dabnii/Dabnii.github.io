@@ -173,6 +173,10 @@ function rps(player1, player2) {
     return "player1";
   }
 }
+// player2가 이기는 경우의 수가 player1보다 적음을 이용한 코드
+// player1이 이기는 경우는 [가위바위보의 승리] 그리고 [비기는 경우]
+// 가위바위보승리와 비기는 경우를 else 로 작성
+// player1에 승리에 대한 정보가 없지만 짧고 간결함을 추구함 
 ```
 
 > - `rockPaperScissors` 함수를 구현해서 가위 바위 보 게임을 구현해주세요.
