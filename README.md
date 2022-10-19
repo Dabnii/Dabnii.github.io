@@ -7,11 +7,8 @@
   <img src="https://img.shields.io/github/last-commit/BongsikB/BongsikB.github.io?style=flat-square">
 </p>
 
-# 📚 Today I Learn
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
+# 📘 CSS & HTML
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Conditionals%20if.md">Conditional Statements</a>
-
 
 # 👩‍💻 Web Project
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
@@ -21,10 +18,9 @@
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">Array</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">Object</a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Conditionals%20if.md">Conditional Statements</a>
 
 # 💻 Computer Science
 
-- 웹 브라우저의 동작 원리
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md">Closure, Lexical, Scope </a>
-
-
