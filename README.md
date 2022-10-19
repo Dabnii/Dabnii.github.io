@@ -10,7 +10,7 @@
 # 📚 Today I Learn
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
-- If 문
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Conditionals%20if.md">Conditional Statements</a>
 
 
 # 👩‍💻 Web Project
