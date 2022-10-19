@@ -1,4 +1,4 @@
-# 📍 All about Position & display(inline)
+ # <p align="center"> 📍 All about Position & display(inline)
 
 - position 속성
 
