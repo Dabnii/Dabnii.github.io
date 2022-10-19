@@ -1,4 +1,4 @@
-# Semantic Web & Semantic Tag
+# <p align="center"> Semantic Web & Semantic Tag
 
 - 시멘틱 태그와 시멘틱 웹의 차이
 - `<img>` 태그를 사용하는 것과 `<div>` background-image 태그 사용 대한 차이점은 무엇일까?
