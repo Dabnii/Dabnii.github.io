@@ -159,6 +159,33 @@ isEitherEvenAndLessThan9(8,8)
 <br>
 <br>
 
+index.js에 있는 가위 바위 보 게임 함수를 아래 조건에 맞게 구현해주세요.
+
+```java script
+function rps(player1, player2) {
+  if (
+    (player2 === "가위" && player1 === "보") ||
+    (player2 === "바위" && player1 === "가위") ||
+    (player2 === "보" && player1 === "바위")
+  ) {
+    return "player2";
+  } else {
+    return "player1";
+  }
+}
+```
+
+> - `rockPaperScissors` 함수를 구현해서 가위 바위 보 게임을 구현해주세요.
+> - **가능하면 || 와 && 연산자 둘다 사용해주세요.**
+> - player1과 player2 중 이긴 사람이 누군지 리턴해주세요.
+> - 예를 들어, player1이 이겼으면 "player1" 이 리턴 되고 그 반대의 경우라면 "player2"가 리턴이 되어야 합니다.
+> - 만일 비기는 경우에는 무조건 "player1"이 리턴 되어야 합니다.
+> - player1 과 player2 의 값은 다음 셋 중 하나 입니다.
+    - "가위"
+    - "바위"
+    - "보"
+> - 예를 들어, player1은 "가위" 이고 player2는 "보" 이면 "player1" 이 리턴 되어야 합니다.
+
 ## 💡 `조건 (삼항) 연산자`
 
 - JavaScript에서 세 개의 피연산자를 취할 수 있는 유일한 연산자
