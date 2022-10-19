@@ -9,7 +9,7 @@
 
 # 📚 Today I Learn
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20layout.md">Display & position</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 
 # 👩‍💻 Web Project
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
