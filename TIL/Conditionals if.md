@@ -145,13 +145,14 @@ if (num <= 100) {
 
 ```javascript
 // 맞는 풀이
+// ✨ if 조건문 속 , , 콤마 연산자를 사용하는 것이 아닌 &&을 사용합니다. 
 function meetAt(year, month, date) {
-  if ((year, month, date)) {
+  if (year && month && date) {
     return year + "/" + month + "/" + date;
-  } else if ((year, month)) {
-    return year + "년 " + month + "월";
+  } else if (year && month) {
+    return year + "년 " +  month + "월";
   } else if (year) {
-    return year + "년 ";
+    return year + "년";
   }
 }
 ```
