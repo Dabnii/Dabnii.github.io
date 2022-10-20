@@ -16,6 +16,7 @@
 # 📌 JavaScript
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">Array</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Conditionals%20if.md">Conditional Statements</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Data%20type.md">Data type</a>
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
 - <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Logical%20Operation.md">Logical Operation </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">Object</a>
