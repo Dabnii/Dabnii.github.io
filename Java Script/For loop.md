@@ -159,6 +159,31 @@ console.log(helloBot(group1))
 > > 첫 시도에 무작정 group1 배열을 넣어 불완전했음.
 > > <br>
 
+## 💻 For loop test #4
+
+<br>
+
+```javascript
+function findSmallestElement(arr) {
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr.length < 1) {
+      return 0;
+    } else if (arr.length >= 1) {
+      return Math.min.apply(Math, arr);
+    }
+  }
+}
+```
+
+> findSmallestElement 함수를 구현해 주세요.
+
+- `findSmallestElement` 의 `arr` 인자는 숫자 값으로만 이루어진 배열입니다.
+- `arr` 의 값들 중 가장 작은 값을 리턴 해주세요.
+- 만일 `arr` 가 비어있으면 0을 리턴 해주세요.
+- 예를 들어, 다음과 같은 배열이 인자(input)으로 들어왔다면 1이 리턴 되어야 합니다.
+  - `for (let i = 0; i <= arr.length; i++)` ✨
+  - 역방향 for ✨
+
 <hr>
 
 ### 오늘의 교훈: 코드를 무작정 쓰지 말고 `pseudocode`로 논리를 정리하자.

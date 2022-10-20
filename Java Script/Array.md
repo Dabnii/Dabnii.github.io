@@ -206,7 +206,7 @@ airplaneSeats [3] [1] = 'Hugo';
 // 3번쨰 배열의 1번을 Hugo로 변경
 ```
 
-### Filter
+## Filter
 
 - 조건에 맞는 요소들만 모아서 `새로운 배열을 반환`
 - 만약 조건에 부합되는 요소가 아무것도 없다면 `빈 배열을 반환`
@@ -244,7 +244,7 @@ console.log(filtered())
 //[{ level: 'hard', subject: 'Mathmatic' },{ level: 'hard', subject: 'Science' }]
 ```
 
-## Splice ⌫
+## Splice ⌫ [1]
 
 - 인덱스 위치에 있는 항목 제거하기
 
@@ -280,6 +280,45 @@ arr[i].splice(j, 1)
 
 <br>
 
+## Splice ⌫ [2]
+
+```java script
+function getElement() {
+  let arr = [3, [4, ["array", 9], 2 + 3], [0]];
+  return arr[1][1][0]
+}
+```
+
+```javascript
+function getElement() {
+  let arr = [3, [4, ["array", 9], 2 + 3], [0]];
+  return arr[1][1][0];
+  ss;
+}
+```
+
+## 💡 핵심 코드
+
+```javascript
+myArray.slice(-1)[0];
+```
+
+- `slice(-1)`는 마지막 요소만 있는 배열을 리턴하기 때문에, <br>
+  배열에서 요소만 가져오려면 아래와 같이 `slice(-1)[0]`으로 가져옴
+
+> Assignment <br>
+>
+> - `getElement` 함수안에 `arr` 변수를 선언했습니다.
+> - `arr` 변수는 배열을 할당했고요, 배열에는 다양한 데이터 타입의 요소가 들어있네요!
+> - 배열이 담긴 `arr` 변수에 접근하여 `getElement` 함수가 `"array"` 라는 문자열을 `return` 할 수 있도록 해주세요.
+
+### 2. `addFirstAndLast` 함수를 작성해주세요.
+
+- `addFirstAndLast` 함수에 주어진 인자 `myArray`는 숫자 값으로만 이루어진 array 입니다.
+- `addFirstAndLast` 함수에 주어진 인자 `myArray` 의 첫번째 element와 마지막 element의 값을 더한 값을 리턴해주세요.
+- 만일 `myArray`에 한 개의 요소만 있다면 해당 요소의 값을 리턴해 주시고 요소가 없는 비어있는 array라면 0을 리턴해주세요.
+- Hint) array의 길이를 구하는 방법은 다음을 참조하세요 : [https://community.wecode.co.kr/t/js-array/200/2](https://community.wecode.co.kr/t/js-array/200/2)
+
 ## Object 객체와 배열의 차이점
 
 | 객체(Object)                       | 배열(Array)               |
@@ -295,3 +334,5 @@ arr[i].splice(j, 1)
 출처:
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+- https://codechacha.com/ko/javascript-get-last-element-in-array/
