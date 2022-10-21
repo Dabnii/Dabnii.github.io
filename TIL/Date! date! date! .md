@@ -114,6 +114,11 @@ console.log(d.toString());
    - 1972년 1월 1일부터 시행된 국제 표준시
    - 1970년 1월 1일 자정을 0 밀리초로 설정하여 기준을 삼아 그 후로 시간의 흐름을 밀리초로 계산 합니다.
 
+## 🌎 GMT 그리치니 
+  - 그리니치 평균시(Greenwich Mean Time, GMT)
+  - 런던을 기점, 웰링턴을 종점으로 하는 협정 세계시의 빠른시간
+
+
 - **`toISOString()`**
  메서드는 단순화한 확장 ISO 형식([ISO 8601](http://en.wikipedia.org/wiki/ISO_8601))의 문자열을 반환합니다. 반환값은 언제나 24글자 또는 27글자(각각 **`YYYY-MM-DDTHH:mm:ss.sssZ`** 또는 **`±YYYYYY-MM-DDTHH:mm:ss.sssZ`**)입니다. 시간대는 언제나 UTC이며 접미어 "`Z`"로 표현합니다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString">MDN</a>
 
