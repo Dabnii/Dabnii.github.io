@@ -1,4 +1,4 @@
-# <p align="center"> 📅 Date method
+# <p align="center"> 📅 Date & Time method
 
 ## ⏰ 지금 시간을 알아보자! Basic way
 
@@ -49,9 +49,7 @@ console.log(d.toString())
 
 <br>
 
-## 📌 DATE <a href="(https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date#%EC%A0%95%EC%A0%81_%EB%A9%94%EC%84%9C%EB%93%9C">[정적 메서드]</a>
-
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#static_methods">[Static methods]</a>
+## 📌 DATE | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#static_methods">[정적 메서드]</a>
 
 ## `Date.now()`
 - 1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. 
