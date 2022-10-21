@@ -35,21 +35,32 @@ console.log(d.toString())
 
 ```
 
-## 📌 DATE 생성자 | **[Constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#constructor)**
+## 📌 DATE 생성자 | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#constructor">[Constructor]</a>
 
-`[Date()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)`
+## `Date()`
 
 함수로 호출할 경우 `new Date().toString()`과 동일하게 현재 날짜와 시간을 나타내는 문자열을 반환합니다.
+<a href="(https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">[see more]</a>
 
-`[new Date()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)`
 
-생성자로 호출할 경우 새로운 `Date` 객체를 반환합니다.
+## `new Date()` 
+
+생성자로 호출할 경우 새로운 `Date` 객체를 반환합니다.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">[see more]</a>
 
 <br>
 
-## 📌 DATE [정적 메서드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date#%EC%A0%95%EC%A0%81_%EB%A9%94%EC%84%9C%EB%93%9C) |**[Static methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#static_methods)**
+## 📌 DATE <a href="(https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date#%EC%A0%95%EC%A0%81_%EB%A9%94%EC%84%9C%EB%93%9C">[정적 메서드]</a>
 
-`[Date.now()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now)`1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. 윤초는 무시합니다.`[Date.parse()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)`날짜를 나타내는 문자열을 분석한 후, 해당 날짜와 1970년 1월 1일 00:00:00 UTC의 시간 차이를 밀리초 단위의 숫자 값으로 반환합니다.
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#static_methods">[Static methods]</a>
+
+## `Date.now()`
+- 1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. 
+- 윤초는 무시합니다.
+<a hef="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now">see more</a>
+
+## `Date.parse`
+- 날짜를 나타내는 문자열을 분석한 후, 
+- 해당 날짜와 1970년 1월 1일 00:00:00 UTC의 시간 차이를 밀리초 단위의 숫자 값으로 반환합니다.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/parse">see more</a>
 
 <br>
 
@@ -63,7 +74,7 @@ console.log(d.toString())
 //Mon Jan 04 2010 11:30:00 GMT+0900 (한국 표준시)
 ```
 
-## ⏰ (년, 월, 일, 시간, 분, 초 )
+## ⏰ (년, 월, 일, 시간, 분, 초)
 
 ```java script
 d = new Date (2019, 7, 2, 11, 30, 27,0)
