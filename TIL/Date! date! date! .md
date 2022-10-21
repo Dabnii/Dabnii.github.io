@@ -54,7 +54,7 @@ console.log(d.toString())
 ## `Date.now()`
 - 1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. 
 - 윤초는 무시합니다.
-<a hef="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now">see more</a>
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now">see more</a>
 
 ## `Date.parse`
 - 날짜를 나타내는 문자열을 분석한 후, 
