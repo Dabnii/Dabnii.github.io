@@ -9,20 +9,20 @@
 <br>
 
 
-## 🔭 <strong> Scope | 스코프 </strong> </span>
-> -  <strong> `유효범위` </span></strong>
-> - <strong> `전역스코프, 지역스코프, 전역변수, 지역변수 `</strong> 네 가지로 구분
-> - 함수가 실행될 때 생성되는 값, 표현식을 찾을때 참고하는 <strong>`표`</span> </strong>와 유사
-> - `하위 스코프` &#8594; `상위 스코프`로만 접근 </span>가능
-> - 하나 이상의 스코프가 모인 것을 스코프 체인이라 칭함
-> - 함수가 실행 되는 즉시 생성
->    - 함수 단위로 스코프 생성
->   - 모든 변수는 스코프를 가짐
+## 🔭 Scope | 스코프 
+ - `유효범위` 
+ - `전역스코프, 지역스코프, 전역변수, 지역변수 ` 네 가지로 구분
+ - 함수가 실행될 때 생성되는 값, 표현식을 찾을때 참고하는 `표`와 유사
+ - `하위 스코프` &#8594; `상위 스코프`로만 접근 가능
+ - 하나 이상의 스코프가 모인 것을 스코프 체인이라 칭함
+ - 함수가 실행 되는 즉시 생성
+    - 함수 단위로 스코프 생성
+    - 모든 변수는 스코프를 가짐
 
 <br>
 <br>
 
-## <strong> 🌎 전역스코프 & 🏠 지역스코프</strong> </span>
+## 🌎 전역스코프 & 🏠 지역스코프
 
 
 &#32;|🌎 전역스코프 Global Scope | 🏠 지역스코프 Local Scope
@@ -51,13 +51,14 @@
 
 이름 |정적 스코프  | 동적 스코프 
 ---|---|---
-결정 방식|함수가 <strong>`정의(선언)`</strong>되는 시점| 함수가 `호출`되는 시점에 결정
+결정 방식|함수가 `정의(선언)` 되는 시점| 함수가 `호출`되는 시점에 결정
 Eng| `Lexical scope` &#124;&#124; `Static scope` | Dynamic scope
 
-    함수가 정의(선언) 되는 시점에 정적스코프 (렉시컬 스코프) 또는 동적 스코프로 정의 됩니다. 
+  - 함수가 정의(선언) 되는 시점에 정적스코프 (렉시컬 스코프) 또는 동적 스코프로 정의 됩니다. 
+
 <br><br>
 
-## <strong> 🌎 전역스코프 & 🏠 지역스코프 Code sample_Fruits </strong> </span>
+## 🌎 전역스코프 & 🏠 지역스코프 [Code sample_Fruits]
 
 ```java script
 const x = 'Apple';  //🌎전역스코프 
@@ -78,29 +79,29 @@ fruits() // 'kiwi'
 ```
 <br>
 
-## ✨ <strong> 스코프 참조 방향 : `하위`&#8594;`상위` &#124;&#124; `내부`&#8594;`외부` </strong>
-반대의 경우 성립하지 않음 (상위 &#8594; 하위 불가)
+## ✨ 스코프 참조 방향 : `하위`&#8594;`상위` &#124;&#124; `내부`&#8594;`외부` </strong>
+  반대의 경우 성립하지 않음 (상위 &#8594; 하위 불가)
 
-&#91;상위&#93; 전역 스코프|&#32;
----|---
- x | 'Apple'
+  &#91;상위&#93; 전역 스코프|&#32;
+  ---|---
+  x | 'Apple'
 
-&#8593; 참조방향
+  &#8593; 참조방향
 
 
-&#91;하위&#93; 지역 스코프|&#32;
----|---
-x | 'Kiwi'
+  &#91;하위&#93; 지역 스코프|&#32;
+  ---|---
+  x | 'Kiwi'
 
 <br>
-🤔 어떻게 전역에 선언된 🍎 'Apple' 아닌 🥝 <strong>'Kiwi' </strong>가 나왔을까요?<br>
-outer의 내부 함수인 inner가 전역에 선언된 x = 'Apple'이 아닌 <br>
+  🤔 어떻게 전역에 선언된 🍎 'Apple' 아닌 🥝 'Kiwi' 가 나왔을까요?<br>
+  outer의 내부 함수인 inner가 전역에 선언된 x = 'Apple'이 아닌 <br>
 
-`함수 내부에 선언된 x = 'kiwi'값을 지역 스코프에서 참조`하였기 때문입니다. <br> 
-즉 내부 함수에서 값을 찾았기에 전역 함수로 진행하지 않은 것 입니다.<br>
-&#32;+ 🤫 전역에서 x를 호출하면 'Apple'이라는 값을 받을 수 있습니다. <br><br>
+  `함수 내부에 선언된 x = 'kiwi'값을 지역 스코프에서 참조`하였기 때문입니다. <br> 
+  즉 내부 함수에서 값을 찾았기에 전역 함수로 진행하지 않은 것 입니다.<br>
+  &#32;+ 🤫 전역에서 x를 호출하면 'Apple'이라는 값을 받을 수 있습니다. <br><br>
 
-## <strong> 🌎 전역스코프 & 🏠 지역스코프 Code sample_outer&inner </strong> </span>
+## 🌎 전역스코프 & 🏠 지역스코프 [Code sample_outer&inner]
 
 ```java script
 var x = '나는 전역 X야';
@@ -166,9 +167,9 @@ inner 지역 스코프|&#32;
 <br>
 
 ## ✍️ <strong> Lexical Environment | 렉시컬 환경 (어휘적 환경) </strong>
-> - 어떠한 코드가 어디에서 실행 되는 등 대체적인 `정보를 담고 있는 환경`
-> - 포함하는 식별자, 식별자에 바인딩 된 값,  `상위 렉시컬 환경에 대한 참조를 담은 하나의 자료 구조 `
->   - 함수가 실행되는 즉시 Lexical 환경 생성
+- 어떠한 코드가 어디에서 실행 되는 등 대체적인 `정보를 담고 있는 환경`
+- 포함하는 식별자, 식별자에 바인딩 된 값,  `상위 렉시컬 환경에 대한 참조를 담은 하나의 자료 구조 `
+   - 함수가 실행되는 즉시 Lexical 환경 생성
 
 <br>
 
@@ -218,8 +219,8 @@ newFunction("inner");
 ```
 <br>
 
-- outerFunction ('outside')은 변수 "newFunction"에 할당되면 즉시 호출됩니다.<br>
-- 호출되면 outerFunction은 변수 "newFunction"을 outerFunction(outerVariable)이 아닌<br> <span>     InnerFunction(innerVariable)으로 재할당하는 함수 `"innerFunction(innerVariable)"을 반환`합니다.<br>
+- outerFunction ('outside')은 변수 "newFunction"에 할당되면 즉시 호출됩니다.
+- 호출되면 outerFunction은 변수 "newFunction"을 outerFunction(outerVariable)이 아닌 InnerFunction(innerVariable)으로 재할당하는 함수 `"innerFunction(innerVariable)"을 반환`합니다.
 - 그런 다음 변수를 newFunction('inside')으로 호출하여 console.log 코드를 실행하는 innerFunction('inside')을 호출합니다. 결론은 innerFunction이 outerFunction으로 `원래 설정한 outerVariable 파라미터('outside')를 기억하고 액세스할 수 있다는 것입니다. 따라서 console.log는 'outside'와 'inside'를 모두 사용할 수 있다.`
 - 소멸 한 함수의 스코프는 `기억` 되어 액세스 할 수 있습니다.
 
@@ -227,9 +228,9 @@ newFunction("inner");
 
 <br><br>
 
-# 📌 <strong> Closure | 클로져 </strong>
-> -  `함수 와 렉시컬 환경의 조합` </span>입니다. <br>
-> -  `내부 함수가 소멸된 외부 함수에 접근`할 때 `내부 함수를 클로져` </span> </strong> 라고 합니다.
+# 📌 Closure | 클로져
+> -  `함수 와 렉시컬 환경의 조합` 입니다. <br>
+> -  `내부 함수가 소멸된 외부 함수에 접근`할 때 `내부 함수를 클로져` 라고 합니다.
 
 <br>
 
