@@ -2,6 +2,9 @@
 
 ## ⏰ 지금 시간을 알아보자! Basic way
 
+## `new Date()`
+
+- 인수를 전달하지 않으면 현 날짜와 시간을 가는 인스턴스 반환
 
 ```java script
 let d;
@@ -23,12 +26,24 @@ let birthday = new Date(1995, 11, 17, 3, 24, 0)
 //https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date
 ```
 
+## `new Date(milliseconds)`
+
+- 인수로 숫자 타입의 밀리초를 전달하면 1970년 1월 1일 00:00(UTC)을 기점으로 인수로 전달된 밀리초만큼 경과한 날짜와 시간을 가지는 인스턴스를 반환 합니다.
+
 - milliseconds since January 1st 1970 UTC
 
+- 86400000ms는 1day를 의미한다.
+- 1s = 1,000ms
+- 1m = 60s \_ 1,000ms = 60,000ms
+- 1h = 60m \_ 60,000ms = 3,600,000ms
+- 1d = 24h \* 3,600,000ms = 86,400,000ms
+
 ```java script
+// KST(Korea Standard Time)는 GMT(그리니치 평균시: Greenwich Mean Time)에 9시간을 더한 시간이다.
+
 d = new Date();
 d = new Date(1164411006456);
-// 밀리초를 입력하여 문자열로 변환 
+// 밀리초를 입력하여 문자열로 변환
 
 console.log(d.toString())
 //Sat Nov 25 2006 08:30:06 GMT+0900 (한국 표준시)
@@ -40,10 +55,9 @@ console.log(d.toString())
 ## `Date()`
 
 함수로 호출할 경우 `new Date().toString()`과 동일하게 현재 날짜와 시간을 나타내는 문자열을 반환합니다.
-<a href="(https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">[see more]</a>
+<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">[see more]</a>
 
-
-## `new Date()` 
+## `new Date()`
 
 생성자로 호출할 경우 새로운 `Date` 객체를 반환합니다.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/Date">[see more]</a>
 
@@ -52,12 +66,14 @@ console.log(d.toString())
 ## 📌 DATE | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#static_methods">[정적 메서드]</a>
 
 ## `Date.now()`
-- 1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다. 
+
+- 1970년 1월 1일 00:00:00 UTC로부터 지난 시간을 밀리초 단위의 숫자 값으로 반환합니다.
 - 윤초는 무시합니다.
-<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now">see more</a>
+  <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/now">see more</a>
 
 ## `Date.parse`
-- 날짜를 나타내는 문자열을 분석한 후, 
+
+- 날짜를 나타내는 문자열을 분석한 후,
 - 해당 날짜와 1970년 1월 1일 00:00:00 UTC의 시간 차이를 밀리초 단위의 숫자 값으로 반환합니다.<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/parse">see more</a>
 
 <br>
@@ -82,7 +98,7 @@ console.log(d.toString())
 //Fri Aug 02 2019 11:30:27 GMT+0900 (한국 표준시)
 ```
 
-### ⏰ 조금 더 간결하게 설정해보자!
+## ⏰ 조금 더 간결하게 설정해보자!
 
 ```java script
 let date3 = new Date(2019, 5, 1);
@@ -103,7 +119,7 @@ console.log(d.getSeconds()) // 27
 //디바이스의 시간대에 맞춰나옴
 ```
 
-## ⏰ 시간을 지정해 주자! 
+## ⏰ 시간을 지정해 주자!
 
 - 데이터 객체를 수정하거나 조정할 때 유용
 
@@ -119,20 +135,21 @@ console.log(d.toString());
 ```
 
 ## 🌎 UTC version of time
-   - Coordinated Universal Time/Universal Time Coordinated, UTC
-   - 1972년 1월 1일부터 시행된 국제 표준시
-   - 1970년 1월 1일 자정을 0 밀리초로 설정하여 기준을 삼아 그 후로 시간의 흐름을 밀리초로 계산 합니다.
 
-## 🌎 GMT 그리치니 
-  - 그리니치 평균시(Greenwich Mean Time, GMT)
-  - 런던을 기점, 웰링턴을 종점으로 하는 협정 세계시의 빠른시간
+- Coordinated Universal Time/Universal Time Coordinated, UTC
+- 1972년 1월 1일부터 시행된 국제 표준시
+- 1970년 1월 1일 자정을 0 밀리초로 설정하여 기준을 삼아 그 후로 시간의 흐름을 밀리초로 계산 합니다.
 
+## 🌎 GMT 그리치니
+
+- 그리니치 평균시(Greenwich Mean Time, GMT)
+- 런던을 기점, 웰링턴을 종점으로 하는 협정 세계시의 빠른시간
 
 - **`toISOString()`**
- 메서드는 단순화한 확장 ISO 형식([ISO 8601](http://en.wikipedia.org/wiki/ISO_8601))의 문자열을 반환합니다. 반환값은 언제나 24글자 또는 27글자(각각 **`YYYY-MM-DDTHH:mm:ss.sssZ`** 또는 **`±YYYYYY-MM-DDTHH:mm:ss.sssZ`**)입니다. 시간대는 언제나 UTC이며 접미어 "`Z`"로 표현합니다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString">MDN</a>
+   메서드는 단순화한 확장 ISO 형식([ISO 8601](http://en.wikipedia.org/wiki/ISO_8601))의 문자열을 반환합니다. 반환값은 언제나 24글자 또는 27글자(각각 **`YYYY-MM-DDTHH:mm:ss.sssZ`** 또는 **`±YYYYYY-MM-DDTHH:mm:ss.sssZ`**)입니다. 시간대는 언제나 UTC이며 접미어 "`Z`"로 표현합니다. <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString">MDN</a>
 
 ```javascript
-console.log(d.toISOString())
+console.log(d.toISOString());
 
 //'2019-08-05T02:10:27.000Z'
 ```
@@ -141,22 +158,24 @@ console.log(d.toISOString())
 
 - 시간을 표현하는 언어를 설정 할 수 있습니다.
 - The **`toLocaleString()`**
- method returns a string with a language-sensitive representation of this date. In implementations with `[Intl.DateTimeFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
- support, this method simply calls `Intl.DateTimeFormat`.
+   method returns a string with a language-sensitive representation of this date. In implementations with `[Intl.DateTimeFormat` API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+   support, this method simply calls `Intl.DateTimeFormat`.
 
 ```jsx
-console.log(d.toLocaleString("ko-KR")) //'2019. 8. 5. 오전 11:10:27'
-console.log(d.toLocaleString("en-US")) //'8/5/2019, 11:10:27 AM'
+console.log(d.toLocaleString("ko-KR")); //'2019. 8. 5. 오전 11:10:27'
+console.log(d.toLocaleString("en-US")); //'8/5/2019, 11:10:27 AM'
 ```
 
 - Time zone 설정!
 
 ```javascript
-console.log(d.toLocaleString("ko-KR", {
-timeZone: "America/Los_Angeles"}))
+console.log(
+  d.toLocaleString("ko-KR", {
+    timeZone: "America/Los_Angeles",
+  })
+);
 //'2019. 8. 4. 오후 7:10:27'
 ```
-
 
 <hr>
 
@@ -165,3 +184,4 @@ timeZone: "America/Los_Angeles"}))
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleStrin
 
 - https://www.youtube.com/watch?v=-eRsWqwcPuk
+- https://poiemaweb.com/js-date
