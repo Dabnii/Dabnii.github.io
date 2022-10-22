@@ -26,5 +26,6 @@
 
 # 💻 Computer Science
 
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/DevTools%20%7C%20Chrome.md">DevTools</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md">Closure, Lexical, Scope </a>
