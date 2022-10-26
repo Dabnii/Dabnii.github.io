@@ -2,6 +2,8 @@
 
 ## 📌 자주 사용하는 명령어
 
+- 터미널 명령어
+
 | 명령어        | 뜻                      | 설명                        | 활용                  |
 | ------------- | ----------------------- | --------------------------- | --------------------- |
 | cd            | change directory        | 폴더이동                    | cd (경로) → . .. /usr |
@@ -15,7 +17,7 @@
 | touch         | touch                   | 파일 생성 및 날짜정보 변경  | touch readme.md       |
 | chmod         | change mode             | 파일 / 디렉토리 권한 설정   | chmod u+x readme.md   |
 
-<hr>
+<br>
 
 ## 📌 Git의 목적과 필요성
 
@@ -110,5 +112,149 @@ origin	https://github.com/%username%/%repo% (fetch)
 origin	https://github.com/%username%/%repo% (push)
 git branch * main
 
+```
+
+| 명령어       | 뜻                                 | 설명                                                                                                                                               | 활용                          |
+| ------------ | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| git clone    | 깃 복제                            | 신규 레파지토리를 내 로컬로 가져오기                                                                                                               | git clone [%ropo link%]       |
+| git branch   | 독립된 개발 공간 생성              | 개발자, 파드 별로 브랜치를 사용해야함 <br> - e.g. main 파트 개발자는 main 브랜치를 사용 <br> - e.g. log-in 파트 개발자는 log-in 브랜치를 사용 <br> | git branch [branch name]      |
+| git checkout | 브랜치를 이동                      | 현재 → 이동할 브랜치                                                                                                                               | git checkout [branch name]    |
+| git pull     | (이미 존재하는 repo) 코드 가져오기 | GitHub의 특정 브랜치의 코드를 가져올 때 사용                                                                                                       | git pull origin [branch name] |
+| git merge    | 코드 합치기                        | 로컬에서 현재 브랜치의 코드와 특정 브랜치의 코드를 함칠 때 사용                                                                                    | git merge [branch name]       |
+| git pull     | GitHub에서 가져올 브랜치 이름      | GibHub Master → Local Master                                                                                                                       | git pull [branch]             |
+
+## 🔍 Vscode 에서 터미널을 열어보자!
+
+- `Cmd + J`
+
+## 📌 Git Repo를 터미널을 이용하여 clone
+
+```jsx
+
+cd desktop
+//폴더이동 루트에서 데스크탑으로
+pwd
+//어느 위치인지 확인 하기
+git clone https://github.com/%repolink%reponame.git
+// 깃허브의 레파지토리의 링크를 넣습니다
+Cloning into '%Repo%'...
+... [다운로드]
+// 다운로드가 됩니다
+```
+
+## 📌 git clone
+
+- 코드 복제 (신규 | 내 로컬에 없다는 전제)
+- 기존 레파지토리를 내 로컬로 가져오는 명령어
+- `git clone [%ropo link%]`
+
+## 📌 git branch
+
+- 독립된 공간 만들기
+- 독립적으로 개발을 할 수 있는 공간을 만드는 명령어
+- `git branch [branch name]`
+- 모두 main/master 브랜치를 사용한다면 코드가 꼬이게 됨
+- 위의 이유로, 개발자 마다 개별의 브랜치에서 작업해야함
+  - e.g. main 파트 개발자는 main 브랜치를 사용
+  - e.g. log-in 파트 개발자는 log-in 브랜치를 사용
+
+## 📌 git checkout
+
+- 브랜치를 이동할 때 사용
+- 현재 있는 브랜치에서 다른 브랜치로 이동할 때 사용하는 명령어
+- `git checkout [branch name]`
+- git branch와 다른 개념 → 필히 checkout 해주어야 함!
+
+## 📌 git pull
+
+- 코드 가져오기 (이미 존재하는 레파토지)
+- github에 있는 특정 브랜치의 코드를 로컬로 가져올 때 사용하는 명령어
+  - git clone : 새로운/로컬에 존재하지 않는 전체 코드를 가져오는 것
+- `git pull origin [branch name]`
+
+## 📌 git merge
+
+- 코드 합치기
+- 로컬에서 현재 브랜치의 코드와 특정 브랜치의 코드를 합칠 때 사용
+- 나의 현재 위치 브랜치에서 다른 브랜치를 합칠 때
+- `git merge [branch name]`
+- 내 브랜치와 깃허브의 코드 병합
+- PR 하단에 컨펌 이후 merge버튼이 활성화 됨
+  - 제약이 있음
+  - 머지담당자가 따로 있음 github에서는
+
+## 📌 git pull
+
+- 깃허브에서 따오고 싶은 브랜치 이름
+- `git pull [branch]`
+- 마스터로 이동하여 최신화 되어 있는 코드를 가져옴
+- 깃허브 마스터를 → 로컬 마스터로 가져오기
+
+## 🙅‍♀️ Master 작업은 지양!
+
+- Master가 기둥
+- master를 기준으로 branch가 확장 되어야 함
+- Vscode 좌측 하단에 확인 가능
+- branch 수시로 확인!
+- 배포할 때 마스터 코드로 진행되기 때문에 작업 🙅‍♀️
+
+```jsx
+git branch BranchName/foloderName
+git branch BranchName/foloderName
+* master //현재 내가 있는 브랜치
+
+git checkout BranchName/foloderName
+//브랜치로 이동
+//생성했다고 해서 바로 그 디렉토리/브랜치로 이동하지 않기 때문
+// 어떤 작업을 할것인지에 따라 'feature' 를 fix로 바꾸어서 변동
+// feature/ 작업할 기능
+git checkout BranchName/foloderName
+//Switched to branch 'BranchName/foloderName'
+git add .
+//
+git commit -m "ADD:md 파일생성 "
+// ADD:md 파일생성
+
+git push origin BranchName/foloderName
+
+git push origin BranchName/foloderName
+
+git checkout master
+//Switched to branch 'master'
+//Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+git pull origin master
+git checkout BranchName/foloderName
+
+Switched to branch 'feature/testfile'
+//내 마스터를 가져와서 로컬에 머지 할 것
 
 ```
+
+> Origin 로컬에선 사용 X | Origin은 깃허브의 링크를 대신하는 것이기 때문
+
+## ✨ 커밋 컨벤션
+
+- `modify` || `fix` || `add` 간략하게 작업을 소개할 수 있어야함
+- 원활한 의사소통을 위함
+
+<br>
+
+# 📝 [PR] 작업 보고서
+
+- 나의 독립적인 공간을 생성하고 코드를 올리게 되면 나옵니다
+- `PR` 풀 리퀘스트 → 내가 작성한 코드를 확인하는 보고서
+
+### 📝 MD 파일 뜯어보기:
+
+- [x] Done!
+- [ ] Not yet :(
+
+### 📝 구현 사항 설명
+
+- 커밋을 간략하게 설명하는 섹션
+- 본인이 한 작업에 대한 내용
+
+## 📝 우측 Lables
+
+- 태그들을 사용할 수 있음
+- PR들의 목록
