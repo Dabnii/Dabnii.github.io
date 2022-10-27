@@ -151,10 +151,6 @@ input #text {
   opacity: 30%;
 }
 
-.login-btn {
-  color: white;
-}
-
 .active {
   appearance: unset;
   border: none;
