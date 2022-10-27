@@ -4,17 +4,17 @@
 
 ## 🌈 westagram | Vanila JS
 
-1. Login page
+1. `Login page`
 
-- HTML
-- CSS
-- Java script
+   - HTML
+   - CSS
+   - Java script
 
-  2.Feed page
+2. `Feed page`
 
-- HTML
-- CSS
-- Java script
+   - HTML
+   - CSS
+   - Java script
 
 <hr>
 
