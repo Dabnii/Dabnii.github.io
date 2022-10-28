@@ -8,7 +8,7 @@
       - HTML (Hyper Text Markup language)
     - 문서와 문서가 링크로 연결되어 있음을 뜻함
     - Transfer
-      - HTML로 만든 웹페이지 문서 (파일)ㅇㄹ 보낸다
+      - HTML로 만든 웹페이지 문서(파일)을 보낸다
     - `Protocol` 약속 🤙
       - 컴퓨터끼리 어떻게 HTML을 주고 받을지 정함
 2.  📢 Request, Response 구조에 대해 설명할 수 있다.
