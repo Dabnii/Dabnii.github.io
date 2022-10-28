@@ -172,7 +172,7 @@ input #text {
 
 > ## 🤔pseudocode
 >
-> ✨ 삼항 연산자를 사용 <br> `condition ? exprIfTrue : exprIfFalse`<br>
+> ✅ 삼항 연산자 사용 <br> `condition ? exprIfTrue : exprIfFalse`<br>
 > 이메일과 비밀번호 둘 중 하나 입력이 된다면 버튼이 활성화 되도록 하기 <br>
 > If true : 둘 중 하나라도 입력 되었을 때<br>
 > If false : 둘 중 하나라도 입력 되지 않았을 때<br>
@@ -182,6 +182,67 @@ input #text {
 > 로그인 아이디 #id-input<br>
 > 비밀번호 아이디 #password-input<br>
 > 로그인 버튼 클래스 .login-btn<br>
+
+```javascript
+//3차 - 멘토님 코칭const
+thisIsId = document.querySelector("#id-input");
+const thisIsPassword = document.querySelector("#password-input");
+const thisIsLoginBtn = document.querySelector(".login-btn");
+
+function activeButton() {
+  thisIsLoginBtn.classList.remove("button_a");
+  thisIsLoginBtn.classList.add("active");
+  thisIsLoginBtn.disabled = false;
+}
+function inactiveButton() {
+  thisIsLoginBtn.classList.remove("active");
+  thisIsLoginBtn.classList.add("button_a");
+  thisIsLoginBtn.disabled = true;
+}
+
+function handleClick(event) {
+  const inputID = document.querySelector("#id-input").value;
+  const inputPW = document.querySelector("#password-input").value;
+  console.log(inputID, inputPW);
+
+  const isValid = inputID.length >= 1 && inputPW.length >= 8;
+
+  isValid ? activeButton() : inactiveButton();
+}
+
+thisIsId.addEventListener("keyup", handleClick);
+```
+
+🗝 핵심 포인트
+
+- `thisIsLoginBtn`.disabled = false; 버튼이 제대로 활성화 되지 않았던 이유
+  - 타겟을 지정해 주지 않았음
+- `삼항연산자` 사용을 위한 함수 생성
+  - ` isValid ? activeButton() : inactiveButton();`
+  - 💬 과제 출제 의도 파악도 필요하다
+
+## 📝 코드 들여다보기
+
+- `href`
+
+  - 뒤로 가기 가능
+
+- `replace`
+
+  - 뒤로 가기 불가
+  - 보안이나 기획의도에 따라 이전페이지 접근을 막을 수 있음
+
+- `addEventListner`
+
+  - 여러 이벤트 리스너들을 함수로 제어할 수 있음
+
+  ```javascript
+  function init() {
+    // 이벤트를 읽는 코드들을 집합
+    //eventlistner...
+  }
+  init();
+  ```
 
 ```javascript
 //2차 작성코드 2022.Oct.27
@@ -241,9 +302,8 @@ thisIsId.addEventListener("keyup", handleClick);
 
 `disabled` 채택한 이유:
 
-- `disabled`을 사용하여 HTML 태그 불리언 값을 학습 하고자 하였다.
+- `disabled`을 사용하여 HTML 태그 사용법을 학습 하고자 하였다.
 - JavaScript에서 `동적 요소`와 `disabled`의 확장성을 학습하였다.
-- 유지보수를 위하여 `style.color` 사용을 지양하였다.
 
 <hr>
 
