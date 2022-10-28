@@ -145,7 +145,7 @@
 
 💡실제 프로젝트를 진행할 때 가장 많이 보게 될 응답의 상태 코드 들입니다.<br> Status Code의 숫자에 각각 의미가 내포되어 있습니다.<br> Status Code 만 보아도 응답이 제대로 됐는지 안 됐는지를 파악할 수 있습니다.<br>
 
-## 1. Success
+## 1. ✅ Success
 
 ### `200: OK`
 
@@ -162,7 +162,7 @@
 - 요청이 성공했으며 제공할 응답메세지가 없을 경우 사용하는 Status Code
 - 주로 DELETE 메소드의 요청으로 성공적으로 삭제되어서 응답으로 제공할 컨텐츠가 없을 때 사용된다.
 
-## `2. Client Error`
+## 2. 💬 Client Error
 
 ### `400: Bad Request`
 
@@ -185,9 +185,9 @@
 
 - 요청된 URI 가 존재하지 않는다는 의미를 나타내는 Status Code
 
-## `3. Server Error`
+## 3. 🥲 Server Error
 
-### `500: Internal Server Error` 🥲
+- `500: Internal Server Error`
 
 <hr>
 E.O.D
