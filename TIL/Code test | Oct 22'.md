@@ -169,7 +169,7 @@ function find_longest_word(arr) {
 
 - Prep-study
 - 삼항연산자 완벽이해
-- split 동작원래 이해
+- split 동작원리 이해
 - 원시코드 → 발전된 코드
 - pseudocode code ✨
 
