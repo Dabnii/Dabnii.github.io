@@ -184,8 +184,8 @@ input #text {
 > 로그인 버튼 클래스 .login-btn<br>
 
 ```javascript
-//3차 - 멘토님 코칭const
-thisIsId = document.querySelector("#id-input");
+//3차 - 멘토님 코칭
+const thisIsId = document.querySelector("#id-input");
 const thisIsPassword = document.querySelector("#password-input");
 const thisIsLoginBtn = document.querySelector(".login-btn");
 
