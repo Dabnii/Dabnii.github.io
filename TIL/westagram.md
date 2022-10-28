@@ -49,7 +49,7 @@
 - 각 HTML, CSS, JavaScript의 역할을 이해하였으며, JavaScript에서 method통하여 값을 변경하는 확장성에 중심을 두었습니다.
 - JavaScript의 꽃, `Event`,`addEventListner`동작과 원리를 이해
 - 삼항연산자를 사용한 가독성이 좋은 코드 작성
-- `작동하는 코드가 아닌 더 나은 작성된 코드` 💪
+- `작동하는 코드가 아닌 더 나은 코드` 💪
   - `semantic tag` & `삼항연산자` & `tag convention`
 
 <hr>
