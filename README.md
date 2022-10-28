@@ -41,4 +41,4 @@
 
 2022 <br>
 
-- <a herf="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20test_Oct%2022.md">📚 Code test_10/28</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20test_Oct%2022.md">📚 Code test_10/28</a>
