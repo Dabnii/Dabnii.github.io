@@ -36,3 +36,9 @@
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/DevTools%20%7C%20Chrome.md">DevTools</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Git%20%26%20Git-hub%20101.md"> Git & GitHub 101</a>
+
+# 📚 Code tests
+
+| 2022                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------ |
+| - <a herf="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20test%20%7C%20Oct%2022'.md">📚 [Code test_10/28]</a> |
