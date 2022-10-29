@@ -5,7 +5,7 @@
 ## Q.1
 
 ```jsx
-짝수인지 판별하는 함수 isEven을 작성 주세요.
+짝수인지 판별하는 함수 isEven을 작성
 
 console.log(isEven(11)) // --> "짝수가 아닙니다."
 console.log(isEven(10)) // --> "짝수 입니다."
@@ -24,7 +24,6 @@ function isEven(num) {
 
 ```jsx
 function calculateTotal(amount) {
-  // 아래 코드를 작성해주세요.
   let totalAmount = amount + amount * 0.095 + amount * 0.15;
   return totalAmount;
 }
@@ -35,8 +34,6 @@ console.log(calculateTotal(30));
 ```jsx
 //오류답안
 function calculateTotal(amount) {
-  // 아래 코드를 작성해주세요.
-
   let totalAmount = amount + amount(amount * 0.095) + amount(amount * 0.15);
   //amount(arg)를 삽입시 함수가 아니라는 오류가 뜸!
   //당연함
@@ -78,7 +75,6 @@ const words = str.split("-");
 //2차 코드
 //else 필요 유무를 알아보자
 function getFind(filter, sentence) {
-  // 아래 코드를 작성해주세요.
   for (let i = 0; i < sentence.length; i++) {
     if (sentence[i] === filter) {
       return i;
@@ -91,7 +87,6 @@ function getFind(filter, sentence) {
 ```jsx
 // 1차 혼란스러움
 function getFind(filter, sentence) {
-  // 아래 코드를 작성해주세요.
  for (let i = 0; i <sentence.length; i++){
    if ( sentence[i] === filter ){
      return sentence[i]
@@ -148,7 +143,6 @@ console.log(find_longest_word(["PHP", "Exercises", "Backend"]))
 
 ```jsx
 function find_longest_word(arr) {
-  // 아래 코드를 구현해주세요.
   let longest = arr[0]
   // longest arr는 0부터 시작합니다!
 
