@@ -1,6 +1,6 @@
 # <p align="center">📖 Code test
 
-<p align="center"> 📆 2020.Oct.28 | 1h<br>
+<p align="center"> 📆 2022.Oct.28 | 1h<br>
 
 ## Q.1
 
