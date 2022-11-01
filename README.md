@@ -14,7 +14,7 @@
 
 # 👩‍💻 Web Project
 
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/westagram.md">westagram</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/westagram.md">Westagram</a>
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
 
 # 📌 JavaScript

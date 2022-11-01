@@ -297,16 +297,6 @@ thisIsId.addEventListener("keyup", handleClick);
 
 <hr>
 
-## 2️⃣ Main/feed page
-
-- HTML
-
-- CSS
-
-- JavaScript
-
-<hr>
-
 ## 2️⃣ Feed-in page
 
 - HTML | 가독성 높이기 👀
@@ -353,9 +343,6 @@ commentInput.addEventListener("keyup", function () {
   }
 });
 
-//${id} + ${ctx} + delete button
-//const inputCtx = input.value;
-
 commentForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const newCommentCtx = commentInput.value;
@@ -365,22 +352,32 @@ commentForm.addEventListener("submit", (event) => {
 });
 ```
 
-> 엔터를 쳐서 값을 가져오고 싶은데 -> form태그에 input & button 넣기 <br>
-> 왜 프리벤트이벤트가 안되던 오류 -> form 태그에 이벤트리스너를 붙여줬어야 함<br> `<ul><li></li></ul>`<br>
-> ul안에 어펜드차일드 <br>`newComment.innerHTML = <li> ${newCommentCtx} </li>`<br>
-> li에 새롭게 입력합니다<br>`addComment[0].appendChild(newComment)`<br> 원래는 `document.appendCHild`였는데 그 뜻은 전체 화면을 덮어 씌운다 라는 의미<br>
-> 그래서 `addCommnet의 0번 인덱스`에서 가져온다로 수정<br>`getElementbyclassname`으로 가져왔기 떄문에 → 이 건 배열로 가져오게 됨<br> `const addComment = document.getElementsByClassName("letAddNewComment")` <br> ul이 중복 사용되었기 때문에 클래스네임을 할당함
+## 📝 코드 들여다보기
 
-> `<ul>` > ` <li>``</li> ` `</ul>`ul안에 어펜드차일드
+1. `게시` 버튼을 눌러 댓글 입력
 
-> newComment.innerHTML = `<li> ${newCommentCtx} </li>`;
-> li에 새롭게 입력합니다
-> addComment[0].appendChild(newComment);
-> 본래 document.appendCHild였는데 그 뜻은 전체 화면을 덮어 씌운다 라는 의미
-> 그래서 addCommnet의 0번 인덱스에서 가져온다로 수정
-> getElementbyclassname으로 가져왔기 떄문에 → 이 건 배열로 가져오게 됨
-> `const addComment = document.getElementsByClassName("letAddNewComment")`
-> ul이 중복 사용되었기 때문에 클래스네임을 할당함
+- form 부모 태그에 input & button 자식 설정
+- 🤔 Submit이 되지 않던 이슈:
+  - from 태그에 이벤트 리스너를 지정하지 않았기 떄문
+  - `eventPrevent` 역시 작동하지 않았음
+
+2. 작성된 댓글을 화면에 띄우기
+
+   - `<ul><li></li></ul>`
+
+   - ul안에 appendChild: - `newComment.innerHTML = <li> ${newCommentCtx} </li>`
+
+   - `<li>`에 새로운 댓글 내용을 입력합니다
+
+3. 댓글을 화면에 띄우기
+
+   - `document.appendCHild`였는데 그 뜻은 전체 화면을 덮어 씌운다 라는 의미
+
+     - 💡 `addCommnet의 0번 인덱스`에서 가져오도록 수정
+
+   - `getElementbyclassname`에서 → 배열로
+   - `const addComment = document.getElementsByClassName("letAddNewComment")`
+   - ul이 중복 사용되었기 때문에 클래스네임을 할당
 
 <hr>
 
@@ -388,13 +385,16 @@ commentForm.addEventListener("submit", (event) => {
 
 - `시맨틱 태그` 사용을 통하여 사람과 컴퓨터에게 의미를 전달하는 HTML 작성
 - 가독성을 높인 `들여쓰기`, `CSS 컨벤션`을 규칙을 적용하여 추후 `유지보수에 용이`하도록 함
-- 각 HTML, CSS, JavaScript의 역할을 이해하였으며, JavaScript에서 method통하여 값을 변경하는 확장성에 중심을 두었습니다.
+- 각 HTML, CSS, JavaScript의 역할을 이해하였으며, JavaScript에서 method통하여 값을 변경하는 확장성에 중점
 - JavaScript의 꽃, `Event`,`addEventListner`동작과 원리를 이해
 - 삼항연산자를 사용한 가독성이 좋은 코드 작성
 - `작동하는 코드가 아닌 더 나은 코드` 💪
   - `semantic tag` & `삼항연산자` & `tag convention`
+- 자바스크립트의 기본 문법들을 응용하는 과정이 흥미롭다.
+  - 복기와 응용이 배움으 원동력이 된다!
+  - 작동과 성공 또한 훌륭한 원동력
 - 나의 보폭에 맞는 속도로 차근히 생각하고 코드 작성이 도움이 되었다.
-- I never lose, Either I win or lean.
+- <i> I never lose, Either I win or lean.</i>
 
 <hr>
 <p align="center"> E.O.D 2022/10/31
