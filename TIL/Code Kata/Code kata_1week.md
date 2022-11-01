@@ -1,6 +1,6 @@
 # <p align="center">📖 Code Kata
 
-<p align="center"> 📆 2022.Oct.31 | 55min<br>
+<p align="center"> 📆 2022.Oct.30 | 55min<br>
 
 ## Week 1 | test #1
 
@@ -84,5 +84,95 @@ console.log(twoSum([11, 14, 4, 9], 13));
 - `1차코드` result가 이미 array이기 때문에 push 메소드 사용이 불필요하다
 - 두 값을 비교할 때 `if (nums[i] + nums[j] === target)` 방법과 `(let j = i + 1; j < nums.length; j++)` 등 여러 표현법을 학습
 - 함수가 아닌 선언문이어도 `console.log(func(arg,arg));` 사용가능.
+
+<br>
+<hr>
+<p align="center"> 📆 2022.Oct.31 | 1h<br>
+
+## Week 1 | test #2
+
+> ### Q.1
+>
+> reverse 함수에 정수인 숫자를 인자로 받습니다.<br> 그 숫자를 뒤집어서 return해주세요.<br>
+> x: 숫자 return: 뒤집어진 숫자를 반환!<br>예들 들어, x: 1234 return: 4321<br>
+> x: -1234 return: -4321<br>
+> x: 1230 return: 321
+
+`💡 핵심 키워드 : 음수인 경우는 결과값이 다시 음수가 되어야 한다.`
+
+```javascript
+//3차 풀이
+const reverse = (x) => {
+  let makePositive = x * -1;
+  if (x < 0) {
+    result = makePositive.toString().split("").reverse().join("");
+    return Number(result * -1);
+  } else {
+    result = x.toString().split("").reverse().join("");
+    return Number(result);
+  }
+};
+
+reverse(5678); //5678
+reverse(-1234); //-4321
+```
+
+```javascript
+//2차 풀이
+const reverse = (x) => {
+  let makePositive = x * -1;
+  if (x < 0) {
+    result = makePositive.toString().split("").reverse().join("");
+    return Number(result * -1);
+  }
+  if (x >= 0) {
+    result = x.toString().split("").reverse().join("");
+    return Number(result);
+  }
+};
+
+reverse(0); //0
+reverse(2345); //2345
+reverse(-9876); //-6789
+```
+
+```javascript
+//1차 풀이 반쪽짜리 코드
+// for문을 역방향으로 순회한 시도는 좋았으나 음수를 입력시 NaN 오류 발생 🤔
+const reverse = (x) => {
+  let numToString = x.toString(); //'1234'
+  let strToArr = numToString.split(""); //arr
+  let newArr = [];
+
+  for (let i = strToArr.length - 1; i >= 0; i--) {
+    newArr.push(strToArr[i]);
+  }
+  let result = newArr.join("");
+  console.log(result);
+  return Number(result);
+};
+reverse(5678);
+```
+
+## 🌳 성장 포인트
+
+- `아는만큼 간결해지는 코드`
+- 인라인으로 메소드들을 연결하는 방법을 학습
+  - 숫자 → 문자열
+    - `toString()`
+    - `String()`
+    - `toFixed()`
+    - `${number1}`
+  - 역방향:
+    - `For loop`
+      - `result = makePositive.toString().split("").reverse().join("")`
+    - `reverse()`
+  - 문자열 → 숫자
+    - `Number()`
+    - `parseInt()`
+    - `typeof`
+    - `parseFloat()`
+- 코드는 아는 만큼 쓸 수 있다.
+- 끈기 있게, 실팰해도 console.log를 찍어보며 한 줄 한 줄 최선을 다하여 작성했다. 기톡 + 1
 
 <hr>
