@@ -391,7 +391,7 @@ commentForm.addEventListener("submit", (event) => {
 - `작동하는 코드가 아닌 더 나은 코드` 💪
   - `semantic tag` & `삼항연산자` & `tag convention`
 - 자바스크립트의 기본 문법들을 응용하는 과정이 흥미롭다.
-  - 복기와 응용이 배움으 원동력이 된다!
+  - 복기와 응용이 배움의 원동력이 된다!
   - 작동과 성공 또한 훌륭한 원동력
 - 나의 보폭에 맞는 속도로 차근히 생각하고 코드 작성이 도움이 되었다.
 - <i> I never lose, Either I win or lean.</i>
