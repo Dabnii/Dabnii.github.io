@@ -379,9 +379,8 @@ commentForm.addEventListener("submit", (event) => {
 > 본래 document.appendCHild였는데 그 뜻은 전체 화면을 덮어 씌운다 라는 의미
 > 그래서 addCommnet의 0번 인덱스에서 가져온다로 수정
 > getElementbyclassname으로 가져왔기 떄문에 → 이 건 배열로 가져오게 됨
-
-// const addComment = document.getElementsByClassName("letAddNewComment");
-//ul이 중복 사용되었기 때문에 클래스네임을 할당함
+> `const addComment = document.getElementsByClassName("letAddNewComment")`
+> ul이 중복 사용되었기 때문에 클래스네임을 할당함
 
 <hr>
 
