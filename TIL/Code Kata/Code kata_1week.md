@@ -101,6 +101,21 @@ console.log(twoSum([11, 14, 4, 9], 13));
 `💡 핵심 키워드 : 음수인 경우는 결과값이 다시 음수가 되어야 한다.`
 
 ```javascript
+//4차 풀이
+const reverse = (x) => {
+  let resultNums = parseInt(x.toString().split("").reverse().join(""));
+  ✨ return x >= 0 ? resultNums : -resultNums;
+};
+
+console.log(reverse(-1234)); // -4321
+console.log(reverse(9876)); //6789
+```
+
+- 삼항연산자
+- `parseInt` 문자열을 정수로 반환
+- `Math.abs()`
+
+```javascript
 //3차 풀이
 const reverse = (x) => {
   let makePositive = x * -1;
