@@ -158,21 +158,21 @@ reverse(5678);
 
 - `아는만큼 간결해지는 코드`
 - 인라인으로 메소드들을 연결하는 방법을 학습
-  - 숫자 → 문자열
-    - `toString()`
-    - `String()`
-    - `toFixed()`
-    - `${number1}`
-  - 역방향:
-    - `For loop`
-      - `result = makePositive.toString().split("").reverse().join("")`
-    - `reverse()`
-  - 문자열 → 숫자
-    - `Number()`
-    - `parseInt()`
-    - `typeof`
-    - `parseFloat()`
-- 코드는 아는 만큼 쓸 수 있다.
+  - `result = makePositive.toString().split("").reverse().join("")`
+- 숫자 → 문자열 :
+  - `toString()`
+  - `String()`
+  - `toFixed()`
+  - `${number1}`
+- 역방향:
+  - `For loop`
+    - `(let i = strToArr.length - 1; i >= 0; i--)`
+  - `reverse()`
+- 문자열 → 숫자 :
+  - `Number()`
+  - `parseInt()`
+  - `typeof`
+  - `parseFloat()`
 - 끈기 있게, 실패해도 console.log를 찍어보며 한 줄 한 줄 최선을 다하여 작성했다. 기특 + 1
 
 <hr>
