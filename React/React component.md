@@ -63,9 +63,9 @@ const element = (
 );
 ```
 
-<a href="#"> 이전글: React 101</a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md#"> 이전글: React 101</a>
 
-<a href="#"> 다음글: React 101</a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md"> 다음글: React & JSX</a>
 
 <hr>
 <p align="center"> E.O.D

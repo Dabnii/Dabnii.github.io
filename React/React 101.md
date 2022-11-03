@@ -48,9 +48,9 @@ e.g. 🏆 `선언적` :
   - DOM 처리 횟수를 최소화
   - 효율성 극대화 👏
 
-<a href="#"> 이전글: React의 등장 배경 & Library</a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%EB%93%B1%EC%9E%A5%EB%B0%B0%EA%B2%BD.md"> 이전글: React의 등장 배경 & Library</a>
 
-<a href="#"> 다음글: React 컴포넌트</a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md"> 다음글: React 컴포넌트</a>
 
 <hr>
 <p align="center"> E.O.D
