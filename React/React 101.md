@@ -51,3 +51,6 @@ e.g. 🏆 `선언적` :
 <a href="#"> 이전글: React의 등장 배경 & Library</a>
 
 <a href="#"> 다음글: React 컴포넌트</a>
+
+<hr>
+<p align="center"> E.O.D
