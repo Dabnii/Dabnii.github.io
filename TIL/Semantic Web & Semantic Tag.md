@@ -4,6 +4,7 @@
 - `<img>` 태그를 사용하는 것과 `<div>` background-image 태그 사용 대한 차이점은 무엇일까?
 
 ### 🤔시멘틱의 뜻은 무엇일까요?
+
 # 🔤 Semantic
 
 relating to meaning in language or logic.
