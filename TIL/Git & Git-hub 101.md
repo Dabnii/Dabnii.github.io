@@ -33,8 +33,8 @@
 
 1.  `Git` git을 사용한 프로젝트들의 저장소
 2.  개발자들의 Social Network
-3.  git : 프로젝트의 버전관리를 도와주는 시스템
-4.  GitHub→ Git을 이용해 버전관리를 한 프로젝트들을 관리하게 해주는 호스트 서비스
+3.  `git` : 프로젝트의 버전관리를 도와주는 시스템
+4.  `GitHub→ Git`을 이용해 버전관리를 한 프로젝트들을 관리하게 해주는 `호스트 서비스`
 
 ## 📌 Git의 init, add, status, commit, log, push 명령어의 역할
 
@@ -59,8 +59,8 @@
 
 ## 🔢 터미널을 사용한 깃 허브 업로드 순서
 
-1.  GitHub 로컬 레포토지 생성
-    - `+` 버튼을 눌러 새로운 레포토지를 생성합니다.
+1.  GitHub 로컬 repository 생성
+    - `+` 버튼을 눌러 새로운 repository를 생성합니다.
       - README.MD 없이 생성 합니다.
       - README.MD가 없는 경우
       - …or create a new repository on the command line 섹션에서 `6` `git remote add origin https://github.com/%UserName%/%New repo%`를 복사하여 터미널에 입력합니다.
@@ -116,7 +116,7 @@ git branch * main
 
 | 명령어       | 뜻                                 | 설명                                                                                                                                               | 활용                          |
 | ------------ | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| git clone    | 깃 복제                            | 신규 레파지토리를 내 로컬로 가져오기                                                                                                               | git clone [%ropo link%]       |
+| git clone    | 깃 복제                            | 신규 repository를 내 로컬로 가져오기                                                                                                               | git clone [%ropo link%]       |
 | git branch   | 독립된 개발 공간 생성              | 개발자, 파드 별로 브랜치를 사용해야함 <br> - e.g. main 파트 개발자는 main 브랜치를 사용 <br> - e.g. log-in 파트 개발자는 log-in 브랜치를 사용 <br> | git branch [branch name]      |
 | git checkout | 브랜치를 이동                      | 현재 → 이동할 브랜치                                                                                                                               | git checkout [branch name]    |
 | git pull     | (이미 존재하는 repo) 코드 가져오기 | GitHub의 특정 브랜치의 코드를 가져올 때 사용                                                                                                       | git pull origin [branch name] |
@@ -136,7 +136,7 @@ cd desktop
 pwd
 //어느 위치인지 확인 하기
 git clone https://github.com/%repolink%reponame.git
-// 깃허브의 레파지토리의 링크를 넣습니다
+// 깃허브의 repository 링크를 넣습니다
 Cloning into '%Repo%'...
 ... [다운로드]
 // 다운로드가 됩니다
@@ -145,7 +145,7 @@ Cloning into '%Repo%'...
 ## 📌 git clone
 
 - 코드 복제 (신규 | 내 로컬에 없다는 전제)
-- 기존 레파지토리를 내 로컬로 가져오는 명령어
+- 기존 repository를 내 로컬로 가져오는 명령어
 - `git clone [%ropo link%]`
 
 ## 📌 git branch
@@ -167,7 +167,7 @@ Cloning into '%Repo%'...
 
 ## 📌 git pull
 
-- 코드 가져오기 (이미 존재하는 레파토지)
+- 코드 가져오기 (이미 존재하는 repository)
 - github에 있는 특정 브랜치의 코드를 로컬로 가져올 때 사용하는 명령어
   - git clone : 새로운/로컬에 존재하지 않는 전체 코드를 가져오는 것
 - `git pull origin [branch name]`
