@@ -22,7 +22,7 @@
 |           | Framework                 | Library                                       |
 | --------- | ------------------------- | --------------------------------------------- |
 | 공통 목적 | 효율적인 개발             | 효율적인 개발                                 |
-| 특징      | FRAME 이미 제작된 툴 사용 | LIbrary 필요한 기능을 찾아 사용               |
+| 특징      | Frame 이미 제작된 툴 사용 | Library 필요한 기능을 찾아 사용               |
 | 자율성    | 수동적                    | 능동적 작업 가능                              |
 | 예시      | 모든 도구가 갖춰진 주방   | 용도에 따라 가져다 쓰는 도구 <br> e.g. 주전자 |
 
@@ -54,7 +54,7 @@
 
 <br>
 
-<a href="#"> 다음글: React 101</a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md"> 다음글: React 101</a>
 
 <hr>
 <p align="center"> E.O.D
