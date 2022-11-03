@@ -191,3 +191,28 @@ reverse(5678);
 - 끈기 있게, 실패해도 console.log를 찍어보며 한 줄 한 줄 최선을 다하여 작성했다. 기특 + 1
 
 <hr>
+
+<p align="center"> 📆 2022.Nov.3 | 10min<br>
+
+## Week 1 | test #4
+
+> 숫자인 num을 인자로 넘겨주면, 뒤집은 모양이 num과 똑같은지 여부를 반환해주세요.<br>
+> num: 숫자 return: true or false (뒤집은 모양이 num와 똑같은지 여부)<br>
+> 예를 들어, num = 123 return false => 뒤집은 모양이 321 이기 때문<br>
+> num = 1221 return true => 뒤집은 모양이 `1221` 이기 때문<br>
+> num = -121 return false => 뒤집은 모양이 121- 이기 때문<br>
+> num = 10 return false => 뒤집은 모양이 01 이기 때문<br>
+
+`💡 핵심 키워드 : 123321경우는 뒤집어도, 뒤집지 않아도 같은 모양이다!`
+
+```javascript
+const sameReverse = (num) => {
+  let reverse = num.toString().split("").reverse().join("");
+  return num == reverse ? true : false;
+};
+```
+
+## 🌳 성장 포인트
+
+- 인지와 기억은 다르다! 복기의 중요성
+- 2번 문제와 연관되는 코드테스트
