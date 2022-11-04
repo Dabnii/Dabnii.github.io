@@ -10,7 +10,7 @@
 - 첫 번째 요소인 state를 통해 동적으로 관리하고자 하는 값을 할당 가능
 - 두 번째 요소인 setState function을 통해 state를 업데이트 가능
 
-### 💡 State 특징
+### 💡 State 선언
 
 ```javascript
 // Main.js
@@ -26,3 +26,5 @@ const Main = () => {
 
 export default Main;
 ```
+
+1. useState함수는 Hook의 일종
