@@ -7,7 +7,7 @@
 - 모든 타입의 데이터와 함수까지 어떤 값이든 자식 컴포넌트에 전달 가능
   - e.g. 문자, 숫자, 변수, 함수 등
 - 2개 이상의 값일 때 `띄어쓰기로` 구분&전달
-  - e.g. <Child pet={animal} englishName='tiger' />
+  - e.g.`<Child pet={animal} englishName='tiger' />`
 
 ### 💡 부모 컴포넌트에서의 데이터 전달
 

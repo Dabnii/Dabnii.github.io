@@ -14,7 +14,7 @@
 ### 💡 Hook 사용 규칙
 
 - `함수컴포넌트` 또는 `custom hook` 안에서만 사용 가능
-- `at the top level` `취상위` 에서만 호출 할 수 있음
+- `at the top level` `최상위` 에서만 호출 할 수 있음
 
 ```javascript
 // useState Hook을 최상위에서 호출한 경우
