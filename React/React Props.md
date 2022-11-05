@@ -123,9 +123,9 @@ export default Child;
 
   <br>
 
-<a href=""> 이전글: React & Hook </a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md"> 이전글: React Hook </a>
 
-<a href=""> 다음글: React & State </a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20State.md"> 다음글: React State </a>
 
 <hr>
 <p align="center"> E.O.D
