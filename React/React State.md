@@ -28,3 +28,10 @@ export default Main;
 ```
 
 1. useState함수는 Hook의 일종
+
+<br>
+
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md">이전글: React Props </a>
+
+<hr>
+<p align="center"> E.O.D
