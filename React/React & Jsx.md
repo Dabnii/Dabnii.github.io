@@ -160,7 +160,7 @@ const Greetings = () => {
 
 <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md"> 이전글: React Component </a>
 
-<a href="#"> 다음글: </a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md"> 다음글: React Hook </a>
 
 <hr>
 <p align="center"> E.O.D
