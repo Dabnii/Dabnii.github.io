@@ -41,7 +41,7 @@ export default Test;
 
 <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md"> 이전글: React & JSX </a>
 
-<a href=""> 다음글: React Props</a>
+<a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md"> 다음글: React Props</a>
 
 <hr>
 <p align="center"> E.O.D
