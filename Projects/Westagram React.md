@@ -1,6 +1,6 @@
 # <p align="center"> 🌈 Westagram x React.js
 
-## 🌈 westagram | React.js
+## 🌈 Westagram | React.js
 
 1. `Login page`
 
@@ -235,7 +235,7 @@ body {
     }
     ```
 
-    ```jxs
+    ```jsx
     <button
         disabled={disable}
         className={"loginBtn"}
@@ -247,10 +247,10 @@ body {
 
 - `input` 오브젝트 값 확인 방법
 
-  ```jxs
+  ```jsx
   const saveUserId = (event) => {
-      setUsername(event.target.value);
-  }
+    setUsername(event.target.value);
+  };
   ```
 
 - `preventDefault`는 btn이 아닌 `form`에 설정
