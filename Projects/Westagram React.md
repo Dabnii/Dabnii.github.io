@@ -254,7 +254,7 @@ body {
   ```
 
 - `preventDefault`는 btn이 아닌 `form`에 설정
-- `SCSS` 자손 선택자를 사용한 `disabled`, 불 필요한 코드 삭제
+- `SCSS` 부모 선택자를 사용한 `disabled`, 불 필요한 코드 삭제 
 - `React`의 장점인 선언적 개발 환경 이해
 - `Hook` 학습
   - 1️⃣ `import React, { useState } from "react"` : 최상위
