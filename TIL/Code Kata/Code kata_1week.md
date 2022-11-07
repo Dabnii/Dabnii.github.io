@@ -1,75 +1,218 @@
 # <p align="center">📖 Code Kata
 
-<p align="center"> 📆 2022.Nov.7 | 50min<br>
+<p align="center"> 📆 2022.Oct.30 | 55min<br>
 
-## Week 2 | test #1
+## Week 1 | test #1
 
-> ### Q.1 로마자에서 숫자로 바꾸기
->
-> 1~3999 사이의 로마자 s를 인자로 주면 그에 해당하는 숫자를 반환해주세요. 로마 숫자를 숫자로 표기하면 다음과 같습니다.<br>
->
-> ### 💡 Symbol Value<br>
->
-> I 1<br>
-> V 5<br>
-> X 10<br>
-> L 50<br>
-> C 100<br>
-> D 500<br>
-> M 1000<br>
-> 로마자를 숫자로 읽는 방법은 로마자를 왼쪽부터 차례대로 더하면 됩니다. III = 3 XII = 12 XXVII = 27 입니다.<br>
-> 그런데 4를 표현할 때는 IIII가 아니라 IV 입니다. 뒤의 숫자에서 앞의 숫자를 빼주면 됩니다. 9는 IX입니다.
-> I는 V와 X앞에 와서 4, 9 X는 L, C앞에 와서 40, 90 C는 D, M앞에 와서 400, 900
+`twoSum`함수에 숫자배열과 `'특정 수'`를 인자로 넘기면, 더해서 `'특정 수'`가 나오는 `index`를 배열에 담아 return해 주세요.
 
-### 💡 핵심 키워드 :
+> `nums: 숫자 배열` <br>`target: 두 수를 더해서 나올 수 있는 합계`<br> `return: 두 수의 index를 가진 숫자 배열`<br>
+> 예를 들어,<br>
+> nums은 [4, 9, 11, 14] target은 13<br>
+> nums[0] + nums[1] = 4 + 9 = 13 입니다.<br>
+> 그러하여 `[0, 1]`이 return 되어야 합니다.<br>
+> 💡 가정 : target으로 보내는 합계의 조합은 배열 전체 중에 `2개 밖에 없다고 가정`하겠습니다.
 
-- 데이터를 담는 객체를 활용.
-- `[]` Bracket Notation 활용.
-- IV 4, IX 9 경우는 앞 자리가 뒷 자리보다 작다.
-- ✨ 복잡해 보이지만, 간단한 2가지의 조건만 충족 하면 된다.
+<br>
 
-| s    | i [0]   | i + 1 [1]        | 숫자 |
-| ---- | ------- | ---------------- | ------ |
-| I    | I (1)   | null             | 1      |
-| II   | I (1)   | I (1)            | 2      |
-| III  | I (1)   | I (1) ... + I(i) | 3      |
-| `IV` | `I (1)` | `V (5)`          | `4`    |
-| `IX` | `I (1)` | `X (10)`         | `9`    |
+## 💬 pseudocode
 
-- 1️⃣ : 앞 자리가 뒷 자리 보다 작은 경우 `뒤에서 앞 자리를 뺀다`
-- 2️⃣ : 앞 자리가 뒷 자리 보다 큰 경우 더 한다
+1. return 값을 담을 array 생성
+1. for문을 사용하여 array를 순회
+1. 두 값을 비교해야하므로 두개의 for 문 작성
+1. 📌 중복되는 값을 빼기
+1. e.g. [4, 9, 11, 14] `target`은 `13`
+
+   | i   | j   | note     |
+   | --- | --- | -------- |
+   | 4   | 4   | X : 중복 |
+   | 4   | 9   | `O`      |
+
+1. e.g. [4, 9, 11, 14] `target`은 `20`
+
+   | i   | j   | note     |
+   | --- | --- | -------- |
+   | 9   | 4   | X        |
+   | 9   | 9   | X : 중복 |
+   | 9   | 11  | `O`      |
+   | 9   | 14  | X        |
+
+- 위의 표를 참고하면 중복되는 값들은 `i=j`를 빼주어 불필요한 값을 삭제
+  - A : ` for (let j = i + 1; j < nums.length; j++) { if (nums[i] + nums[j] === target)`
+  - B : ` if (i < j) { if (nums[i] + nums[j] === target)`
 
 ```javascript
-function romanToNum(s) {
-  const romeNum = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000,
-  };
+// 2차 풀이 ✅
+const twoSum = (nums, target) => {
+  let result = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+};
+console.log(twoSum([11, 14, 4, 9], 13));
+```
 
-  let result = 0;
-
-  for (let i = 0; i < s.length; i++) {
-    if (romeNum[s[i]] < romeNum[s[i + 1]]) {
-      result -= romeNum[s[i]];
-      //result  = result - romeNum[s[i]]
-    } else {
-      result += romeNum[s[i]];
+```javascript
+//1차 풀이 ✅
+const twoSum = (nums, target) => {
+  let result = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      if (i < j) {
+        if (nums[i] + nums[j] === target) {
+          console.log(i);
+          console.log(j);
+          result.push(i);
+          result.push(j);
+        }
+      }
     }
   }
   return result;
-}
+};
+console.log(twoSum([11, 14, 4, 9], 13));
 ```
 
 ## 🌳 성장 포인트
 
-- `+=` & `-=`
-  - `result  = result - romeNum[s[i]]`
-  - `result  = result + romeNum[s[i]]`
-- 복잡해 보이는 문제 조건을 간단하게 생각하는 방법
-  - 함정에 빠지지 말자 🕳
-- 동기들에게 한 수 배우는 날 🙇‍♀️
+- 중첩 for문을 사용
+  - 사전 스터디 때 배열 속 배열 값을 제거하는 코드를 복기
+- `1차코드` result가 이미 array이기 때문에 push 메소드 사용이 불필요하다
+- 두 값을 비교할 때 `if (nums[i] + nums[j] === target)` 방법과 `(let j = i + 1; j < nums.length; j++)` 등 여러 표현법을 학습
+- 함수가 아닌 선언문이어도 `console.log(func(arg,arg));` 사용가능.
+
+<br>
+<hr>
+<p align="center"> 📆 2022.Oct.31 | 1h<br>
+
+## Week 1 | test #2
+
+> ### Q.1
+>
+> reverse 함수에 정수인 숫자를 인자로 받습니다.<br> 그 숫자를 뒤집어서 return해주세요.<br>
+> x: 숫자 return: 뒤집어진 숫자를 반환!<br>예들 들어, x: 1234 return: 4321<br>
+> x: -1234 return: -4321<br>
+> x: 1230 return: 321
+
+`💡 핵심 키워드 : 음수인 경우는 결과값이 다시 음수가 되어야 한다.`
+
+```javascript
+//4차 풀이
+const reverse = (x) => {
+  let resultNums = parseInt(x.toString().split("").reverse().join(""));
+  ✨ return x >= 0 ? resultNums : -resultNums;
+};
+
+console.log(reverse(-1234)); // -4321
+console.log(reverse(9876)); //6789
+```
+
+- 삼항연산자
+- `parseInt` 문자열을 정수로 반환
+- `Math.abs()`
+
+```javascript
+//3차 풀이
+const reverse = (x) => {
+  let makePositive = x * -1;
+  if (x < 0) {
+    result = makePositive.toString().split("").reverse().join("");
+    return Number(result * -1);
+  } else {
+    result = x.toString().split("").reverse().join("");
+    return Number(result);
+  }
+};
+
+reverse(5678); //5678
+reverse(-1234); //-4321
+```
+
+```javascript
+//2차 풀이
+const reverse = (x) => {
+  let makePositive = x * -1;
+  if (x < 0) {
+    result = makePositive.toString().split("").reverse().join("");
+    return Number(result * -1);
+  }
+  if (x >= 0) {
+    result = x.toString().split("").reverse().join("");
+    return Number(result);
+  }
+};
+
+reverse(0); //0
+reverse(2345); //2345
+reverse(-9876); //-6789
+```
+
+```javascript
+//1차 풀이 반쪽짜리 코드
+// for문을 역방향으로 순회한 시도는 좋았으나 음수를 입력시 NaN 오류 발생 🤔
+const reverse = (x) => {
+  let numToString = x.toString(); //'1234'
+  let strToArr = numToString.split(""); //arr
+  let newArr = [];
+
+  for (let i = strToArr.length - 1; i >= 0; i--) {
+    newArr.push(strToArr[i]);
+  }
+  let result = newArr.join("");
+  console.log(result);
+  return Number(result);
+};
+reverse(5678);
+```
+
+## 🌳 성장 포인트
+
+- `아는만큼 간결해지는 코드`
+- 인라인으로 메소드들을 연결하는 방법을 학습
+  - `result = makePositive.toString().split("").reverse().join("")`
+- 숫자 → 문자열 :
+  - `toString()`
+  - `String()`
+  - `toFixed()`
+  - `${number1}`
+- 역방향:
+  - `For loop`
+    - `(let i = strToArr.length - 1; i >= 0; i--)`
+  - `reverse()`
+- 문자열 → 숫자 :
+  - `Number()`
+  - `parseInt()`
+  - `typeof`
+  - `parseFloat()`
+- 끈기 있게, 실패해도 console.log를 찍어보며 한 줄 한 줄 최선을 다하여 작성했다. 기특 + 1
+
+<hr>
+
+<p align="center"> 📆 2022.Nov.3 | 10min<br>
+
+## Week 1 | test #4
+
+> 숫자인 num을 인자로 넘겨주면, 뒤집은 모양이 num과 똑같은지 여부를 반환해주세요.<br>
+> num: 숫자 return: true or false (뒤집은 모양이 num와 똑같은지 여부)<br>
+> 예를 들어, num = 123 return false => 뒤집은 모양이 321 이기 때문<br>
+> num = 1221 return true => 뒤집은 모양이 `1221` 이기 때문<br>
+> num = -121 return false => 뒤집은 모양이 121- 이기 때문<br>
+> num = 10 return false => 뒤집은 모양이 01 이기 때문<br>
+
+`💡 핵심 키워드 : 123321경우는 뒤집어도, 뒤집지 않아도 같은 모양이다!`
+
+```javascript
+const sameReverse = (num) => {
+  let reverse = num.toString().split("").reverse().join("");
+  return num == reverse ? true : false;
+};
+```
+
+## 🌳 성장 포인트
+
+- 인지와 기억은 다르다! 복기의 중요성
+- 2번 문제와 연관되는 코드테스트
