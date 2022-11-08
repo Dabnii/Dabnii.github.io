@@ -79,7 +79,7 @@
    //컴포넌트 안에서 useEffect 작성
        useEffect(()=> {
        fetch("/data/useInforList.json")
-       .then((response)=> response.jsson())
+       .then((response)=> response.json())
        .then((result)=> setUserInforList(result)
        //console.log(userInforList);
        }, []);
@@ -131,8 +131,44 @@
   - 상수 데이터임을 나타내기 위해서 변수명은 `UPPER_SNAKE_CASE` 사용
   - 객체 형태 뿐만 아니라 숫자, 문자열, 배열 등 가능
 - 반복되는 UI 구조는 `상수 데이터와 map 메서드를 활용`해 `간결`하게 표현 가능
+  - `Array.map()`
 - 상수 데이터를 활용하면 UI를 효율적으로, 확장성 있게 구성할 수 있으며 유지보수가 용이
 - 상수 데이터는 컴포넌트 파일 내부에서 선언 & 별도의 파일로 분리해서 사용 가능
+
+### 상수데이터 선언
+
+```javascript
+const FOOTER_INFO_LIST = [
+  { id: 1, link: "https://github.com/terms", text: "Terms" },
+  { id: 2, link: "https://github.com/privacy", text: "Privacy" },
+  ...{ id: 11, link: "https://github.com/about", text: "About" },
+];
+```
+
+```javascript
+// Footer.js
+
+import React from "react";
+
+const Footer = () => {
+  return (
+    <footer>
+      {/* 생략 */}
+      <ul>
+        {FOOTER_INFO_LIST.map((info) => (
+          <li key={info.id}>
+            <a href={info.link}>{info.text}</a>
+          </li>
+        ))}
+      </ul>
+    </footer>
+  );
+};
+
+export default Footer;
+```
+
+> 객체 형태 뿐만 아니라 숫자, 문자열, 배열 등 가능
 
 ### map 메서드에서 return하는 javascript를 컴포넌트화하고, props로 넘겨주는 방식 활용 👇
 
@@ -162,29 +198,29 @@ export default Footer;
 - 컴포넌트의 `state`나 `props` 등, `컴포넌트 리렌더링 시 변하는 값을 포함하는 상수 데이터는 컴포넌트 내부`에서 작성
 - 컴포넌트가 리렌더링 될 때마다 새로 선언되고 할당될 필요가 없는 `상수 데이터는 컴포넌트 외부`에서 작성
 
-```javascript
-// Footer.js
+  ```javascript
+  // Footer.js
 
-import React from "react";
+  import React from "react";
 
-const Footer = () => {
-  return (
-    <footer>
-      {/* 생략 */}
-      <ul>
-        {FOOTER_INFO_LIST.map((info) => (
-          <FooterInfo key={info.id} link={info.link} text={info.text} />
-        ))}
-      </ul>
-    </footer>
-  );
-};
+  const Footer = () => {
+    return (
+      <footer>
+        {/* 생략 */}
+        <ul>
+          {FOOTER_INFO_LIST.map((info) => (
+            <FooterInfo key={info.id} link={info.link} text={info.text} />
+          ))}
+        </ul>
+      </footer>
+    );
+  };
 
-export default Footer;
+  export default Footer;
 
-const FOOTER_INFO_LIST = [
-  { id: 1, link: "https://github.com/terms", text: "Terms" },
-  { id: 2, link: "https://github.com/privacy", text: "Privacy" },
-  ...{ id: 11, link: "https://github.com/about", text: "About" },
-];
-```
+  const FOOTER_INFO_LIST = [
+    { id: 1, link: "https://github.com/terms", text: "Terms" },
+    { id: 2, link: "https://github.com/privacy", text: "Privacy" },
+    ...{ id: 11, link: "https://github.com/about", text: "About" },
+  ];
+  ```
