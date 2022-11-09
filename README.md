@@ -38,6 +38,7 @@
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md">React Hook</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md">React Props</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20State.md">React State</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Mock%20Data.md">React Mock data</a>
 
 # 💻 Computer Science
 
