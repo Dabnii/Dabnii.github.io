@@ -76,3 +76,134 @@ function romanToNum(s) {
 - 복잡해 보이는 문제 조건을 간단하게 생각하는 방법
   - 함정에 빠지지 말자 🕳
 - 동기들에게 한 수 배우는 날 🙇‍♀️
+
+<br>
+
+---
+
+<p align="center"> 📆 2022.Nov.8 | 1h30mins<br>
+
+## Week 2 | test #2
+
+> ### Q.2 majority, more than a half 찾기
+>
+> 숫자로 이루어진 배열인 nums를 인자로 전달합니다. <br>
+> 숫자중에서 과반수(majority, more than a half)가 넘은 숫자를 반환해주세요. <br> `nums` 배열의 길이는 무조건 `2`개 이상
+
+```js
+//예
+nums = [3, 2, 3];
+return 3;
+
+nums = [2, 2, 1, 1, 1, 2, 2];
+return 2;
+```
+
+### 💡 핵심 키워드 : `forEach`
+
+```javascript
+function moreThanHalf(nums) {
+  let numsLength = nums.length;
+
+  const result = {};
+  nums.forEach((element) => {
+    if (result[element]) {
+      result[element] = result[element] + 1;
+    } else {
+      result[element] = 0 + 1;
+    }
+  });
+
+  let ans = 0;
+  for (let i in result) {
+    if (result[i] > numsLength / 2) {
+      return i - 0;
+    }
+  }
+}
+```
+
+```javascript
+//줍줍코드
+function moreThanHalf(numbers) {
+  const counts = {};
+
+  for (number of numbers) {
+    counts[number] = counts[number] + 1 || 1;
+  }
+
+  for (number in counts) {
+    if (counts[number] > numbers.length / 2) {
+      return number;
+    }
+  }
+}
+```
+
+1. `for...of`와 `forEach`는 기능은 같다, 가독성의 차이
+2. `counts[number] = counts[number] + 1 || 1`
+3. lets you skip an if statement too
+4. If counts[number] is truthy i.e. if it exists + 1
+5. If it doesn't, set the value to 1
+
+<br>
+
+## 🌳 성장 포인트
+
+- `res = 0, count= 0`
+- ` return i - 0;` → 문자를 숫자로 `-`
+- 코드 수집이 정말 재밌네요.. 같은 문제에 다양한 해석 ✨
+
+<p align="center"> 📆 2022.Nov.9 | 45min<br>
+
+## Week 2 | test #3
+
+> ### Q.1 로마자에서 숫자로 바꾸기
+>
+> `s`는 여러 괄호들로 이루어진 String 인자입니다. s가 유효한 표현인지 아닌지 `true/false`로 반환해주세요. <br>
+> 종류는 `(', ')`, `[', ']`, `{', '}` 으로 총 `6`개 있습니다. 아래의 경우 유효합니다.
+>
+> 1. 한 번 괄호를 시작했으면, 같은 괄호로 끝내야 한다.
+> 1. 괄호 순서가 맞아야 한다.<br>
+
+```javascript
+//예
+
+s = "()";
+return true;
+
+s = "()[]{}";
+return true;
+
+s = "(]";
+return false;
+
+s = "([)]";
+return false;
+
+s = "{[]}";
+return true;
+s = "[]{}";
+```
+
+### 💡 핵심 키워드 :
+
+- `includes()`
+- `replace()`
+
+```javascript
+function isValid(s) {
+  while (s.includes("()") || s.includes("[]") || s.includes("{}")) {
+    s = s.replace("()", "");
+    s = s.replace("[]", "");
+    s = s.replace("{}", "");
+  }
+  return s === "" ? true : false;
+}
+```
+
+## 🌳 성장 포인트
+
+- `return s === "" ? true : false;`
+- 다양한 메소드의 경험
+- 누구나 쉽고 이해하고 읽을 수 있는 코드를 작성 💪
