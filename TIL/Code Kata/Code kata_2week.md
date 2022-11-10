@@ -134,7 +134,7 @@ function moreThanHalf(numbers) {
 
   for (number in counts) {
     if (counts[number] > numbers.length / 2) {
-      return number;
+      return number - 0;
     }
   }
 }
@@ -158,7 +158,7 @@ function moreThanHalf(numbers) {
 
 ## Week 2 | test #3
 
-> ### Q.1 로마자에서 숫자로 바꾸기
+> ### Q.3 [string 유효판단] true/false
 >
 > `s`는 여러 괄호들로 이루어진 String 인자입니다. s가 유효한 표현인지 아닌지 `true/false`로 반환해주세요. <br>
 > 종류는 `(', ')`, `[', ']`, `{', '}` 으로 총 `6`개 있습니다. 아래의 경우 유효합니다.
@@ -188,8 +188,19 @@ s = "[]{}";
 
 ### 💡 핵심 키워드 :
 
-- `includes()`
-- `replace()`
+- `includes()` <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">MDN : includes()</a>
+
+  - includes() 메서드는 배열이 특정 요소를 포함하고 있는지 판별합니다.
+  - 반환값: `Boolean`
+
+- `replace()` <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace">MDN : reaplce()</a>
+
+  - replace() 메서드는 어떤 패턴에 일치하는 일부 또는 모든 부분이 교체된 새로운 문자열을 반환
+
+  ```javascript
+  var newStr = str.replace(regexp|substr, newSubstr|function)
+
+  ```
 
 ```javascript
 function isValid(s) {
@@ -205,5 +216,3 @@ function isValid(s) {
 ## 🌳 성장 포인트
 
 - `return s === "" ? true : false;`
-- 다양한 메소드의 경험
-- 누구나 쉽고 이해하고 읽을 수 있는 코드를 작성 💪
