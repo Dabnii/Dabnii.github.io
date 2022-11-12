@@ -1,6 +1,7 @@
 # <p align="center"> 🌈 Westagram x React.js
 
-## 🌈 Westagram | React.js
+
+## 🌈 Westagram | React.js `ver.1`
 
 1. `Login page`
 
@@ -269,5 +270,164 @@ body {
 
 - `onChange` : input의 변경에 반응하는 이벤트
 
-<hr>
 <p align="center"> E.O.D 2022/11/6
+<hr>
+<br>
+
+### <p align="center"> 📆 2022.Nov.12
+
+## 🌈 Westagram | React.js `ver.2` 
+
+📝 update log:
+
+1. `Code review` & `Live code 리뷰`
+2. `계산된 속성명`
+3. `전개 구문` 
+
+### 1️⃣ Code review
+  > 서로의 코드를 확인하고, 보완&발전
+
+1. `SCSS`
+  - 부모 선택자 사용 
+  - `@mixin` & `@include`
+  - `$Variable` 변수 선택자 활용
+2. `JSX`
+  - `includes()` 와 `indexOf()` method 차이점
+    ```javascript
+    //indexOf
+      const isValid = username.indexOf('@') !== -1 && password.length >= 5;
+    //includes
+      const isValid = username.includes('@') && password.length >= 5;
+    ```
+3. 📌 `계산된 속성명` | `Computed property names` ES 6~
+
+- 계산된 속성명
+  - 꺽쇠괄호`([])` 로 속성 이름을 감싸면 속성 이름을 `동적`으로 만듬
+  - 꺽쇠괄호 안에는 자바스크립트 `내장 함수, 메서드, 계산식, 변수를 넣음`
+  - 순서 번호가 붙는 속성 이름을 여러개 사용하는 객체를 생성하는 경우
+    > The `computed property names` feature was introduced in ECMAScript 2015(ES6) that allows you to dynamically compute the names of the object properties in JavaScript object literal notation.<br>
+    >A JavaScript object is just a `collection of key-value pairs called properties.` A property's key is a string or symbol (also known as property name), and 📌 `value can be anything.`
+  - 계산된 속성명을 사용하지 하는 경우와 그렇지 않은 경우 👇
+ 
+  ```javascript
+  // 계산된 속성명 미사용, 기존코드
+  function makeObject1(key,value) {
+      const obj = {};
+      obj[key] = value;
+      return obj
+  }
+
+  // 계산된 속성명 사용
+  function makeObject2(key,value) {
+      return {[key]:value}        
+      // 계산된 속성명 [key]
+  }
+  //[key]값이 key의 이름으로 동적으로 할당된다.
+  ```
+
+  ```javascript
+  //예시 2
+  let idx = 0;
+  let obj = {["name" + ++idx]: idx, ["name" + ++idx]: idx, ["name" + ++idx]: idx};
+  console.log(obj);
+
+  //{ name1: 1, name2: 2, name3: 3 }
+  ```
+  - 📌 프로젝트에 적용한 코드 
+    - 장점: 코드 가독성이 높아지고, 효율적인 작업 가능
+
+  ```javascript
+  //const [id, setId] = useState('');
+  //const [password, setPassword] = useState('');
+  // 위의 두 코드를 저장된 속성명을 적용하면 아래처럼 작성할 수 있다.
+  const [userInfo, setUserInfo] = useState({
+    id: '',
+    pw: '',
+  });
+  ```
+4. 전개 구문 | spread syntax
+    > 전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를 0개 이상의 인수 (함수로 호출할 경우) 또는 요소 (배열 리터럴의 경우)로 확장하여, 0개 이상의 키-값의 쌍으로 객체로 확장시킬 수 있습니다.
+
+    ```javascript
+    // 펼칠 대상이 객체인 경우
+    {...obj}
+
+    // 펼칠 대상이 배열인 경우
+    [...arr]
+
+    // 혹은
+    {...arr}
+    ```
+
+    ```javascript
+    //function saveUserId(event) {
+    //setId(event.target.value);
+    //}
+    //function saveUserPw(event) {
+    //setPassword(event.target.value);
+    //}
+
+    const handleUserInfo = e => {
+      const { name, value } = e.target;
+      setUserInfo(prev => ({ ...prev, [name]: value }));
+    };
+    ```
+    ```javascript
+    //Feed.js
+    const handleClickBtn = () => {
+    const pushedComment = [...commentList, coText];
+    setCommentList(pushedComment);
+    setCoText('');
+    };
+    ```
+
+5. `map` 반복되는 UI 
+    - 작업을 하다 보니, 피드, 댓글과 같이 반복되는 UI, 컴포넌트가 있었다
+    - 하드 코딩하지 않고 제작 하기 위하여 `map` `state` `props` 사용
+    ```javascript
+    //Feed.js
+    import React from 'react';
+    import './Comment.scss';
+
+    export default function Comment(props) {
+      const { contents } = props;
+      return (
+        <li>
+          <span>0713.jpg </span>
+          {contents}
+        </li>
+      );
+    }
+    ```
+    ```javascript
+    //FeedList.js
+    import React from 'react';
+    import { useState } from 'react';
+    import { useEffect } from 'react';
+    import Feed from './Feed';
+
+    const FeedList = () => {
+      const [feedData, setFeedData] = useState([]);
+
+      useEffect(() => {
+        fetch('/data/data.json')
+          .then(response => response.json())
+          .then(result => setFeedData(result));
+      }, []);
+      return feedData.map((feedinfo, i) => <Feed key={i} feedinfo={feedinfo} />);
+    };
+
+    export default FeedList;
+    ```
+
+
+<hr>
+출처: 
+
+- https://attacomsian.com/blog/javascript-computed-property-names
+
+- https://velog.io/@kwonh/ES6-%EB%8B%A8%EC%B6%95%EC%86%8D%EC%84%B1%EB%AA%85-%EA%B3%84%EC%82%B0%EB%90%9C%EC%86%8D%EC%84%B1%EB%AA%85-%EB%B9%84%EA%B5%AC%EC%A1%B0%ED%99%94%ED%95%A0%EB%8B%B9-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0
+
+- https://blogpack.tistory.com/640
+
+- https://bigtop.tistory.com/
