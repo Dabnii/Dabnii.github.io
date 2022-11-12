@@ -283,9 +283,15 @@ body {
 1. `Code review` & `Live code 리뷰`
 2. `계산된 속성명`
 3. `전개 구문` 
+5. `map` 반복되는 UI 
+6. `Props` & `setState`
+1. `fetch`
 
-### 1️⃣ Code review
-  > 서로의 코드를 확인하고, 보완&발전
+### 🗝 핵심 포인트
+
+📝 Code review
+  > 서로의 코드를 확인하고, 보완 &발전 목적 <br>
+  > 마이너한 부분 부터, 코드 리팩토링에 훌륭한 리소스들을 얻은 유의미한 시간 
 
 1. `SCSS`
   - 부모 선택자 사용 
@@ -299,7 +305,7 @@ body {
     //includes
       const isValid = username.includes('@') && password.length >= 5;
     ```
-3. 📌 `계산된 속성명` | `Computed property names` ES 6~
+3. 📌 `계산된 속성명` | `Computed property names` ES6~
 
 - 계산된 속성명
   - 꺽쇠괄호`([])` 로 속성 이름을 감싸면 속성 이름을 `동적`으로 만듬
@@ -345,7 +351,7 @@ body {
     pw: '',
   });
   ```
-4. 전개 구문 | spread syntax
+4. `전개 구문` | `spread syntax`
     > 전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를 0개 이상의 인수 (함수로 호출할 경우) 또는 요소 (배열 리터럴의 경우)로 확장하여, 0개 이상의 키-값의 쌍으로 객체로 확장시킬 수 있습니다.
 
     ```javascript
@@ -381,7 +387,7 @@ body {
     };
     ```
 
-5. `map` 반복되는 UI 
+5. `map()` 반복되는 UI 
     - 작업을 하다 보니, 피드, 댓글과 같이 반복되는 UI, 컴포넌트가 있었다
     - 하드 코딩하지 않고 제작 하기 위하여 `map` `state` `props` 사용
     ```javascript
@@ -419,6 +425,86 @@ body {
 
     export default FeedList;
     ```
+6. `Props` & `setState`
+
+    ```javascript
+      //값을 바꾸고 싶으면 set함수를 사용
+      //새로운 배열을 넣어야함 
+
+      const handleClickBtn = () => {
+        commentList.push(commentList);
+        const pushedComment=[]
+        setCommentList([...commentList]);
+      //아래로 표현 가능 👇
+
+        const pushedComments = [...commentList];
+        setCommentList(pushedComments);
+        setCommentInput('')
+        // 코멘트 값 지워주기 ... value={commentInput}
+        // state를 공통으로 넣어주기
+        // 순환이 됨
+
+        // 	 const pushedComments = [...commentList, commentInput];
+        // 코멘트 리스트 뒤에 인풋을 추가, 배열처럼 추가하는 것
+    ```
+
+  1. 상수 데이터 
+      > 동적으로 변하지 않아 백엔드 API 등을 통해서 가져올 필요가 없는 `정적인 데이터`<br>
+      > 반복되는 UI 구조는 상수 데이터와 `map 메서드를 활용해 간결하게 표현` 가능<br>
+      > UI를 효율적으로, 확장성 있게 구성 가능 `유지보수가 용이`<br>
+      > 컴포넌트 파일 내부에서 선언하거나, 별도의 파일로 분리해서 사용<br>
+
+      ```javascript
+      //data.js
+      const ASIDE_LIST = [
+      { id: 1, text: '소개' },
+      { id: 2, text: '도움말' },
+      { id: 3, text: '홍보 센터' },
+      { id: 4, text: 'API' },
+      { id: 5, text: '채용 정보' },
+      { id: 6, text: '개인정보처리방침' },
+      { id: 7, text: '약관' },
+      { id: 8, text: '위치' },
+      { id: 9, text: '인기 계정' },
+      { id: 10, text: '해시태그' },
+      { id: 11, text: '언어' },
+      ];
+      export default ASIDE_LIST;
+      ```  
+      ```javascript
+      //Main.js
+      import ASIDE_LIST from './data'; 
+      //...
+      <ul className="aside_list">
+        {ASIDE_LIST.map(el => {
+          return <li key={el.id}>{el.text}•</li>;
+        })}
+      </ul>
+      //다시 등장한 map
+      //UI를 그려주고 싶은 곳에 상수 데이터를 넣어준다
+      ```
+
+  1. `Fetch`  
+      - Fetch: 특정정보가 필요할 때 클라이언트는 서버에 HTTP 통신으로 요청 리퀘스트를 보내고 정보 응답을 받음.
+      - `데이터 생성,수정,삭제` 가능
+
+      ```javascript
+      fetch(”API주소”, {
+      method:”post”,
+      headers: 해당 통신에 대한 대략적인 정보(//부가적인정보/콘첸츠의 타입),
+      body: 실질적인 데이터 
+      //body: JSON
+      // id, password 
+      })
+
+      //보낼 때 JSON으로 넘겨야 함
+      //JavaScript→ Json으로 보낼 때  
+      JSON.stringfy(id,password)
+      ({userId:id, userPassword:password})
+      ```
+<p align="center"> E.O.D 2022/11/6
+
+  
 
 
 <hr>
@@ -431,3 +517,5 @@ body {
 - https://blogpack.tistory.com/640
 
 - https://bigtop.tistory.com/
+
+- https://www.daleseo.com/js-window-fetch/
