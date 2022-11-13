@@ -1,6 +1,5 @@
 # <p align="center"> 🌈 Westagram x React.js
 
-
 ## 🌈 Westagram | React.js `ver.1`
 
 1. `Login page`
@@ -255,7 +254,7 @@ body {
   ```
 
 - `preventDefault`는 btn이 아닌 `form`에 설정
-- `SCSS` 부모 선택자를 사용한 `disabled`, 불 필요한 코드 삭제 
+- `SCSS` 부모 선택자를 사용한 `disabled`, 불 필요한 코드 삭제
 - `React`의 장점인 선언적 개발 환경 이해
 - `Hook` 학습
   - 1️⃣ `import React, { useState } from "react"` : 최상위
@@ -276,57 +275,63 @@ body {
 
 ### <p align="center"> 📆 2022.Nov.12
 
-## 🌈 Westagram | React.js `ver.2` 
+## 🌈 Westagram | React.js `ver.2`
 
 📝 update log:
 
 1. `Code review` & `Live code 리뷰`
 2. `계산된 속성명`
-3. `전개 구문` 
-5. `map` 반복되는 UI 
-6. `Props` & `setState`
-1. `fetch`
+3. `전개 구문`
+4. `map` 반복되는 UI
+5. `Props` & `setState`
+6. `fetch`
 
 ### 🗝 핵심 포인트
 
 📝 Code review
-  > 서로의 코드를 확인하고, 보완 &발전 목적 <br>
-  > 마이너한 부분 부터, 코드 리팩토링에 훌륭한 리소스들을 얻은 유의미한 시간 
+
+> 서로의 코드를 확인하고, 보완 &발전 목적 <br>
+> 마이너한 부분 부터, 코드 리팩토링에 훌륭한 리소스들을 얻은 유의미한 시간
 
 1. `SCSS`
-  - 부모 선택자 사용 
-  - `@mixin` & `@include`
-  - `$Variable` 변수 선택자 활용
+
+- 부모 선택자 사용
+- `@mixin` & `@include`
+- `$Variable` 변수 선택자 활용
+
 2. `JSX`
-  - `includes()` 와 `indexOf()` method 차이점
-    ```javascript
-    //indexOf
-      const isValid = username.indexOf('@') !== -1 && password.length >= 5;
-    //includes
-      const isValid = username.includes('@') && password.length >= 5;
-    ```
+
+- `includes()` 와 `indexOf()` method 차이점
+  ```javascript
+  //indexOf
+  const isValid = username.indexOf("@") !== -1 && password.length >= 5;
+  //includes
+  const isValid = username.includes("@") && password.length >= 5;
+  ```
+
 3. 📌 `계산된 속성명` | `Computed property names` ES6~
 
 - 계산된 속성명
+
   - 꺽쇠괄호`([])` 로 속성 이름을 감싸면 속성 이름을 `동적`으로 만듬
   - 꺽쇠괄호 안에는 자바스크립트 `내장 함수, 메서드, 계산식, 변수를 넣음`
   - 순서 번호가 붙는 속성 이름을 여러개 사용하는 객체를 생성하는 경우
     > The `computed property names` feature was introduced in ECMAScript 2015(ES6) that allows you to dynamically compute the names of the object properties in JavaScript object literal notation.<br>
-    >A JavaScript object is just a `collection of key-value pairs called properties.` A property's key is a string or symbol (also known as property name), and 📌 `value can be anything.`
+    > A JavaScript object is just a `collection of key-value pairs called properties.` A property's key is a string or symbol (also known as property name), and 📌 `value can be anything.`
   - 계산된 속성명을 사용하지 하는 경우와 그렇지 않은 경우 👇
- 
+
   ```javascript
   // 계산된 속성명 미사용, 기존코드
-  function makeObject1(key,value) {
-      const obj = {};
-      obj[key] = value;
-      return obj
+  function makeObject1(key, value) {
+    const obj = {};
+    obj[key] = value;
+    return obj;
   }
 
   // 계산된 속성명 사용
-  function makeObject2(key,value) {
-      return {[key]:value}        
-      // 계산된 속성명 [key]
+  function makeObject2(key, value) {
+    return { [key]: value };
+    // 계산된 속성명 [key]
   }
   //[key]값이 key의 이름으로 동적으로 할당된다.
   ```
@@ -334,12 +339,17 @@ body {
   ```javascript
   //예시 2
   let idx = 0;
-  let obj = {["name" + ++idx]: idx, ["name" + ++idx]: idx, ["name" + ++idx]: idx};
+  let obj = {
+    ["name" + ++idx]: idx,
+    ["name" + ++idx]: idx,
+    ["name" + ++idx]: idx,
+  };
   console.log(obj);
 
   //{ name1: 1, name2: 2, name3: 3 }
   ```
-  - 📌 프로젝트에 적용한 코드 
+
+  - 📌 프로젝트에 적용한 코드
     - 장점: 코드 가독성이 높아지고, 효율적인 작업 가능
 
   ```javascript
@@ -347,11 +357,13 @@ body {
   //const [password, setPassword] = useState('');
   // 위의 두 코드를 저장된 속성명을 적용하면 아래처럼 작성할 수 있다.
   const [userInfo, setUserInfo] = useState({
-    id: '',
-    pw: '',
+    id: "",
+    pw: "",
   });
   ```
-4. `전개 구문` | `spread syntax`
+
+4.  `전개 구문` | `spread syntax`
+
     > 전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를 0개 이상의 인수 (함수로 호출할 경우) 또는 요소 (배열 리터럴의 경우)로 확장하여, 0개 이상의 키-값의 쌍으로 객체로 확장시킬 수 있습니다.
 
     ```javascript
@@ -373,27 +385,30 @@ body {
     //setPassword(event.target.value);
     //}
 
-    const handleUserInfo = e => {
+    const handleUserInfo = (e) => {
       const { name, value } = e.target;
-      setUserInfo(prev => ({ ...prev, [name]: value }));
-    };
-    ```
-    ```javascript
-    //Feed.js
-    const handleClickBtn = () => {
-    const pushedComment = [...commentList, coText];
-    setCommentList(pushedComment);
-    setCoText('');
+      setUserInfo((prev) => ({ ...prev, [name]: value }));
     };
     ```
 
-5. `map()` 반복되는 UI 
-    - 작업을 하다 보니, 피드, 댓글과 같이 반복되는 UI, 컴포넌트가 있었다
-    - 하드 코딩하지 않고 제작 하기 위하여 `map` `state` `props` 사용
     ```javascript
     //Feed.js
-    import React from 'react';
-    import './Comment.scss';
+    const handleClickBtn = () => {
+      const pushedComment = [...commentList, coText];
+      setCommentList(pushedComment);
+      setCoText("");
+    };
+    ```
+
+5.  `map()` 반복되는 UI
+
+    - 작업을 하다 보니, 피드, 댓글과 같이 반복되는 UI, 컴포넌트가 있었다
+    - 하드 코딩하지 않고 제작 하기 위하여 `map` `state` `props` 사용
+
+    ```javascript
+    //Feed.js
+    import React from "react";
+    import "./Comment.scss";
 
     export default function Comment(props) {
       const { contents } = props;
@@ -405,31 +420,35 @@ body {
       );
     }
     ```
+
     ```javascript
     //FeedList.js
-    import React from 'react';
-    import { useState } from 'react';
-    import { useEffect } from 'react';
-    import Feed from './Feed';
+    import React from "react";
+    import { useState } from "react";
+    import { useEffect } from "react";
+    import Feed from "./Feed";
 
     const FeedList = () => {
       const [feedData, setFeedData] = useState([]);
 
       useEffect(() => {
-        fetch('/data/data.json')
-          .then(response => response.json())
-          .then(result => setFeedData(result));
+        fetch("/data/data.json")
+          .then((response) => response.json())
+          .then((result) => setFeedData(result));
       }, []);
-      return feedData.map((feedinfo, i) => <Feed key={i} feedinfo={feedinfo} />);
+      return feedData.map((feedinfo, i) => (
+        <Feed key={i} feedinfo={feedinfo} />
+      ));
     };
 
     export default FeedList;
     ```
-6. `Props` & `setState`
+
+6.  `Props` & `setState`
 
     ```javascript
       //값을 바꾸고 싶으면 set함수를 사용
-      //새로운 배열을 넣어야함 
+      //새로운 배열을 넣어야함
 
       const handleClickBtn = () => {
         commentList.push(commentList);
@@ -448,67 +467,66 @@ body {
         // 코멘트 리스트 뒤에 인풋을 추가, 배열처럼 추가하는 것
     ```
 
-  1. 상수 데이터 
-      > 동적으로 변하지 않아 백엔드 API 등을 통해서 가져올 필요가 없는 `정적인 데이터`<br>
-      > 반복되는 UI 구조는 상수 데이터와 `map 메서드를 활용해 간결하게 표현` 가능<br>
-      > UI를 효율적으로, 확장성 있게 구성 가능 `유지보수가 용이`<br>
-      > 컴포넌트 파일 내부에서 선언하거나, 별도의 파일로 분리해서 사용<br>
+7.  상수 데이터
 
-      ```javascript
-      //data.js
-      const ASIDE_LIST = [
-      { id: 1, text: '소개' },
-      { id: 2, text: '도움말' },
-      { id: 3, text: '홍보 센터' },
-      { id: 4, text: 'API' },
-      { id: 5, text: '채용 정보' },
-      { id: 6, text: '개인정보처리방침' },
-      { id: 7, text: '약관' },
-      { id: 8, text: '위치' },
-      { id: 9, text: '인기 계정' },
-      { id: 10, text: '해시태그' },
-      { id: 11, text: '언어' },
-      ];
-      export default ASIDE_LIST;
-      ```  
-      ```javascript
-      //Main.js
-      import ASIDE_LIST from './data'; 
-      //...
-      <ul className="aside_list">
-        {ASIDE_LIST.map(el => {
-          return <li key={el.id}>{el.text}•</li>;
-        })}
-      </ul>
-      //다시 등장한 map
-      //UI를 그려주고 싶은 곳에 상수 데이터를 넣어준다
-      ```
+    > 동적으로 변하지 않아 백엔드 API 등을 통해서 가져올 필요가 없는 `정적인 데이터`<br>
+    > 반복되는 UI 구조는 상수 데이터와 `map 메서드를 활용해 간결하게 표현` 가능<br>
+    > UI를 효율적으로, 확장성 있게 구성 가능 `유지보수가 용이`<br>
+    > 컴포넌트 파일 내부에서 선언하거나, 별도의 파일로 분리해서 사용<br>
 
-  1. `Fetch`  
-      - Fetch: 특정정보가 필요할 때 클라이언트는 서버에 HTTP 통신으로 요청 리퀘스트를 보내고 정보 응답을 받음.
-      - `데이터 생성,수정,삭제` 가능
+    ```javascript
+    //data.js
+    const ASIDE_LIST = [
+      { id: 1, text: "소개" },
+      { id: 2, text: "도움말" },
+      { id: 3, text: "홍보 센터" },
+      { id: 4, text: "API" },
+      { id: 5, text: "채용 정보" },
+      { id: 6, text: "개인정보처리방침" },
+      { id: 7, text: "약관" },
+      { id: 8, text: "위치" },
+      { id: 9, text: "인기 계정" },
+      { id: 10, text: "해시태그" },
+      { id: 11, text: "언어" },
+    ];
+    export default ASIDE_LIST;
+    ```
 
-      ```javascript
-      fetch(”API주소”, {
-      method:”post”,
-      headers: 해당 통신에 대한 대략적인 정보(//부가적인정보/콘첸츠의 타입),
-      body: 실질적인 데이터 
-      //body: JSON
-      // id, password 
-      })
+    ```javascript
+    //Main.js
+    import ASIDE_LIST from "./data";
+    //...
+    <ul className="aside_list">
+      {ASIDE_LIST.map((el) => {
+        return <li key={el.id}>{el.text}•</li>;
+      })}
+    </ul>;
+    //다시 등장한 map
+    //UI를 그려주고 싶은 곳에 상수 데이터를 넣어준다
+    ```
 
-      //보낼 때 JSON으로 넘겨야 함
-      //JavaScript→ Json으로 보낼 때  
-      JSON.stringfy(id,password)
-      ({userId:id, userPassword:password})
-      ```
-<p align="center"> E.O.D 2022/11/6
+8.  `Fetch`  
+     - Fetch: 특정정보가 필요할 때 클라이언트는 서버에 HTTP 통신으로 요청 리퀘스트를 보내고 정보 응답을 받음. - `데이터 생성,수정,삭제` 가능
 
-  
+          ```javascript
+          fetch(”API주소”, {
+          method:”post”,
+          headers: 해당 통신에 대한 대략적인 정보(//부가적인정보/콘첸츠의 타입),
+          body: 실질적인 데이터
+          //body: JSON
+          // id, password
+          })
 
+          //보낼 때 JSON으로 넘겨야 함
+          //JavaScript→ Json으로 보낼 때
+          JSON.stringfy(id,password)
+          ({userId:id, userPassword:password})
+          ```
+
+    <p align="center"> E.O.D 2022/11/11
 
 <hr>
-출처: 
+출처:
 
 - https://attacomsian.com/blog/javascript-computed-property-names
 
