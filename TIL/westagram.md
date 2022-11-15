@@ -395,6 +395,3 @@ commentForm.addEventListener("submit", (event) => {
   - 작동과 성공 또한 훌륭한 원동력
 - 나의 보폭에 맞는 속도로 차근히 생각하고 코드 작성이 도움이 되었다.
 - <i> I never lose, Either I win or lean.</i>
-
-<hr>
-<p align="center"> E.O.D 2022/10/31
