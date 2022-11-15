@@ -216,3 +216,25 @@ function isValid(s) {
 ## 🌳 성장 포인트
 
 - `return s === "" ? true : false;`
+
+<p align="center"> 📆 2022.Nov.15 | 5mins<br>
+
+## Q.2
+
+> 문자로 구성된 배열을 input으로 전달하면, 문자를 뒤집어서 return 해주세요.<br>
+> 새로운 배열을 선언하면 안 됩니다.<br>
+> 인자로 받은 배열을 수정해서 만들어주세요.<br>
+> Input: `["h","e","l","l","o"]`<br>
+> Output: `["o","l","l","e","h"]`<br>
+> Input: `["H","a","n","n","a","h"]`<br>
+> Output: `["h","a","n","n","a","H"]`<br>
+
+## A.2
+
+```javascript
+const reverseString = (s) => {
+  return (reverseOut = s.reverse());
+};
+```
+
+🫡
