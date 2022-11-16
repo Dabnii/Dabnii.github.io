@@ -30,7 +30,7 @@ onClick={() => setShowSearch(true)}
 
 ### 📌 SCSS: hover & firstchild
 
-```jsx
+```css
 .navCategoriesWrap {
     display: flex;
     padding: 0.5rem 4rem;
