@@ -12,7 +12,7 @@
 ```jsx
 const [showSearch, setShowSearch] = useState(false ✨);
 //불리언 값으로 보여줌을 관리합니다
-
+ 
 //...
 onClick={() => setShowSearch(true)}
 //이벤트를 넣어줄 함수에 작성합니다 (클릭을 하면 true)-> 즉 보여주기로 바꾼다
