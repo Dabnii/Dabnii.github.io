@@ -12,7 +12,7 @@
 ```jsx
 const [showSearch, setShowSearch] = useState(false ✨);
 //불리언 값으로 보여줌을 관리합니다
- 
+
 //...
 onClick={() => setShowSearch(true)}
 //이벤트를 넣어줄 함수에 작성합니다 (클릭을 하면 true)-> 즉 보여주기로 바꾼다
@@ -252,15 +252,15 @@ export default DropDown;
     - 아쉬운 점은, 나 혼자 서기를 하고 있다는 점인데 이 부분은 밋업 직전 슬랙 리마인드를 보내 팀원들 선 작성을 요청 할 예정!
   - 회의록 자랑 👇
 
-    <img src="https://user-images.githubusercontent.com/110847597/202832942-f82089aa-2004-47ff-bb9c-80678e2653a6.png" width="250px" height="auto" align="left">
+    <img src="https://user-images.githubusercontent.com/110847597/202832942-f82089aa-2004-47ff-bb9c-80678e2653a6.png" width="600px" height="auto" align="center">
 
-    <img src="https://user-images.githubusercontent.com/110847597/202832978-bc561897-0d0d-40fe-8075-e3366c176d74.png" width="245px" height="auto" align="right">
+    <img src="https://user-images.githubusercontent.com/110847597/202832978-bc561897-0d0d-40fe-8075-e3366c176d74.png" width="600px" height="auto" align="center">
 
 ---
 
 <br>
 
-### <p alignt="left"> 💻 코드 들여다보기
+### 💻 코드 들여다보기
 
 - closeBtn을 누르면 뜨는 `0` 이슈 해결
 - `Fetch` 사용 & 학습
