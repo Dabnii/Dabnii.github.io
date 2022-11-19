@@ -131,3 +131,241 @@ export default function DownNav(props) {
   - 상수 데이터로 제작하여 `map()`으로 사용하는 방법
 
 ---
+
+## <p align="center"> `39cm` 📆 11/17
+
+### 반복되는 UI 상수데이로 사용
+
+```jsx
+//DropDownData.json
+
+[
+  {
+    id: 1,
+    category: "여성 >",
+    top: "상의",
+    bottom: "하의",
+    shoes: "신발",
+  },
+  {
+    id: 2,
+    category: "남성 >",
+    top: "상의",
+    bottom: "하의",
+    shoes: "신발",
+  },
+  {
+    id: 3,
+    category: "공용 >",
+    top: "상의",
+    bottom: "하의",
+    shoes: "신발",
+  },
+];
+```
+
+```jsx
+//DropDown.js
+
+import React from "react";
+
+const DropDown = ({ obj, mouseLeave }) => {
+  return (
+    <>
+      <div onMouseLeave={mouseLeave} className="dropDown">
+        <div className="dropDownRow">
+          <ul className="dropDownCategories">
+            <li className="category">{obj.category} </li>
+            <li className="top">{obj.top}</li>
+            <li className="bottom">{obj.bottom}</li>
+            <li className="shoes">{obj.shoes}</li>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default DropDown;
+```
+
+```jsx
+//DropDown.js
+
+<ul className="navCategories">
+  <li onMouseEnter={() => setShowHoverMenu(0)}>BEST</li>
+  <li onMouseEnter={() => setShowHoverMenu(1)}>WOMEN</li>
+  <li onMouseEnter={() => setShowHoverMenu(2)}>MEN</li>
+  <li onMouseEnter={() => setShowHoverMenu(3)}>UNISEX</li>
+</ul>;
+
+//
+{
+  dropDownData.map((obj, index) => {
+    if (obj.id === showHoverMenu) {
+      return <DropDown obj={obj} key={index} />;
+    }
+  });
+}
+
+////DropDownData.json → obj임
+```
+
+```jsx
+{dropDownData.map((obj, index) => {
+          if (obj.id === showHoverMenu) {
+            return (
+              <DropDown
+                obj={obj}
+                key={index}
+                mouseLeave={() => setShowHoverMenu(0)}
+              />
+            );
+          }
+```
+
+### 🌳 성장포인트 :
+
+- `useState`를 자유자재로 사용하고 있다
+- `map()`을 사용한 조건부 렌더링을 다시 복습!
+
+---
+
+## <p align="center"> `39cm` 📆 11/18
+
+### 📝 Daily Sprint meet up!
+
+- 프로젝트가 시작 된 익일 화요일 부터 매일 데일리 스프린트를 진행하고 있다.
+- 노션에 회의록 & task를 정리하여 간단하게 15분 내외로 진행하고 있다.
+  - 기록하고 문서화를 좋아하는 나에게 너무 즐거운 시간 ✨
+  - 팀원들의 태스크를 확인하고 적극적으로 질문 할 수 있고 이해할 수 있어 불필요한 소통이 줄었다
+    - 작업하다가 다른 팀원에게 단발&불시로 질문하는것이 미안했는데 효율적이라 좋다.
+    - 회의록을 읽어보면 놓쳤던 & 헷갈리던 부분도 체크 가능 🫡
+- 📝 멘토님의 오늘 스프린트 밋업 피드백
+
+  - 👏 Good
+    - 회의록을 남기고 있고, 필요한 부분들을 현업과 비슷하게 진행하고 있는 것
+    - Blocking 컨트롤이 좋다
+    - Trello에서 백&프론트 통합적으로 관리가 잘 되고 있음!
+      - 세부 task를 입력해도 좋겠다
+  - 💪 Try it!
+    - 아쉬운 점은, 나 혼자 서기를 하고 있다는 점인데 이 부분은 밋업 직전 슬랙 리마인드를 보내 팀원들 선 작성을 요청 할 예정!
+  - 회의록 자랑 👇
+
+    <img src="https://user-images.githubusercontent.com/110847597/202832942-f82089aa-2004-47ff-bb9c-80678e2653a6.png" width="250px" height="auto" align="left">
+
+    <img src="https://user-images.githubusercontent.com/110847597/202832978-bc561897-0d0d-40fe-8075-e3366c176d74.png" width="245px" height="auto" align="right">
+
+---
+
+<br>
+
+### <p alignt="left"> 💻 코드 들여다보기
+
+- closeBtn을 누르면 뜨는 `0` 이슈 해결
+- `Fetch` 사용 & 학습
+- `Token` 유무를 사용한 로그인/로그아웃 버튼 상태 변환
+
+```javascript
+{
+  NavIconList.map((el) => {
+    if (el.id !== 3) {
+      return (
+        <div key={el.id}>
+          <Link className="unsetLink" to={el.url}>
+            <img src={el.img} alt="icon-img" />
+            <span>{el.text}</span>
+          </Link>
+        </div>
+      );
+    }
+  });
+}
+{
+  localStorage.getItem("TOKEN") && (
+    <div>
+      <Link
+        className="unsetLink"
+        to={"/Login"}
+        onClick={() => localStorage.removeItem("TOKEN")}
+      >
+        <img src="/images/leedabin/logout.png" alt="icon-img" />
+        <span>LOGOUT</span>
+      </Link>
+    </div>
+  );
+}
+{
+  !localStorage.getItem("TOKEN") && (
+    <div>
+      <Link className="unsetLink" to={"/login"}>
+        <img src="/images/leedabin/login.png" alt="icon-img" />
+        <span>LOGIN</span>
+      </Link>
+    </div>
+  );
+}
+```
+
+1. `Token` BackEnd 에서 토큰을 받지 못하여 임시로 개발자 도구로 생성
+
+- 🧩 드디어 맞춰진 퍼즐!
+- 1주차에 학습한 `개발자도구`중 내가 발표&정리한 어플리케이션 패널을 적극 활용하는 타임
+- 📎 <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/DevTools%20%7C%20Chrome.md#-%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%ED%8C%A8%EB%84%90">DevTools | Chrome by. me</a>
+
+  - 🗄 로컬 스토리지에 특정데이터를 저장하고 저장한 데이터를 접근해서가져오는 방법
+
+  - `✍️ 세팅하는 법`
+
+    1. localStorage.setItem("key", "value")
+    2. sessionStorage.setItem("key", "value")setcookie("key","value","지속시간")
+
+    `🔍 스토리지 접근해서 값 가져오는 법`
+
+    1. localStorage.getItem("key")
+    2. sessionStorage.getItem("key")document.cookie
+
+    `✂️ 스토리지 접근해서 값 지우기`
+
+    1. localStorage.removeItem(key)
+
+  - console패널에서
+
+    1.  `localStorage.setItem("TOKEN", "Pw")` 를 임시로 생성
+    2.  `localStorage.getItem("TOKEN")` 으로 토큰 생성 확인
+    3.  작업중인 사이트에서 로그인성공 여부 확인 → `Logout` 버튼으로 바뀌었다면 성공
+    4.  `Logout` 버튼을 눌러 로그아웃을 확인 & 토근 삭제 확인 👏
+    5.  위의 코드에서 작동 로직을 확인 할 수 있다
+        - 아쉬운 점은.. 굳이 `map()`로 돌리지 않아도 됐을거라는 추측
+        - 코드가 길다고 나쁜건 아닌데 비효율적으로 판단
+
+### ⚒️ 이슈 수정
+
+- closeBtn을 누르면 `0`이 등장함
+
+```javascript
+<img
+  alt="closeBtn"
+  className="searchCloseBtn"
+  src="/images/leedabin/closeBtn.png"
+  onClick={() => setShowSearch(false)}
+/>
+```
+
+- 해결 방법:
+  - 원인: ` onClick={() => setShowSearch(0)}`를 적으면 0이 UI에 그려진다 😧
+  - `0`을 기입한 이유는 `false` 사이드 서치바를 사라지게 하는 목적이었기 때문에 `false`로 수정하면 된다!
+
+### 🌳 성장포인트 :
+
+- 조각조각 단편적으로 공부했던 부분들이 하나의 큰 퍼즐이 되어가는 즐거움
+- `state` 작성과 원리를 학습
+- `조건부 렌더링` `&&` 학습
+- 고민 보다 코드를 써보는 시간을 늘려보자
+- `MockData`, `fetch`의 적절한 사용 예시를 학습
+
+---
+
+## <p align="center"> `39cm` 📆 11/19
+
+### Product detail page!
