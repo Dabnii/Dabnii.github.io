@@ -251,10 +251,7 @@ export default DropDown;
   - 💪 Try it!
     - 아쉬운 점은, 나 혼자 서기를 하고 있다는 점인데 이 부분은 밋업 직전 슬랙 리마인드를 보내 팀원들 선 작성을 요청 할 예정!
   - 회의록 자랑 👇
-
-    <img src="https://user-images.githubusercontent.com/110847597/202832942-f82089aa-2004-47ff-bb9c-80678e2653a6.png" width="600px" height="auto" align="center">
-
-    <img src="https://user-images.githubusercontent.com/110847597/202832978-bc561897-0d0d-40fe-8075-e3366c176d74.png" width="600px" height="auto" align="center">
+    ![img](https://user-images.githubusercontent.com/110847597/202833938-368cc3fb-9907-459f-a5dd-21a1cfa70300.png)
 
 ---
 
