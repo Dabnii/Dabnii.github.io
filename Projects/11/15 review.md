@@ -255,8 +255,6 @@ export default DropDown;
 
 ---
 
-<br>
-
 ### 💻 코드 들여다보기
 
 - closeBtn을 누르면 뜨는 `0` 이슈 해결
