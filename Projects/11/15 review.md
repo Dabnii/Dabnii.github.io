@@ -361,6 +361,32 @@ export default DropDown;
 
 ---
 
-## <p align="center"> `39cm` 📆 11/19
+## <p align="center"> `39cm` 📆 11/20
 
-### Product detail page!
+### Product detail page
+
+```javascript
+const hendleScrollUp = (e) => {
+  if (!window.scrollY) return;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+const handleScrollDown = (e) => {
+  if (window.scrollY) return;
+
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+};
+```
+
+- 개발자 사고 필요:
+  - 처음 ScrollDown 기능을 구현 할 때, `Bottom`도 넣어보고 `top` 4000 넣어봤다.(미작동)
+  - `Bottom` 인자를 인식 하지 않는다.
+  - `top` 4000은 인식하지만 개발자가 지향해야할 방식은 아니라 구글링으로 ` top: document.documentElement.scrollHeight,` 코드를 착안하게 됨.
+    - <a href="https://stackabuse.com/how-to-scroll-to-top-in-react-with-a-button-component">📎참고 사이트</a>
