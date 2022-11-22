@@ -390,3 +390,116 @@ const handleScrollDown = (e) => {
   - `Bottom` 인자를 인식 하지 않는다.
   - `top` 4000은 인식하지만 개발자가 지향해야할 방식은 아니라 구글링으로 ` top: document.documentElement.scrollHeight,` 코드를 착안하게 됨.
     - <a href="https://stackabuse.com/how-to-scroll-to-top-in-react-with-a-button-component">📎참고 사이트</a>
+
+---
+
+## <p align="center"> `39cm` 📆 11/22
+
+```jsx
+useEffect(() => {
+  fetch("/data/product.json", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((data) => setPdData(data));
+}, []);
+```
+
+- moct 데이터를 불러 올 때 경로를 확인 필수
+- Get은 단독 일 때 생략가능
+
+```jsx
+const token = localStorage.getItem("TOKEN");
+//이렇게 할당하여 부르는 것이 유지보수에 도움이 됩니다
+//어제의 피드백 반영완료
+
+<img
+    className="heartLineIcon"
+    alt="heart"
+    onClick={() => {
+      setLikePd((prev) => !prev);
+    }}
+    src={
+      likePd === false
+        ? "/images/leedabin/heartLine.png"
+        : "/images/leedabin/heartOrange.png"
+    }
+  />
+) : (
+  <img
+    className="heartLineIcon"
+    alt="heart"
+    src="/images/leedabin/heartLine.png"
+    onClick={() => alert("로그인이 필요한 서비스 입니다!")}
+  />
+)}
+```
+
+### Mock data
+
+```jsx
+const [pdData, setPdData] = useState([]);
+
+{pdData[0]?.price}
+pdData의 '0' 번째 배열에서 price를 가져옵니다.
+
+?.
+//옵셔널 체이닝
+```
+
+```jsx
+//prodectDetail.js
+import { Link, useParams } from "react-router-dom";
+
+//prodectDetail.js
+useEffect(() => {
+  fetch(`https://reqres.in/api/users/${userId}`, {
+    method: "GET",
+  })
+    //  fetch(/2nd/fetch/), 이렇게 연결해서 작성 가능
+    .then((response) => response.json())
+    .then((data) => setPdData(data));
+}, []);
+
+//router
+<Route path="/ProductDetail/:productId" element={<ProductDetail />} />;
+```
+
+- `:`뒤로 사용자가 정의할 수 있다.
+
+### 📌 세자리 마다 콤마 붙여주기 000,000
+
+```jsx
+{
+  (pdData[0]?.price * amount).toLocaleString();
+}
+
+{
+  (pdData[0]?.price).toLocaleString();
+}
+```
+
+- 위의 코드가 오류가 생긴다면 감싸고 있는 div나 가까운 상위에 가서 `{pdData &&}` 조건부 렌더링 해주기
+
+```jsx
+const [amount, setAmount] = useState(0);
+
+const onIncrease = () => {
+  setNumber((prevNum) => prevNum + 1);
+  setAmount(amount + 1);
+};
+
+const onDecrease = () => {
+  if (number <= 0) {
+    setNumber(0);
+  } else {
+    setNumber((prevNum) => prevNum - 1);
+    setAmount(amount - 1);
+  }
+};
+```
+
+- 음수까지 진행되던 연산 이슈 해결
+  - ✨ `if (number <= 0) {setNumber(0)}`
+
+---
