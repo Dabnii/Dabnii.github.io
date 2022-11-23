@@ -503,3 +503,132 @@ const onDecrease = () => {
   - ✨ `if (number <= 0) {setNumber(0)}`
 
 ---
+
+## <p align="center"> `39cm` 📆 11/23
+
+### 📌 JSON 이슈
+
+```jsx
+const [pdData, setPdData] = useState([]);
+
+{pdData[0]?.price}
+pdData의 '0' 번째 배열에서 price를 가져옵니다.
+
+?.
+//옵셔널 체이닝
+//2022.11.22 작성한 코드
+```
+
+- 💭 `fetch`로 목데이터를 들고와서 읽는 순간 오류가 발생
+
+  ```JSON
+  {
+    "productName": " 숏다운 (3color)",
+    "description": "포근하고 헤어리한 터치감의 우먼스 집업 가디건, YKK 투웨이 지퍼 사용",
+    "price": 297000,
+    "category": "상의",
+    "likesNumber": "likesNumber",
+    "images": [
+      ".../.../png"
+      ".../.../png"
+      ".../.../png"
+    ],
+    "reviews": [
+      {
+        "reviewTitle": "제목",
+        "reviewContent": "첫번째 리뷰의 내용입니다.",
+        "reviewImage": "./.../jpg",
+        "rating": "rating",
+        "reviewUser": "@1234KIM"
+      }
+    ]
+  }
+  ```
+
+- 📌 객체로 된 데이터라 때문에 조건부 실행을 원한다면 아래의 코드로 적어야한다.
+    ```jsx
+    {pdData[0] !== null && ()}
+    ```
+  - 배열은 `true`/`false` 값으로 들어온다
+  - 객체는 `undefined`로 들어온다
+  - `{pdData[0] && }`로 사용하면 오류가 발생한다.
+  - 어떠한 객체를 받아오는지, 비동기 언어의 특성을 파악하지 못하연 초보적인 실수가 반복된다.
+    - 시간을 효율적으로 쓰지 못하는 치명적인 단점
+
+### 📌 `fetch`
+
+- `fetch`는 `const` 함수 안에서도 쓸 수 있고, `useEffect` 컴포넌트가 렌더링 될 때 실행하도록 설정 할 수 있다.
+  - 📌 컴퓨터 적으로 사고하기
+  - 마운트, 언마운트 시점, 그리고 업데이트 될 때 세 가지 정도 생각해보면 좋겠다.
+    - 장바구니, 결제 같은 경우는 특정한 이벤트가 있을 때 발생하면 좋겠다 → `onClickEvent`
+    - 상품 리스트, 상품 정보는 첫 마운트 될 때 필요하다 → `useEffect`
+    - 위의 개념이 어려웠으나, 이번 프로젝트 때 반복 학습 중
+
+### 📌 `map()`
+
+```jsx
+{pdData.images?.map((image, i) => (
+    <img src={image} alt="thumbnail" className="detailsInfo" />
+  ))}
+```
+
+### 🎠 carousel
+
+```jsx
+//detailProduct.js
+const [current, setCurrent] = useState(0);
+const [style, setStyle] = useState({ marginLeft: `-${current}00%` });
+
+const imgSize = useRef(images.current.length);
+
+//const images = useRef([]);
+//위의 코드를 지우면 모래성 같은 내 코드들이 무너진다..
+
+
+useEffect(() => {
+  setStyle({ marginLeft: `-${current}00%` });
+}, [current]);
+
+const moveSlide = (i) => {
+  let nextIndex = current + i;
+
+  if (nextIndex < 0) nextIndex = imgSize.current - 1;
+  else if (nextIndex >= imgSize.current) nextIndex = 0;
+
+  setCurrent(nextIndex);
+};
+
+//캐러셀에 들어갈 이미지 맵하기
+<div className="flexBox" style={style}>
+    {pdData.images?.map((image, i) => (
+        <img src={image} alt="thumbnail" />
+    ))}
+</div>
+```
+- 맵을 이용한 이미지 가로 정렬
+- 이미지의 current 값을 사용한 margin 이동 👏
+
+### 🌳 성장 포인트: 
+  - `객체조건부 실행` 근본적인 오류를 잡기 위하여 시간을 많이 쓴 시간이었다.
+  - `map()` 을 사용한 반복되는 UI 구현
+  - `fetch` 사용법
+  - 어제보다 나은 오늘의 나 💪
+  
+---
+## <p align="center"> `39cm` 📆 11/24
+
+### 📌 `useParams`
+
+```jsx
+const params = useParams();
+const productId = params.productId;
+```
+  - Null
+
+### 📌 데이터 통신:
+  - Null
+
+### 📝 회고: 
+
+  - 기획에서 서비스의 차별점을 구현 하지 못한게 아쉽다
+  - 컴포넌트 분리 및 가독성 좋은 코드를 쓰지 못한 점 
