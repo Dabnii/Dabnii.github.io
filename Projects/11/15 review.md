@@ -470,13 +470,9 @@ useEffect(() => {
 ### 📌 세자리 마다 콤마 붙여주기 000,000
 
 ```jsx
-{
-  (pdData[0]?.price * amount).toLocaleString();
-}
+{ (pdData[0]?.price * amount).toLocaleString();}
 
-{
-  (pdData[0]?.price).toLocaleString();
-}
+{ (pdData[0]?.price).toLocaleString();}
 ```
 
 - 위의 코드가 오류가 생긴다면 감싸고 있는 div나 가까운 상위에 가서 `{pdData &&}` 조건부 렌더링 해주기
@@ -623,12 +619,161 @@ const moveSlide = (i) => {
 const params = useParams();
 const productId = params.productId;
 ```
-  - Null
+  >상세페이지 작업 
+  - 동적 라우팅을 위하여 `useParams()`를 사용하였다.
+    - 기존에는 `/Main` 링크를 썼다.
+    - 위의 경우로 진행하면 상품이 1,000개일때 마다 라우트를 해줄 수 없다!
+
+
+  ```jsx
+    <Route path="/ProductDetail/:productId" element={<ProductDetail />}/>
+  ```
+  
+  - `:productId`
+
+  - 컨벤션을 productId로 정한 이유:
+     - 이미 뚜렷한 컨벤션이 있고, 룰이 있다면 좀 더 짧은 이름으로 대체 하면 좋겠지만 그렇지 않기에 다른 팀원이 `사전 지식 없이 열어서 읽어도 쉽게 읽기 위함`
 
 ### 📌 데이터 통신:
-  - Null
+  - `useEffect` & `fetch`
+  - 어제와 같이 객체 데이터를 state에 저장하고 사용할 때가 조금 헷갈린다.
+
+    ```jsx
+    //productdetail.js
+    const addCart = () => {
+      fetch("http://127.0.0.1:3000/cart", {
+        method: "POST",
+        headers: {
+          authorization: localStorage.getItem("TOKEN"),
+          "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+          productId: productId,
+          //Backend의 데이터 명세를 참조하여 작성합니다.
+          amount: amount,
+      }),
+    })
+      .then((response) => {
+        if (response.status !== 200) {
+          //Backend의 데이터 명세를 참조하여 작성합니다.
+          throw new Error("에러 발생!");
+        } else {
+          navigator("/Cart");
+        }
+      })
+      .catch((error) => alert("장바구니 추가에 실패하였습니다."));
+    };
+    ```
+
+    - 왜 위의 코드는 `useEffect`로 쓰지 않았을까? 
+    - 📌 `호출시점`
+    - useEffect는 렌더링이 끝난후 어떠한 작동을 목적
+    - 즉, `결제 버튼을 누를 때 마다 fetch를 진행`해야 한다.
+      - 결제는 렌더링이 끝난다고 진행되는것이 아니다.
+    - `fetch` + `useEffect`는 쌍이라고 생각하던 사고를 깨주는 코드였다.
+    - 간략하게 `useEffect`를 정리하자면...
+      1. 의존성 배열이 전달되지 않았다면 매 렌더링마다 콜백 함수를 호출한다.
+      2. 의존성 배열이 전달되었다면 의존성 배열의 값을 검사한다.
+      - a. 의존성 배열에 있는 값 중 `하나라도 이전 렌더링과 비교했을 때 달라졌다면` 콜백 함수를 호출한다.
+      - b. 의존성 배열에 있는 값이 `이전 렌더링과 비교했을 때 모두 다 같다면` 콜백 함수를 호출하지 않는다.
+    - 선언한 `addCart` 함수를 `onClick` 이벤트에 넣어 클릭시 작동하도록 합니다.👇
+    ```jsx
+    <button className="addCartBtn" type="button" onClick={addCart}>
+    ```
+
+  - `fetch` + `useEffect`
+
+    ```jsx
+      useEffect(() => {
+      //통신용입니다
+      // fetch(`https://reqres.in/api/users/${productId}`)
+      fetch("/data/product.json")
+        .then((response) => response.json())
+        .then((data) => setPdData(data));
+    }, []);
+    ```
+    - 의존성 배열을 넣어 최초 마운트 시 데이터를 가져 오도록 했습니다.
+    - 또한 마찬가지로, 백엔드의 데이터 명세를 따릅니다.
+    - `${productId}`는 최상단에 선언한 `const params = useParams()`, `const productId = params.productId` usePrams 입니다.
+    - 위의 데이터는 상품에 대한 정보이기 때문에 마운트가 될 때 필요합니다.
+
+    ```jsx
+    //productdetail.js
+    useEffect(() => {
+       const ipAddress = "%ip%";
+
+      //통신용입니다
+      fetch(`http://${ipAddress}:3000/products/${productId}`, {
+        headers: {
+          productId: productId,
+        },
+      })
+        // fetch("/data/product.json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setPdData(data.product[0]);
+        });
+
+      fetch(`http://${ipAddress}:3000/likes/product/${productId}`, {
+        headers: {
+          authorization: localStorage.getItem("TOKEN"),
+        },
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result.isLiked);
+          setLikePd(result.isLiked);
+      });
+    }, [productId]);
+    ```    
+
+
+    ```jsx
+      const setPaymentItem = () => {
+        if (localStorage.getItem("TOKEN")) {
+        localStorage.setItem(
+        "orderList",
+        JSON.stringify({
+          productId: productId,
+          productName: pdData.productName,
+          productPrice: pdData.price,
+          images: pdData.images,
+          brandName: pdData.brandName,
+          amount: amount,
+        })
+      );
+          navigator("/Payment");
+        } else alert("로그인이 필요한 서비스 입니다.");
+      };
+    ```
+    - `JSON.stringify()`는 자바스크립트의 값을 JSON 문자열로 변환한다.
+
+
 
 ### 📝 회고: 
 
+- 👍 잘한 점  
+  - 개발자의 소통방식을 배웠다 
+    - 단순히 일정을 체크하고 작업진행률을 묻는 것이 아닌 어떠한 기능을 구현하기 위하여 각자가 어떤 리소스와 역량, 한계를 가지고 있는지 나눠보는 것이었다.
+    - 물론 일정 소통과 블락커 해소도 중요한 부분 중 하나이다.
+    - 👍 개발 일지 (Notion)와 트렐로를 사용하여 일정과 회의를 문서화 하여 서로 헤매는 부분이 적었다.  
+
+- 💪 아쉬운 점
   - 기획에서 서비스의 차별점을 구현 하지 못한게 아쉽다
+    - 마케팅 측면 에서 `리뷰`의 힘이 강력한데, 위 사이트는 상품에 리뷰를 게시글 목록 형태로 보여준다.
+    - 인스타그램 피드처럼 상품의 착용사진이나, 네이티브한 사진을 보여주지 않는 점이 아쉬웠다.
+    - 그래서 `리뷰 기능을 개선하여 매출 증대로 연계하고 싶었다.`
+    - 막상 진행하려고 하니 단순히 리뷰를 UI를 개선하는 것 보다 등록, 수정, 삭제 기능을 추가해야했다.
+    - 사전에 더 꼼꼼히 고려했다면 프론트&백엔드 팀과 싱크가 맞아 진행했을 수도 있다고 생각한다.
+    - 위의 과정을 결과로 다음 프로젝트에서는 우선순위와 기능에 대하여 논의를 할 것이다.
+  
   - 컴포넌트 분리 및 가독성 좋은 코드를 쓰지 못한 점 
+    - 개선 방법: 초석을 잘 다지는 것 처럼, 작업시에 컴포넌트를 계획하고 분리 습관을 만들 예정
+    - 한 줄을 쓰더라도 가독성과 간결함에 집중 할 것이다.
+  - 다시 한 번, 아는 만큼 쓸 수 있는 코드.
+  - 주말 동안 부족했던 부분을 더 공부 하고 다음 프로젝트에 임할 예정!
+  - 39cm팀 고생 많았습니다!
+
+  --- 
+  <p align="center">E.O.D
