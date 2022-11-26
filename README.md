@@ -7,17 +7,21 @@
   <img src="https://img.shields.io/github/last-commit/BongsikB/BongsikB.github.io?style=flat-square">
 </p>
 
+# 👩‍💻 Web Project
+
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/11/TeamProj%2039cm.md">1st Team proj.39cm</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/Westagram%20React.md">Westagram x React </a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/westagram.md">Westagram vanila js</a>
+- <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
+
+# 🌳 Today I Learn
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/11/15%20review.md">2022.Nov</a>
+
 # 📘 CSS & HTML
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
 
-# 👩‍💻 Web Project
-
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/11/15%20review.md">39cm Review</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/Westagram%20React.md">Westagram x React </a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/westagram.md">Westagram vanila js</a>
-- <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
 
 # 📌 JavaScript
 
