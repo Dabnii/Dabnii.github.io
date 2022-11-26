@@ -475,7 +475,7 @@ useEffect(() => {
 { (pdData[0]?.price).toLocaleString();}
 ```
 
-- 위의 코드가 오류가 생긴다면 감싸고 있는 div나 가까운 상위에 가서 `{pdData &&}` 조건부 렌더링 해주기
+- 위의 코드가 오류가 생긴다면 감싸고 있는 div나 직계부모에 가서 `{pdData &&}` 조건부 렌더링 해주기
 
 ```jsx
 const [amount, setAmount] = useState(0);
