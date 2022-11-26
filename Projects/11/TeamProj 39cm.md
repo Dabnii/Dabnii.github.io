@@ -58,7 +58,7 @@
 
 1. Nav & Main
 
-  <img src="https://user-images.githubusercontent.com/110847597/204074927-6682e061-9a54-44bd-ae1a-a86b5b980afe.gif" width="700px">
+  <img src="https://user-images.githubusercontent.com/110847597/204074927-6682e061-9a54-44bd-ae1a-a86b5b980afe.gif" width="1000px">
 
 2. Nav search
 
