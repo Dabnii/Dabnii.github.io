@@ -2,7 +2,7 @@
 
 <P align="center">📆 2022.11.14~25
 
-<img src="https://user-images.githubusercontent.com/110847597/204074927-6682e061-9a54-44bd-ae1a-a86b5b980afe.gif" align="center"/>
+<img src="https://user-images.githubusercontent.com/110847597/204074927-6682e061-9a54-44bd-ae1a-a86b5b980afe.gif" />
 
 <br>
 
