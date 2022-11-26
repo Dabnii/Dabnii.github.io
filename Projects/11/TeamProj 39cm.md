@@ -57,11 +57,9 @@
 ## 🥳 나의 제작파트
 
 1. Nav & Main
-
   <img src="https://user-images.githubusercontent.com/110847597/204074927-6682e061-9a54-44bd-ae1a-a86b5b980afe.gif" width="1000px">
 
 2. Nav search
-
   ![search-gif](https://user-images.githubusercontent.com/110847597/204092994-329bcc28-8516-4a46-a492-7543c028bf7b.gif)
 
 3. Product detail page
