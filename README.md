@@ -15,14 +15,14 @@
 - <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
 
 # 🌳 Today I Learn
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/11/15%20review.md">2022.Nov.1~2nd</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/11/3rdWeek.md">2022.Nov.3-4th</a>
+
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md">2022.Nov.1~2nd</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/3rdWeek.md">2022.Nov.3-4th</a>
 
 # 📘 CSS & HTML
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
-
 
 # 📌 JavaScript
 
