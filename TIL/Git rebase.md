@@ -13,7 +13,6 @@
     ```
     pick AAAA BBBB
     s CCCC DDDD
-
     ```
     1. `i` insert
     1. 첫 번째 커밋만 남기기 위하여 첫 글자를 `s`로 수정
