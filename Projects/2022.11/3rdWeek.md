@@ -97,11 +97,6 @@
    3. ✨ 동일한 클래스 명을 복사하여, 나의 `css`에서 추가 + 수정
    4. 원본 css를 수정 하지 않음
 
-### 📌 데이터를 객체에 저장하자!
-
-    ```jsx
-
-    ```
 
 ### 📝 `spread operator` <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax"> 📎 전개 구문</a>
 
@@ -234,7 +229,7 @@
 
 - `htmlFor`을 input의 id와 같게 수정 하면 동일 요소로 인식 함
 - 전개구문을 하루 전날 공부 하고 오늘 써보니 감회가 새롭다.
-- 
+
 
 ### 📍 Styled-components Props.
 
