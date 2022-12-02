@@ -278,5 +278,18 @@
 - UI가 비어 보이는 것이 오류로 보인다.
 - 사용자의 혼란을 줄이기 위하여 `location` 값이 false 일 때 보여줄 UI 제작
 - 애니메이션 적용으로 매끄러운 트랜지션 적용
-- 어제 올린 글의 <a href="https://medium.com/geekculture/stop-using-for-conditional-rendering-in-react-a0f7b96200f8">📎 Stop Using “&&” for Conditional Rendering in React</a> 의 의견을 착안하여, 무분별한 조건부 렌더링을 줄이고자 하였음
-- 결과는 매우 흡족 👍
+- 어제 올린 글의 <a href="https://medium.com/geekculture/stop-using-for-conditional-rendering-in-react-a0f7b96200f8">📎 Stop Using “&&” for Conditional Rendering in React</a> 아티클을 참고하여, 무분별한 조건부 렌더링을 줄이고자 하였음
+  - 결과는 매우 흡족 👍
+
+### 🌳 성장 포인트
+- 삼항연산자, 조건부 렌더링을 더 유연하게 사용하게 되었다.
+- useNavigate를 사용하여 장소→날짜→시간 조건(플로우)이 성립되어야 좌석 선택으로 진행할 수 있도록 했다.
+- 날짜 선택의 `onChange` 함수에 기능을 추가 정확한 기능 구현을 완료했다.
+- `e.target.value` value 값을 확인하는 방법! 기억 기억! 
+  ```jsx
+    onChange={e => {
+    console.log(e.target.value);
+    setPickTime({ pickedTime: '🌞 10:10 AM' });
+  }}
+  ```
+- 정말 어제보다 나은 개발자가 되고있다 💪 
