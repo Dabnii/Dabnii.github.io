@@ -263,3 +263,20 @@
 
 
 ### 📍 삼항연산자를 사용한 화면 UI 변경
+
+```jsx
+//기존 조건부 렌더링 UI
+ {location && (
+  <Calendar
+    className="calendar"
+    value={value}
+    onChange={changeDate}
+  />
+)}
+```
+
+- UI가 비어 보이는 것이 오류로 보인다.
+- 사용자의 혼란을 줄이기 위하여 `location` 값이 false 일 때 보여줄 UI 제작
+- 애니메이션 적용으로 매끄러운 트랜지션 적용
+- 어제 올린 글의 <a href="https://medium.com/geekculture/stop-using-for-conditional-rendering-in-react-a0f7b96200f8">📎 Stop Using “&&” for Conditional Rendering in React</a> 의 의견을 착안하여, 무분별한 조건부 렌더링을 줄이고자 하였음
+- 결과는 매우 흡족 👍
