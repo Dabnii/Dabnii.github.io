@@ -97,7 +97,6 @@
    3. ✨ 동일한 클래스 명을 복사하여, 나의 `css`에서 추가 + 수정
    4. 원본 css를 수정 하지 않음
 
-
 ### 📝 `spread operator` <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax"> 📎 전개 구문</a>
 
 - 전개 구문은 반복 가능한 객체 ✨ `iterable`에 적용할 수 있는 문법
@@ -134,57 +133,58 @@
 ## <p align="center"> `CGW` 📆 12/1
 
 ### 📍 React + Styled-components
+
 `input radio` & `label`
 
 ```jsx
 <TimePick>
-    <TimeRadio
-      type="radio"
-      name="radio"
-      id="firstTime"
-      defaultValue="firstTime"
-      onChange={() => setPickTime({ pickedTime: '🌞 10:10 AM' })}
-    />
-    <TimeLabel htmlFor="firstTime">🌞 10:10 AM</TimeLabel>
-</TimePick>
+  <TimeRadio
+    type="radio"
+    name="radio"
+    id="firstTime"
+    defaultValue="firstTime"
+    onChange={() => setPickTime({ pickedTime: "🌞 10:10 AM" })}
+  />
+  <TimeLabel htmlFor="firstTime">🌞 10:10 AM</TimeLabel>
+</TimePick>;
 
-    const TimeLabel = styled.label`
-      display: flex;
-      border: none;
-      margin-bottom: 6px;
-      padding: 5px;
-      height: 50px;
-      width: 200px;
-      font-weight: 600;
-      border-radius: 8px;
-      background-color: #ecedf2;
-      justify-content: center;
-      align-items: center;
-    `;
+const TimeLabel = styled.label`
+  display: flex;
+  border: none;
+  margin-bottom: 6px;
+  padding: 5px;
+  height: 50px;
+  width: 200px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #ecedf2;
+  justify-content: center;
+  align-items: center;
+`;
 
-    const TimeRadio = styled.input`
-      appearance: unset;
+const TimeRadio = styled.input`
+  appearance: unset;
 
-      &:checked + ${TimeLabel} {
-        background-color: #fb4357;
-        color: white;
-      }
-    `;
+  &:checked + ${TimeLabel} {
+    background-color: #fb4357;
+    color: white;
+  }
+`;
 ```
 
-  - `&:checked` 인풋 박스가 선택 되었을 때 박스 색상 변경
-  - `input radio` & `label` 혼합하여 버튼 박스처럼 보이도록 함
-  - `name="radio"` 같은 name을 가진 radio 박스는 하나로 인식함
+- `&:checked` 인풋 박스가 선택 되었을 때 박스 색상 변경
+- `input radio` & `label` 혼합하여 버튼 박스처럼 보이도록 함
+- `name="radio"` 같은 name을 가진 radio 박스는 하나로 인식함
 
 - 💣 React + input box error!
-  >Warning: Failed prop type: You provided a checked prop to a form field without an onChange handler. This will render a read-only field. If the field should be mutable use defaultChecked. Otherwise, set either onChange or readOnly.
 
-- 📌  해결방안:
+  > Warning: Failed prop type: You provided a checked prop to a form field without an onChange handler. This will render a read-only field. If the field should be mutable use defaultChecked. Otherwise, set either onChange or readOnly.
+
+- 📌 해결방안:
 
 1. `checked` 속성 대신 `deafultChecked` 속성 사용
 1. `onClick` 속성 대신 `onChange` 사용
 1. `onClick`을 사용해야한다면 `readOnly` 속성 추가
-
 
 ### 📍 조건부 렌더링 심화
 
@@ -213,7 +213,7 @@
     id="gangNam"
     defaultValue="gangNam"
     onChange={selectLocation}
-    //1️⃣ onChange 이벤트 
+    //1️⃣ onChange 이벤트
   />
   <Label htmlFor="gangNam">강남점</Label>
   //input label은 위와 쌍으로 기억하면 좋겠다.
@@ -229,7 +229,6 @@
 
 - `htmlFor`을 input의 id와 같게 수정 하면 동일 요소로 인식 함
 - 전개구문을 하루 전날 공부 하고 오늘 써보니 감회가 새롭다.
-
 
 ### 📍 Styled-components Props.
 
@@ -249,47 +248,108 @@
 - 위의 코드로는 그 외 버튼요소에 적용하면 좋곘다.
 - 하지만, CSS를 js로 바꾸는건 훌륭한 사안은 아닌 듯
 
-### 🌳 성장 포인트 
-  - 궁금하면 물어보자, 동기든 멘토든 인터넷이든!
-    - input 박스 에러, 스타일 컴포넌트 props 사용 법, 조건부 렌더링 등 많은 힌트를 얻어 성공해냄
-  - 조건부 렌더링도 좋지만 삼항 연산자를 사용하여 오류를 최소화 하자
-    - `useState`를 숫자로 관리하면, `0` 일때 화면에 렌더링 되는 오류가 있기 떄문
-    - 실제로 내가 겪은 오류 <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md#%EF%B8%8F-%EC%9D%B4%EC%8A%88-%EC%88%98%EC%A0%95">📎 0이 화면에 그려진다...</a>
-    - 그리고 이번주 출근길에 읽은 조건부렌더링 아티클 <a href="https://medium.com/geekculture/stop-using-for-conditional-rendering-in-react-a0f7b96200f8">📎 Stop Using “&&” for Conditional Rendering in React</a>
+### 🌳 성장 포인트
+
+- 궁금하면 물어보자, 동기든 멘토든 인터넷이든!
+  - input 박스 에러, 스타일 컴포넌트 props 사용 법, 조건부 렌더링 등 많은 힌트를 얻어 성공해냄
+- 조건부 렌더링도 좋지만 삼항 연산자를 사용하여 오류를 최소화 하자
+  - `useState`를 숫자로 관리하면, `0` 일때 화면에 렌더링 되는 오류가 있기 떄문
+  - 실제로 내가 겪은 오류 <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md#%EF%B8%8F-%EC%9D%B4%EC%8A%88-%EC%88%98%EC%A0%95">📎 0이 화면에 그려진다...</a>
+  - 그리고 이번주 출근길에 읽은 조건부렌더링 아티클 <a href="https://medium.com/geekculture/stop-using-for-conditional-rendering-in-react-a0f7b96200f8">📎 Stop Using “&&” for Conditional Rendering in React</a>
 
 ---
 
 ## <p align="center"> `CGW` 📆 12/2
 
-
 ### 📍 삼항연산자를 사용한 화면 UI 변경
+
+<img width="1159" alt="스크린샷 2022-12-03 오후 7 42 57" src="https://user-images.githubusercontent.com/110847597/205437000-9a1582de-d6de-4707-ad36-263034c8d5f3.png">
 
 ```jsx
 //기존 조건부 렌더링 UI
- {location && (
-  <Calendar
-    className="calendar"
-    value={value}
-    onChange={changeDate}
-  />
-)}
+{
+  location && (
+    <Calendar className="calendar" value={value} onChange={changeDate} />
+  );
+}
 ```
 
 - UI가 비어 보이는 것이 오류로 보인다.
+  - 나였다면 오류인 줄 알고 새로고침을 여러번 누를 것 같고, 플로우에 대해서 굉장히 혼란스러울 것 같다. 고로 나쁜 서비스 경험!
 - 사용자의 혼란을 줄이기 위하여 `location` 값이 false 일 때 보여줄 UI 제작
 - 애니메이션 적용으로 매끄러운 트랜지션 적용
 - 어제 올린 글의 <a href="https://medium.com/geekculture/stop-using-for-conditional-rendering-in-react-a0f7b96200f8">📎 Stop Using “&&” for Conditional Rendering in React</a> 아티클을 참고하여, 무분별한 조건부 렌더링을 줄이고자 하였음
-  - 결과는 매우 흡족 👍
+  - 결과는 매우 흡족 👍 👇
+
+![수정후 UI](https://user-images.githubusercontent.com/110847597/205437284-646c3d1f-eb44-4656-8b5f-7ea101df6702.gif)
+
+```jsx
+//삼항 연산자를 적용한 렌더 & UI 변경
+{location ? (
+    <Calendar
+      className="calendar"
+      value={value}
+      onChange={changeDate}
+    />
+  ) : (
+    <CalenderReadyBox>
+      <CalendarReadyText>
+        🍿 영화관을 먼저 선택해주세요!
+      </CalendarReadyText>
+    </CalenderReadyBox>
+  )}
+</CalenderBox>
+```
+
+### 🔍 radio 박스의 Value를 알아보자!
+
+```jsx
+  const [selectMenus, setSelectMenus] = useState({
+    location: false,
+    date: false,
+    movieTime: false,
+  });
+
+const selectTime = (e) => {
+  const { value } = e.target;
+  setPickTime((prev) => ({ ...prev, pickedTime: value }));
+  setSelectMenus((prev) => ({ ...prev, movieTime: true }));
+  //아래의 코드를 작성 후 위의 코드 작성했다
+  //며칠 째 꾸준히 등장하는 ((prev) => ({ ...prev, movieTime: true }))!
+  // 즉 movieTime: true로 바꿔주는 것!
+
+  onChange={e => {
+    console.log(e.target.value);
+    setPickTime({ pickedTime: '🌞 10:10 AM' });
+  }}
+
+};
+```
+
+### 📆 달력의 데이터를 객체에 담아보자!
+
+```jsx
+setPickDay((prev) => ({
+  ...prev,
+  time: { month: e.getMonth() + 1, day: e.getDate() },
+}));
+```
+
+- `y((prev) => ({...prev,{ month: e.getMonth() + 1, day: e.getDate() }`
+  - 위의 코드로 작성하면 제대로 오류가 생긴다.
+  - 왜냐, object는 key가 없기 때문이다.
+  - 넣어준다면 제대로 담긴다!
 
 ### 🌳 성장 포인트
+
 - 삼항연산자, 조건부 렌더링을 더 유연하게 사용하게 되었다.
 - useNavigate를 사용하여 장소→날짜→시간 조건(플로우)이 성립되어야 좌석 선택으로 진행할 수 있도록 했다.
 - 날짜 선택의 `onChange` 함수에 기능을 추가 정확한 기능 구현을 완료했다.
-- `e.target.value` value 값을 확인하는 방법! 기억 기억! 
+- `e.target.value` value 값을 확인하는 방법! 기억 기억!
   ```jsx
     onChange={e => {
     console.log(e.target.value);
     setPickTime({ pickedTime: '🌞 10:10 AM' });
   }}
   ```
-- 정말 어제보다 나은 개발자가 되고있다 💪 
+- 정말 어제보다 나은 개발자가 되고있다 💪
