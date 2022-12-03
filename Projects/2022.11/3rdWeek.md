@@ -337,8 +337,8 @@ setPickDay((prev) => ({
 
 - `y((prev) => ({...prev,{ month: e.getMonth() + 1, day: e.getDate() }`
   - 위의 코드로 작성하면 제대로 오류가 생긴다.
-  - 왜냐, object는 key가 없기 때문이다.
-  - 넣어준다면 제대로 담긴다!
+  - 왜냐, object key가 없기 때문이다!
+  - key를 넣어준다면 제대로 담긴다! 🫡
 
 ### 🌳 성장 포인트
 
@@ -353,3 +353,66 @@ setPickDay((prev) => ({
   }}
   ```
 - 정말 어제보다 나은 개발자가 되고있다 💪
+
+## <p align="center"> `CGW` 📆 12/3
+
+### 📍 닐짜 데이터를 문자열로 가져오기
+
+```jsx
+const changeDate = (e) => {
+  setValue(e);
+  setPickDay((prev) => ({
+    ...prev,
+    date: {
+      year: `${e.getFullYear()}` + "년",
+      month: `${e.getMonth() + 1}` + "월",
+      day: `${e.getDate()}` + "일",
+    },
+  }));
+
+  setSelectMenus((prev) => ({ ...prev, movieDate: true }));
+  console.log(pickDay);
+  //year:2022
+  //month: 12월
+  //day: 4일
+};
+```
+
+- 위의 방법은 템플릿 리터럴도 사용하고, ~~리액트가 싫어하고~~ 효율적이지 못한 것 같다.
+- 스트링으로 전달 해주면 되는 것이라 아래의 코드로 수정하고 있다.
+- <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date">📎MDN Date</a>
+  - 공식문서를 수시로 확인 하자!
+
+```jsx
+const changeDate = (e) => {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  setValue(e);
+
+  setPickDay((prev) => ({
+    ...prev,
+    date: e.toLocaleDateString("ko-KO", options),
+  }));
+
+  setSelectMenus((prev) => ({ ...prev, movieDate: true }));
+
+  console.log(pickDay);
+  console.log(e.toLocaleDateString("ko-KO", options));
+  // 2022년 12월 4일
+};
+```
+
+- 객체의 value값으로 저장된 값을 문자열로 바꿔서 전달해야한다.
+- 두번째 코드로 수정 중이고, 이렇게 보내는 것이 맞을 것 같다!
+- 내일 또는 빠른 시일내에 백엔드와 통신해보면 될 것 같다.
+- 내일은 useParams, 쿼리스트링을 사용한 동적 라우팅을 할 계획이다.
+- useEffect, fetch를 사용하여 데이터 전송 기능도 구현 예정
+
+### 🌳 성장 포인트
+
+- 더 효율적인 방법을 생각하고 접근 하고 있다.
+- date를 쉽고 효율적으로 변환하기 위하여 고민하면서 `구글링`을 통해 많은 도움을 얻었다.

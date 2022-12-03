@@ -791,4 +791,3 @@ const productId = params.productId;
   ***
 
   <p align="center">E.O.D
-  sdfdskf;lsdkf;kjsdlkfjlsdkjl
