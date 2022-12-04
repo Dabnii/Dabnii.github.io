@@ -429,3 +429,54 @@ const changeDate = (e) => {
 
 - 더 효율적인 방법을 생각하고 접근 하고 있다.
 - date를 쉽고 효율적으로 변환하기 위하여 고민하면서 `구글링`을 통해 많은 도움을 얻었다.
+
+## <p align="center"> `CGW` 📆 12/4
+
+### 🪟 모달창을 띄워보자
+
+```jsx
+const [showSeat, setShowSeat] = useState(false);
+//BookB를 숨기도록 false로 준다. 0으로 주면 오류뜬다 주의
+
+{
+  movieTime ? (
+    <SeatButton onClick={() => setShowSeat(true)}>좌석 선택</SeatButton>
+  ) : (
+    //좌석 선택 버튼이 활성화 되었을 때, 온클릭 이벤트가 발생하면 setShowSeat를 True로 바꿔준다
+    <SeatButtonGrey onClick={() => alert("예매 정보를 모두 선택해주세요!")}>
+      좌석 선택
+    </SeatButtonGrey>
+  );
+}
+
+{
+  showSeat && <BookB />;
+}
+//showSeat가 true가 되었다면 하면에 뜬다!
+```
+
+- 📌 오랜만의 복기, 조건부 렌더링
+
+  - 삼항연산자를 쓰지 않은 이유, 필요없다. 이게 더 짧다
+  - 고민 추가: 다른 팀원이 작업한 컴포넌트 인데 닫기 버튼 기능 구현이 필요하다
+  - 위의 로직보다 더 효율적으로 쓸 수 있는 방법이 있을 것 같다.
+  - 예를 들면, 아래의 계산된 속성명에서 사용가능할 것 같다.
+    - selectMenus에 `movieSeat`을 넣는 방식도 고려해봐야겠다.
+
+  ```jsx
+  const [selectMenus, setSelectMenus] = useState({
+    movieLocation: false,
+    movieDate: false,
+    movieTime: false,
+  });
+
+  const { movieLocation, movieDate, movieTime } = selectMenus;
+  ```
+
+### 🌳 성장 포인트:
+
+- 정말 매 순간이 성장 포인트다. 내가 꾸준히 남긴 글의 도움을 받고있다. 예를 들면, 이전에 구현해봤던 코드, 로직을 활용하면서 새롭게 쓰고있다.
+
+---
+
+## <p align="center"> `CGW` 📆 12/5
