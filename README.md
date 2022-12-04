@@ -16,8 +16,9 @@
 
 # 🌳 Today I Learn
 
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md">2022.Nov.1~2nd</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/Dec1stWeek.md">2022.Dec.1~2nd</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/3rdWeek.md">2022.Nov.3-4th</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md">2022.Nov.1~2nd</a>
 
 # 📘 CSS & HTML
 
