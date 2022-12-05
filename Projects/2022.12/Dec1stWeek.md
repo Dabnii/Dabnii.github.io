@@ -353,3 +353,163 @@ const [showSeat, setShowSeat] = useState(false);
 ---
 
 ## <p align="center"> `CGW` 📆 12/5
+
+### ⚒️ 리팩토링
+
+```jsx
+const BookARsv = () => {
+  const [movieData, setMovieData] = useState([]);
+  const [value, setValue] = useState(new Date());
+  const [showSeat, setShowSeat] = useState(false);
+
+  const [selectList, setSelectList] = useState({
+    place: "",
+    day: "",
+    time: "",
+  });
+
+  const { place, time, day } = selectList;
+
+  const selectLocation = (e) => {
+    const { name, value } = e.target;
+    setSelectList((prev) => ({ ...prev, [name]: value }));
+  };
+
+  console.log(selectList);
+
+  const changeDate = (e) => {
+    // 통신용 변환 코드 ||
+    // const options = {
+    //   weekday: 'long',
+    //   year: 'numeric',
+    //   month: 'long',
+    //   day: 'numeric',
+    // };
+    // date: e.toLocaleDateString('ko-KO', options),
+    setValue(e);
+    setSelectList((prev) => ({ ...prev, day: e }));
+  };
+
+  useEffect(() => {
+    fetch("/data/movieData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setMovieData(data);
+      });
+  }, []);
+
+  if (movieData == null) return null;
+
+  return (
+    <>
+      <ReservationContainer>
+        <PlaceSelect>
+          <StepTitle>STEP1</StepTitle>
+          <SubTitle>지역/영화관 선택</SubTitle>
+          <PlacePick>
+            {movieData?.map((data, index) => (
+              <PlacePickTextSeoul key={index}>
+                <PlaceTextBox key={data.id}>
+                  <PlacePickP>📍{data.region}</PlacePickP>
+                </PlaceTextBox>
+                <PlacePickButtonContainer>
+                  <Pick>
+                    <Input
+                      type="radio"
+                      name="place"
+                      id="theater"
+                      defaultValue={data.branch}
+                      onChange={selectLocation}
+                    />
+                    <Label htmlFor={data.branch}>{data.branch}</Label>
+                    <Input
+                      type="radio"
+                      name="place"
+                      id={data.branch}
+                      defaultValue={data.branch}
+                      onChange={selectLocation}
+                    />
+                    <Label htmlFor={data.branch}>{data.branch}</Label>
+                  </Pick>
+                </PlacePickButtonContainer>
+              </PlacePickTextSeoul>
+            ))}
+          </PlacePick>
+        </PlaceSelect>
+        <CalendarContainer>
+          <PlaceText>
+            <StepTitle>STEP2</StepTitle>
+            <SubTitle>날짜 선택</SubTitle>
+          </PlaceText>
+          <CalenderBox>
+            {place ? (
+              <Calendar
+                className="calendar"
+                value={value}
+                onChange={changeDate}
+                minDate={new Date()}
+                maxDate={new Date(2022, 11, 16)}
+                minDetail="year"
+              />
+            ) : (
+              <CalenderReadyBox>
+                <CalendarReadyText>
+                  🍿 영화관을 먼저 선택해주세요!
+                </CalendarReadyText>
+              </CalenderReadyBox>
+            )}
+          </CalenderBox>
+        </CalendarContainer>
+        <SelectTime>
+          <StepTitle>STEP3</StepTitle>
+          <SubTitle>시간 선택</SubTitle>
+          <TimePickContainer>
+            {day ? (
+              <TimePick>
+                <TimeRadio
+                  type="radio"
+                  name="time"
+                  id={movieData[0].date_times}
+                  defaultValue={movieData[0].date_times}
+                  onChange={selectLocation}
+                />
+                <TimeLabel htmlFor={movieData[0].date_times}>
+                  🌞 {movieData[0].date_times}
+                </TimeLabel>
+                <TimeRadio
+                  type="radio"
+                  name="time"
+                  id={movieData[1].date_times}
+                  defaultValue={movieData[1].date_times}
+                  onChange={selectLocation}
+                />
+                <TimeLabel htmlFor={movieData[1].date_times}>
+                  🌙 {movieData[1].date_times}
+                </TimeLabel>
+              </TimePick>
+            ) : (
+              <TimePickReadyBox>
+                <TimePickReady>📆 날짜를 먼저 정해주세요!</TimePickReady>
+              </TimePickReadyBox>
+            )}
+          </TimePickContainer>
+        </SelectTime>
+      </ReservationContainer>
+      <ButtonBox>
+        {time ? (
+          <SeatButton onClick={() => setShowSeat(true)}>좌석 선택</SeatButton>
+        ) : (
+          <SeatButtonGrey
+            onClick={() => alert("예매 정보를 모두 선택해주세요!")}
+          >
+            좌석 선택
+          </SeatButtonGrey>
+        )}
+      </ButtonBox>
+      {showSeat && <BookB setShowSeat={setShowSeat} />}
+    </>
+  );
+};
+
+export default BookARsv;
+```
