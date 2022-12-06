@@ -357,7 +357,8 @@ const [showSeat, setShowSeat] = useState(false);
 ### ⚒️ 리팩토링
 
 - 하나의 state로 값 관리하기
-  - 
+- nesting map
+
   ```jsx
   //리팩토링 전
   const [showSeat, setShowSeat] = useState(false);
@@ -404,170 +405,232 @@ const [showSeat, setShowSeat] = useState(false);
     console.log(pickTime);
   };
   ```
-    ```jsx
+
+  ```jsx
   //리팩토링 후 
+  const BookARsv = () => {
+    const [movieData, setMovieData] = useState([]);
+    const [value, setValue] = useState(new Date());
+    const [showSeat, setShowSeat] = useState(false);
+
     const [selectList, setSelectList] = useState({
       place: "",
       day: "",
       time: "",
     });
+
+    const { place, time, day } = selectList;
+
+    const selectLocation = (e) => {
+      const { name, value } = e.target;
+      setSelectList((prev) => ({ ...prev, [name]: value }));
+    };
+
+    console.log(selectList);
+
+    const changeDate = (e) => {
+      setValue(e);
+      setSelectList((prev) => ({ ...prev, day: e }));
+    };
+
+
+    if (movieData == null) return null;
   ```
-
-```jsx
-const BookARsv = () => {
-  const [movieData, setMovieData] = useState([]);
-  const [value, setValue] = useState(new Date());
-  const [showSeat, setShowSeat] = useState(false);
-
-  const [selectList, setSelectList] = useState({
-    place: "",
-    day: "",
-    time: "",
-  });
-
-  const { place, time, day } = selectList;
-
-  const selectLocation = (e) => {
-    const { name, value } = e.target;
-    setSelectList((prev) => ({ ...prev, [name]: value }));
-  };
-
-  console.log(selectList);
-
-  const changeDate = (e) => {
-    setValue(e);
-    setSelectList((prev) => ({ ...prev, day: e }));
-  };
-
-  useEffect(() => {
-    fetch("/data/movieData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setMovieData(data);
-      });
-  }, []);
-
-  if (movieData == null) return null;
-
-  return (
-    <>
-      <ReservationContainer>
-        <PlaceSelect>
-          <StepTitle>STEP1</StepTitle>
-          <SubTitle>지역/영화관 선택</SubTitle>
-          <PlacePick>
-            {movieData?.map((data, index) => (
-              <PlacePickTextSeoul key={index}>
-                <PlaceTextBox key={data.id}>
-                  <PlacePickP>📍{data.region}</PlacePickP>
-                </PlaceTextBox>
-                <PlacePickButtonContainer>
-                  <Pick>
-                    <Input
-                      type="radio"
-                      name="place"
-                      id="theater"
-                      defaultValue={data.branch}
-                      onChange={selectLocation}
-                    />
-                    <Label htmlFor={data.branch}>{data.branch}</Label>
-                    <Input
-                      type="radio"
-                      name="place"
-                      id={data.branch}
-                      defaultValue={data.branch}
-                      onChange={selectLocation}
-                    />
-                    <Label htmlFor={data.branch}>{data.branch}</Label>
-                  </Pick>
-                </PlacePickButtonContainer>
-              </PlacePickTextSeoul>
-            ))}
-          </PlacePick>
-        </PlaceSelect>
-        <CalendarContainer>
-          <PlaceText>
-            <StepTitle>STEP2</StepTitle>
-            <SubTitle>날짜 선택</SubTitle>
-          </PlaceText>
-          <CalenderBox>
-            {place ? (
-              <Calendar
-                className="calendar"
-                value={value}
-                onChange={changeDate}
-                minDate={new Date()}
-                maxDate={new Date(2022, 11, 16)}
-                minDetail="year"
-              />
-            ) : (
-              <CalenderReadyBox>
-                <CalendarReadyText>
-                  🍿 영화관을 먼저 선택해주세요!
-                </CalendarReadyText>
-              </CalenderReadyBox>
-            )}
-          </CalenderBox>
-        </CalendarContainer>
-        <SelectTime>
-          <StepTitle>STEP3</StepTitle>
-          <SubTitle>시간 선택</SubTitle>
-          <TimePickContainer>
-            {day ? (
-              <TimePick>
-                <TimeRadio
-                  type="radio"
-                  name="time"
-                  id={movieData[0].date_times}
-                  defaultValue={movieData[0].date_times}
-                  onChange={selectLocation}
-                />
-                <TimeLabel htmlFor={movieData[0].date_times}>
-                  🌞 {movieData[0].date_times}
-                </TimeLabel>
-                <TimeRadio
-                  type="radio"
-                  name="time"
-                  id={movieData[1].date_times}
-                  defaultValue={movieData[1].date_times}
-                  onChange={selectLocation}
-                />
-                <TimeLabel htmlFor={movieData[1].date_times}>
-                  🌙 {movieData[1].date_times}
-                </TimeLabel>
-              </TimePick>
-            ) : (
-              <TimePickReadyBox>
-                <TimePickReady>📆 날짜를 먼저 정해주세요!</TimePickReady>
-              </TimePickReadyBox>
-            )}
-          </TimePickContainer>
-        </SelectTime>
-      </ReservationContainer>
-      <ButtonBox>
-        {time ? (
-          <SeatButton onClick={() => setShowSeat(true)}>좌석 선택</SeatButton>
-        ) : (
-          <SeatButtonGrey
-            onClick={() => alert("예매 정보를 모두 선택해주세요!")}
-          >
-            좌석 선택
-          </SeatButtonGrey>
-        )}
-      </ButtonBox>
-      {showSeat && <BookB setShowSeat={setShowSeat} />}
-    </>
-  );
-};
-
-export default BookARsv;
-```
+- 육안으로도 보이는 가독성이 좋아진 코드!
+- 가장 인상 깊었던 부분은 하나의 state로 값을 관리하고, 그 값을 활용하여 조건부 렌더링을 사용하는 것. 
+  - 많은 공부를 해서 가독성 좋고 제대로 작동하는 코드를 작성하자! 💪
 
 ### 🌳 성장 포인트
 
-- 좋은 코드는 짧지만 효율적이다.
-- 
+- 좋은 코드는 짧지만 효율적이고 제대로 기능한다.
+- 초기화 버튼 기능 구현 중 `delete` 메소드를 찾았다!
+   - 하지만 위의 값이 바뀌면 UI가 재 렌더링 되어야하는데 useEffect에 state 값을 넣으면 ... 터지기 때문에 새로운 방법을 고안해야한다.
 
 
 ## <p align="center"> `CGW` 📆 12/6
 
+
+### 📍 `Not 연산자`
+
+```jsx
+//bafore
+  if (movieData == null) return null;
+
+//after
+  if (!movieData) return null;
+```
+
+- 두 코드는 같다.
+  - 매번 선언 할 필요 없이 `return`위에 선언
+  - 작은것도 다시 생각해보는 습관이 필요하다 
+
+### 📍 초기화 버튼 기능 수정
+
+```jsx
+//after
+  const deleteObj = () => {
+    setSelectList({ place: '', day: '', time: '' });
+  };
+
+//before
+  const deleteObj = () => {
+    delete selectList.place
+    delete selectList.day
+    delete selectList.time
+  };
+```
+- 🔍 `delete` 메소드는 `Key` & `Value`를 지운다.
+- 그러하여 after 코드로 리팩토링
+- 잘 짜여진 코드는 물 흐르듯 기존 기능들과 잘 작동한다
+  - 리팩토링 한 코드는 초기값(true)으로 돌아가기에 uesEffect를 사용 할 필요도 없다!
+
+### 📍 `Nesting Map`
+
+```jsx
+  {movieData?.map((movie, index) => (
+    <PlacePickTextSeoul key={index}>
+      <PlaceTextBox key={movie.region_id}>
+        <PlacePickP>📍{movie.name}</PlacePickP>
+      </PlaceTextBox>
+      <PlacePickButtonContainer>
+        <Pick>
+      {movie.location.map(lo => {
+        return (
+          <>
+            <Input
+              type="radio"
+              name="place"
+              id={lo.branch_id}
+              defaultValue={lo.branch_name}
+              onChange={onChangeData}
+            />
+            <Label htmlFor={lo.branch_id}>{lo.branch_name}</Label>
+          </>
+      );
+  })}
+```
+- 중첩 map을 사용하여 버튼을 바르게 렌더했다.
+- 수정 과정
+  - Mock data의 구조를 바꾸어 렌더 
+  - 중첩 맵을 활용하여 객체안의 객체 데이터 (branch)를 렌더 
+  - 데이터가 가진 지점의 데이터는 1개이지만, UI는 2개 이기에 지점이 두 번 렌더 됨
+
+💪 Before
+
+|Seoul|--|
+|--|--|
+|Branch A btn| Branch A btn|
+
+👍 After (내가 원했던 렌더 모습) 
+
+|Seoul|--|
+|--|--|
+|Branch A btn| Branch B btn|
+
+```js
+  //before
+  [
+    {
+      "id": 1,
+      "thumbnail": "/images/insideOut.jpg",
+      "title": "inside Out",
+      "region": "서울",
+      "branch": "CGW 강남",
+      "rooms": "3관",
+      "date": "2022년 12월 6일(금)",
+      "date_times": "10:30",
+      "seat": "D6",
+      "price": "12000",
+      "ageLimit": 19,
+      "rate": 4.5
+    },
+    {
+      "id": 2,
+      "thumbnail": "/images/insideOut.jpg",
+      "title": "insideOut",
+      "region": "서울",
+      "branch": "CGW 선릉",
+      "rooms": "3관",
+      "date": "2022년 12월 6일(금)",
+      "date_times": "22:40",
+      "seat": "D6",
+      "price": "12000"
+    },
+  ]
+```
+
+```js
+[
+  {
+    "region_id": 1,
+    "name": "서울",
+    "location": [
+      {
+        "branch_id": 1,
+        "branch_name": "강남"
+      },
+      {
+        "branch_id": 2,
+        "branch_name": "강변"
+      }
+    ]
+  },
+  {
+    "region_id": 2,
+    "name": "경기",
+    "location": [
+      {
+        "branch_id": 3,
+        "branch_name": "경기광주"
+      },
+      {
+        "branch_id": 4,
+        "branch_name": "고양행신"
+      }
+    ]
+]   
+```
+
+
+### 💪 일정 시간 예매 가능/불가능 버튼 구현 🤯🤯🤯
+
+```jsx
+let todayHour = new Date().getHours();
+let today = todayHour
+
+let movieTime = new Date('August 19, 1975 14:15:30')
+let movieHour = movieTime.getHours()
+
+
+const calcTime = () => {
+  let leftTime =  todayHour - movieHour;
+  if (leftTime < 1 ) {
+    console.log('예매가 마감된 영화입니다!')
+  } else {
+      console.log('OK')
+  }
+}
+
+console.log(calcTime())
+console.log(todayHour)
+console.log(movieHour)
+```
+
+1. `new Date()` 현재 값과 영화 상영 시간을 비교하여 연산
+2. `filter`를 사용하여 특정한 조건에 부합하는 것만 찾을 수 있다.
+3. 여기엔 여러가지 솔루션이 있는데
+   1. 위의 코드들을 활용하여 기능 구현 (🤔 유지보수 부분이나 가독성 부분에서 훌륭한 방법은 아닌 것 같다.)
+   1. BE에게 데이터 수정을 요청한다 (현재 받는 time의 값은 `08:30`, `11:24` 스트링으로 들어온다)
+   1. BE 팀에게 영화 상영 시간에 대한 필터링 기능 구현을 요청한다
+1. 교훈: 내가 어려운 건 어려운 것이 맞다.
+1. 기획 부분에서 더 꼼꼼히 (데이터를 어떻게 받는지) 논의 했다면 수정 과정이 줄어들었을 것 같다.
+
+### 🌳 성장 포인트
+
+- 데이터 구조에 따른 UI 렌더 방식과 정제 과정...
+- Map 메소드를 중첩 할 수 있다
+- 프론트엔드에서 데이터를 어느정도 정제 할 수 있지만, best는 기획단계(통신 방법과 데이터 타입, 구조)에 대해서 더 이야기를 나눠볼 것!
+- `+` 통신 중 `204` 오류는, 내가 쿠키를 지우면 해결 된다!
+
+
+## <p align="center"> `CGW` 📆 12/7
