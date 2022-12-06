@@ -356,6 +356,63 @@ const [showSeat, setShowSeat] = useState(false);
 
 ### ⚒️ 리팩토링
 
+- 하나의 state로 값 관리하기
+  - 
+  ```jsx
+  //리팩토링 전
+  const [showSeat, setShowSeat] = useState(false);
+
+  const [selectMenus, setSelectMenus] = useState({
+    movieLocation: false,
+    movieDate: false,
+    movieTime: false,
+    movieSeat: false,
+  });
+
+  const { movieLocation, movieDate, movieTime, movieSeat } = selectMenus;
+
+  const selectLocation = e => {
+    const { value } = e.target;
+    setSelectMenus(prev => ({ ...prev, movieLocation: true }));
+    setPickPlace(prev => ({ ...prev, value }));
+    console.log(pickPlace);
+  };
+
+  const changeDate = e => {
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    setValue(e);
+
+    setPickDay(prev => ({
+      ...prev,
+      date: e.toLocaleDateString('ko-KO', options),
+    }));
+
+    setSelectMenus(prev => ({ ...prev, movieDate: true }));
+
+    console.log(pickDay);
+  };
+
+  const selectTime = e => {
+    const { value } = e.target;
+    setPickTime(prev => ({ ...prev, pickedTime: value }));
+    setSelectMenus(prev => ({ ...prev, movieTime: true }));
+    console.log(pickTime);
+  };
+  ```
+    ```jsx
+  //리팩토링 후 
+    const [selectList, setSelectList] = useState({
+      place: "",
+      day: "",
+      time: "",
+    });
+  ```
+
 ```jsx
 const BookARsv = () => {
   const [movieData, setMovieData] = useState([]);
@@ -378,14 +435,6 @@ const BookARsv = () => {
   console.log(selectList);
 
   const changeDate = (e) => {
-    // 통신용 변환 코드 ||
-    // const options = {
-    //   weekday: 'long',
-    //   year: 'numeric',
-    //   month: 'long',
-    //   day: 'numeric',
-    // };
-    // date: e.toLocaleDateString('ko-KO', options),
     setValue(e);
     setSelectList((prev) => ({ ...prev, day: e }));
   };
@@ -513,3 +562,12 @@ const BookARsv = () => {
 
 export default BookARsv;
 ```
+
+### 🌳 성장 포인트
+
+- 좋은 코드는 짧지만 효율적이다.
+- 
+
+
+## <p align="center"> `CGW` 📆 12/6
+
