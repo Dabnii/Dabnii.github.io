@@ -630,7 +630,238 @@ console.log(movieHour)
 - 데이터 구조에 따른 UI 렌더 방식과 정제 과정...
 - Map 메소드를 중첩 할 수 있다
 - 프론트엔드에서 데이터를 어느정도 정제 할 수 있지만, best는 기획단계(통신 방법과 데이터 타입, 구조)에 대해서 더 이야기를 나눠볼 것!
-- `+` 통신 중 `204` 오류는, 내가 쿠키를 지우면 해결 된다!
 
 
 ## <p align="center"> `CGW` 📆 12/7
+
+### 🫂 중첩 삼항연산자
+
+- 첫번째 삼항 연산자
+  - 조건: `영화관`이 선택 되었다면
+  - `true`일 때 해당 일자에 대한 영화 시간을 UI로 그려내고
+    - ✨ `true` 이지만, 해당 영화 시간이 없다면 `영화가 매진 되었습니다` 라는 문구를 띄운다
+  - `false`라면 `영화를 먼저 선택해 주세요!`라는 문구를 띄운다
+    - 이러한 방법을 채택한 이유 <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/Dec1stWeek.md#-%EC%82%BC%ED%95%AD%EC%97%B0%EC%82%B0%EC%9E%90%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%ED%99%94%EB%A9%B4-ui-%EB%B3%80%EA%B2%BD">📎 빈칸은 오류로 보인다! 12/2</a>
+      - 실제 영화 사이트 처럼 영화, 시간, 일자를 누를 때 마다 유연하게 데이터를 처리하면 좋겠지만, 난이도가 높아서 UI를 순차적으로 그려주는 것으로 진행했다.
+      - 난이도 조절과 유저에게 우리가 원하는 flow로 진행 할 수 있어서 꽤 뿌듯하다.
+  - 👏 사실 위의 기능을 뇌로는 이해했지만, 코드로 구현하지 못해서 답답한 부분이 있었다.
+  - 하나씩 뜯어보고, 동기에게 많은 도움을 얻어 성공했다! 👇
+
+```jsx
+  <TimePickContainer>
+      {day ? (
+        <TimePick>
+          {timeFilter.length !== 0 ? (
+            timeFilter.map((movieTime, i) => {
+              return (
+                <React.Fragment key={i}>
+                  {timeFilter[i].time.map((detailTime, index) => {
+                    return (
+                      <React.Fragment key={index}>
+                        <TimeRadio
+                          type="radio"
+                          name="time"
+                          id={detailTime.time}
+                          defaultValue={detailTime.time}
+                          onChange={onChangeData}
+                        />
+                        <TimeLabel htmlFor={detailTime.time}>
+                          {detailTime.time}
+                        </TimeLabel>
+                      </React.Fragment>
+                    );
+                  })}
+                </React.Fragment>
+              );
+            })
+          ) : (
+            <TimePickReadyBox>
+              <TimePickReady>🥲 매진 되었어요!</TimePickReady>
+            </TimePickReadyBox>
+          )}
+        </TimePick>
+      ) : (
+        <TimePickReadyBox>
+          <TimePickReady>📆 날짜를 먼저 정해주세요!</TimePickReady>
+        </TimePickReadyBox>
+      )}
+    </TimePickContainer>
+```
+
+### 🌳 성장 포인트
+
+- 영화시간이 없을 경우의 코드를 알럿으로 띄울 수 있었지만, 중첩 삼항 연산자를 사용하여 더 적은 코드로 메세지를 렌더링 했음!
+- 하나의 함수 안에 처리해야할 데이터나 함수가 있다면 느리게 처리된다. (당연함) 
+- `fetch`가 진행하는 비동기적 특성을 주말에 공부!
+  - 자바스크립트는 동기적 언어이다
+  - 브라우저 엔진에서 작동 할 때는 비동기적으로 처리 된다.
+  - 그리고 fetch... 비동기적... 공부를 하지 않으려야 하지 않을 수가 없는 매력적인 조합이다🔥
+  - ~~따뜻한 아이스아메리카노~~ ~~화려하지만 심플한~~ 
+
+
+## <p align="center"> `CGW` 📆 12/8
+
+### 🔍 `filter` 검색어로 영화 리스트를 찾자!
+
+```jsx
+const [showList, setShowList] = useState(false);
+
+{showList && (
+  <SearchList
+    onMouseOut={() => {
+      setShowList(false);
+    }}
+    onMouseOver={() => {
+      setShowList(true);
+    }}
+  >  
+    <ListOverContainer>
+      {movieList.map((list, index) => {
+        if (list.title.toLowerCase().includes(inputState)) {
+          return (
+            <StyledLink key={index} to={`/times/${list.id}`}>
+              <MovieFiltered>
+                <MovieInfoBox>
+                  <ThumbsImg>
+                    <Thumb src={list.thumbnail} alt="thumb nail" />
+                  </ThumbsImg>
+                  <MatchedTitle>{list.title}</MatchedTitle>
+                </MovieInfoBox>
+                <BookNow>🎫 예매하기</BookNow>
+              </MovieFiltered>
+            </StyledLink>
+          );
+        } else {
+          return null;
+        }
+      })}
+    </ListOverContainer>
+  </SearchList>
+)}
+```
+- `if (list.title.toLowerCase().includes(inputState))`
+  - 1차 프로젝트 때, 아리송 했던 코드가 이젠 명확하게 이해가 된다!
+- `<StyledLink key={index} to={`/times/${list.id}`}>`
+  - 받아오는 데이터의 영화 `id`와 `const params = useParams()` 코드!
+- `SearchList`에서 마우스가 떠난다면, 해당 div를 사라지게 하기
+  - [이슈] 추천 검색 list div에 마우스가 오버 되면 SearchList가 사라졌다. 
+
+```jsx
+//after
+      <Form.Control
+        style={{ height: '35px' }}
+        type="search"
+        placeholder="Search"
+        className="me-2"
+        aria-label="Search"
+        onChange={e => {
+          setInputState(e.target.value);
+          if (e.target.value.length > 0) {
+            setShowList(true);
+          } else {
+            setShowList(false);
+          }
+        }}
+        value={inputState}
+      />
+      <Button
+        variant="danger"
+        style={{
+          height: '35px',
+          width: '80px',
+          padding: '2px 8px',
+        }}
+      >
+        검색
+      </Button>
+    </Form>
+  </Navbar.Collapse>
+  {showList && (
+    <SearchList
+      onMouseOut={() => {
+        setShowList(false);
+      }}
+      onMouseOver={() => {
+        setShowList(true);
+      }}
+    >
+```
+- `SearchList`에서 마우스가 떠난다면, 해당 div를 사라지게 하기
+  - [해결] state로 인풋값을 변환하지만, 어떠한 값으로 바뀌는지 정확히 전달 하지 않았음.
+  - 아래의 값과 조건을 주어 렌더링 하기 
+  ```jsx
+     if (e.target.value.length > 0) {
+        setShowList(true);
+      } else {
+        setShowList(false);
+      }
+    ```
+  - 박, 심교수님 절 올립니다🙇‍♀️ 
+    - 얼른 코흘리개에서 벗어나서 도움을 주는 개발짱이 되겠습니다.
+
+### 🌳 성장 포인트
+
+- `useParams`를 사용한 filter 기능에서 링크 연결
+- 간단해 보이지만 구현은 그렇지 않은 영화 검색 기능 
+- 홀로 작성하고 방법을 찾아내고 구현해내는 코드들이 늘어나고 있다 👍👍
+
+
+## <p align="center"> `CGW` 📆 12/9 `The last day!`
+Big day
+
+### 2주간의 프로젝트 회고하기 : 나에 대한 회고 
+  > <a href="https://www.marimba.team/kr/blog/top-retrospective-templates/">📎 애자일 회고(Agile Retrospective)를 위한 템플릿 추천</a>
+
+## 1️⃣ Continue – Stop – Start
+  - 팀이 지속해서 유지해야 할 것, 그만 두어야할 것, 그리고 새롭게 시작해보아야 할 것 이렇게 세 가지 항목으로 회고를 구성하여 진행해보세요.
+  - 팀원들로부터 더 나은 팀을 만들기 위한 새로운 제안, 개선점 등을 이끌어내기 아주 좋은 방법이 될 거예요😉
+    
+
+## 2️⃣ 4L: Liked, Learned, Lacked, Longed for
+  - 😍 좋았던 것(`L`iked)
+  - 📚 배운 것(`L`earned)
+  - 💦 부족했던 것(`L`acked)
+  - 🕯 바라는 것(`L`onged for)
+    - 오로지 내가 수행했던 일에만 집중해서 솔직하게 정리해보세요!
+
+## 3️⃣ KPT (Keep – Problem – Try)
+  - 지속할 것(Keep), 해결할 것(Problem), 시도할 것(Try)!
+  - 지난 프로젝트를 되돌아보며 세 가지로 나눠 정리하고 함께 되짚어봅니다.
+  - ❤️ 지속할 것 (Keep)
+    - 좋았던 점을 기반으로 앞으로 프로젝트를 진행할 때 계속 유지해야 할 사항!
+    - 잘한 부분에는 칭찬과 박수 마구마구 보내주기, 잊지 마세요.
+  - 🧐 해결할 것 (Problem)
+    - 아쉬웠던 점을 기반으로 앞으로 프로젝트를 진행할 때 개선되어야 할 사항!
+    - 단순히 일어난 사건뿐만 아니라 사건에 이르기까지의 과정을 나누는 게 좋아요.
+  - 🙌 시도할 것 (Try)
+    - 앞서 이야기한 해결할 문제들의 원인을 파악하여 앞으로 시도해볼 만한 사항!
+    - 회고 이후 액션 아이템을 구체화하는 것이 포인트입니다.
+
+## 1️⃣ Continue – Stop – Start
+- `Continue` : 끊임 없는 도전, 에러창 만나고 스스로 해결 하기, TIL을 더 꼼꼼히 작성하기 
+- `Stop` : 처음부터 완벽한 코드를 기대하는 것, 스스로에게 은연중 스트레스를 준다
+- `Start` : 백엔드와 통신을 위하여 `ERD` 작성법과 읽는 법 공부
+
+## 2️⃣ 4L: Liked, Learned, Lacked, Longed for
+  - 😍 좋았던 것(`L`iked)
+     - 든든한 동기들과 함께 작성하는 코드
+     - 어렵지만 1차 프로젝트 때 보다 심화 된 레벨의 프로젝트 (필터링& 동적라우팅)
+     - 매일 아침 정각, 팀원들이 미리 작성한 스탠드업 템플릿을 기반으로 데일리 스탠드업을 진행 한 것
+     - 애자일 개발을 위한 트렐로 사용 및 활용
+  - 📚 배운 것(`L`earned)
+     - 많이 넘어지고 에러창을 만나고 해결하면서 성장했다.
+     - 코드 리팩토링을 통하여 더 좋은 코드는 수정이 되어도 물 흐르듯이 자연스럽게 작동하는 것
+  - 💦 부족했던 것(`L`acked)
+     - 에러 대처법이 아직 미숙하고, console.log를 활용한 디버깅 숙련도가 낮음
+     - 돌발 상황(e.g. 전달해야할 데이터 타입이 바뀌어야한다거나 또는 그 반대의 경우)에서 블락커를 많이 만났다.
+     - 예를 들면, 내가 데이터 타입을 정체하는데 많은 리소스가 들고 비효율 적이라는 판단이 내려진다면, 백엔드에 데이터 변경을 요청해도 된다는 점
+      - 처음이고, 기획 단계에서 완벽하다 생각한 부분에서도 변수가 늘 생겼기에 수시로 논의해보고 변수에 흔들리지 않는 마음가짐  
+        - >제가 어렵다고 생각하는 부분은 모두가 어려운 것이 맞고, 고민이 깊어질 때면 팀원이든 멘토님과 의견을 나눠보는것도 방법이라는 것을 배웠습니다. 이건 여러분과 공유하면 좋을 것 같아 작성합니다..
+즉 혼자 깊게 고민하고 앓지 말기! 12/7 스탠드업 미팅 -나-
+  - 🕯 바라는 것(`L`onged for)
+    - 기존 사이트의 복잡한 UI를 개선하여 사용자에게 예매를 직관화 하여 예매를 쉽게 하는 것
+    - 에러나 문제없이 잘 돌아가는 예매사이트 🔥
+
+---
+
+<p align="center">E.O.D
