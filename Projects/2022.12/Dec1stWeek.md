@@ -372,42 +372,42 @@ const [showSeat, setShowSeat] = useState(false);
 
   const { movieLocation, movieDate, movieTime, movieSeat } = selectMenus;
 
-  const selectLocation = e => {
+  const selectLocation = (e) => {
     const { value } = e.target;
-    setSelectMenus(prev => ({ ...prev, movieLocation: true }));
-    setPickPlace(prev => ({ ...prev, value }));
+    setSelectMenus((prev) => ({ ...prev, movieLocation: true }));
+    setPickPlace((prev) => ({ ...prev, value }));
     console.log(pickPlace);
   };
 
-  const changeDate = e => {
+  const changeDate = (e) => {
     const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     };
     setValue(e);
 
-    setPickDay(prev => ({
+    setPickDay((prev) => ({
       ...prev,
-      date: e.toLocaleDateString('ko-KO', options),
+      date: e.toLocaleDateString("ko-KO", options),
     }));
 
-    setSelectMenus(prev => ({ ...prev, movieDate: true }));
+    setSelectMenus((prev) => ({ ...prev, movieDate: true }));
 
     console.log(pickDay);
   };
 
-  const selectTime = e => {
+  const selectTime = (e) => {
     const { value } = e.target;
-    setPickTime(prev => ({ ...prev, pickedTime: value }));
-    setSelectMenus(prev => ({ ...prev, movieTime: true }));
+    setPickTime((prev) => ({ ...prev, pickedTime: value }));
+    setSelectMenus((prev) => ({ ...prev, movieTime: true }));
     console.log(pickTime);
   };
   ```
 
   ```jsx
-  //리팩토링 후 
+  //리팩토링 후
   const BookARsv = () => {
     const [movieData, setMovieData] = useState([]);
     const [value, setValue] = useState(new Date());
@@ -436,49 +436,49 @@ const [showSeat, setShowSeat] = useState(false);
 
     if (movieData == null) return null;
   ```
+
 - 육안으로도 보이는 가독성이 좋아진 코드!
-- 가장 인상 깊었던 부분은 하나의 state로 값을 관리하고, 그 값을 활용하여 조건부 렌더링을 사용하는 것. 
+- 가장 인상 깊었던 부분은 하나의 state로 값을 관리하고, 그 값을 활용하여 조건부 렌더링을 사용하는 것.
   - 많은 공부를 해서 가독성 좋고 제대로 작동하는 코드를 작성하자! 💪
 
 ### 🌳 성장 포인트
 
 - 좋은 코드는 짧지만 효율적이고 제대로 기능한다.
 - 초기화 버튼 기능 구현 중 `delete` 메소드를 찾았다!
-   - 하지만 위의 값이 바뀌면 UI가 재 렌더링 되어야하는데 useEffect에 state 값을 넣으면 ... 터지기 때문에 새로운 방법을 고안해야한다.
-
+  - 하지만 위의 값이 바뀌면 UI가 재 렌더링 되어야하는데 useEffect에 state 값을 넣으면 ... 터지기 때문에 새로운 방법을 고안해야한다.
 
 ## <p align="center"> `CGW` 📆 12/6
-
 
 ### 📍 `Not 연산자`
 
 ```jsx
 //bafore
-  if (movieData == null) return null;
+if (movieData == null) return null;
 
 //after
-  if (!movieData) return null;
+if (!movieData) return null;
 ```
 
 - 두 코드는 같다.
   - 매번 선언 할 필요 없이 `return`위에 선언
-  - 작은것도 다시 생각해보는 습관이 필요하다 
+  - 작은것도 다시 생각해보는 습관이 필요하다
 
 ### 📍 초기화 버튼 기능 수정
 
 ```jsx
 //after
-  const deleteObj = () => {
-    setSelectList({ place: '', day: '', time: '' });
-  };
+const deleteObj = () => {
+  setSelectList({ place: "", day: "", time: "" });
+};
 
 //before
-  const deleteObj = () => {
-    delete selectList.place
-    delete selectList.day
-    delete selectList.time
-  };
+const deleteObj = () => {
+  delete selectList.place;
+  delete selectList.day;
+  delete selectList.time;
+};
 ```
+
 - 🔍 `delete` 메소드는 `Key` & `Value`를 지운다.
 - 그러하여 after 코드로 리팩토링
 - 잘 짜여진 코드는 물 흐르듯 기존 기능들과 잘 작동한다
@@ -509,54 +509,53 @@ const [showSeat, setShowSeat] = useState(false);
       );
   })}
 ```
+
 - 중첩 map을 사용하여 버튼을 바르게 렌더했다.
 - 수정 과정
-  - Mock data의 구조를 바꾸어 렌더 
-  - 중첩 맵을 활용하여 객체안의 객체 데이터 (branch)를 렌더 
+  - Mock data의 구조를 바꾸어 렌더
+  - 중첩 맵을 활용하여 객체안의 객체 데이터 (branch)를 렌더
   - 데이터가 가진 지점의 데이터는 1개이지만, UI는 2개 이기에 지점이 두 번 렌더 됨
 
 💪 Before
 
-|Seoul|--|
-|--|--|
-|Branch A btn| Branch A btn|
+![Issue](https://user-images.githubusercontent.com/110847597/206710723-c5c147ad-9d9d-460a-8850-247fa312cf07.png)
 
-👍 After (내가 원했던 렌더 모습) 
+👍 After (내가 원했던 렌더 모습)
 
-|Seoul|--|
-|--|--|
-|Branch A btn| Branch B btn|
+<img width="1038" alt="스크린샷 2022-12-09 오후 10 08 47" src="https://user-images.githubusercontent.com/110847597/206710812-c12b221e-7e7e-4cd1-a04e-97b4b07ae650.png">
+
+<br>
 
 ```js
-  //before
-  [
-    {
-      "id": 1,
-      "thumbnail": "/images/insideOut.jpg",
-      "title": "inside Out",
-      "region": "서울",
-      "branch": "CGW 강남",
-      "rooms": "3관",
-      "date": "2022년 12월 6일(금)",
-      "date_times": "10:30",
-      "seat": "D6",
-      "price": "12000",
-      "ageLimit": 19,
-      "rate": 4.5
-    },
-    {
-      "id": 2,
-      "thumbnail": "/images/insideOut.jpg",
-      "title": "insideOut",
-      "region": "서울",
-      "branch": "CGW 선릉",
-      "rooms": "3관",
-      "date": "2022년 12월 6일(금)",
-      "date_times": "22:40",
-      "seat": "D6",
-      "price": "12000"
-    },
-  ]
+//before
+[
+  {
+    id: 1,
+    thumbnail: "/images/insideOut.jpg",
+    title: "inside Out",
+    region: "서울",
+    branch: "CGW 강남",
+    rooms: "3관",
+    date: "2022년 12월 6일(금)",
+    date_times: "10:30",
+    seat: "D6",
+    price: "12000",
+    ageLimit: 19,
+    rate: 4.5,
+  },
+  {
+    id: 2,
+    thumbnail: "/images/insideOut.jpg",
+    title: "insideOut",
+    region: "서울",
+    branch: "CGW 선릉",
+    rooms: "3관",
+    date: "2022년 12월 6일(금)",
+    date_times: "22:40",
+    seat: "D6",
+    price: "12000",
+  },
+];
 ```
 
 ```js
@@ -588,32 +587,30 @@ const [showSeat, setShowSeat] = useState(false);
         "branch_name": "고양행신"
       }
     ]
-]   
+]
 ```
-
 
 ### 💪 일정 시간 예매 가능/불가능 버튼 구현 🤯🤯🤯
 
 ```jsx
 let todayHour = new Date().getHours();
-let today = todayHour
+let today = todayHour;
 
-let movieTime = new Date('August 19, 1975 14:15:30')
-let movieHour = movieTime.getHours()
-
+let movieTime = new Date("August 19, 1975 14:15:30");
+let movieHour = movieTime.getHours();
 
 const calcTime = () => {
-  let leftTime =  todayHour - movieHour;
-  if (leftTime < 1 ) {
-    console.log('예매가 마감된 영화입니다!')
+  let leftTime = todayHour - movieHour;
+  if (leftTime < 1) {
+    console.log("예매가 마감된 영화입니다!");
   } else {
-      console.log('OK')
+    console.log("OK");
   }
-}
+};
 
-console.log(calcTime())
-console.log(todayHour)
-console.log(movieHour)
+console.log(calcTime());
+console.log(todayHour);
+console.log(movieHour);
 ```
 
 1. `new Date()` 현재 값과 영화 상영 시간을 비교하여 연산
@@ -622,15 +619,14 @@ console.log(movieHour)
    1. 위의 코드들을 활용하여 기능 구현 (🤔 유지보수 부분이나 가독성 부분에서 훌륭한 방법은 아닌 것 같다.)
    1. BE에게 데이터 수정을 요청한다 (현재 받는 time의 값은 `08:30`, `11:24` 스트링으로 들어온다)
    1. BE 팀에게 영화 상영 시간에 대한 필터링 기능 구현을 요청한다
-1. 교훈: 내가 어려운 건 어려운 것이 맞다.
-1. 기획 부분에서 더 꼼꼼히 (데이터를 어떻게 받는지) 논의 했다면 수정 과정이 줄어들었을 것 같다.
+4. 교훈: 내가 어려운 건 어려운 것이 맞다.
+5. 기획 부분에서 더 꼼꼼히 (데이터를 어떻게 받는지) 논의 했다면 수정 과정이 줄어들었을 것 같다.
 
 ### 🌳 성장 포인트
 
 - 데이터 구조에 따른 UI 렌더 방식과 정제 과정...
 - Map 메소드를 중첩 할 수 있다
 - 프론트엔드에서 데이터를 어느정도 정제 할 수 있지만, best는 기획단계(통신 방법과 데이터 타입, 구조)에 대해서 더 이야기를 나눠볼 것!
-
 
 ## <p align="center"> `CGW` 📆 12/7
 
@@ -648,56 +644,55 @@ console.log(movieHour)
   - 하나씩 뜯어보고, 동기에게 많은 도움을 얻어 성공했다! 👇
 
 ```jsx
-  <TimePickContainer>
-      {day ? (
-        <TimePick>
-          {timeFilter.length !== 0 ? (
-            timeFilter.map((movieTime, i) => {
-              return (
-                <React.Fragment key={i}>
-                  {timeFilter[i].time.map((detailTime, index) => {
-                    return (
-                      <React.Fragment key={index}>
-                        <TimeRadio
-                          type="radio"
-                          name="time"
-                          id={detailTime.time}
-                          defaultValue={detailTime.time}
-                          onChange={onChangeData}
-                        />
-                        <TimeLabel htmlFor={detailTime.time}>
-                          {detailTime.time}
-                        </TimeLabel>
-                      </React.Fragment>
-                    );
-                  })}
-                </React.Fragment>
-              );
-            })
-          ) : (
-            <TimePickReadyBox>
-              <TimePickReady>🥲 매진 되었어요!</TimePickReady>
-            </TimePickReadyBox>
-          )}
-        </TimePick>
+<TimePickContainer>
+  {day ? (
+    <TimePick>
+      {timeFilter.length !== 0 ? (
+        timeFilter.map((movieTime, i) => {
+          return (
+            <React.Fragment key={i}>
+              {timeFilter[i].time.map((detailTime, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <TimeRadio
+                      type="radio"
+                      name="time"
+                      id={detailTime.time}
+                      defaultValue={detailTime.time}
+                      onChange={onChangeData}
+                    />
+                    <TimeLabel htmlFor={detailTime.time}>
+                      {detailTime.time}
+                    </TimeLabel>
+                  </React.Fragment>
+                );
+              })}
+            </React.Fragment>
+          );
+        })
       ) : (
         <TimePickReadyBox>
-          <TimePickReady>📆 날짜를 먼저 정해주세요!</TimePickReady>
+          <TimePickReady>🥲 매진 되었어요!</TimePickReady>
         </TimePickReadyBox>
       )}
-    </TimePickContainer>
+    </TimePick>
+  ) : (
+    <TimePickReadyBox>
+      <TimePickReady>📆 날짜를 먼저 정해주세요!</TimePickReady>
+    </TimePickReadyBox>
+  )}
+</TimePickContainer>
 ```
 
 ### 🌳 성장 포인트
 
 - 영화시간이 없을 경우의 코드를 알럿으로 띄울 수 있었지만, 중첩 삼항 연산자를 사용하여 더 적은 코드로 메세지를 렌더링 했음!
-- 하나의 함수 안에 처리해야할 데이터나 함수가 있다면 느리게 처리된다. (당연함) 
+- 하나의 함수 안에 처리해야할 데이터나 함수가 있다면 느리게 처리된다. (당연함)
 - `fetch`가 진행하는 비동기적 특성을 주말에 공부!
   - 자바스크립트는 동기적 언어이다
   - 브라우저 엔진에서 작동 할 때는 비동기적으로 처리 된다.
   - 그리고 fetch... 비동기적... 공부를 하지 않으려야 하지 않을 수가 없는 매력적인 조합이다🔥
-  - ~~따뜻한 아이스아메리카노~~ ~~화려하지만 심플한~~ 
-
+  - ~~따뜻한 아이스아메리카노~~ ~~화려하지만 심플한~~
 
 ## <p align="center"> `CGW` 📆 12/8
 
@@ -706,45 +701,48 @@ console.log(movieHour)
 ```jsx
 const [showList, setShowList] = useState(false);
 
-{showList && (
-  <SearchList
-    onMouseOut={() => {
-      setShowList(false);
-    }}
-    onMouseOver={() => {
-      setShowList(true);
-    }}
-  >  
-    <ListOverContainer>
-      {movieList.map((list, index) => {
-        if (list.title.toLowerCase().includes(inputState)) {
-          return (
-            <StyledLink key={index} to={`/times/${list.id}`}>
-              <MovieFiltered>
-                <MovieInfoBox>
-                  <ThumbsImg>
-                    <Thumb src={list.thumbnail} alt="thumb nail" />
-                  </ThumbsImg>
-                  <MatchedTitle>{list.title}</MatchedTitle>
-                </MovieInfoBox>
-                <BookNow>🎫 예매하기</BookNow>
-              </MovieFiltered>
-            </StyledLink>
-          );
-        } else {
-          return null;
-        }
-      })}
-    </ListOverContainer>
-  </SearchList>
-)}
+{
+  showList && (
+    <SearchList
+      onMouseOut={() => {
+        setShowList(false);
+      }}
+      onMouseOver={() => {
+        setShowList(true);
+      }}
+    >
+      <ListOverContainer>
+        {movieList.map((list, index) => {
+          if (list.title.toLowerCase().includes(inputState)) {
+            return (
+              <StyledLink key={index} to={`/times/${list.id}`}>
+                <MovieFiltered>
+                  <MovieInfoBox>
+                    <ThumbsImg>
+                      <Thumb src={list.thumbnail} alt="thumb nail" />
+                    </ThumbsImg>
+                    <MatchedTitle>{list.title}</MatchedTitle>
+                  </MovieInfoBox>
+                  <BookNow>🎫 예매하기</BookNow>
+                </MovieFiltered>
+              </StyledLink>
+            );
+          } else {
+            return null;
+          }
+        })}
+      </ListOverContainer>
+    </SearchList>
+  );
+}
 ```
+
 - `if (list.title.toLowerCase().includes(inputState))`
   - 1차 프로젝트 때, 아리송 했던 코드가 이젠 명확하게 이해가 된다!
 - `<StyledLink key={index} to={`/times/${list.id}`}>`
   - 받아오는 데이터의 영화 `id`와 `const params = useParams()` 코드!
 - `SearchList`에서 마우스가 떠난다면, 해당 div를 사라지게 하기
-  - [이슈] 추천 검색 list div에 마우스가 오버 되면 SearchList가 사라졌다. 
+  - [이슈] 추천 검색 list div에 마우스가 오버 되면 SearchList가 사라졌다.
 
 ```jsx
 //after
@@ -786,81 +784,83 @@ const [showList, setShowList] = useState(false);
       }}
     >
 ```
+
 - `SearchList`에서 마우스가 떠난다면, 해당 div를 사라지게 하기
   - [해결] state로 인풋값을 변환하지만, 어떠한 값으로 바뀌는지 정확히 전달 하지 않았음.
-  - 아래의 값과 조건을 주어 렌더링 하기 
+  - 아래의 값과 조건을 주어 렌더링 하기
   ```jsx
-     if (e.target.value.length > 0) {
-        setShowList(true);
-      } else {
-        setShowList(false);
-      }
-    ```
-  - 박, 심교수님 절 올립니다🙇‍♀️ 
+  if (e.target.value.length > 0) {
+    setShowList(true);
+  } else {
+    setShowList(false);
+  }
+  ```
+  - 박, 심교수님 절 올립니다🙇‍♀️
     - 얼른 코흘리개에서 벗어나서 도움을 주는 개발짱이 되겠습니다.
 
 ### 🌳 성장 포인트
 
 - `useParams`를 사용한 filter 기능에서 링크 연결
-- 간단해 보이지만 구현은 그렇지 않은 영화 검색 기능 
+- 간단해 보이지만 구현은 그렇지 않은 영화 검색 기능
 - 홀로 작성하고 방법을 찾아내고 구현해내는 코드들이 늘어나고 있다 👍👍
 
-
 ## <p align="center"> `CGW` 📆 12/9 `The last day!`
+
 Big day
 
-### 2주간의 프로젝트 회고하기 : 나에 대한 회고 
-  > <a href="https://www.marimba.team/kr/blog/top-retrospective-templates/">📎 애자일 회고(Agile Retrospective)를 위한 템플릿 추천</a>
+### 2주간의 프로젝트 회고하기 : 나에 대한 회고
+
+> <a href="https://www.marimba.team/kr/blog/top-retrospective-templates/">📎 애자일 회고(Agile Retrospective)를 위한 템플릿 추천</a>
 
 ## 1️⃣ Continue – Stop – Start
-  - 팀이 지속해서 유지해야 할 것, 그만 두어야할 것, 그리고 새롭게 시작해보아야 할 것 이렇게 세 가지 항목으로 회고를 구성하여 진행해보세요.
-  - 팀원들로부터 더 나은 팀을 만들기 위한 새로운 제안, 개선점 등을 이끌어내기 아주 좋은 방법이 될 거예요😉
-    
+
+- 팀이 지속해서 유지해야 할 것, 그만 두어야할 것, 그리고 새롭게 시작해보아야 할 것 이렇게 세 가지 항목으로 회고를 구성하여 진행해보세요.
+- 팀원들로부터 더 나은 팀을 만들기 위한 새로운 제안, 개선점 등을 이끌어내기 아주 좋은 방법이 될 거예요😉
 
 ## 2️⃣ 4L: Liked, Learned, Lacked, Longed for
-  - 😍 좋았던 것(`L`iked)
-  - 📚 배운 것(`L`earned)
-  - 💦 부족했던 것(`L`acked)
-  - 🕯 바라는 것(`L`onged for)
-    - 오로지 내가 수행했던 일에만 집중해서 솔직하게 정리해보세요!
+
+- 😍 좋았던 것(`L`iked)
+- 📚 배운 것(`L`earned)
+- 💦 부족했던 것(`L`acked)
+- 🕯 바라는 것(`L`onged for)
+  - 오로지 내가 수행했던 일에만 집중해서 솔직하게 정리해보세요!
 
 ## 3️⃣ KPT (Keep – Problem – Try)
-  - 지속할 것(Keep), 해결할 것(Problem), 시도할 것(Try)!
-  - 지난 프로젝트를 되돌아보며 세 가지로 나눠 정리하고 함께 되짚어봅니다.
-  - ❤️ 지속할 것 (Keep)
-    - 좋았던 점을 기반으로 앞으로 프로젝트를 진행할 때 계속 유지해야 할 사항!
-    - 잘한 부분에는 칭찬과 박수 마구마구 보내주기, 잊지 마세요.
-  - 🧐 해결할 것 (Problem)
-    - 아쉬웠던 점을 기반으로 앞으로 프로젝트를 진행할 때 개선되어야 할 사항!
-    - 단순히 일어난 사건뿐만 아니라 사건에 이르기까지의 과정을 나누는 게 좋아요.
-  - 🙌 시도할 것 (Try)
-    - 앞서 이야기한 해결할 문제들의 원인을 파악하여 앞으로 시도해볼 만한 사항!
-    - 회고 이후 액션 아이템을 구체화하는 것이 포인트입니다.
+
+- 지속할 것(Keep), 해결할 것(Problem), 시도할 것(Try)!
+- 지난 프로젝트를 되돌아보며 세 가지로 나눠 정리하고 함께 되짚어봅니다.
+- ❤️ 지속할 것 (Keep)
+  - 좋았던 점을 기반으로 앞으로 프로젝트를 진행할 때 계속 유지해야 할 사항!
+  - 잘한 부분에는 칭찬과 박수 마구마구 보내주기, 잊지 마세요.
+- 🧐 해결할 것 (Problem)
+  - 아쉬웠던 점을 기반으로 앞으로 프로젝트를 진행할 때 개선되어야 할 사항!
+  - 단순히 일어난 사건뿐만 아니라 사건에 이르기까지의 과정을 나누는 게 좋아요.
+- 🙌 시도할 것 (Try)
+  - 앞서 이야기한 해결할 문제들의 원인을 파악하여 앞으로 시도해볼 만한 사항!
+  - 회고 이후 액션 아이템을 구체화하는 것이 포인트입니다.
 
 ## 1️⃣ Continue – Stop – Start
-- `Continue` : 끊임 없는 도전, 에러창 만나고 스스로 해결 하기, TIL을 더 꼼꼼히 작성하기 
+
+- `Continue` : 끊임 없는 도전, 에러창 만나고 스스로 해결 하기, TIL을 더 꼼꼼히 작성하기
 - `Stop` : 처음부터 완벽한 코드를 기대하는 것, 스스로에게 은연중 스트레스를 준다
 - `Start` : 백엔드와 통신을 위하여 `ERD` 작성법과 읽는 법 공부
 
 ## 2️⃣ 4L: Liked, Learned, Lacked, Longed for
-  - 😍 좋았던 것(`L`iked)
-     - 든든한 동기들과 함께 작성하는 코드
-     - 어렵지만 1차 프로젝트 때 보다 심화 된 레벨의 프로젝트 (필터링& 동적라우팅)
-     - 매일 아침 정각, 팀원들이 미리 작성한 스탠드업 템플릿을 기반으로 데일리 스탠드업을 진행 한 것
-     - 애자일 개발을 위한 트렐로 사용 및 활용
-  - 📚 배운 것(`L`earned)
-     - 많이 넘어지고 에러창을 만나고 해결하면서 성장했다.
-     - 코드 리팩토링을 통하여 더 좋은 코드는 수정이 되어도 물 흐르듯이 자연스럽게 작동하는 것
-  - 💦 부족했던 것(`L`acked)
-     - 에러 대처법이 아직 미숙하고, console.log를 활용한 디버깅 숙련도가 낮음
-     - 돌발 상황(e.g. 전달해야할 데이터 타입이 바뀌어야한다거나 또는 그 반대의 경우)에서 블락커를 많이 만났다.
-     - 예를 들면, 내가 데이터 타입을 정체하는데 많은 리소스가 들고 비효율 적이라는 판단이 내려진다면, 백엔드에 데이터 변경을 요청해도 된다는 점
-      - 처음이고, 기획 단계에서 완벽하다 생각한 부분에서도 변수가 늘 생겼기에 수시로 논의해보고 변수에 흔들리지 않는 마음가짐  
-        - >제가 어렵다고 생각하는 부분은 모두가 어려운 것이 맞고, 고민이 깊어질 때면 팀원이든 멘토님과 의견을 나눠보는것도 방법이라는 것을 배웠습니다. 이건 여러분과 공유하면 좋을 것 같아 작성합니다..
-즉 혼자 깊게 고민하고 앓지 말기! 12/7 스탠드업 미팅 -나-
-  - 🕯 바라는 것(`L`onged for)
-    - 기존 사이트의 복잡한 UI를 개선하여 사용자에게 예매를 직관화 하여 예매를 쉽게 하는 것
-    - 에러나 문제없이 잘 돌아가는 예매사이트 🔥
+
+- 😍 좋았던 것(`L`iked)
+  - 든든한 동기들과 함께 작성하는 코드
+  - 어렵지만 1차 프로젝트 때 보다 심화 된 레벨의 프로젝트 (필터링& 동적라우팅)
+  - 매일 아침 정각, 팀원들이 미리 작성한 스탠드업 템플릿을 기반으로 데일리 스탠드업을 진행 한 것
+  - 애자일 개발을 위한 트렐로 사용 및 활용
+- 📚 배운 것(`L`earned)
+  - 많이 넘어지고 에러창을 만나고 해결하면서 성장했다.
+  - 코드 리팩토링을 통하여 더 좋은 코드는 수정이 되어도 물 흐르듯이 자연스럽게 작동하는 것
+- 💦 부족했던 것(`L`acked) - 에러 대처법이 아직 미숙하고, console.log를 활용한 디버깅 숙련도가 낮음 - 돌발 상황(e.g. 전달해야할 데이터 타입이 바뀌어야한다거나 또는 그 반대의 경우)에서 블락커를 많이 만났다. - 예를 들면, 내가 데이터 타입을 정체하는데 많은 리소스가 들고 비효율 적이라는 판단이 내려진다면, 백엔드에 데이터 변경을 요청해도 된다는 점 - 처음이고, 기획 단계에서 완벽하다 생각한 부분에서도 변수가 늘 생겼기에 수시로 논의해보고 변수에 흔들리지 않는 마음가짐
+  - > 제가 어렵다고 생각하는 부분은 모두가 어려운 것이 맞고, 고민이 깊어질 때면 팀원이든 멘토님과 의견을 나눠보는것도 방법이라는 것을 배웠습니다. 이건 여러분과 공유하면 좋을 것 같아 작성합니다..
+    > 즉 혼자 깊게 고민하고 앓지 말기! 12/7 스탠드업 미팅 -나-
+- 🕯 바라는 것(`L`onged for)
+  - 기존 사이트의 복잡한 UI를 개선하여 사용자에게 예매를 직관화 하여 예매를 쉽게 하는 것
+  - 에러나 문제없이 잘 돌아가는 예매사이트 🔥
 
 ---
 
