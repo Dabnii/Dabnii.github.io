@@ -59,14 +59,14 @@
 ## 🥳 나의 제작파트
 
 1. 🎫 영화 예매
-   ![CGW_select](https://user-images.githubusercontent.com/110847597/206864130-ba3268d0-ecb7-4c0d-b7da-67458f466509.gif)
+   <img width="1386px" alt="CGW booking" align="center" src="https://user-images.githubusercontent.com/110847597/206864130-ba3268d0-ecb7-4c0d-b7da-67458f466509.gif"/>
 
    - 다시 고르기 기능
-     ![CGW_delete](https://user-images.githubusercontent.com/110847597/206864567-cb62ee6c-833f-4cfb-a941-952b3b510d83.gif)
+     <img width="1386px" alt="CGW booking-reselect" align="center" src="https://user-images.githubusercontent.com/110847597/206864567-cb62ee6c-833f-4cfb-a941-952b3b510d83.gif"/>
 
 1. 🔍 영화 검색
 
-   ![CGW_search](https://user-images.githubusercontent.com/110847597/206864375-e94a542a-10e7-485e-b58a-c16370670830.gif)
+  <img width="1386px" alt="CGW Searching" align="center" src="https://user-images.githubusercontent.com/110847597/206864375-e94a542a-10e7-485e-b58a-c16370670830.gif"/>
 
 ### 💪 위의 파트를 담당하게 된 이유
 
@@ -112,15 +112,15 @@
 
 💪 Before
 
-![Issue](https://user-images.githubusercontent.com/110847597/206710723-c5c147ad-9d9d-460a-8850-247fa312cf07.png)
+<img width="1038" alt="IssueBefore" align="center" src="https://user-images.githubusercontent.com/110847597/206710723-c5c147ad-9d9d-460a-8850-247fa312cf07.png"/>
 
 👍 After (내가 원했던 렌더 모습)
 
-<img width="1038" alt="스크린샷 2022-12-09 오후 10 08 47" src="https://user-images.githubusercontent.com/110847597/206710812-c12b221e-7e7e-4cd1-a04e-97b4b07ae650.png">
+<img width="1038" alt="IssueAfter" align="center" src="https://user-images.githubusercontent.com/110847597/206710812-c12b221e-7e7e-4cd1-a04e-97b4b07ae650.png">
 
 ### 🫂 중첩 삼항연산자
 
-![중첩삼항연산-플로우유도](https://user-images.githubusercontent.com/110847597/206713220-7804ec0d-dda7-48b9-9008-b75311ba419a.gif)
+  <img width="1386px" alt="CGW nesting map" align="center" src="https://user-images.githubusercontent.com/110847597/206713220-7804ec0d-dda7-48b9-9008-b75311ba419a.gif"/>
 
 > Step 3 문구를 주목!
 
