@@ -487,27 +487,27 @@ const deleteObj = () => {
 ### 📍 `Nesting Map`
 
 ```jsx
-  {movieData?.map((movie, index) => (
-    <PlacePickTextSeoul key={index}>
-      <PlaceTextBox key={movie.region_id}>
-        <PlacePickP>📍{movie.name}</PlacePickP>
-      </PlaceTextBox>
-      <PlacePickButtonContainer>
-        <Pick>
-      {movie.location.map(lo => {
-        return (
-          <>
-            <Input
-              type="radio"
-              name="place"
-              id={lo.branch_id}
-              defaultValue={lo.branch_name}
-              onChange={onChangeData}
-            />
-            <Label htmlFor={lo.branch_id}>{lo.branch_name}</Label>
-          </>
-      );
-  })}
+{movieData?.map((movie, index) => (
+  <PlacePickTextSeoul key={index}>
+    <PlaceTextBox key={movie.region_id}>
+      <PlacePickP>📍{movie.name}</PlacePickP>
+    </PlaceTextBox>
+    <PlacePickButtonContainer>
+      <Pick>
+    {movie.location.map(lo => {
+      return (
+        <>
+          <Input
+            type="radio"
+            name="place"
+            id={lo.branch_id}
+            defaultValue={lo.branch_name}
+            onChange={onChangeData}
+          />
+          <Label htmlFor={lo.branch_id}>{lo.branch_name}</Label>
+        </>
+    );
+})}
 ```
 
 - 중첩 map을 사용하여 버튼을 바르게 렌더했다.

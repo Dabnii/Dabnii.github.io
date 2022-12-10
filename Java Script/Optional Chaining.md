@@ -11,7 +11,7 @@
 - 백엔드와 함께 통신 하기 전, Mock data를 사용할 때 위 오류를 만났다.
 - 분명히 fetch한 데이터를 불러올 때 예상치 못한 오류가 발생했다.
   - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md#mock-data">Mock 데이터 사용중 발견한 오류 -22.11.22-</a>
-  - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md#mock-data">객체 데이터를 들고오면 터진다! -22.11.23-</a>
+  - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md#-json-%EC%9D%B4%EC%8A%88">객체 데이터를 들고오면 터진다! -22.11.23-</a>
 
 ### 내가 사용한 Optional chaining
 
