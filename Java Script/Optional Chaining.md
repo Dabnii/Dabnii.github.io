@@ -1,4 +1,4 @@
-# <p align=center> Optional Chaining `?.`
+# <p align=center> ⛓️ Optional Chaining `?.`
 
 <p align=center> ⛓️ Optional Chaining : 왼쪽 평가대상이 없어도 괜찮은 경우에만 선택적으로 사용
 
@@ -33,7 +33,7 @@ const nestedProp = obj.first && obj.first.second;
 - 옵셔널 체이닝을 권장하는 이유:
 
   - 👀 가독성: `&&`을 사용하여 비교할 경우 코드가 길어지게 됨
-  - 🪜 낮은 안정성 : 비교하는 값 중 `falsy` 값이 있다면 `null` `undefined` 값을 도출하지 않음
+  - 🪜 낮은 안정성 : 비교하는 값 중, 만약 `obj.first`가 `0` 즉 `falsy` 한 값이라면 오류가 발생할 수 있기 때문에 권장하지 않음
 
 ### ⛓️ 내가 사용한 Optional chaining
 
@@ -72,7 +72,7 @@ const nestedProp = obj.first && obj.first.second;
     - 배열은 `true`/`false` 값으로 들어온다
     - 객체는 `undefined`로 들어온다
     - 객체인 `{pdData[0] && }`로 조건부 렌더링을 사용하면 오류가 발생한다.
-    - 어떠한 데이터 타입을 받아오는지, 동기적 언어의 특성을 파악하지 못하연 초보적인 실수가 반복된다.
+    - 어떠한 데이터 타입을 받아오는 지 파악하지 못하연 초보적인 실수가 반복된다. ☹️
 
   ```jsx
   const data = {};
