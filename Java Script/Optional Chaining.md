@@ -4,11 +4,36 @@
 
 ### ⛓️ Optional Chaining 이란?
 
+- The optional chaining `?.` operator accesses an object's property or calls a function. If the object is undefined or null, it returns `undefined` instead of throwing an error.
+
 - 옵셔널 체이닝(optional chaining) `?.`을 사용하면 프로퍼티가 없는 중첩 객체를 에러 없이 안전하게 접근할 수 있습니다. <i>-모던 자바스크립트-</i>
+- 💡 `?.`은 ` ?.` `앞`의 평가 대상이 `undefined`나 `null`이면 평가를 멈추고 `undefined를` 반환합니다.
+
+### ⛓️ Optional Chaining syntax
+
+```javascript
+obj.val?.prop;
+obj.val?.[expr];
+obj.func?.(args);
+```
 
 ### ⛓️ Optional Chaining이 필요한 이유
 
-- 💡 `?.`은 ` ?.` `앞`의 평가 대상이 `undefined`나 `null`이면 평가를 멈추고 `undefined를` 반환합니다.
+```javascript
+//Optional Chaining
+const nestedProp = obj.first?.second;
+```
+
+```javascript
+//&& 연산자를 사용한 test
+const nestedProp = obj.first && obj.first.second;
+```
+
+- 위 아래 코드는 같은 코드
+- 옵셔널 체이닝을 권장하는 이유:
+
+  - 👀 가독성: `&&`을 사용하여 비교할 경우 코드가 길어지게 됨
+  - 🪜 낮은 안정성 : 비교하는 값 중 `falsy` 값이 있다면 `null` `undefined` 값을 도출하지 않음
 
 ### ⛓️ 내가 사용한 Optional chaining
 
@@ -49,6 +74,12 @@
     - 객체인 `{pdData[0] && }`로 조건부 렌더링을 사용하면 오류가 발생한다.
     - 어떠한 데이터 타입을 받아오는지, 동기적 언어의 특성을 파악하지 못하연 초보적인 실수가 반복된다.
 
+  ```jsx
+  const data = {};
+  console.log(data.id); //
+  console.log(data?.id); //undefined
+  ```
+
 ### ⛓️ 남용금지 Optional chaining
 
 - ⚠️ 옵셔널 체이닝을 남용하지 마세요.
@@ -76,7 +107,8 @@
 참고 자료:
 
 - <a href="https://ko.javascript.info/optional-chaining">옵셔널체이닝'?.'</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining">Optional chaining (?.)</a>
 
-```
+---
 
-```
+<p align="center">E.O.D</p>
