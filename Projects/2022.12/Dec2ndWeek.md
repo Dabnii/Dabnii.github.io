@@ -3,17 +3,36 @@
 ### ⏰ Setting time
 1. install nvm: [https://github.com/creationix/nvm](https://github.com/creationix/nvm)
     ```jsx
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash	
+    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash	
     ```    
 2. install node stable version: `nvm install stable`
 3. install yarn: `npm install -g yarn`
     ```jsx
-    nvm install vNN.NN.N
+    $ nvm install vNN.NN.N
     //사용하고자 하는 버전 으로 변환 합니다
     ```  
 4. install requirements: `yarn install`
 5. create `.env` according to `.env.example`
 6. start project `yarn start`
+
+## 📍 NVM 버전을 고정하기
+1. 재부팅 후  접속시, 터미널의 nvm 버전이 바뀌는 것을 방지 하기 위함입니다.
+1. 최신 버전이 아닌 특정 버전을 써야하는 경우에 필요합니다.
+
+    ```jsx
+    $ nvm list
+    //현재 nvm 버전을 확인
+    ```
+
+    ```jsx
+    $ nvm use v14
+    //원하는 버전으로 변경 (임시적)
+    ```
+
+    ```jsx
+    $ nvm alias default v14
+    //원하는 버전으로 디폴트 값 고정 
+    ```
 
 
 ### 🛥 Onboarding 
@@ -30,4 +49,15 @@
 
 ## <p align="center"> `Internship` 📆 12/13
 
+
+## 🛥 Onboarding 🌊🌊🌊
+
+### 👀 미리 둘러 볼 것!
+
+- [x] `packagelock.json`의 의존선 확인
+- [x] `Git branch` 확인
+- [x] `Pull Request` 컨벤션 확인
+- [X] `Commit message` 컨벤션 확인
+
+## <p align="center"> `Internship` 📆 12/14
 
