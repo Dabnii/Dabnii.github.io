@@ -122,20 +122,17 @@ a {
 - 의미가 없는, 디자인 요소 이미지 사용에는 background-image tag 사용이 적합하다.
 
 <hr>
+
 출처:
   
-- https://poiemaweb.com/html5-semantic-web
-  
+- https://poiemaweb.com/html5-semantic-web 
 - https://chanho-yoon.github.io/web/web-semanticWeb-semanticTag/
-
 - https://velog.io/@anhesu11/%EC%8B%9C%EB%A7%A8%ED%8B%B1-%EC%9B%B9%EA%B3%BC-%EC%8B%9C%EB%A9%98%ED%8B%B1-%ED%8B%B0%EA%B7%B8
-
 - https://www.quora.com/What-are-the-main-differences-between-semantic-web-and-HTML-tags
-
 - https://www.quora.com/What-is-difference-between-ordinary-web-and-semantic-web
-
 - https://fierycoding.tistory.com/m/55
-
 - https://www.w3schools.com/html/html5_semantic_elements.asp
+
+--- 
 
 E.O.D

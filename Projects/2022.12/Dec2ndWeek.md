@@ -34,6 +34,8 @@
     //원하는 버전으로 디폴트 값 고정 
     ```
 
+    <img width="856" alt="재부팅" src="https://user-images.githubusercontent.com/110847597/207327527-45b7bedb-a64f-46bc-80cb-bd6415532f3b.png">
+    > 가끔은 터미널도 재부팅이 필요하다 
 
 ### 🛥 Onboarding 
 1. 깃허브 세팅이 완료 되었다면
@@ -58,6 +60,7 @@
 - [x] `Git branch` 확인
 - [x] `Pull Request` 컨벤션 확인
 - [X] `Commit message` 컨벤션 확인
+
 
 ## <p align="center"> `Internship` 📆 12/14
 
