@@ -1,7 +1,6 @@
 # <p align="center"> 🪞 Why is JavaScript called synchronous?
 
-![동기cover](https://user-images.githubusercontent.com/110847597/208118602-43311d4b-428c-4181-a55a-a5c5b2442092.png)
-
+<img src="https://user-images.githubusercontent.com/110847597/208118602-43311d4b-428c-4181-a55a-a5c5b2442092.png" width=1000px align="center" alt="동기비동기 이미지"/>
 
 ### 🟨 자바스크립트는 어떤 언어인가요? | `#동기적언어` `#싱글스레드` 
 
@@ -36,7 +35,7 @@
     - 효율적 운영이 가능하다    
 
 ## ✨♻️  `동기 Synchronous` vs `비동기 Asynchronous`
-![동기cover](https://user-images.githubusercontent.com/110847597/208118602-43311d4b-428c-4181-a55a-a5c5b2442092.png)
+<img src="https://user-images.githubusercontent.com/110847597/208118602-43311d4b-428c-4181-a55a-a5c5b2442092.png" width=1000px align="center" alt="동기비동기 이미지"/>
 
 ### ✨♻️ `동기 Synchronous`:
 - 현재 실행중인 테스크가 종료할 때 까지 다음에 실행될 테스크가 대기하는 방식
