@@ -61,9 +61,4 @@
 - [x] `Pull Request` 컨벤션 확인
 - [X] `Commit message` 컨벤션 확인
 
-
-## <p align="center"> `Internship` 📆 12/14
-
-## <p align="center"> `Internship` 📆 12/15
-
-
+---
