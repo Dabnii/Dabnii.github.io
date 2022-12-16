@@ -1,12 +1,18 @@
 # <p align="center"> 🪞 Why is JavaScript called synchronous?
+<p align="center"> 🪞 왜 자바스크립트를 동기적 언어라고 부르나요?
+
 
 <img src="https://user-images.githubusercontent.com/110847597/208118602-43311d4b-428c-4181-a55a-a5c5b2442092.png" width=1000px align="center" alt="동기비동기 이미지"/>
 
-### 🟨 자바스크립트는 어떤 언어인가요? | `#동기적언어` `#싱글스레드` 
+### <p align="center"> 🟨 자바스크립트는 어떤 언어인가요? | #동기적언어 #싱글스레드 
 
-## 🤔 실제로 멀티 스레드 처럼 사용하는데 어떻게 사용하나요? 
+---
 
-### 👩‍🍳Process
+<p align="center">🤔 실제로 멀티 스레드 처럼 사용하는데 어떻게 사용하나요? 
+
+## 👩‍🍳Process
+
+![spongebob is cooking](https://media1.giphy.com/media/ud6EmjRF8CICI/giphy.gif?cid=ecf05e47iffxdsawyvbnij2q51iedjfsjpml6qn9amtjl9p9&rid=giphy.gif&ct=g)
 - 기본적으로 프로세스당 1개의 스레드를 가짐
 - 프로세스는 각각 독립된 메모리 영역 (Code, Data, Stack, Heap 구조)을 할당 받는다
 - 프로세스는 별도의 주소 공간에서 실행되기 때문에 다른 프로세스의 변수나 자료구조에 접근할 수 없다.
@@ -36,6 +42,8 @@
 
 ## ✨♻️  `동기 Synchronous` vs `비동기 Asynchronous`
 <img src="https://user-images.githubusercontent.com/110847597/208118602-43311d4b-428c-4181-a55a-a5c5b2442092.png" width=1000px align="center" alt="동기비동기 이미지"/>
+
+![spongebob ticket](https://media0.giphy.com/media/xT3i0XldZ29FX3X3C8/giphy.gif?cid=ecf05e47npvilyzm6ssjgshj8osafimnovudvt5ruas6phpq&rid=giphy.gif&ct=g)
 
 ### ✨♻️ `동기 Synchronous`:
 - 현재 실행중인 테스크가 종료할 때 까지 다음에 실행될 테스크가 대기하는 방식
