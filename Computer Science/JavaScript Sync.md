@@ -132,3 +132,8 @@ console.log(3)
 - [동기식 처리 모델 vs 비동기식 처리 모델](https://poiemaweb.com/js-async)
 - [자바스크립트란?](https://ko.javascript.info/intro)
 - [동기(Synchronous)는 정확히 무엇을 의미하는걸까?](https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/)
+
+---
+
+
+[다음글: JavaScript Process](https://github.com/Dabnii/Dabnii.github.io/blob/8a5069aaafb3ab808d525d2e28a2c54b8a8f1b48/Computer%20Science/JavaScript%20Process.md)
