@@ -1,5 +1,5 @@
 # <p align="center">  JavaScript Process
-<p align="center">  Process, Processor
+<p align="center">  Process, Processor [작성중]
 
 # 👩‍🍳Process
 - 기본적으로 프로세스당 1개의 스레드를 가짐

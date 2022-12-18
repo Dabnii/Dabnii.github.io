@@ -62,3 +62,37 @@
 - [X] `Commit message` 컨벤션 확인
 
 ---
+
+## <p align="center"> `Internship` 📆 12/16
+
+### 📍 Class Components
+
+```jsx
+// App.js
+
+import React from 'react';
+
+class App extends React.Component {
+  render() {
+    return <h1>This is Class Component!</h1>;
+  }
+}
+export default App;
+```
+> 클래스 컴포넌트에서는 위와 같이 반드시 render() 메서드가 있어야 하고, 그 안에서 화면에 보여줄 JSX(Javascript Syntax eXtension) 를 반환합니다. state 및 lifecycle(라이프사이클) API를 통해 관련 기능을 사용할 수 있습니다.
+
+
+```jsx
+    console.log(this.props);
+    console.log(columns);
+//위의 두가지로 알아낸 데이터 구조
+```
+
+🌳 성장 포인트 :
+
+- 클래스 컴포넌트를 사용
+    - 학습을 위하여 class component를 사용 중, 기존의 작업되어있는 프로젝트도 클래스 컴포넌트로 구성되어 있다.
+- `console.log`를 찍어보며 어떤 데이터가 들어오는지 확인해 보는 습관을 가지자.
+- `this`의 컴백
+
+---
