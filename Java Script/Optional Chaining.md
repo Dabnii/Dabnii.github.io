@@ -101,6 +101,15 @@ const nestedProp = obj.first && obj.first.second;
 - 변수 user가 선언되어있지 않으면 `user?.anything` 평가시 에러가 발생합니다.<br>
 <i>-모던 자바스크립트-</i>
 
+### ⛓️ Optional chaining 그리고 폴리필 
+
+![Need Optional chaining polyfill](https://user-images.githubusercontent.com/110847597/208449972-2eb86606-41c5-482d-9114-e447b8e4ed5e.png)
+- 이럴 땐, optional chaining이 나오기 전의 방식으로 [&& 연산자를 사용한 test](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Optional%20Chaining.md#%EF%B8%8F-optional-chaining%EC%9D%B4-%ED%95%84%EC%9A%94%ED%95%9C-%EC%9D%B4%EC%9C%A0) 하면 된다.
+  ```javascript
+  //&& 연산자를 사용한 test
+  const nestedProp = obj.first && obj.first.second;
+  ```
+
 
 ---
 

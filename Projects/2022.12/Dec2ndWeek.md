@@ -96,3 +96,69 @@ export default App;
 - `this`의 컴백
 
 ---
+
+## <p align="center"> `Internship` 📆 12/19
+
+### 📚 `antd table` library
+엣헴... [📎 antd table: 공식 사이트](https://ant.design/components/table)
+
+> 어쩐지... props로 어떤 값을 넣어도 오류가 났다.<br>
+> 당연함, 라이브러리의 명세를 확인 했어야했다.<br>
+> 오늘의 교훈, package-lock.json을 열심히 확인하고... 검색을 꼭 해보자.<br>
+> 둘쨋날... 사수께서 확인해보라던게 이런 라이브러리가 있다는 걸 보란거였다. 하지만 아는만큼 보인다고 응애인 나는 몰랐다. antd를 자체적으로 만든건 줄 알았다.. 오늘이라도 알아서 다행이다.
+
+```jsx
+<Table
+    className="table table_small"
+    rowSelection={rowSelection}
+    columns={columns}
+    dataSource={data}
+    onRow={record => ({
+        onClick: () => {
+        this.selectRow(record);
+        },
+    })}
+    />
+```
+
+```jsx
+    const data = [
+      {
+        key: '1',
+        SCHEDULE_NAME: 'test1',
+        CREATED: '2022/12/25',
+        SCHEDULE_TAG: 32,
+      },
+      {
+        key: '2',
+        SCHEDULE_NAME: 'test2',
+        CREATED: '2022/12/30',
+        SCHEDULE_TAG: 42,
+      },
+...
+    ];
+
+    const columns = [
+      {
+        title: 'SCHEDULE NAME',
+        dataIndex: 'SCHEDULE_NAME',
+        key: 'SCHEDULE_NAME',
+      },
+      {
+        title: 'SCHEDULE TAG',
+        dataIndex: 'SCHEDULE_TAG',
+        key: 'SCHEDULE_TAG',
+      },
+...
+    ];
+```
+
+공식문서를 따라 작성하면 짜잔, 이렇게 이미지가 뜬다. 👏👏👏
+![after table screenshot](https://user-images.githubusercontent.com/110847597/208448995-d5fbacc8-0d0d-4702-bcb1-a7876419f791.png)
+
+내일 할 일: 
+
+- [ ] SCSS를 수정하기, 커밋하기
+
+### 📛 `This.state?` `This.Props?`
+
