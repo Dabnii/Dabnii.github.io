@@ -160,5 +160,25 @@ export default App;
 
 - [ ] SCSS를 수정하기, 커밋하기
 
-### 📛 `This.state?` `This.Props?`
+<br>
 
+###  <p align="center">📛 `This.state?` `This.Props?`
+> 현업 코드를 보다보니, this가 정말 많이 쓰이고 있었다.
+> 어디서 호출하느냐에 따라 바인딩 되는것이 결정된다는데 더 적극적으로 공부를 해야겠다.
+
+📝 This.state
+
+1. `this.state` : state를 해당 컴포넌트에서 만들 때
+
+🧚‍♀️ This.props
+
+1. `this.props` : 부모 컴포넌트나, 리덕스에서 `해당 컴포넌트에 주입` 할 때
+
+🌳 성장 포인트 :
+
+- 내가 어렵다면, 어려운 것이 맞다! 
+    - 그때마다 물어보고 또 알아보자!
+- 라이브러리를 많이 써보고 친숙해 져야겠다.
+- `this` 공부도 잊지 말자!
+
+## <p align="center"> `Internship` 📆 12/20
