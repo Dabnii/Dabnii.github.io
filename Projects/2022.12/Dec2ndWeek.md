@@ -185,20 +185,20 @@ export default App;
 
 ### 📝 class components Error + `this`
 
-😈 오늘 만난 에러
-- Uncaught RefereceError: 
-isStagingSchedulingTableShown이 선언되지 않았다는 것.
-<img width="431" alt="Error!!" src="https://user-images.githubusercontent.com/110847597/208923021-1b281f3d-db2f-494d-b0a9-23cab8b6a201.png">
+### 😈 오늘 만난 에러
+*`Uncaught RefereceError:isStagingSchedulingTableShown`이 선언되지 않았다는 것.*
+<img width="1000px" alt="Error!!" src="https://user-images.githubusercontent.com/110847597/208923021-1b281f3d-db2f-494d-b0a9-23cab8b6a201.png" align="center">
 
 🤔 하지만 난 분명 선언을 했는데?
 이렇게 말이다! 👇
-![Error #1](https://user-images.githubusercontent.com/110847597/208923028-c15f834d-f8e7-485b-9a67-e710c3dd7d4d.png)
+  <img width="1000px" alt="Error!!2" src="https://user-images.githubusercontent.com/110847597/208923028-c15f834d-f8e7-485b-9a67-e710c3dd7d4d.png" align="center">
 
 🧐 차근히 코드를 훑어보다, `this`를 사용한다는걸 알게 되었고 함수형 컴포넌트와는 다름을 알게 되었다.
-![Error #2](https://user-images.githubusercontent.com/110847597/208923033-9a6026af-92a1-42ac-bfd2-b5dc1dc09cf7.png)
+  <img width="1000px" alt="Error!!3" src="https://user-images.githubusercontent.com/110847597/208923033-9a6026af-92a1-42ac-bfd2-b5dc1dc09cf7.png" align="center">
+
 
 아래와 같이 this.state 이 컴포넌트에서 만들고, 선언하겠음을 컴퓨터에게 알렸다.
-![Error Fix!](https://user-images.githubusercontent.com/110847597/208923037-cf51b5e3-3585-4b75-8fa1-3ce7eb44d8ce.png)
+  <img width="1000px" alt="Error!!fix!" src="https://user-images.githubusercontent.com/110847597/208923037-cf51b5e3-3585-4b75-8fa1-3ce7eb44d8ce.png" align="center">
 
 잘 해결하였다. 뿌듯 💪
 
