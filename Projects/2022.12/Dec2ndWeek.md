@@ -181,4 +181,75 @@ export default App;
 - 라이브러리를 많이 써보고 친숙해 져야겠다.
 - `this` 공부도 잊지 말자!
 
-## <p align="center"> `Internship` 📆 12/20
+## <p align="center"> `Internship` 📆 12/21
+
+### 📝 class components Error + `this`
+
+😈 오늘 만난 에러
+- Uncaught RefereceError: 
+isStagingSchedulingTableShown이 선언되지 않았다는 것.
+<img width="431" alt="Error!!" src="https://user-images.githubusercontent.com/110847597/208923021-1b281f3d-db2f-494d-b0a9-23cab8b6a201.png">
+
+🤔 하지만 난 분명 선언을 했는데?
+이렇게 말이다! 👇
+![Error #1](https://user-images.githubusercontent.com/110847597/208923028-c15f834d-f8e7-485b-9a67-e710c3dd7d4d.png)
+
+🧐 차근히 코드를 훑어보다, `this`를 사용한다는걸 알게 되었고 함수형 컴포넌트와는 다름을 알게 되었다.
+![Error #2](https://user-images.githubusercontent.com/110847597/208923033-9a6026af-92a1-42ac-bfd2-b5dc1dc09cf7.png)
+
+아래와 같이 this.state 이 컴포넌트에서 만들고, 선언하겠음을 컴퓨터에게 알렸다.
+![Error Fix!](https://user-images.githubusercontent.com/110847597/208923037-cf51b5e3-3585-4b75-8fa1-3ce7eb44d8ce.png)
+
+잘 해결하였다. 뿌듯 💪
+
+```jsx
+//Counter.js
+import React, {Component} from 'react'
+
+class Counter extends Component {
+
+    constructor(props) {
+
+        super(props);
+        this.state = {
+            increaseNum : 0,
+            decreaseNum : 100
+        };
+    }
+
+    render(){
+        const {increaseNum, decreaseNum} = this.state;
+        return(
+            <div>
+                <h1>증가하는 값 : {increaseNum}</h1>
+                <h2>감소하는 값 : {decreaseNum}</h2>
+                <button
+                    onClick={()=>{
+    
+                        this.setState({
+                            increaseNum : increaseNum + 1,
+                            decreaseNum : decreaseNum - 1
+                        });
+                    }}
+                >
+                    Increase / Decrease
+                </button>
+            </div>
+        );
+    }
+}
+
+export default Counter;
+```
+> [[React] 클래스형 컴포넌트에서 state 사용하기](https://velog.io/@choie0423/React-%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-state-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+
+### 🌳 성장 포인트 :
+
+- 에러에 당황하지 않고 읽어보고, 검색하고 코드를 하나씩 체크하며 스스로 해결하고 있다.
+- 비록 클래스 컴포넌트를 많이 사용하지 않는 추세이지만, 부딪혀보고 경험하고 있어 많이 배우고 있다.
+
+출처:
+
+- [[React] 클래스형 컴포넌트에서 state 사용하기](https://velog.io/@choie0423/React-%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-state-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+
+## <p align="center"> `Internship` 📆 12/22
