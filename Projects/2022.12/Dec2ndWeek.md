@@ -253,3 +253,48 @@ export default Counter;
 - [[React] 클래스형 컴포넌트에서 state 사용하기](https://velog.io/@choie0423/React-%ED%81%B4%EB%9E%98%EC%8A%A4%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%97%90%EC%84%9C-state-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
 
 ## <p align="center"> `Internship` 📆 12/22
+
+### 📝 class components `componentDidMount()`
+
+- `uncaught invariant violation: hooks can only be called inside`
+  - 통신 준비를 위하여 `useEffect와` `fetch`를 작성하고 렌더 하는 순간, 발생된 오류
+  <img width="529" alt="KakaoTalk_Photo_2022-12-23-00-14-51" src="https://user-images.githubusercontent.com/110847597/209169628-7c2a358b-1bba-49e7-ad13-95cb3f83f52e.png">
+  - 코드를 아무리 확인 해도, 내 hook은 함수 내부에 선언 되어 있었다.
+  - 그 때, 뇌를 스치는 생각.
+  - 나 지금... `클래스 컴포넌트` 인데?
+
+  - 약간의 시간을 당겨, React를 막 배우기 시작했을 때 클래스 컴포넌트와 함수 컴포넌트의 차이를 배웠다.
+  - 가장 큰 차이점은, 생명주기를 관리 할 수 있는 Hook이 나오므로서 함수 컴포넌트가 활성화 된 것이다.
+    - 즉, Hook이 나오기 전에는 함수 컴포넌트에서 생명주기를 관리하기 어려웠다는것!
+    
+    ### 📌 Component types
+
+    | &#32;    | Class component                | Function component            |
+    | -------- | ------------------------------ | ----------------------------- |
+    | 난이도   | 심화 및 필수!                  | 초심자에게 추천               |
+    | 필수사항 | ✨ `render()` 메서드           | &#32;                         |
+    | 특징     | State & Lifecycle API 사용가능 | Hook 등장이후 `state`사용가능 |
+    - [My TIL:🧢 React Component](https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md)
+    ```jsx
+    componentDidMount() {
+      fetch('../../../api/requests/MockDataSchedule.json').then(res =>
+        tagReadData(res).then(console.log('Saved!')),
+      );
+    }
+    ```
+    [Ref: Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a?gi=bc14f2a9db99)
+    > 클래스컴포넌트를 사용하게 되어서 영광이다. 함수 컴포넌트를 쓸 때 보다 더 많이 넘어지지만, 확실히 많이 배워간다. 특히나 `this`의 개념이 서서히 확립되는 중.
+
+    ![KakaoTalk_Photo_2022-12-23-00-14-40 002](https://user-images.githubusercontent.com/110847597/209169661-13f590b6-db7d-452a-966b-2f87dd34a2bc.png)
+
+    <img width="519" alt="KakaoTalk_Photo_2022-12-23-00-14-40 001" src="https://user-images.githubusercontent.com/110847597/209169666-6735970f-9fd5-46ad-946e-d81bf9ebd156.png">
+
+    - 그리고 콘솔로그를 많이 찍어보며, 코딩하는 중입니다.
+    
+    ![KakaoTalk_Photo_2022-12-23-00-14-40 004](https://user-images.githubusercontent.com/110847597/209169654-30fbbff1-5745-4c94-ade7-aecd424ac119.png)
+
+    <img width="514" alt="KakaoTalk_Photo_2022-12-23-00-14-40 007" src="https://user-images.githubusercontent.com/110847597/209169643-d20127ee-c18b-48d8-9b84-3c58a82fc5fc.png">
+
+    - 담기지 않았습니다. 슬픕니다.
+
+## <p align="center"> `Internship` 📆 12/23
