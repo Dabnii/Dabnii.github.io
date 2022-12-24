@@ -43,6 +43,7 @@
 
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%EB%93%B1%EC%9E%A5%EB%B0%B0%EA%B2%BD.md">React의 등장 배경 & Library</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md">React 101</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Class%20LifeCycle.md">React Class component</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md">React Component</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md">React & JSX</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md">React Hook</a>
@@ -52,9 +53,10 @@
 
 # 💻 Computer Science
 
-- [JavaScript | Synchronous, Single-threaded Language 💬](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20Sync.md)
-   - [JavaScript | Process 💬 ](https://github.com/Dabnii/Dabnii.github.io/blob/8a5069aaafb3ab808d525d2e28a2c54b8a8f1b48/Computer%20Science/JavaScript%20Process.md)
-- [JavaScript |  Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
+- [JavaScript | Synchronous, Single-threaded Language](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20Sync.md)
+  - [JavaScript | Process 💬 ](https://github.com/Dabnii/Dabnii.github.io/blob/8a5069aaafb3ab808d525d2e28a2c54b8a8f1b48/Computer%20Science/JavaScript%20Process.md)
+  - [JavaScript | Thread]()
+- [JavaScript | Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
 
 # 🌐 Web dev skills up!
 
