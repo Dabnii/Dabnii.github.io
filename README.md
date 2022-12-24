@@ -54,8 +54,8 @@
 # 💻 Computer Science
 
 - [JavaScript | Synchronous, Single-threaded Language](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20Sync.md)
-  - [JavaScript | Process 💬 ](https://github.com/Dabnii/Dabnii.github.io/blob/8a5069aaafb3ab808d525d2e28a2c54b8a8f1b48/Computer%20Science/JavaScript%20Process.md)
-  - [JavaScript | Thread]()
+  - [JavaScript | Process 💬](https://github.com/Dabnii/Dabnii.github.io/blob/8a5069aaafb3ab808d525d2e28a2c54b8a8f1b48/Computer%20Science/JavaScript%20Process.md)
+  - [JavaScript | Thread 💬](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20%7C%20Thread.md)
 - [JavaScript | Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
 
 # 🌐 Web dev skills up!
