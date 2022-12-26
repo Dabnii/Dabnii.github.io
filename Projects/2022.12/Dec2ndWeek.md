@@ -462,3 +462,33 @@ getTableApi = async ({ projectId, workspaceId, responseType }) => {
 ---
 
 ## <p align="center"> `Internship` 📆 12/26
+
+### 📊 antd table ✅ checkbox
+
+```jsx
+//한참 찾은 input 값 배열에 넣기!
+state = {
+    keys: [],
+  };
+
+<Table
+        columns={columns}
+        dataSource={tagReadData.results}
+        rowSelection={{
+          type: 'radio',
+          selectedRowKeys: this.state.keys,
+          onChange: this.onRowKeysChange,
+        }}
+        rowKey={record => record.id}
+        onRow={record => ({
+          onClick: () => {
+            this.selectRow(record);
+          },
+        })}
+      />
+```
+- `keys`를 배열로 선언 합니다.
+- `rowselection={{ type: 'radio'}}`로 디폴트 값을 바꿔줍니다.
+
+### 🔌 Fetch!
+
