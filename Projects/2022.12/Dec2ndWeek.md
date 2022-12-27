@@ -492,3 +492,152 @@ state = {
 
 ### 🔌 Fetch!
 
+```jsx
+getTableApi = async ({ projectId, workspaceId, responseType }) => {
+    console.log('table api 통신 시작!!!');
+    const authToken = localStorage.getItem('auth_token');
+
+    try {
+      const response = await fetch(
+        `url`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: authToken,
+            'client-server': 'application/json',
+          },
+        },
+      );
+
+      const tagReadData = await response.json();
+      console.log(tagReadData.results);
+      this.setState({ tagReadData });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const { selectedRowKeys, tagReadData } = this.state;
+  //렌더하는 곳에서 구조분해 할당을 해주어야함. 
+```
+
+## <p align="center"> `Internship` 📆 12/27
+
+  ```jsx
+  uploadTagCreate = async () => {
+    const { workspaceId, projectId } = this.props;
+    const { responseType, keyDataFromChild } = this.state;
+    console.log(keyDataFromChild);
+    await api({
+      url: `url`,
+      method: 'post',
+      headers: { 'content-type': 'application/json' },
+      data: {
+        tag_id: keyDataFromChild[0],
+      },
+    }).then(response => {
+      const { data } = response;
+    });
+  };
+  //200 OK 🫡
+  ```
+
+### 📎 axios 
+  ```jsx
+  //fetch로 발생할 수 있는 오유를 방지하기 위하여 axios 활용
+  sortTagsApi = async () => {
+    const { workspaceId, projectId } = this.props;
+    const { responseType, schedulingTagList } = this.state;
+
+    await api({
+      url: `url`,
+      method: 'get',
+      headers: { 'content-type': 'application/json' },
+    }).then(response => {
+      const { data } = response;
+      this.setState({ schedulingTagList: data.results });
+      // tagID : Num
+    });
+  };
+  ```
+
+### 👩‍👩‍👧‍👦 자식에서 부모로 데이터 보내기
+
+```jsx
+//parent
+state= {
+  keyDataFromChild: [],
+}
+
+uploadTagCreate = async () => {
+    const { keyDataFromChild } = this.state;
+
+    await api({
+      url: `url`,
+      method: 'post',
+      headers: { 'content-type': 'application/json' },
+      data: {
+        tag_id: keyDataFromChild[0],
+      },
+    }).then(response => {
+      const { data } = response;
+    });
+  };
+
+  const getKeyData = value => {
+    this.setState({ keyDataFromChild: value });
+  };
+
+//child
+  state = {
+    keys: [],
+  };
+
+  onRowKeysChange = keys => {
+    this.setState({ keys });
+    const { getKeyData } = this.props;
+    getKeyData(keys);
+  };
+```
+
+### 🛡 임시방편 로직
+
+```jsx
+const { invalid } = this.props;
+// invalid는 form field의 값들을 체크하고 업로드 버튼을 제어하고 있다
+// 너무 깊은 프롭스인 관계로 원 출처를 찾지 못했다.
+// 그러하여 아래의 임시 방편 방안으로 해결..
+
+const { invalidCheck: true } = this.state
+// invalid응 임시방편으로 사용할 새로운 스테이트를 선언
+
+const getKeyData = value => {
+  this.setState({ keyDataFromChild: value });
+  this.state.keyDataFromChild !== []
+    ? this.setState({ invalidCheck: false })
+    : this.setState({ invalidCheck: true });
+};
+// 위의 작성 한, 자식 요소에서 받아온 keys값을 담은 스테이트를 사용
+// keyDataFromChild가 빈 값이 아니라면 (즉, key값이 배열에 있다면)
+// invalidCheck의 값은 false가 되어 disabled를 해제합니다.
+// TMI 나의 최애 삼항
+<BlueButton
+  type="submit"
+  className="button_uppercase"
+  disabled={invalid || invalidCheck}
+  onClick={onClickButton}
+>
+```
+
+  ### 🌳 성장 포인트 :
+
+- console.log를 찍으며 어떤 문제가 있는지 확인!
+- 혼자서 해낼 수 있는 것들이 많아지고 있다. 🥹
+  - fetch도 혼자서 척척.. 200 ok 짜릿
+- 자식에서 부모로 넘기기 까지 성공
+- 임시방편 로직도 작성했다. 
+  - 나는... 유지보수가 쉽게 코드를 쓸것이다.
+  - 돌아가는 코드 말고, 잘 짜여진 코드를 쓰자!
+
+
+## <p align="center"> `Internship` 📆 12/28
