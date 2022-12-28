@@ -540,6 +540,8 @@ uploadTagCreate = async () => {
 //200 OK 🫡
 ```
 
+![200OK!](https://user-images.githubusercontent.com/110847597/209746568-7568e051-a34f-45fe-8922-6453cbd94f33.png)
+
 ### 📎 axios
 
 ```jsx
