@@ -370,7 +370,7 @@ componentWillMount() {
 //전달 받은 프롭스 구조분해할당을 해줍니다
 
 //responseType은 fetch를 사용할 때
-`http://183.111.204.170:42001/api/v1/workspaces/${workspaceId}/projects/${projectId}/tags/type/${responseType}`,
+`url${workspaceId}/projects/${projectId}/tags/type/${responseType}`,
 //추가: 훌륭한 네임으로 바꾸는 것이 좋겠군요...
 ```
 
@@ -409,7 +409,7 @@ function yell(msg) {
 }
 ```
 
-### 🫡 실제 내가 try catch를 활용한 코드
+### 🫡 실제 try catch를 활용한 코드
 
 ```jsx
 //child
@@ -468,25 +468,26 @@ getTableApi = async ({ projectId, workspaceId, responseType }) => {
 ```jsx
 //한참 찾은 input 값 배열에 넣기!
 state = {
-    keys: [],
-  };
+  keys: [],
+};
 
 <Table
-        columns={columns}
-        dataSource={tagReadData.results}
-        rowSelection={{
-          type: 'radio',
-          selectedRowKeys: this.state.keys,
-          onChange: this.onRowKeysChange,
-        }}
-        rowKey={record => record.id}
-        onRow={record => ({
-          onClick: () => {
-            this.selectRow(record);
-          },
-        })}
-      />
+  columns={columns}
+  dataSource={tagReadData.results}
+  rowSelection={{
+    type: "radio",
+    selectedRowKeys: this.state.keys,
+    onChange: this.onRowKeysChange,
+  }}
+  rowKey={(record) => record.id}
+  onRow={(record) => ({
+    onClick: () => {
+      this.selectRow(record);
+    },
+  })}
+/>;
 ```
+
 - `keys`를 배열로 선언 합니다.
 - `rowselection={{ type: 'radio'}}`로 디폴트 값을 바꿔줍니다.
 
@@ -494,110 +495,108 @@ state = {
 
 ```jsx
 getTableApi = async ({ projectId, workspaceId, responseType }) => {
-    console.log('table api 통신 시작!!!');
-    const authToken = localStorage.getItem('auth_token');
+  console.log("table api 통신 시작!!!");
+  const authToken = localStorage.getItem("auth_token");
 
-    try {
-      const response = await fetch(
-        `url`,
-        {
-          method: 'GET',
-          headers: {
-            Authorization: authToken,
-            'client-server': 'application/json',
-          },
-        },
-      );
+  try {
+    const response = await fetch(`url`, {
+      method: "GET",
+      headers: {
+        Authorization: authToken,
+        "client-server": "application/json",
+      },
+    });
 
-      const tagReadData = await response.json();
-      console.log(tagReadData.results);
-      this.setState({ tagReadData });
-    } catch (err) {
-      console.log(err);
-    }
-  };
+    const tagReadData = await response.json();
+    console.log(tagReadData.results);
+    this.setState({ tagReadData });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-  const { selectedRowKeys, tagReadData } = this.state;
-  //렌더하는 곳에서 구조분해 할당을 해주어야함. 
+const { selectedRowKeys, tagReadData } = this.state;
+//렌더하는 곳에서 구조분해 할당을 해주어야함.
 ```
 
 ## <p align="center"> `Internship` 📆 12/27
 
-  ```jsx
-  uploadTagCreate = async () => {
-    const { workspaceId, projectId } = this.props;
-    const { responseType, keyDataFromChild } = this.state;
-    console.log(keyDataFromChild);
-    await api({
-      url: `url`,
-      method: 'post',
-      headers: { 'content-type': 'application/json' },
-      data: {
-        tag_id: keyDataFromChild[0],
-      },
-    }).then(response => {
-      const { data } = response;
-    });
-  };
-  //200 OK 🫡
-  ```
+```jsx
+uploadTagCreate = async () => {
+  const { workspaceId, projectId } = this.props;
+  const { responseType, keyDataFromChild } = this.state;
+  console.log(keyDataFromChild);
+  await api({
+    url: `url`,
+    method: "post",
+    headers: { "content-type": "application/json" },
+    data: {
+      tag_id: keyDataFromChild[0],
+    },
+  }).then((response) => {
+    const { data } = response;
+  });
+};
+//200 OK 🫡
+```
 
-### 📎 axios 
-  ```jsx
-  //fetch로 발생할 수 있는 오유를 방지하기 위하여 axios 활용
-  sortTagsApi = async () => {
-    const { workspaceId, projectId } = this.props;
-    const { responseType, schedulingTagList } = this.state;
+### 📎 axios
 
-    await api({
-      url: `url`,
-      method: 'get',
-      headers: { 'content-type': 'application/json' },
-    }).then(response => {
-      const { data } = response;
-      this.setState({ schedulingTagList: data.results });
-      // tagID : Num
-    });
-  };
-  ```
+```jsx
+//fetch로 발생할 수 있는 오류를 방지하기 위하여 axios 활용
+sortTagsApi = async () => {
+  const { workspaceId, projectId } = this.props;
+  const { responseType, schedulingTagList } = this.state;
+
+  await api({
+    url: `url`,
+    method: "get",
+    headers: { "content-type": "application/json" },
+  }).then((response) => {
+    const { data } = response;
+    this.setState({ schedulingTagList: data.results });
+    // tagID : Num
+  });
+};
+```
 
 ### 👩‍👩‍👧‍👦 자식에서 부모로 데이터 보내기
 
 ```jsx
 //parent
-state= {
+state = {
   keyDataFromChild: [],
-}
+};
 
 uploadTagCreate = async () => {
-    const { keyDataFromChild } = this.state;
+  const { keyDataFromChild } = this.state;
 
-    await api({
-      url: `url`,
-      method: 'post',
-      headers: { 'content-type': 'application/json' },
-      data: {
-        tag_id: keyDataFromChild[0],
-      },
-    }).then(response => {
-      const { data } = response;
-    });
-  };
+  await api({
+    url: `url`,
+    method: "post",
+    headers: { "content-type": "application/json" },
+    data: {
+      tag_id: keyDataFromChild[0],
+    },
+  }).then((response) => {
+    const { data } = response;
+  });
+};
 
-  const getKeyData = value => {
-    this.setState({ keyDataFromChild: value });
-  };
+const getKeyData = (value) => {
+  this.setState({ keyDataFromChild: value });
+};
 
 //child
-  state = {
-    keys: [],
-  };
+state = {
+  keys: [],
+};
 
-  onRowKeysChange = keys => {
-    this.setState({ keys });
-    const { getKeyData } = this.props;
-    getKeyData(keys);
-  };
+onRowKeysChange = (keys) => {
+  this.setState({ keys });
+  const { getKeyData } = this.props;
+  getKeyData(keys);
+};
 ```
 
 ### 🛡 임시방편 로직
@@ -629,15 +628,14 @@ const getKeyData = value => {
 >
 ```
 
-  ### 🌳 성장 포인트 :
+### 🌳 성장 포인트 :
 
 - console.log를 찍으며 어떤 문제가 있는지 확인!
 - 혼자서 해낼 수 있는 것들이 많아지고 있다. 🥹
   - fetch도 혼자서 척척.. 200 ok 짜릿
 - 자식에서 부모로 넘기기 까지 성공
-- 임시방편 로직도 작성했다. 
+- 임시방편 로직도 작성했다.
   - 나는... 유지보수가 쉽게 코드를 쓸것이다.
   - 돌아가는 코드 말고, 잘 짜여진 코드를 쓰자!
-
 
 ## <p align="center"> `Internship` 📆 12/28
