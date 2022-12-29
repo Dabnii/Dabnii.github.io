@@ -640,4 +640,74 @@ const getKeyData = value => {
   - 돌아가는 코드 말고, 잘 짜여진 코드를 쓰자!
 
 
-## <p align="center"> `Internship` 📆 12/28
+## <p align="center"> `Internship` 📆 12/29
+
+- `retraining_batch` 라면 분할 하여 `retraining`,`batch_prediction`로 렌더
+- 태그가 하나일 때 `matchingTag` 하나의 박스로 렌더하기
+- 처음에 `for`을 사용하여 매핑 하려 했지만, 조건이 2가지가 되기 때문에 아래의 코드로 수정.
+
+```jsx
+state = {
+    matchingTag: '', 
+    // 하나의 태그일 경우의 스테이트
+    matchingTags: '',
+    retrainingTag: '',
+    // 두가지 경우 일 때, retrainingTag 값을 담는 곳 
+    batchPredictionTag: '',
+    // 두가지 경우 일 때, batchPredictionTag 값을 담는 곳 
+
+  };
+
+mapApiData = () => {
+    const { scheduleDetails } = this.props;
+    const scheduleType = scheduleDetails.type;
+    const scheduleTags = scheduleDetails.tags;
+
+    if (scheduleType === 'retraining_batch') {
+      scheduleTags.map((el, i) => {
+        if (el.type === 'retraining') {
+          this.setState({ retrainingTag: el.tag });
+        }
+        if (el.type === 'batch_prediction') {
+          this.setState({ batchPredictionTag: el.tag });
+        }
+      });
+    } else {
+      scheduleDetails.map((el, i) => {
+        this.setState({ matchingTag: el.tag });
+      });
+    }
+  };
+```
+
+```jsx
+<div className="ant-form-item-control-wrapper">
+  {scheduleDetails.type === 'retraining_batch' ? (
+  //리액트에서 삼항 조건을 주어 렌더링 할 수 있음
+    <>
+      <input
+        className="tagInput"
+        name="name"
+        type="text"
+        placeholder={this.state.retrainingTag}
+        readOnly
+      />
+      <input
+        className="tagInput"
+        name="name"
+        type="text"
+        placeholder={this.state.batchPredictionTag}
+        readOnly
+      />
+    </>
+  ) : (
+    <input
+      className="tagInput"
+      name="name"
+      type="text"
+      placeholder={this.state.matchingTag}
+      readOnly
+    />
+  )}
+</div>
+```
