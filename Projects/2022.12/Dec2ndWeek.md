@@ -711,3 +711,10 @@ mapApiData = () => {
   )}
 </div>
 ```
+## <p align="center"> `Internship` 📆 12/27
+
+```jsx
+  if (Number.isInteger(keepCount) === false) {
+      inputValue = Math.round(keepCount);
+  }
+```
