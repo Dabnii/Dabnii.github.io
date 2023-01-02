@@ -719,37 +719,131 @@ mapApiData = () => {
   }
 ```
 
+- total 데이터 수 와 사용자가 입력하는 값을 연산하여 남는 값을 렌더링 해야한다.
+   - 간단해 보였지만 조건이 여러가지가 필요했다.
+   - 상수여야 한다 → 소수점 이라면 반올림 한다
+      - `isInteger`을 활용하여 로직을 짰지만 작동하지 않는다.
+      - `while`을 사용하여 값이 참이면 계속 조건을 순회하게 할지 고민이다.
+   - 지울 값이 가진 데이터 값보다 클 수 없다
+   
+
+### 🌳 인턴 셋째 주 회고 :
+  
+### 👏 잘한 점 
+  1. 라이브러리에 대한 이해도 up
+  1. 개발자의 업무 환경 이해 
+  1. 컴퓨팅 사고력 up
+  1. 검색하고 질문하는 용기
+
+### 💪 아쉬운 점
+  1. 누가 봐도 이해하기 쉬운 코드를 작성하는 것이 아직은 부족하다.
+  1. 리팩토링 한 코드를 보면 늘 `아... 이렇게 적을 걸` 이라는 아쉬움
+
+### 🏆 앞으로의 다짐
+  1. 더 적극적으로 질문하고, 고민하기
+  1. 절대적인 코드 작성 시간 늘리기!
+    - 홀로 앓는 시간을 줄이는 것 
+  1. 기록과 회고를 통한 복습 
+  <img width="427" alt="스크린샷 2023-01-02 오전 11 09 22" src="https://user-images.githubusercontent.com/110847597/210249410-a8992621-ad6f-4bb7-a969-85217e67360f.png">
+
+
 ## <p align="center"> `Internship` 📆 1/2
 
-## 메뉴탭
+## ✨ 메뉴탭 CSS 바꾸기
 
 ```jsx
 className={classNames('tab-menu__link', {
-                    'tab-menu__link_active': type === 'retrainedModels',
-                  })}
+          'tab-menu__link_active': type === 'retrainedModels',
+        })}
 ```
 
+### 📍 useEffect + state 업데이트
+
 ```jsx
-{typeList.map(item => (
-  <button
-    key={item.value}
-    type="button"
-    className={classNames('tab-menu__link', {
-      'tab-menu__link_active':
-        item.value === this.state.responseType,
-    })}
-    value={item.value}
-    onClick={() => {
-      this.setState({ responseType: item.value }, () =>
-        this.sortTagsApi(),
-      );
-    }}
-  >
-    <div className="tab-text">
-      <span className={`button-menu__link + ${item.value}`}>
-        <span>{item.label}</span>
+useEffect(
+    () => {
+      if (createCount >= predictionKeepModel) {
+        setPreDeleteCount(createCount - predictionKeepModel);
+      }
+    },
+    [createCount, predictionKeepModel],
+  );
+//useEffect와 의존성 배열을 활용 한 ui 렌더
+
+  <input
+  type="number"
+  className="delQuality"
+  placeholder={0}
+  id="delQuality"
+  step={1}
+  min={0}
+  max={createCount}
+  value={retrainingKeepModel}
+  onChange={e => setRetrainingKeepModel(Number(e.target.value))}
+/>
+```
+### 🍯 `Input`
+  - `step={1}`을 넣으면 1씩 커진다.
+  - `max={createCount}`
+  - input의 화살표를 계속 보여주는 방법은 `opacity: 1`
+  ```jsx
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+      opacity: 1;
+  }
+  ```
+
+
+### 📝 조건부 렌더: scheduleType 타입에 따른
+
+```jsx
+//scheduleMethodTob.js
+const scheduleType = scheduleDetails.type;
+
+//index.js
+ {scheduleType && scheduleType.includes('prediction') ? (
+  <div className="studio-container_auto_del">
+    <div className="title-wrap">
+      <span className="title-wrap-text">
+        Enable Prediction Auto-delete
       </span>
     </div>
-  </button>
-))}
+    {predictionAutoDeletion && (
+      <ScheduleAutoDeleteViewOption
+        prediction={scheduleType.includes('prediction')}
+        createCount={schedulingOptions.createCount}
+        predictionKeepModel={predictionKeepModel}
+        setPredictionKeepModel={setPredictionKeepModel}
+      />
+    )}
+  </div>
+) : (
+  <></>
+)}
 ```
+
+### 📊 antd table CSS
+
+```jsx
+ {
+    title: 'CREATED',
+    dataIndex: 'created_at',
+    key: 'created_at',
+    render: text => getFormattedDateTimeTable(text),
+    className: 'tag-columns-custom',
+  }
+```
+
+### 🌳 성장 포인트 :
+
+- 표 CSS를 커스텀 하는 도중, 오류를 만났다.
+- 클래스네임을 공유하고 있어 전체 css에 적용이 되는 것.
+- `row`를 수정하지 않고 `column`을 수정하는 방법으로 변경 후 성공!
+- 라이브러리 명세를 확인하여 위의 코드 4번째 코드 `className:'tag-columns-custom'`로 작성하여 열을 수정 함!
+  - `key`를 활용하여 date의 포맷 변환도 완료 
+  - 라이브러리는 어렵지만 또 쉽다. 🥲
+- 검색과 질문도 코딩이다.
+- 얼마 안남은 마무리와 `QA`를 잘 마무리 할 것
+
+## <p align="center"> `Internship` 📆 1/3
+
