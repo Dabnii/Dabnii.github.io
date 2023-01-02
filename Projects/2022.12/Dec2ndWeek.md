@@ -718,3 +718,38 @@ mapApiData = () => {
       inputValue = Math.round(keepCount);
   }
 ```
+
+## <p align="center"> `Internship` 📆 1/2
+
+## 메뉴탭
+
+```jsx
+className={classNames('tab-menu__link', {
+                    'tab-menu__link_active': type === 'retrainedModels',
+                  })}
+```
+
+```jsx
+{typeList.map(item => (
+  <button
+    key={item.value}
+    type="button"
+    className={classNames('tab-menu__link', {
+      'tab-menu__link_active':
+        item.value === this.state.responseType,
+    })}
+    value={item.value}
+    onClick={() => {
+      this.setState({ responseType: item.value }, () =>
+        this.sortTagsApi(),
+      );
+    }}
+  >
+    <div className="tab-text">
+      <span className={`button-menu__link + ${item.value}`}>
+        <span>{item.label}</span>
+      </span>
+    </div>
+  </button>
+))}
+```
