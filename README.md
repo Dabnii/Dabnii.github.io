@@ -57,13 +57,16 @@
   - [JavaScript | Process 💬](https://github.com/Dabnii/Dabnii.github.io/blob/8a5069aaafb3ab808d525d2e28a2c54b8a8f1b48/Computer%20Science/JavaScript%20Process.md)
   - [JavaScript | Thread 💬](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20%7C%20Thread.md)
 - [JavaScript | Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
+- [JavaScript | This]()
+- [JavaScript | Ajax]()
 
 # 🌐 Web dev skills up!
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/DevTools%20%7C%20Chrome.md">DevTools</a>
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Git%20%26%20Git-hub%20101.md"> Git & GitHub 101</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Git%20rebase.md"> Git Rebase</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Git%20%26%20Git-hub%20101.md">Git & GitHub 101</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Git%20rebase.md">Git Rebase</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/HTTP%20101.md">HTTP 101</a>
+- [Pull Request & Commit](https://github.com/Dabnii/Dabnii.github.io/blob/fbab4f17ee0ebe2aeda4e2fb57c1cda0c20eabcf/TIL/Git%20commit%20message%20%26%20Pull%20request.md)
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
 
 # 📚 Code tests
