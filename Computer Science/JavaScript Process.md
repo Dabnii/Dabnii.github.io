@@ -6,7 +6,7 @@
 
 ### `#독립적` `#실행중인작업`
 
-[Operation System](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcB9Isi%2FbtruUoLTJ8E%2F7pyzUTqv5XcWfrV41AB6AK%2Fimg.png)
+![Operation System](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcB9Isi%2FbtruUoLTJ8E%2F7pyzUTqv5XcWfrV41AB6AK%2Fimg.png)
 
 ### 📍 `1 Process 1 thread`
 
