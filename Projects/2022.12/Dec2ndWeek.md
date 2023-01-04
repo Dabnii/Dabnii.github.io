@@ -887,7 +887,9 @@ Math.min([value1[, value2[, ...]]])
 
 ### 🌳 성장 포인트 :
 
-- ABCD
-- ABCD
-
-## <p align="center"> `Internship` 📆 1/4
+- `아는 만큼 가독성이 좋아지는 코드`
+  - 처음 위의 기능을 구현할 때 `if (가진값 <= 입력값) {...} if(가진값.정수가 아닐 때)` 등 복잡한 로직을 작성했다. (약 7줄)
+  - 자연스럽게 while과 작동 시점에 대해서 고민이 깊어졌고, 간단한 수정사항이었는데 복잡하게 느껴졌다.
+  - 하지만 Input의 `min`, `max`, `step`을 활용하여 코드는 더 간결해졌다.
+  - 또한 `const possibleMax = Math.min(MAX_KEEP, createCount)` 코드를 작성하여 `정수가 아닐 때, 입력값이 가진 값 보다 클 때` 두 가지 조건을 한 줄로 해결하였다. (선언까지 3줄)
+  - _Kepp It Simple, Stupid_ 을 기억하며 오늘도 열심히 공부를!
