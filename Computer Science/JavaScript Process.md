@@ -1,6 +1,6 @@
 # <p align="center"> JavaScript Process
 
-<p align="center">  Process, Processor 🏗️
+<p align="center"> 👩‍🍳Process & Processor
 
 # 👩‍🍳 Process
 
