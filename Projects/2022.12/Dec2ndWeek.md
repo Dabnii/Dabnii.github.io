@@ -893,3 +893,8 @@ Math.min([value1[, value2[, ...]]])
   - 하지만 Input의 `min`, `max`, `step`을 활용하여 코드는 더 간결해졌다.
   - 또한 `const possibleMax = Math.min(MAX_KEEP, createCount)` 코드를 작성하여 `정수가 아닐 때, 입력값이 가진 값 보다 클 때` 두 가지 조건을 한 줄로 해결하였다. (선언까지 3줄)
   - _Kepp It Simple, Stupid_ 을 기억하며 오늘도 열심히 공부를!
+
+---
+
+회고:
+
