@@ -64,7 +64,7 @@
       - README.MD 없이 생성 합니다.
       - README.MD가 없는 경우
       - …or create a new repository on the command line 섹션에서 `6` `git remote add origin https://github.com/%UserName%/%New repo%`를 복사하여 터미널에 입력합니다.
-1.  `git innit`
+1.  `git init`
 1.  `git add .`
 1.  `git commit` (공식적으로 기록 남김/업로드 합니다)
 1.  `git push origin (branch name)`
@@ -125,6 +125,8 @@ git branch * main
 | git pull                            | GitHub에서 가져올 브랜치 이름             | GibHub Master → Local Master                                                                                                                       | git pull [branch]                |
 | git stash                           | git 임시저장                              | 브랜치 이동을 위한 임시저장                                                                                                                        | git stash                        |
 | git stash show -p <br> git apply -R | stash 되돌리기                            | stash를 되돌린다                                                                                                                                   | git stash show -p , git apply -R |
+| git remote -v                       | git remote Ref 조회                       | 연결 되어있는 원격 레파지토리 확인                                                                                                                 | git remote -v                    |
+| git remote remove origin            | 연결 되어있는 원격 레파지토리 삭제        | 연결 되어있는 원격 레파지토리 삭제                                                                                                                 | git remote remove origin         |
 
 ## 🔍 Vscode 에서 터미널을 열어보자!
 
