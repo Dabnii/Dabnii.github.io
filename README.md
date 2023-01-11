@@ -18,6 +18,7 @@
 
 # 🌳 Today I Learn
 
+- [2023.Jan.1~2nd](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.01/Jan.1-2ndWeek.md)
 - [2022.Internship.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/Dec2ndWeek.md)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/Dec1stWeek.md">2022.Dec.1~2nd</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/3rdWeek.md">2022.Nov.3-4th</a>
