@@ -52,14 +52,14 @@ noop
 
 ## 💡 Git rebase `noop` Solution
 
+```
+//git rebase -i HEAD~Number
+git rebase -i HEAD~7
+```
+
 1. `~Number` number 자리에 커밋 범위를 입력
    > `rebase -i` without a commit range will not display any commits. to rebase the last, say, 7 commits use the following:
-1. Happy rebase ✨
-
-```
-git rebase -i HEAD~7
-//git rebase -i HEAD~Number
-```
+1. Happy rebase 🥳
 
 ---
 
