@@ -56,7 +56,7 @@
 
 ### 👀 미리 둘러 볼 것!
 
-- [x] `packagelock.json`의 의존선 확인
+- [x] `packagelock.json`의 의존성 확인
 - [x] `Git branch` 확인
 - [x] `Pull Request` 컨벤션 확인
 - [x] `Commit message` 컨벤션 확인
@@ -114,7 +114,7 @@ console.log(columns);
   rowSelection={rowSelection}
   columns={columns}
   dataSource={data}
-  onRow={(record) => ({
+  onRow={record => ({
     onClick: () => {
       this.selectRow(record);
     },
@@ -288,7 +288,7 @@ export default Counter;
 
     [Ref: Fetching Data in React using Hooks](https://blog.bitsrc.io/fetching-data-in-react-using-hooks-c6fdd71cb24a?gi=bc14f2a9db99)
 
-    > 클래스컴포넌트를 사용하게 되어서 영광이다. 함수 컴포넌트를 쓸 때 보다 더 많이 넘어지지만, 확실히 많이 배워간다. 특히나 `this`의 개념이 서서히 확립되는 중.
+    > 클래스컴포넌트를 사용하게 되어서 영광이다. 함수 컴포넌트를 쓸 때 보다 더 많이 넘어지지만, 확실히 많이 배워간다. 특히나 `this`의 개념이 확립되는 중.
 
     ![KakaoTalk_Photo_2022-12-23-00-14-40 002](https://user-images.githubusercontent.com/110847597/209169661-13f590b6-db7d-452a-966b-2f87dd34a2bc.png)
 
@@ -479,8 +479,8 @@ state = {
     selectedRowKeys: this.state.keys,
     onChange: this.onRowKeysChange,
   }}
-  rowKey={(record) => record.id}
-  onRow={(record) => ({
+  rowKey={record => record.id}
+  onRow={record => ({
     onClick: () => {
       this.selectRow(record);
     },
@@ -533,7 +533,7 @@ uploadTagCreate = async () => {
     data: {
       tag_id: keyDataFromChild[0],
     },
-  }).then((response) => {
+  }).then(response => {
     const { data } = response;
   });
 };
@@ -554,7 +554,7 @@ sortTagsApi = async () => {
     url: `url`,
     method: "get",
     headers: { "content-type": "application/json" },
-  }).then((response) => {
+  }).then(response => {
     const { data } = response;
     this.setState({ schedulingTagList: data.results });
     // tagID : Num
@@ -580,12 +580,12 @@ uploadTagCreate = async () => {
     data: {
       tag_id: keyDataFromChild[0],
     },
-  }).then((response) => {
+  }).then(response => {
     const { data } = response;
   });
 };
 
-const getKeyData = (value) => {
+const getKeyData = value => {
   this.setState({ keyDataFromChild: value });
 };
 
@@ -594,7 +594,7 @@ state = {
   keys: [],
 };
 
-onRowKeysChange = (keys) => {
+onRowKeysChange = keys => {
   this.setState({ keys });
   const { getKeyData } = this.props;
   getKeyData(keys);
@@ -779,7 +779,7 @@ useEffect(() => {
   min={0}
   max={createCount}
   value={retrainingKeepModel}
-  onChange={(e) => setRetrainingKeepModel(Number(e.target.value))}
+  onChange={e => setRetrainingKeepModel(Number(e.target.value))}
 />;
 ```
 
@@ -867,7 +867,7 @@ const possibleMax = Math.min(MAX_KEEP, createCount);
   min={1}
   max={possibleMax}
   value={retrainingKeepModel}
-  onChange={(e) => setRetrainingKeepModel(Number(e.target.value))}
+  onChange={e => setRetrainingKeepModel(Number(e.target.value))}
 />;
 ```
 
@@ -899,21 +899,22 @@ Math.min([value1[, value2[, ...]]])
 ## <p align="center"> `Internship` 📝 `Retrospective`
 
 ### 4L: Liked, Learned, Lacked, Longed for
+
 - 😍 좋았던 것(Liked)
   - 협업 코드를 직접 체험 해 본 것
   - 라이브러리를 사용 한 것
   - 통신을 통하여 배포까지 진행 한 것
 - 📚 배운 것(Learned)
-  - 리액트 학습 
+  - 리액트 학습
   - 실무의 통신(postman, 인터페이서 참고서, 기획서 활용)
-     - 예를 들어, Back에게 전송해야 할 데이터가 `console.log`에 찍어서 보이지 않는다면, 프론트에서 제작하는 것이 아닌 요청이나 질문을 통하여 데이터 전송 방식을 논의해야함
+    - 예를 들어, Back에게 전송해야 할 데이터가 `console.log`에 찍어서 보이지 않는다면, 프론트에서 제작하는 것이 아닌 요청이나 질문을 통하여 데이터 전송 방식을 논의해야함
 - 💦 부족했던 것(Lacked)
   - 리액트 학습
   - 데이터 통신의 타이밍
 - 🕯 바라는 것(Longed for)
-  - 적극적으로 질문하고, 검색하는 과정에서 많이 배웠다. 이전에 했던 실수를 다시 하지 않도록 복습하고 더 노력하기! 
-  - 짧은 4주동안 잘 해주시고 많이 배울 수 있어 너무 감사했습니다. :) 개발짱이 되어 다시 만나요.. 
+  - 적극적으로 질문하고, 검색하는 과정에서 많이 배웠다. 이전에 했던 실수를 다시 하지 않도록 복습하고 더 노력하기!
+  - 짧은 4주동안 잘 해주시고 많이 배울 수 있어 너무 감사했습니다. :) 개발짱이 되어 다시 만나요..
 
---- 
+---
 
 E.O.D
