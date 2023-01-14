@@ -74,8 +74,8 @@
 
 # 📚 Code tests
 
-| 2022                                                                                                                         |
-| ---------------------------------------------------------------------------------------------------------------------------- |
-| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20test_Oct%2022.md"> 📚 Code Test_Oct</a> |
-| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_1week.md"> 📚 Code Kata_1~5 </a>   |
-| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_2week.md"> 📚 Code Kata_6~10 </a>  |
+| 2022                                                                                                                         | 2023                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20test_Oct%2022.md"> 📚 Code Test_Oct</a> | [📚 Programmers_Jan](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Programmers/Lv0.md) |
+| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_1week.md"> 📚 Code Kata_1~5 </a>   | 🏗️                                                                                                |
+| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_2week.md"> 📚 Code Kata_6~10 </a>  | 🏗️                                                                                                |
