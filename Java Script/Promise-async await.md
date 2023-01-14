@@ -33,7 +33,7 @@ function fetchUser() {
 const user = fetchUser();
 ```
 
-# 🎯 Async
+# <p align="center">🎯 Async</p>
 
 ```jsx
 async function fetchUser() {
@@ -55,7 +55,7 @@ const user = fetchUser();
 - `function`앞에 `async`을 붙이면 해당 함수는 항상 `Promise`를 반환합니다.
 - 프라미스가 아닌 값을 반환하더라도 이행 상태의 프라미스(resolved promise)로 값을 감싸 이행된 프라미스가 반환되도록 합니다.
 
-# 🚦 await
+# <p align="center">🚦 await </p>
 
 ```javascript
 function delay(ms) {
@@ -119,7 +119,7 @@ async function pickFruits(){
 
 ## ✅ `Promise.all`
 
-- 여러 개의 프라미스가 모두 처리되길 기다려야 하는 상황이라면 이 프라미스들을 Promise.all로 감싸고 여기에 await를 붙여 사용할 수 있습니다.
+- 여러 개의 프라미스가 모두 처리되길 기다려야 하는 상황이라면 이 프라미스들을 `Promise.all`로 감싸고 여기에 `await`를 붙여 사용할 수 있습니다.
 
 ```javascript
 function pickAllFruits() {
@@ -237,7 +237,3 @@ f().catch(alert); // TypeError: failed to fetch // (\*)
 
 - [async와 await](https://ko.javascript.info/async-await)
 - [자바스크립트 13. 비동기의 꽃 JavaScript async 와 await 그리고 유용한 Promise APIs | 프론트엔드 개발자 입문편 (JavaScript ES6)](https://www.youtube.com/watch?v=aoQSOZfz3vQ)
-
-```
-
-```
