@@ -33,7 +33,7 @@ function fetchUser() {
 const user = fetchUser();
 ```
 
-## 🎯 Async
+# 🎯 Async
 
 ```jsx
 async function fetchUser() {
@@ -55,7 +55,7 @@ const user = fetchUser();
 - `function`앞에 `async`을 붙이면 해당 함수는 항상 `Promise`를 반환합니다.
 - 프라미스가 아닌 값을 반환하더라도 이행 상태의 프라미스(resolved promise)로 값을 감싸 이행된 프라미스가 반환되도록 합니다.
 
-## 🚦 await
+# 🚦 await
 
 ```javascript
 function delay(ms) {

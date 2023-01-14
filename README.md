@@ -40,6 +40,7 @@
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">Object</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Optional%20Chaining.md">Optional Chaining</a>
 - [Promise](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Promise.md)
+  - [async & await](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Promise-async%20await.md)
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/string%3C-%3ENumber.md">String ←→ Number</a>
 
 # 🧢 React
