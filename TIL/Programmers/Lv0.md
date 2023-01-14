@@ -161,3 +161,70 @@ const solution = array => {
 - [Array.prototype.sort()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 > 👏 `+5`점을 얻었다!
+
+---
+
+## <p align="center">📚 각도기</p>
+
+<p align="center">📆2023/01/14
+
+## 🧩 Answer
+
+```javascript
+const solution = angle => {
+  let answer = 0;
+  if (0 < angle && angle < 90) {
+    return 1;
+  } else if (angle === 90) {
+    return 2;
+  } else if (90 < angle && angle < 180) {
+    return 3;
+  } else if (angle === 180) {
+    return 4;
+  }
+  return answer;
+};
+```
+
+## 🧩 Answer
+
+- 삼항연산자를 활용해서 작성했으나 undefined떠서 위의 코드로 바꿨다. 2점 get!
+
+```jsx
+//my first answer 😩
+const solution = angle => {
+  0 < angle < 90 ? 1 : angle === 90 ? 2 : 90 < angle < 180 ? 3 : 4;
+};
+// 오류 발견!
+// return 과 && 연산자를 넣어주면 정상 작동한다!
+const solution = angle => {
+  return 0 < angle && angle < 90
+    ? 1
+    : angle === 90
+    ? 2
+    : 90 < angle && angle < 180
+    ? 3
+    : angle === 180
+    ? 4
+    : null;
+};
+
+//better
+function solution(angle) {
+  return angle < 90 ? 1 : angle === 90 ? 2 : angle < 180 ? 3 : 4;
+}
+```
+
+```jsx
+//Nice
+function solution(angle) {
+  return [0, 90, 91, 180].filter(x => angle >= x).length;
+}
+// filter를 활용하여 배열의 인덱스를 활용함
+// 이게 아마 출제의도 같다
+```
+
+### 🌳 성장 포인트
+
+- 물음표 연산자?를 여러 개 연결하면 복수의 조건을 처리할 수 있습니다.
+- `return`을 넣어주는 것 잊지말기
