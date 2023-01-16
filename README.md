@@ -9,7 +9,7 @@
 </p>
 
 # 👩‍💻 Web Project
-- [Internship Schedule progra](https://github.com/Dabnii/internship-schedule-program)
+- [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/TeamProj%20CGW.md">2nd Team proj.CGW: 영화 예매</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/Westagram%20React.md">Westagram x React </a>
