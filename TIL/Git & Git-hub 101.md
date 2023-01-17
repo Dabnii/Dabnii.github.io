@@ -1,6 +1,7 @@
 # <p align="center"> 💻 Git & GitHub
 
 ![Git cheat sheet](https://raw.githubusercontent.com/hbons/git-cheat-sheet/master/preview.png)
+> https://github.com/hbons/git-cheat-sheet
 
 ## 📌 자주 사용하는 명령어
 
