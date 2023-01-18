@@ -168,9 +168,7 @@ const solution = array => {
 
 <p align="center">📆2023/01/14
 
-## 🧩 Answer
-
-### 🧩 Answer #1
+## 🧩 Answer #1
 
 ```jsx
 // return 과 && 연산자
@@ -187,7 +185,7 @@ const solution = angle => {
 };
 ```
 
-### 🧩 Answer #3
+### 🧩 Answer #2
 
 ```javascript
 const solution = angle => {
@@ -235,3 +233,32 @@ function solution(angle) {
 출처:
 
 - [📎 다중 ‘?’](https://ko.javascript.info/ifelse#ref-159)
+
+---
+
+## <p align="center">📚 양꼬치</p>
+
+<p align="center">📆2023/01/18
+
+```
+머쓱이네 양꼬치 가게는 10인분을 먹으면 음료수 하나를 서비스로 줍니다.
+양꼬치는 1인분에 12,000원, 음료수는 2,000원입니다.
+정수 n과 k가 매개변수로 주어졌을 때, 양꼬치 n인분과 음료수 k개를 먹었다면 총얼마를 지불해야 하는지 return 하도록 solution 함수를 완성해보세요.
+```
+
+## 🧩 Answer #1
+
+```javascript
+const solution = (n, k) => {
+  let answer = 0;
+  if (n >= 10) {
+    k -= Math.floor(n / 10);
+  }
+  return (answer = n * 12000 + k * 2000);
+};
+```
+
+### 🌳 성장 포인트
+
+- `n % 10 === 0` 을 활용하여, 나머지 연산자를 사용하여 해결하려 했지만, 정확한 답이 나오지 않아 1차 실패. 나머지연산자는 배수확인은 가능했다
+- `k -= Math.floor(n / 10)`를 활용하여 양꼬치가 10보다 클 경우를 정수로 반환하여 k 음료수에서 연산된 값만을 빼준다.
