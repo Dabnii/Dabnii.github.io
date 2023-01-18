@@ -1,6 +1,7 @@
 # <p align="center"> 💻 Git & GitHub
 
 ![Git cheat sheet](https://raw.githubusercontent.com/hbons/git-cheat-sheet/master/preview.png)
+
 > https://github.com/hbons/git-cheat-sheet
 
 ## 📌 자주 사용하는 명령어
@@ -108,7 +109,7 @@ git remote add origin https://github.com/%username%/%repo%
 git remote
 git remote --v
 
-//it push origin main
+// git push origin main
 
 //branch 확인
 origin	https://github.com/%username%/%repo% (fetch)
@@ -124,7 +125,7 @@ git branch * main
 | git checkout                        | 브랜치를 이동                             | 현재 → 이동할 브랜치                                                                                                                               | git checkout [branch name]       |
 | git checkout -b                     | 브랜치 생성과 함께 해당 브랜치로 checkout | 생성 및 브랜치 이동                                                                                                                                | git checkout -b [branch]         |
 | git pull                            | (이미 존재하는 repo) 코드 가져오기        | GitHub의 특정 브랜치의 코드를 가져올 때 사용                                                                                                       | git pull origin [branch name]    |
-| git merge                           | 코드 합치기                               | 로컬에서 현재 브랜치의 코드와 특정 브랜치의 코드를 함칠 때 사용                                                                                    | git merge [branch name]          |
+| git merge                           | 코드 합치기                               | 로컬에서 현재 브랜치의 코드와 특정 브랜치의 코드를 합칠 때 사용                                                                                    | git merge [branch name]          |
 | git pull                            | GitHub에서 가져올 브랜치 이름             | GibHub Master → Local Master                                                                                                                       | git pull [branch]                |
 | git stash                           | git 임시저장                              | 브랜치 이동을 위한 임시저장                                                                                                                        | git stash                        |
 | git stash show -p <br> git apply -R | stash 되돌리기                            | stash를 되돌린다                                                                                                                                   | git stash show -p , git apply -R |
