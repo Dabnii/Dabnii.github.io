@@ -273,8 +273,10 @@ const solution = (n, k) => {
 
 <p align="center">📆2023/01/21
 
-```
-머쓱이는 학교에서 키 순으로 줄을 설 때 몇 번째로 서야 하는지 궁금해졌습니다. 머쓱이네 반 친구들의 키가 담긴 정수 배열 array와 머쓱이의 키 height가 매개변수로 주어질 때, 머쓱이보다 키 큰 사람 수를 return 하도록 solution 함수를 완성해보세요.
+```javascript
+머쓱이는 학교에서 키 순으로 줄을 설 때 몇 번째로 서야 하는지 궁금해졌습니다.
+머쓱이네 반 친구들의 키가 담긴 정수 배열 array와 머쓱이의 키 height가 매개변수로 주어질 때,
+머쓱이보다 키 큰 사람 수를 return 하도록 solution 함수를 완성해보세요.
 ```
 
 ### 입출력 예
@@ -287,8 +289,7 @@ const solution = (n, k) => {
 ```javascript
 const solution = (array, height) => {
   // let combArr = array.concat(height).sort() 😩
-  const answer = array.filter(el => el > height);
-  return answer.length;
+  const answer = array.filter(el => el > height).length;
 };
 ```
 
@@ -298,3 +299,26 @@ const solution = (array, height) => {
   - 위의 코드가 없어도 된다. 왜냐, 이런 조건이 없다.
   - `filter()` 메소드에서 `height` 보다 큰 값을 출력한다.
   - 전국 메소드 지식 자랑이 되었다.
+
+## <p align="center">📚 문자 반복 출력하기</p>
+
+<p align="center">📆2023/01/21
+
+```javascript
+문자열 my_string과 정수 n이 매개변수로 주어질 때,
+my_string에 들어있는 각 문자를 n만큼 반복한 문자열을 return 하도록
+solution 함수를 완성해보세요.
+```
+
+```javascript
+const solution = (my_string, n) => {
+  return (answer = [...my_string].map(el => el.repeat(n)).join(""));
+};
+```
+
+### 🌳 성장 포인트
+
+- `repeat()`
+  - [📎 repeat MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+- 직전에 풀었던 문제에서 활용한 `[...]` 스프레드 연산자, 전개구문을 적극 활용
+- 어제보다 더 나은 코테를 하는 나!
