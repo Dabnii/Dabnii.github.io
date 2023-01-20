@@ -31,30 +31,30 @@
     1. 수정할 때 마다 파일을 새로 만들면 관리가 불편
     2. ✨ 언제든 이전 버전의 코드로 돌아갈 수 있음
     3. ✨ 어떤 개발자가 어떤 코드를 작성했는지 확인할 수 있다
-    4. 하나의 프로젝트를 두고 여러명이 개발자들이 협업할 수 있다.
+    4. 하나의 프로젝트를 두고 여러명이 개발자들이 협업할 수 있다
 
 ## 📌 Github 와 Git의 차이점
 
 1.  `Git` git을 사용한 프로젝트들의 저장소
-2.  개발자들의 Social Network
-3.  `git` : 프로젝트의 버전관리를 도와주는 시스템
-4.  `GitHub→ Git`을 이용해 버전관리를 한 프로젝트들을 관리하게 해주는 `호스트 서비스`
+2.  개발자들의 `Social Network`
+3.  `Git` 프로젝트의 버전관리를 도와주는 시스템
+4.  `GitHub → Git`을 이용해 버전관리를 한 프로젝트들을 관리하게 해주는 `호스트 서비스`
 
 # 📌 Git cheat sheet
 
-| 명령어                              | 뜻                                        | 설명                                                                                                                                               | 활용                             |
-| ----------------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| git clone                           | 깃 복제                                   | 신규 repository를 내 로컬로 가져오기                                                                                                               | git clone [%ropo link%]          |
-| git branch                          | 독립된 개발 공간 생성                     | 개발자, 파드 별로 브랜치를 사용해야함 <br> - e.g. main 파트 개발자는 main 브랜치를 사용 <br> - e.g. log-in 파트 개발자는 log-in 브랜치를 사용 <br> | git branch [branch name]         |
-| git checkout                        | 브랜치를 이동                             | 현재 → 이동할 브랜치                                                                                                                               | git checkout [branch name]       |
-| git checkout -b                     | 브랜치 생성과 함께 해당 브랜치로 checkout | 생성 및 브랜치 이동                                                                                                                                | git checkout -b [branch]         |
-| git pull                            | (이미 존재하는 repo) 코드 가져오기        | GitHub의 특정 브랜치의 코드를 가져올 때 사용                                                                                                       | git pull origin [branch name]    |
-| git merge                           | 코드 합치기                               | 로컬에서 현재 브랜치의 코드와 특정 브랜치의 코드를 합칠 때 사용                                                                                    | git merge [branch name]          |
-| git pull                            | GitHub에서 가져올 브랜치 이름             | GibHub Master → Local Master                                                                                                                       | git pull [branch]                |
-| git stash                           | git 임시저장                              | 브랜치 이동을 위한 임시저장                                                                                                                        | git stash                        |
-| git stash show -p <br> git apply -R | stash 되돌리기                            | stash를 되돌린다                                                                                                                                   | git stash show -p , git apply -R |
-| git remote -v                       | git remote Ref 조회                       | 연결 되어있는 원격 레파지토리 확인                                                                                                                 | git remote -v                    |
-| git remote remove origin            | 연결 되어있는 원격 레파지토리 삭제        | 연결 되어있는 원격 레파지토리 삭제                                                                                                                 | git remote remove origin         |
+| 명령어                              | 뜻                                        | 설명                                                                                                                                               | 활용                                |
+| ----------------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| git clone                           | 깃 복제                                   | 신규 repository를 내 로컬로 가져오기                                                                                                               | git clone [%ropo link%]             |
+| git branch                          | 독립된 개발 공간 생성                     | 개발자, 파드 별로 브랜치를 사용해야함 <br> - e.g. main 파트 개발자는 main 브랜치를 사용 <br> - e.g. log-in 파트 개발자는 log-in 브랜치를 사용 <br> | git branch [branch name]            |
+| git checkout                        | 브랜치를 이동                             | 현재 → 이동할 브랜치                                                                                                                               | git checkout [branch name]          |
+| git checkout -b                     | 브랜치 생성과 함께 해당 브랜치로 checkout | 생성 및 브랜치 이동                                                                                                                                | git checkout -b [branch]            |
+| git pull                            | (이미 존재하는 repo) 코드 가져오기        | GitHub의 특정 브랜치의 코드를 가져올 때 사용                                                                                                       | git pull origin [branch name]       |
+| git merge                           | 코드 합치기                               | 로컬에서 현재 브랜치의 코드와 특정 브랜치의 코드를 합칠 때 사용                                                                                    | git merge [branch name]             |
+| git pull                            | GitHub에서 가져올 브랜치 이름             | GibHub Master → Local Master                                                                                                                       | git pull [branch]                   |
+| git stash                           | git 임시저장                              | 브랜치 이동을 위한 임시저장                                                                                                                        | git stash                           |
+| git stash show -p <br> git apply -R | stash 되돌리기                            | stash를 되돌린다                                                                                                                                   | git stash show -p,<br> git apply -R |
+| git remote -v                       | git remote Ref 조회                       | 연결 되어있는 원격 레파지토리 확인                                                                                                                 | git remote -v                       |
+| git remote remove origin            | 연결 되어있는 원격 레파지토리 삭제        | 연결 되어있는 원격 레파지토리 삭제                                                                                                                 | git remote remove origin            |
 
 ## 📌 Git의 init, add, status, commit, log, push 명령어의 역할
 
@@ -71,10 +71,10 @@
     - `git commit -m “msg”` 한줄로 커밋 메세지를 남길 때
     - `git commit` 여러줄의 커밋을 남길 때
 5.  `log` → e.g.영수증
-    - 기록을 열람용
-6.  `push` →
+    - 기록 열람용
+6.  `push`
     - 작성한 코드를 원격 저장소에 업로드
-    - 이력을 남긴 코드들을 깃허브에 올리고 싶을 때 사용하는 명령어
+    - 이력을 남긴 코드를 깃허브에 올리고 싶을 때 사용하는 명령어
     - `git push origin [branch-name]`
 
 ## 🔢 터미널을 사용한 깃 허브 업로드 순서
@@ -103,29 +103,29 @@ mkdir git
 //디렉토리 생성
 
 ls
-// 현재 경로 내 파일 목록 출력
+//현재 경로 내 파일 목록 출력
 
 💡 ls -al
 //현재 경로 내 파일 목록 출력
-// 중요한 보안이나 정보가 입력여부를 필히 확인해야함
+//중요한 보안이나 정보가 입력여부를 필히 확인해야함
 
 touch.md %file Name%.md
 //md 생성
 
 i
-// md 파일에 insert 상태로 전환 후 입력
+//md 파일에 insert 상태로 전환 후 입력
 :wq
 //md파일을 저장하고 나가기
 
 git status
-// git
+
 gid add .
 
 git remote add origin https://github.com/%username%/%repo%
 git remote
 git remote --v
 
-// git push origin main
+git push origin main
 
 //branch 확인
 origin	https://github.com/%username%/%repo% (fetch)
@@ -145,10 +145,10 @@ cd desktop
 pwd
 //어느 위치인지 확인 하기
 git clone https://github.com/%repolink%reponame.git
-// 깃허브의 repository 링크를 넣습니다
+//깃허브의 repository 링크를 넣습니다
 Cloning into '%Repo%'...
 ... [다운로드]
-// 다운로드가 됩니다
+//다운로드가 됩니다
 ```
 
 ## 📌 git clone
@@ -191,7 +191,7 @@ Cloning into '%Repo%'...
 - 내 브랜치와 깃허브의 코드 병합
 - PR 하단에 컨펌 이후 merge버튼이 활성화 됨
   - 제약이 있음
-  - 머지담당자가 따로 있음 github에서는
+  - github에서는 `merge` 머지담당자가 따로 있음
 
 ## 📌 git pull
 
@@ -210,7 +210,7 @@ Cloning into '%Repo%'...
 ## 🙅‍♀️ Master(Main) 작업은 지양!
 
 - Master(Main)가 기둥
-- master(Main)를 기준으로 branch가 확장 되어야 함
+- Master(Main)를 기준으로 branch가 확장 되어야 함
 - Vscode 좌측 하단에 확인 가능
 - branch 수시로 확인!
 - 배포할 때 마스터 코드로 진행되기 때문에 작업 🙅‍♀️
@@ -223,14 +223,14 @@ git branch BranchName/foloderName
 git checkout BranchName/foloderName
 //브랜치로 이동
 //생성했다고 해서 바로 그 디렉토리/브랜치로 이동하지 않기 때문
-// 어떤 작업을 할것인지에 따라 'feature' 를 fix로 바꾸어서 변동
-// feature/ 작업할 기능
+//어떤 작업을 할것인지에 따라 'feature' 를 fix로 바꾸어서 변동
+//feature/ 작업할 기능
 git checkout BranchName/foloderName
 //Switched to branch 'BranchName/foloderName'
 git add .
-//
+
 git commit -m "ADD:md 파일생성 "
-// ADD:md 파일생성
+//ADD:md 파일생성
 
 git push origin BranchName/foloderName
 
