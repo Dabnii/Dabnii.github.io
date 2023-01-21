@@ -322,3 +322,20 @@ const solution = (my_string, n) => {
   - [📎 repeat MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
 - 직전에 풀었던 문제에서 활용한 `[...]` 스프레드 연산자, 전개구문을 적극 활용
 - 어제보다 더 나은 코테를 하는 나!
+
+## <p align="center">📚 머쓱이보다 키 큰 사람</p>
+
+<p align="center">📆2023/01/21
+
+```javascript
+정수 배열 numbers가 매개변수로 주어집니다.
+numbers의 원소 중 두 개를 곱해 만들 수 있는 최댓값을 return하도록
+solution 함수를 완성해주세요.
+```
+
+```javascript
+const solution = numbers => {
+  return (answer =
+    numbers.sort((a, b) => b - a)[0] * numbers.sort((a, b) => b - a)[1]);
+};
+```
