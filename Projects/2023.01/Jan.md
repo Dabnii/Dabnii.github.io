@@ -73,6 +73,70 @@ $ git remote -v
 
 > 연휴내내 미루었던 리팩토링을 시작헀습니다!
 
+## <p align="center">⚒️ Time to Refactoring 🏗️</p>
+
+미루었던 리팩토링을 시작했습니다. `작동한다면 되는거 아닌가?`는 더 나은 개발자가 되기 위해서 제일 지양해야할 생각입니다. 돌아가는 코드 말고 `더 나은 코드`를 개발하는 개발자가 되고 싶습니다.
+
+### 💡 리팩토링을 왜 배워야 하는걸까?
+
+1. `문제 파악` → 🕵️ 나쁜 코드의 냄새를 맡을 수 있다
+1. `문제 해결 가능` → 💩 더러운 코드를 깨끗하게 개선할 수 있다
+1. `좋은 습관` → 처음부터 깨끗한 코드로 작성한다!
+1. 🫡 즉 이해, 수정이 용이하고 재사용이 가능하도록 작성하는 것!
+
+## <p align="center">🏜️ D.R.Y 🌵</p>
+
+<p align="center">Don't Repeat Yourself</p>
+
+```jsx
+DRY is about the duplication of knowledge, of intent. It’s about expressing the same thing in two different places, possibly in two totally different ways.
+
+Every piece of knowledge must have a single, unambiguous, authoritative representation within a system
+
+-by The Pragmatic Programmer
+```
+
+- `유지보수성` 한 곳에서만 로직을 작성하여 DRY하게 사용한다면, 한 곳에서만 수정하면 됨
+
+### 🙅‍♀️ `W`rite `E`very `T`ime
+
+- 매번 작성하고, 모든 걸 두번씩 작성하는 것
+
+## <p align="center">😘K.I.S.S</p>
+
+<p align="center">Keep It simple, Stupid</p>
+
+```jsx
+대부분의 시스템은 복잡하게 보다는 심플하게 만들어졌을 때 최고로 잘 동작한다.
+불필요한 복잡성은 피해야 한다.
+```
+
+### 가장 간단하게, 그리고 가장 멍청하게!
+
+- Code
+- Function
+- Class
+- View
+- Service
+- System
+
+```jsx
+//💩
+function getFirst (array, isEven) {
+return array. find(x => (isEven ? × % 2 === 0 : × % 2 !== 0));
+}
+```
+
+```jsx
+//✨✨✨
+function getFirstOdd (array) {
+return array.find(x => × % 2 !== 0) ;
+function getFirstEven (array) {
+return array.find(x => × % 2 === 0) ;}
+```
+
+> 위의 예시를 확인해 보며, 작업했던 프로젝트의 코드들을 어떻게 바꾸면 좋을지 감이 잡혔다.
+
 #### Proj. CGW
 
 - [x] `KISS` 한 함수에, 하나의 기능만 담도록 리팩토링 중!
