@@ -66,3 +66,34 @@ $ git remote -v
 [📎 원격저장소 추가 - git remote add](https://shanepark.tistory.com/284)
 
 ---
+
+## <p align="center"> 📆 1/23
+
+### ⚒️ Refactoring Time!
+
+> 연휴내내 미루었던 리팩토링을 시작헀습니다!
+
+#### Proj. CGW
+
+- [x] `KISS` 한 함수에, 하나의 기능만 담도록 리팩토링 중!
+
+#### Proj. 39cm
+
+- [x] 하드코딩 삭제 👋
+- [x] `💨 Swiper` 추가
+- [x] `⭐️ ReactStars` 추가
+
+  ```jsx
+  //After 별점
+  <ReactStars
+    className="reactStarts"
+    value={5}
+    edit={false}
+    color2={"orangered"}
+  />
+  ```
+
+- [코딩 잘하는법 (개발자답게 코딩하려면?)](https://www.youtube.com/watch?v=WF_bzlpaW0I&list=PL1QuuH44oPS3Ss2l8__ai4bbpSe0bUHmU&index=3)
+- [깨끗한 코딩 하는법 (리팩토링 최종정리판 강의, 드루와🥳)](https://www.youtube.com/watch?v=81gaY3Du6OI)
+
+---
