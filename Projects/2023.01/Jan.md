@@ -86,7 +86,7 @@ $ git remote -v
 
 ## <p align="center">🏜️ D.R.Y 🌵</p>
 
-<p align="center">Don't Repeat Yourself</p>
+<p align="center">Don't Repeat Yourself!</p>
 
 ```jsx
 DRY is about the duplication of knowledge, of intent. It’s about expressing the same thing in two different places, possibly in two totally different ways.
@@ -96,7 +96,41 @@ Every piece of knowledge must have a single, unambiguous, authoritative represen
 -by The Pragmatic Programmer
 ```
 
-- `유지보수성` 한 곳에서만 로직을 작성하여 DRY하게 사용한다면, 한 곳에서만 수정하면 됨
+- 💡 `DRY`는 특정한 지식, 의도, 로직등이 다양한 곳에서 다양한 형태로 `계속 반복되는 것을 지양` 하는 것
+- 시스템 내에서 특정한 지식과 로직은 단 한 곳에서 명확하고 신뢰할 수 있도록 존재 해야한다.
+- 👍 `유지보수성` 한 곳에서만 로직을 작성하여 `DRY`하게 사용한다면, 한 곳에서만 수정하면 됨
+
+```jsx
+// 💩
+function greetings(user) {
+  return;
+  `Hi ${user.firstName} ${user.lastName}`;
+}
+function goodbye(user) {
+  return;
+  `See you next time ${user.firstName} ${user.lastName}`;
+}
+```
+
+```jsx
+// 👍
+function greetings(user) {
+  return `Hi ${user.fullName()}`;
+}
+
+function goodbye(user) {
+  return `See you next time ${user.fullName()} 👋`;
+}
+
+class User {
+  //e.g. John Jackson
+  fullName() {
+    return `${this.firstName}, ${this.lastName}👋`;
+  }
+}
+```
+
+> 유저 네임을 위 처럼 한 곳에서 정의해 두면 `class User`에 `${this.middleName}`만 추가해주면 됨
 
 ### 🙅‍♀️ `W`rite `E`very `T`ime
 
@@ -121,18 +155,20 @@ Every piece of knowledge must have a single, unambiguous, authoritative represen
 - System
 
 ```jsx
-//💩
+// 💩
 function getFirst (array, isEven) {
-return array. find(x => (isEven ? × % 2 === 0 : × % 2 !== 0));
+return array.find(x => (isEven ? × % 2 === 0 : × % 2 !== 0));
 }
 ```
 
 ```jsx
-//✨✨✨
+// ✨
 function getFirstOdd (array) {
-return array.find(x => × % 2 !== 0) ;
+  return array.find(x => × % 2 !== 0);
+}
 function getFirstEven (array) {
-return array.find(x => × % 2 === 0) ;}
+  return array.find(x => × % 2 === 0);
+}
 ```
 
 > 위의 예시를 확인해 보며, 작업했던 프로젝트의 코드들을 어떻게 바꾸면 좋을지 감이 잡혔다.
@@ -236,7 +272,7 @@ export default function App({ pdData }) {
   background-position: $background-position;
   background-repeat: no-repeat;
 }
-//Swiper
+//Swiper.scss
 .arrowsSet {
   @include flex(space-between, center);
   width: 100%;
