@@ -103,12 +103,10 @@ Every piece of knowledge must have a single, unambiguous, authoritative represen
 ```jsx
 // 💩
 function greetings(user) {
-  return;
-  `Hi ${user.firstName} ${user.lastName}`;
+  return `Hi ${user.firstName} ${user.lastName}`;
 }
 function goodbye(user) {
-  return;
-  `See you next time ${user.firstName} ${user.lastName}`;
+  return `See you next time ${user.firstName} ${user.lastName}`;
 }
 ```
 
