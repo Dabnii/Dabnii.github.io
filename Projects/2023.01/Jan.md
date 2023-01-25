@@ -161,3 +161,114 @@ return array.find(x => × % 2 === 0) ;}
 - [깨끗한 코딩 하는법 (리팩토링 최종정리판 강의, 드루와🥳)](https://www.youtube.com/watch?v=81gaY3Du6OI)
 
 ---
+
+## <p align="center"> 📆 1/24
+
+## ♻️ Swiper
+
+> 리팩토링을 진행하며 하드코딩 되어 있던 캐러셀을 라이브러리로 수정
+
+<img align="center" src="https://user-images.githubusercontent.com/110847597/214536618-e989c78e-8735-4127-9336-6be9ec28f933.gif" alt="gif-swiper" />
+
+```jsx
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+export default function App({ pdData }) {
+  const [swiperRef, setSwiperRef] = useState([]);
+
+  const prevHandler = () => {
+    swiperRef.slidePrev();
+  };
+
+  const nextHandler = () => {
+    swiperRef.slideNext();
+  };
+
+  return (
+    <>
+      <div className="arrowsSet">
+        <button className="arrowLeft" onClick={prevHandler}></button>
+        <button className="arrowRight" onClick={nextHandler}></button>
+      </div>
+      <Swiper
+        className="swiper"
+        loop={true}
+        slidesPerView={1}
+        navigation
+        onSwiper={swiper => setSwiperRef(swiper)}
+      >
+        {images.map((image, index) => {
+          <SwiperSlide className="swiper-slide">
+            <img
+              key={index}
+              src={image.image}
+              alt="thumbNail"
+              width={400}
+              height={400}
+            />
+          </SwiperSlide>;
+        })}
+      </Swiper>
+    </>
+  );
+}
+```
+
+> 인라인 스타일링을 지양하고 싶다.
+
+### 👻 기존 스와이퍼 버튼을 display none으로 감추기
+
+```scss
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+```
+
+### 🦋 Arrow custom css
+
+```scss
+//mixin.scss
+@mixin backgroundSetting($background-size, $background-position) {
+  background-color: white;
+  background-size: $background-size;
+  background-position: $background-position;
+  background-repeat: no-repeat;
+}
+//Swiper
+.arrowsSet {
+  @include flex(space-between, center);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  align-content: center;
+  transform: translateY(-50%);
+  z-index: 99999;
+
+  .arrowLeft {
+    @include widHeight(2rem, 3rem);
+    align-items: center;
+    border: none;
+    background-image: url(../../../images/arrowLeft.png);
+    @include backgroundSetting(30%, 40%);
+  }
+
+  .arrowRight {
+    @include widHeight(2rem, 3rem);
+    align-items: center;
+    border: none;
+    background-image: url(../../../images/arrowRight.png);
+    @include backgroundSetting(30%, 60%);
+  }
+}
+```
+
+- 아무런 정보가 필요없는 이미지기에 background로 이미지 추가
+- `background-repeat: no-repeat`로 반복 해제
+
+### 🌳 성장 포인트:
+
+- 클린 코드를 해야하는 이유는 높은 확률로 내가 작성한 코드를 6개월 후에 내가 보기 때문!
+  - 컴포넌트 분리와 더 깔끔한 로직을 위하여 많은 시간을 할애했다. 그 만큼 성장! 🦒 앞으론 초석을 잘 다져야지..
