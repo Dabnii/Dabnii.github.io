@@ -354,3 +354,21 @@ function solution(numbers, num1, num2) {
   return (answer = numbers.slice(num1, num2 + 1));
 }
 ```
+
+## <p align="center">📚 유클리드호제법 </p>
+
+---
+
+The Euclidean algorithm is an ancient and efficient method for finding the greatest common divisor (GCD) of two or more integers. It is named after the Greek mathematician Euclid, who first described it in his book "Elements" over 2,000 years ago. The algorithm works by repeatedly dividing the larger number by the smaller number and taking the remainder until the smaller number becomes zero. The last non-zero remainder is the GCD.
+
+```javascript
+To find the GCD of 60 and 48:
+1. Divide 60 by 48: 60 / 48 = 1 with a remainder of 12
+2. Replace the larger number with the smaller number (48) and the smaller number with the remainder (12)
+3. Repeat step 1: 48 / 12 = 4 with a remainder of 0
+4. The last non-zero remainder is 12, so the GCD of 60 and 48 is 12.
+```
+
+The Euclidean algorithm has many practical applications, such as reducing fractions, solving linear Diophantine equations, and cryptography. It is also the foundation of the extended Euclidean algorithm, which can find the greatest common divisor and the coefficients of the Bézout's identity for two numbers.
+
+> 라고 ChatGPT가 말했다.
