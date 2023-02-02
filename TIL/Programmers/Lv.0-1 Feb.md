@@ -126,3 +126,55 @@ function solution(s) {
 ```
 
 > 스프레드 연산자 활용, 배열안에 문자열을 넣어 바로 `[ 'b', 'c', 'a', 'd' ]`으로 변환 🔥 <br> `split("")` 대체가능
+
+## <p align="center">📚 피자 나눠 먹기 (1)</p>
+
+## 🧩 My Answer
+
+```javascript
+// 1차 시도
+const solution = n => {
+  return (answer = n % 7 === 0 ? Math.floor(n / 7) : Math.ceil(n / 7));
+};
+```
+
+```javascript
+//2차 시도!
+const solution = n => {
+  return (answer = Math.ceil(n / 7));
+};
+```
+
+## <p align="center">📚 점의 위치 구하기 </p>
+
+## 🧩 My Answer
+
+```javascript
+const solution = dot => {
+  switch (true) {
+    case dot[0] > 0 && dot[1] > 0:
+      return 1;
+    case dot[0] < 0 && dot[1] > 0:
+      return 2;
+    case dot[0] < 0 && dot[1] < 0:
+      return 3;
+    case dot[0] > 0 && dot[1] < 0:
+      return 4;
+  }
+};
+```
+
+#### `switch (true) { }` `true` ✨
+
+> The use of `return` in a `switch` statement immediately terminates the execution of the `switch` statement and returns the specified value. In this case, `break` _statements are not necessary._
+> 별안간 `switch`에 꽂힌 사람 됨
+
+## 🧩 줍줍 Answer
+
+```javascript
+function solution(dot) {
+  const [num, num2] = dot;
+  const check = num * num2 > 0;
+  return num > 0 ? (check ? 1 : 4) : check ? 3 : 2;
+}
+```
