@@ -204,6 +204,17 @@ const solution = sides => {
 };
 ```
 
+#### 😩 중간 코드
+
+```javascript
+// return answer = (sides.reduce((accu, curr)=> accu + curr) - Math.max(...sides)) < Math.max(...sides)
+```
+
+1. 다시 시작된 `reduce`에 대한 ~~집착~~ 열정.
+1. 늘어나는 코드와 더 간단한 로직을 구현하기 위하여 [🧩 My Answer](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Programmers/Lv.0-1%20Feb.md#-my-answer-6) 로 로직 변경
+1. `Max`와 `reduce`로 나눠 구성했다면 성공 예상
+   1. 코드테스트 꿀잼 ✨ ~~과연 레벨2+ 에서도 이 말을 할까..~~
+
 ## 🧩 줍줍 Answer
 
 ```javascript
