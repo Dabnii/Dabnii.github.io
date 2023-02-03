@@ -178,3 +178,91 @@ function solution(dot) {
   return num > 0 ? (check ? 1 : 4) : check ? 3 : 2;
 }
 ```
+
+## <p align="center">📚 삼각형의 완성조건 (1)</p>
+
+```javascript
+선분 세 개로 삼각형을 만들기 위해서는 다음과 같은 조건을 만족해야 합니다.
+가장 긴 변의 길이는 다른 두 변의 길이의 합보다 작아야 합니다.
+삼각형의 세 변의 길이가 담긴 배열 sides이 매개변수로 주어집니다.
+세 변으로 삼각형을 만들 수 있다면 1,
+만들 수 없다면 2를 return하도록 solution 함수를 완성해주세요.
+```
+
+| sides          | result |
+| -------------- | ------ |
+| [1, 2, 3]      | 2      |
+| [3, 6, 2]      | 2      |
+| [199, 72, 222] | 1      |
+
+## 🧩 My Answer
+
+```javascript
+const solution = sides => {
+  let sorting = sides.sort((a, b) => a - b);
+  return (answer = sorting[0] + sorting[1] > sorting[2] ? 1 : 2);
+};
+```
+
+## 🧩 줍줍 Answer
+
+```javascript
+function solution(sides) {
+  sides = sides.sort((a, b) => a - b);
+  return sides[0] + sides[1] > sides[2] ? 1 : 2;
+}
+```
+
+> 나와 같은 로직이지만 let 선언이 없음
+
+## 🧩 줍줍 Answer 2
+
+```javascript
+function solution(sides) {
+  var answer = 0;
+  const max = Math.max(...sides);
+  const sum = sides.reduce((a, b) => a + b, 0) - max;
+
+  answer = max < sum ? 1 : 2;
+
+  return answer;
+}
+```
+
+> 스프레드 연산자를 자꾸만 까먹는다면.. 외사랑 `reduce` 등장
+
+## <p align="center">📚 중복된 숫자 개수 </p>
+
+```javascript
+정수가 담긴 배열 array와 정수 n이 매개변수로 주어질 때,
+array에 n이 몇 개 있는 지를 return 하도록 solution 함수를 완성해보세요.
+```
+
+| array              | n   | result |
+| ------------------ | --- | ------ |
+| [1, 1, 2, 3, 4, 5] | 1   | 2      |
+| [0, 2, 3, 4]       | 1   | 0      |
+
+## 🧩 My Answer
+
+```javascript
+const solution = (array, n) => {
+  return (answer = array.reduce(
+    (accu, curr) => (n === curr ? accu + 1 : accu),
+    0
+  ));
+};
+```
+
+> 꽤 오래 시간동안 고민한 문제
+> `reduce`에 대한 나의 외사랑은... 계속 된다
+
+## 🧩 줍줍 Answer
+
+```javascript
+const solution = (array, n) => {
+  return array.filter(el => el === n).length;
+};
+```
+
+> 아마 출제의도는 `filter` 사용이라 생각 됨
