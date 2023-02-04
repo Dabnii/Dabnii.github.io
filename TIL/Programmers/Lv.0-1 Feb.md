@@ -277,3 +277,56 @@ const solution = (array, n) => {
 ```
 
 > 아마 출제의도는 `filter` 사용이라 생각 됨
+
+## <p align="center">📚 옷가게 할인 받기 </p>
+
+```javascript
+머쓱이네 옷가게는 10만 원 이상 사면 5%,
+30만 원 이상 사면 10%,
+50만 원 이상 사면 20%를 할인해줍니다.
+
+구매한 옷의 가격 price가 주어질 때,
+지불해야 할 금액을 return 하도록 solution 함수를 완성해보세요.
+```
+
+| price   | result  |
+| ------- | ------- |
+| 150,000 | 142,500 |
+| 580,000 | 464,000 |
+
+## 🧩 My Answer
+
+```javascript
+const solution = price => {
+  switch (true) {
+    case price >= 500000:
+      return (answer = price * 0.8);
+    case price >= 300000:
+      return (answer = price * 0.9);
+    case price >= 100000:
+      return (answer = price * 0.95);
+  }
+  return Math.floor(answer);
+};
+```
+
+> 로직 플로우를 잘 확인해야한다.
+> switch에 미치다...🫡
+
+```javascript
+const discounts = [
+  [500000, 20],
+  [300000, 10],
+  [100000, 5],
+];
+
+const solution = price => {
+  for (let discount of discounts) {
+    if (price >= discount[0])
+      return Math.ceil(price - (price * discount[1]) / 100);
+  }
+  return price;
+};
+```
+
+> 할인 기준과 할인율을 배열로 관리
