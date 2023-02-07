@@ -13,9 +13,19 @@
 
 #### ❕ `Label`로 해결
 
+> 이전에 프로젝트 할 때, button과 radio 박스위에 label을 사용했던 점을 착안
+
+1. label을 on
+2. 인풋박스에 `onMouseEnter`될 때 `false`로 감춘다
+3. displaypencil이 `OFF`라면 input 박스 보이기
+
+### `htmlFor="(input id)"`
+
+- 라디오 박스처럼 label이 대신 클릭되길 바란다면 React에선 htmlFor의 값을 해당하는 라디오박스 id와 일치하게 해주면 된다.
+
 ```jsx
 const [displayPencil, setDisplayPencil] = useState(true);
-//
+//...
 {
   displayPencil ? (
     <label htmlFor="numInput" onMouseEnter={() => setDisplayPencil(false)} />
@@ -196,3 +206,7 @@ function KeepDataComponent({ getAutoDelValue, getData }) {
 ```
 
 - 한 줄이라고 다 좋은 코드는 아니다.
+
+## <p align="center"> 📆 2/7
+
+### 😖 useState의 동기
