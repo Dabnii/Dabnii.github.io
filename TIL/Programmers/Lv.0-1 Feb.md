@@ -330,3 +330,26 @@ const solution = price => {
 ```
 
 > 할인 기준과 할인율을 배열로 관리
+
+## <p align="center">📚 숨어있는 숫자의 덧셈(1) </p>
+
+```javascript
+문자열 `my_string`이 매개변수로 주어집니다.
+`my_string`안의 모든 자연수들의 합을 return하도록 solution 함수를 완성해주세요.
+```
+
+| my_string       | result |
+| --------------- | ------ |
+| "aAb1B2cC34oOp" | 10     |
+| "1a2b3c4d123"   | 16     |
+
+```javascript
+const solution = my_string => {
+  let reg = /[a-zA-Z ]/gim;
+  return my_string
+    .replace(reg, "")
+    .split("")
+    .reduce((a, b) => a + Number(b), 0);
+};
+```
+.
