@@ -1,6 +1,6 @@
 ## <p align="center"> 📆 2/5
 
-### 🖼️ [Toy-project] Internship Program Project
+## 🖼️ [Toy-project] Data create & delete program
 
 - 데이터 태그 생성 기능
 - 데이터 삭제 & 저장 기능
@@ -15,11 +15,11 @@
 
 > 이전에 프로젝트 할 때, button과 radio 박스위에 label을 사용했던 점을 착안
 
-1. label을 on
+1. label을 `on`
 2. 인풋박스에 `onMouseEnter`될 때 `false`로 감춘다
 3. displaypencil이 `OFF`라면 input 박스 보이기
 
-### `htmlFor="(input id)"`
+### 📌 `htmlFor="(input id)"`
 
 - 라디오 박스처럼 label이 대신 클릭되길 바란다면 React에선 htmlFor의 값을 해당하는 라디오박스 id와 일치하게 해주면 된다.
 
@@ -105,6 +105,9 @@ input[type="number"] {
 
 - 예상 로직대로라면 `input min` 속성을 사용하여 `0`이상의 정수만 허용
 - But, `min={0}` 이하 음수도 작성이 되어서 아래의 로직 추가
+- `+` 범위 밖 값이면 팝업창 띄우기!
+
+  ![popup](https://user-images.githubusercontent.com/110847597/217245839-add16c17-e34f-4712-9b0c-0ef45e22a39a.gif)
 
 ```jsx
 const handleInputChange = e => {
