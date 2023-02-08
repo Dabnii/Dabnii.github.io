@@ -8,6 +8,8 @@
   <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdabnii%2Fhit-counter&count_bg=%23252525&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true"/></a>
 </p>
 
+ ##### <p align="center"> Write documentation that is 📜<i> Read official documents, 🔍 inviting and clear, 💡skimmable </i></p>
+
 # 👩‍💻 Web Project
 
 - [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
