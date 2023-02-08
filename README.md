@@ -8,7 +8,7 @@
   <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdabnii%2Fhit-counter&count_bg=%23252525&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true"/></a>
 </p>
 
- ##### <p align="center"> Write documentation that is 📜<i> Read official documents, 🔍 inviting and clear, 💡skimmable </i></p>
+##### <p align="center"> Write documentation that is 📜<i> Read official documents, 🔍 inviting and clear, 💡skimmable </i></p>
 
 # 👩‍💻 Web Project
 
@@ -45,6 +45,7 @@
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Optional%20Chaining.md">Optional Chaining</a>
 - [Promise](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Promise.md)
   - [async & await](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Promise-async%20await.md)
+- [Regular expression](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Regular%20Expression.md)
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/string%3C-%3ENumber.md">String ←→ Number</a>
 
 # 🧢 React

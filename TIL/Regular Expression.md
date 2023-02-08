@@ -1,10 +1,11 @@
 # <p align="center">🔍 Regular expression </p>
 
-<img align="center" src="https://user-images.githubusercontent.com/110847597/217582662-b1f0ffab-4c4f-43b9-9b5a-34d3554949ea.png" alt="reg.Png" width="400px"/>
+<div align="center" >
+<img src="https://user-images.githubusercontent.com/110847597/217582662-b1f0ffab-4c4f-43b9-9b5a-34d3554949ea.png" alt="reg.Png" width="400px" /></div>
 
 ~~그렇습니다, 제가 제작한 이미지 입니다. 🤓~~
 
-## 💡 Regular expression 101
+## <p align="center"> 💡 Regular expression 101</p>
 
 - `/` 슬래시안에 패턴을 작성합니다
 
