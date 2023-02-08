@@ -167,7 +167,7 @@ const onDecrease = () => {
 
 ![closeSHot](https://user-images.githubusercontent.com/110847597/217237782-d558300a-dd9d-4029-bd75-b2c52dfc64ac.gif)
 
-> 0일때 연산하지 않는 문제점을 발견했다.
+> `1`일때 정상적으로 연산하지 않는 문제점을 발견했다.
 > 확인해 보니 숫자가 아닌 `string`으로 들어오고 있었다.
 > `Number()` 사용으로 숫자로 변환완료
 
