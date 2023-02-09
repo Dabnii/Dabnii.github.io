@@ -82,6 +82,25 @@
 - `\s` space 공백
 - `\S` space 공백 `아님`
 
+### Assertions
+
+- Assertions에는 행이나 단어의 시작 · 끝을 나타내는 경계와 (앞, 뒤 읽고 조건식을 포함한) 어떤 식 으로든 매치가 가능한 것을 나타내는 다른 패턴이 포함됩니다.
+
+### `(?=)` Lookahead assertion
+
+### `(?!)` Negative assertions
+
+```javascript
+// JS Lookahead assertion x(?=y)
+
+let regex = /First(?= test)/g;
+
+console.log('First test'.match(regex)); // [ 'First' ]
+console.log('First peach'.match(regex)); // null
+console.log('This is a First test in a year.'.match(regex)); // [ 'First' ]
+console.log('This is a First peach in a month.'.match(regex)); // null
+```
+
 ### 🤓 코테에 사용한 정규식 되짚어보기
 
 <details> 
@@ -101,8 +120,8 @@
 const solution = my_string => {
   let reg = /[a-zA-Z ]/gim;
   return my_string
-    .replace(reg, "")
-    .split("")
+    .replace(reg, '')
+    .split('')
     .reduce((a, b) => a + Number(b), 0);
 };
 ```
@@ -143,7 +162,7 @@ s에는 둘 이상의 정수가 공백으로 구분되어 있습니다.
 //두번째 풀이
 const solution = s => {
   let num = s.split(/\s/g);
-  return Math.min(...num) + " " + Math.max(...num);
+  return Math.min(...num) + ' ' + Math.max(...num);
 };
 ```
 

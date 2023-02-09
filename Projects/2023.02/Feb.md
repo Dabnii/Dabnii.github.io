@@ -28,12 +28,12 @@ const [displayPencil, setDisplayPencil] = useState(true);
 //...
 {
   displayPencil ? (
-    <label htmlFor="numInput" onMouseEnter={() => setDisplayPencil(false)} />
+    <label htmlFor='numInput' onMouseEnter={() => setDisplayPencil(false)} />
   ) : (
     <>
       <input
-        id="numInput"
-        type="number"
+        id='numInput'
+        type='number'
         placeholder={0}
         step={1}
         min={0}
@@ -43,11 +43,11 @@ const [displayPencil, setDisplayPencil] = useState(true);
         onKeyDown={onReset}
         onBlur={onReset}
       />
-      <div className="btnContainer">
-        <button className="increase" onClick={() => onIncrease()}>
+      <div className='btnContainer'>
+        <button className='increase' onClick={() => onIncrease()}>
           +
         </button>
-        <button className="decrease" onClick={() => onDecrease()}>
+        <button className='decrease' onClick={() => onDecrease()}>
           -
         </button>
       </div>
@@ -62,13 +62,13 @@ label {
   width: 50%;
   border-bottom: 2px solid black;
   padding-right: 20px;
-  background-image: url("../../../public/image/pencil.svg");
+  background-image: url('../../../public/image/pencil.svg');
   background-repeat: no-repeat;
   background-position: center;
   //시맨틱태그를 사용할 필요가 없어, background img를 사용
 }
 
-input[type="number"] {
+input[type='number'] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -124,8 +124,8 @@ const handleInputChange = e => {
 };
 //
 <input
-  id="numInput"
-  type="number"
+  id='numInput'
+  type='number'
   placeholder={0}
   step={1}
   min={0}
@@ -210,6 +210,117 @@ function KeepDataComponent({ getAutoDelValue, getData }) {
 
 - 한 줄이라고 다 좋은 코드는 아니다.
 
-## <p align="center"> 📆 2/7
+## <p align="center"> 📆 2/10
 
-### 😖 useState의 동기
+### Login Function ⚙️
+
+- account를 switch로 리팩토링 해보고 싶다.
+
+```jsx
+const [account, setAccount] = useState({
+  firstName: '',
+  lastName: '',
+  email: '',
+  gender: '',
+  password: '',
+  passwordCheck: '',
+});
+
+
+<input
+  type='text'
+  name='lastName'
+  className='lastName'
+  placeholder='last name'
+  maxLength={13}
+  onChange={handleUserInfo}
+  onBlur={() =>
+    setIsValid({
+      ...isValid,
+      lastName:
+        lastNameRex.test(account.lastName) === true
+          ? true
+          : null,
+    })
+  }
+```
+
+### 💨 `onBlur={}`
+
+- `blur` [📎 blur](https://developer.mozilla.org/ko/docs/Web/API/Element/blur_event)
+- blur 이벤트는 엘리먼트의 포커스가 해제되었을 때 발생합니다.
+- 이 이벤트와 focusout 이벤트의 가장 다른점은 `focusout은 이벤트 버블링이 발생`합니다.
+
+### 🔬 `regex` 활용한 유효성 검사
+
+```jsx
+  const [isValid, setIsValid] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    password: false,
+    passwordConfirm: false,
+  });
+
+  const firstNameRex = /^[A-Za-z가-하]{2,}/;
+  //이름은 한글, 영대소문자 무관으로 최소 2자 이상
+  const lastNameRex = /^[A-Za-z가-하]/;
+  //성은 한글, 영대소문자 무관, 자릿수 무관
+  const emailRex = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+  // [a-zA-Z0-9+-_.]하나 이상의 문자로 시작
+  // @ 필수 포함
+  // @ 기호 뒤에 하나 이상의 문자 필수
+  // 문자로 끝이나야함.
+  const passwordRex =
+    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$*])[a-zA-Z\d!@#$*]{8,}$/;
+    //하나 이상의 대소문자 필수, 최소 1개의 숫자 필요, 지정한 특수문자 필수, 최소 8자
+
+
+//input의 속성 이벤트로 사용
+onBlur={() =>
+  setIsValid({
+    ...isValid,
+    firstName:
+      firstNameRex.test(account.firstName) === true
+        ? true
+        : null,
+  })
+}
+```
+
+## 📌 `test()`
+
+- test() 메서드는 주어진 문자열이 정규 표현식을 만족하는지 판별하고, 그 여부를 `true` 또는 `false`로 반환합니다.
+  [📎 Regex.test() MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
+
+```
+regexObj.test(str)
+```
+
+```jsx
+let email = 'abc@e.com';
+const valid = email => {
+  return /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/.test(email);
+};
+valid(email); // true
+```
+
+<details>
+<summary>오늘도 밤새도록 돌아가는 console.log 공장 🏭 </summary>
+
+```jsx
+console.log(account);
+// console.log(account.firstName);
+// console.log('first name:' + firstNameRex.test(account.firstName));
+// console.log('last name' + lastNameRex.test(account.lastName));
+// console.log('emial : ' + emailRex.test(account.email));
+console.log('password: ' + passwordRex.test(account.password));
+// console.log('passwordConfirm: ' + passwordRex.test(account.passwordConfirm));
+// console.log('euqal password: ' + equalPassword);
+console.log('passwordCheck:  ' + passwordRex.test(account.passwordCheck));
+// console.log(account.passwordCheck);
+console.log('passwordConfirm:  ' + passwordConfirm);
+//어지럽다..
+```
+
+</details>
