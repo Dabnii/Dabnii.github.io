@@ -324,3 +324,278 @@ console.log('passwordConfirm:  ' + passwordConfirm);
 ```
 
 </details>
+
+## <p align="center"> 📆 2/9
+
+### 🔥 Firebase
+
+[📎 Firebase](https://console.firebase.google.com/?hl=ko)
+
+- 코드과제를 위하여 파이어 베이스 입문
+- 번거로운 백엔드 작업을 효율적으로 할 수 있는 플랫폼, 인증, 데이터베이스, 스토리지, 원격 구성, 푸쉬알림
+- 여기서 내가 쓸 기능은 `인증`, `데이터베이스`, `스토리지` 정도로 추려진다.
+- [📑 Firbase document](https://firebase.google.com/docs?authuser=0&hl=ko)
+- 이니셜라이즈 하는 부분을 처음 배웠다.
+
+```jsx
+// 도큐먼트 세상
+// 차근히 둘러보면 문서정리가 잘 되어있어 이해하기 쉽다...
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then(userCredential => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch(error => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+```
+
+### ✨ Initialize
+
+- 함수, 클래스 컴포넌트만 사용하다 이렇게 이니셜라이즈 하는건 처음 해봤다.
+
+```jsx
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+
+const firebaseConfig = {
+  apiKey: //apiKey
+  authDomain: //authDomain
+  projectId: //projectId
+  storageBucket: //storageBucket
+  messagingSenderId: //messagingSenderId
+  appId: //appId
+};
+
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
+export const storage = getStorage();
+export const db = getFirestore();
+```
+
+> 그럼 이렇게 원하는 컴포넌트에 임포트 해주면 된다.
+
+```jsx
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { auth, storage, db } from '../Firebase';
+import { doc, setDoc } from 'firebase/firestore';
+```
+
+### 🎊 가입정보 POST 하기
+
+```jsx
+const signup = async e => {
+  e.preventDefault();
+
+  try {
+    const file = image;
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+
+    goToLogin();
+
+    const storageRef = ref(storage, displayName);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      'state_changed',
+      null,
+      error => {
+        console.log('error');
+      },
+      async () => {
+        const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+
+        await updateProfile(user, {
+          displayName: account.displayName,
+          photoURL: downloadURL,
+        });
+        await setDoc(doc(db, 'users', res.user.uid), {
+          uid: res.user.uid,
+          displayName,
+          email,
+          photoURL: downloadURL,
+        });
+        await setDoc(doc(db, 'userChats', res.user.uid));
+      }
+    );
+  } catch (error) {
+    console.log('error!');
+  }
+};
+```
+
+- `firstName` & `lastName`으로 관리 하던 두 개의 `input`을 하나로 통일하고, 이름도 `displayName`으로 수정
+- Firebase는 기본 auth 과정에서 `displayName`은 받지 않기에, `storage`를 통하여 업로드를 하였다.
+  ```jsx
+  //이 부분
+  await updateProfile(user, {
+    displayName: account.displayName,
+    photoURL: downloadURL,
+  });
+  await setDoc(doc(db, 'users', res.user.uid), {
+    uid: res.user.uid,
+    displayName,
+    email,
+    photoURL: downloadURL,
+  });
+  ```
+
+<details>
+  <summary>리팩토링 전 회원가입 코드</summary>
+
+```jsx
+// 이메일, 패스워드로 인증하는 코드
+// 날 것 그 자체
+const signup = async e => {
+  e.preventDefault();
+  const file = image;
+  const res = await createUserWithEmailAndPassword(auth, email, password)
+    .then(userCredential => {
+      const user = userCredential.user;
+      alert('회원가입 성공!');
+      goToLogin();
+      console.log(user);
+      const storageRef = ref(storage, displayName);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      uploadTask.on(
+        error => {
+          console.log('error');
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async downloadURL => {
+            await updateProfile(res.user, {
+              displayName: account.displayName,
+              photoURL: downloadURL,
+            });
+          });
+        }
+      );
+    })
+    .catch(error => {
+      console.log('error!');
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+};
+```
+
+</details>
+
+## <p align="center"> 📆 2/10
+
+### 🏞️ 이미지 띄워보기
+
+- `profile` 이미지를 수집하긴 하는데, 들어가는지 너무 궁금했다.
+- 확인 완료.
+
+```jsx
+const handleFile = e => {
+  setImage(URL.createObjectURL(e.target.files[0]));
+};
+
+//...
+
+<input type='file' onChange={handleFile} />;
+
+{
+  image && <img src={image} alt='selected image' />;
+}
+```
+
+### 🔐 `로그인` 확인하기
+
+- 백엔드와 통신할 때는 `token`이나 고유 auth 방법이 있었는데, Firebase는 token이 찍히지 않는다. 유일한 흔적은 `uid`
+- `useState`를 활용하여 user의 상태를 관리한다.
+
+```jsx
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    setIsLoggedIn(true);
+  } else {
+    setIsLoggedIn(false);
+  }
+});
+
+const logout = () => {
+  auth
+    .signOut()
+    .then(() => {
+      console.log('Logged out');
+    })
+    .catch(error => {
+      console.error(error);
+    });
+};
+
+//
+
+{
+  isLoggedIn ? (
+    <button className='logout' onClick={logout}>
+      로그아웃
+    </button>
+  ) : (
+    <>
+      <li>
+        <Link to='/login'>로그인</Link>
+      </li>
+      <li>
+        <Link to='/signup'>회원가입</Link>
+      </li>
+    </>
+  );
+  //button과 link의 혼종
+}
+```
+
+### 🤦‍♀️ 못생긴 `<Link to>` 스타일링
+
+```
+<Link to>는 a 링크이다
+```
+
+```scss
+a {
+  color: $pink;
+  font-weight: 400;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: black;
+}
+```
+
+> 👏👏👏👏
+
+### 🔨 `<br/>` 쓰고 싶을 때
+
+```scss
+white-space: pre-wrap;
+```
+
+> CSS white-space 속성은 요소가 공백 문자를 처리하는 법을 지정합니다.
+
+| 개행 문자    | 스페이스, 탭 | 자동 줄 바꿈 | 줄 끝의 공백 |
+| ------------ | ------------ | ------------ | ------------ | ------- |
+| normal       | 병합         | 병합         | 예           | 제거    |
+| nowrap       | 병합         | 병합         | 아니오       | 제거    |
+| pre          | 유지         | 유지         | 아니오       | 유지    |
+| pre-wrap     | 유지         | 유지         | 예           | 넘침    |
+| pre-line     | 유지         | 병합         | 예           | 제거    |
+| break-spaces | 유지         | 유지         | 예           | 줄 바꿈 |
+
+- `white-space` 속성 값 변경
+- [📎 white-space](https://developer.mozilla.org/ko/docs/Web/CSS/white-space)
