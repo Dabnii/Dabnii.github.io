@@ -516,6 +516,7 @@ const handleFile = e => {
 
 - 백엔드와 통신할 때는 `token`이나 고유 auth 방법이 있었는데, Firebase는 token이 찍히지 않는다. 유일한 흔적은 `uid`
 - `useState`를 활용하여 user의 상태를 관리한다.
+- 그리고 `context`를 사용하여 상태관리중 23.02.15
 
 ```jsx
 const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -599,3 +600,202 @@ white-space: pre-wrap;
 
 - `white-space` 속성 값 변경
 - [📎 white-space](https://developer.mozilla.org/ko/docs/Web/CSS/white-space)
+
+### state Value 전체를 `validation`로 쓰기
+
+```jsx
+const allValid = Object.values(isValid).every(Boolean);
+```
+
+## <p align="center"> 📆 2/14
+
+## ☁️ Context
+
+[📎 Context](https://ko.reactjs.org/docs/context.html#when-to-use-context)
+
+```jsx
+// Main.js
+// before
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+const [userName, setUserName] = useState('');
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    setIsLoggedIn(true);
+    setUserName(user.displayName);
+  } else {
+    setIsLoggedIn(false);
+  }
+});
+
+// 로그인 여부를 확인하기 위해 onAuthStateChanged(auth, user) 를 확인하고, 값을 스테이트 담고
+// 유저의 이름을 또 따로 저장하고... 😩
+// 하지만 context로 한 줄로 해결했다.
+// 물론 context는 여러줄이다.
+```
+
+```jsx
+// Main.js
+// after
+const { currentUser } = useContext(AuthContext);
+```
+
+- 정말 간결해졌다.
+- 로그인 정보를 → Nav애 전달하고 → Main 과 chat 컴포넌트에 사용해야한다
+- 그럴때 필요한 context!
+
+```
+context를 이용하면 단계마다 일일이 props를 넘겨주지 않고도 컴포넌트 트리 전체에 데이터를 제공할 수 있습니다.
+```
+
+## 🤓 context 들여다보기
+
+```jsx
+import { createContext, useEffect, useState } from 'react';
+import { auth } from '../pages/Firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+
+export const AuthContext = createContext();
+
+export const AuthContextProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState({});
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, user => {
+      setCurrentUser(user);
+      console.log(user);
+    });
+
+    return () => {
+      unsub();
+    };
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ currentUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+```
+
+### ⚠️ 고려할 점
+
+- `context`의 주된 용도는 다양한 레벨에 *네스팅된 많은 컴포넌트에게 데이터를 전달*하는 것입니다. `context`를 사용하면 컴포넌트를 재사용하기가 어려워지므로 꼭 필요할 때만 쓰세요.
+
+- 여러 레벨에 걸쳐 props 넘기는 걸 대체하는 데에 context보다 `컴포넌트 합성이 더 간단한 해결책`일 수도 있습니다.
+
+### 📑 React.createContext API
+
+```jsx
+const MyContext = React.createContext(defaultValue);
+```
+
+- 트리 상위에서 가장 가까이 있는 짝이 맞는 Provider로부터 현재값을 읽습니다.
+- 적절한 Provider를 찾지 못했을 때만 쓰이는 값
+
+### ✨ Context.Provider
+
+```jsx
+<MyContext.Provider value={/* 어떤 값 */}>
+```
+
+- context의 변화를 알리는 역할
+- Provider 하위에서 context를 구독하는 모든 컴포넌트는 Provider의 value prop가 바뀔 때마다 다시 렌더링
+
+### ⚠️ 주의사항
+
+- 다시 렌더링할지 여부를 정할 때 참조(reference)를 확인하기 때문에, Provider의 부모가 렌더링 될 때마다 불필요하게 하위 컴포넌트가 다시 렌더링 될 수 있음
+- 이를 피하기 위해서는 값을 부모의 state로 끌어올리기
+
+#### 그 외 오늘 한 일들
+
+- [x] signup validation & function 90%
+- [x] fixed: signup profile image upload
+- [x] nav & main permission
+- [x] scss mixin 적용
+- [x] chat network flow check
+
+### 🏞️ photoURL upload
+
+- Issue #1
+  - input file을 사용하여 이미지를 업로드 하지만, 데이터베이스에서 보이지 않았다.
+- Issue #2
+
+  - 선택된 file을 UI에 그려내고 싶었다.
+
+- Try #1
+
+  - 공식문서 활용, 실패
+  - 이미 signup 함수에서 처리하고 있었다.
+
+  ```jsx
+  import { getStorage, ref } from 'firebase/storage';
+  // Create a root reference
+  const storage = getStorage();
+
+  // Create a reference to 'mountains.jpg'
+  const mountainsRef = ref(storage, 'mountains.jpg');
+
+  // Create a reference to 'images/mountains.jpg'
+  const mountainImagesRef = ref(storage, 'images/mountains.jpg');
+  ```
+
+- Try #2
+  ```jsx
+  e.target.files[0];
+  ```
+  - 업로드 된 파일의 0번 인덱스를 사용하는 것,
+
+#### 📌 Solution
+
+```jsx
+const handleFile = e => {
+  setImage(e.target.files[0]);
+  setDisplayUserImg(URL.createObjectURL(e.target.files[0]));
+};
+```
+
+- 두개의 state로 관리
+
+| &#32; | image               | displayUserImg                            |
+| ----- | ------------------- | ----------------------------------------- |
+| 목적  | 데이터베이스 업로드 | UI rendering                              |
+| code  | `e.target.files[0]` | `(URL.createObjectURL(e.target.files[0])` |
+
+```jsx
+await uploadBytesResumable(storageRef, file).then(() => {
+  getDownloadURL(storageRef) //
+    .then(async downloadURL => {
+      try {
+        await updateProfile(res.user, {
+          displayName,
+          photoURL: downloadURL,
+        });
+
+        await setDoc(doc(db, 'users', res.user.uid), {
+          uid: res.user.uid,
+          displayName,
+          email,
+          photoURL: downloadURL,
+        });
+
+        await setDoc(doc(db, 'userChats', res.user.uid), {});
+        goToMain();
+      } catch (err) {
+        console.log(err);
+      }
+    });
+});
+```
+
+> 무진장 길어진 통신 코드 😩
+
+### ✨ 15일 todo list
+
+- [] signup/signin refactoring
+- [] signup loading UI design
+- [] signup error UI design
+- [] Chat function 마무리
+
+---
