@@ -11,7 +11,7 @@
 ##### <p align="center"> Write documentation that is 📜<i> Read official documents, 🔍 inviting and clear, 💡skimmable </i></p>
 
 # 👩‍💻 Web Project
-    
+
 - [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/TeamProj%20CGW.md">2nd Team proj.CGW: 영화 예매</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a>
@@ -27,11 +27,6 @@
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/Dec1stWeek.md">2022.Dec.1~2nd</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/3rdWeek.md">2022.Nov.3-4th</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md">2022.Nov.1~2nd</a>
-
-# 📘 CSS & HTML
-
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
 
 # 📌 JavaScript
 
@@ -50,15 +45,23 @@
 
 # 🧢 React
 
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%EB%93%B1%EC%9E%A5%EB%B0%B0%EA%B2%BD.md">React의 등장 배경 & Library</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md">React 101</a>
+- <details>
+    <summary>React 101</summary>
+      - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%EB%93%B1%EC%9E%A5%EB%B0%B0%EA%B2%BD.md">React의 등장 배경 & Library</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md">React 101</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md">React Component</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md">React & JSX</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md">React Hook</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md">React Props</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20State.md">React State</a>
+    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Mock%20Data.md">React Mock data</a> 
+  </details>
+
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Class%20LifeCycle.md">React Class component LifeCycle</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md">React Component</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md">React & JSX</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md">React Hook</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md">React Props</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20State.md">React State</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Mock%20Data.md">React Mock data</a>
+
+# 🖌️ TypeScript
+
+- [TypeScript 101 🏗️]()
 
 # 💻 Computer Science
 
@@ -78,6 +81,13 @@
 - [Pull Request & Commit](https://github.com/Dabnii/Dabnii.github.io/blob/fbab4f17ee0ebe2aeda4e2fb57c1cda0c20eabcf/TIL/Git%20commit%20message%20%26%20Pull%20request.md)
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Semantic%20Web%20%26%20Semantic%20Tag.md">Semantic Web & Semantic Tag </a>
 
+# 📘 CSS & HTML
+
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
+  - [Add multiple classes 🏗️]()
+- [💅 Styled-components 🏗️]()
+
 # 📚 Code tests
 
 | 2022                                                                                                                         | 2023                                                                                                       |
@@ -85,4 +95,3 @@
 | <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20test_Oct%2022.md"> 📚 Code Test_Oct</a> | [📚 Programmers_Jan](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Programmers/Lv0.md)          |
 | <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_1week.md"> 📚 Code Kata_1~5 </a>   | [📚 Programmers_Feb](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Programmers/Lv.0-1%20Feb.md) |
 | <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_2week.md"> 📚 Code Kata_6~10 </a>  | 🏗️                                                                                                         |
-
