@@ -281,10 +281,10 @@ let a: unknown;
 - 선언할 필요 없음
 
 ```tsx
-functino hello() {
-	console.log('x')
+function hello() {
+  console.log('x');
 }
-//functin hello():void
+//function hello():void
 ```
 
 ### never
