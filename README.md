@@ -47,21 +47,24 @@
 
 - <details>
     <summary>React 101</summary>
-      - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%EB%93%B1%EC%9E%A5%EB%B0%B0%EA%B2%BD.md">React의 등장 배경 & Library</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md">React 101</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md">React Component</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md">React & JSX</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md">React Hook</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md">React Props</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20State.md">React State</a>
-    - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Mock%20Data.md">React Mock data</a> 
+    <ol>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%EB%93%B1%EC%9E%A5%EB%B0%B0%EA%B2%BD.md">React의 등장 배경 & Library</a></li>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20101.md">React 101</a></li>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20component.md">React Component</a></li>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20%26%20Jsx.md">React & JSX</a></li>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Hook.md">React Hook</a></li>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Props.md">React Props</a></li>
+    <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20State.md">React State</a></li>
+  <li><a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Mock%20Data.md">React Mock data</a></li>
+  </ol>
+
   </details>
 
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Class%20LifeCycle.md">React Class component LifeCycle</a>
 
 # 🖌️ TypeScript
 
-- [TypeScript 101 🏗️]()
+- [TypeScript 101 🏗️](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript101.md)
 
 # 💻 Computer Science
 
