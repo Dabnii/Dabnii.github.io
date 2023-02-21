@@ -236,3 +236,66 @@ type Member = {
 
 let john: Member = { name: 'kim' };
 ```
+
+### Readonly Tuple
+
+```tsx
+const player: readonly [string, number, boolean];
+```
+
+```tsx
+type Member = {
+  [key: string]: string;
+  //모든 오브젝트 속성
+};
+
+let john: Member = { name: 'kim' };
+```
+
+### undefined, null, any
+
+```tsx
+let a = [];
+// a = any
+```
+
+`any`: 아무 타입
+
+`undefined`: 선언X 할당X
+
+`null`: 선언O 할당X
+
+## <p align="center"> Exclusive Typescript type checker </p>
+
+### unknown
+
+- unknown타입은 모든 값을 나타냅니다. 이것은 any타입과 비슷하지만 any보다 unknown이 더 안전합니다. 이유는 unknown값으로 작업을 수행하는 것은 합법적이지 않기 때문입니다.
+
+```tsx
+let a: unknown;
+```
+
+### void
+
+- 아무것도 return 하지 않는 함수
+- 선언할 필요 없음
+
+```tsx
+functino hello() {
+	console.log('x')
+}
+//functin hello():void
+```
+
+### never
+
+- 함수가 절대 return 하지 않을 때
+- 함수에서 exception(예외) 발생할 때
+- 일부 함수는 값을 반환하지 않습니다.
+- 이는 함수가 예외를 throw하거나 프로그램 실행을 종료함을 의미합니다.
+
+```tsx
+function fail(msg: string): never {
+  throw new Error(msg);
+}
+```
