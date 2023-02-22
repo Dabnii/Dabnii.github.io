@@ -299,3 +299,75 @@ function fail(msg: string): never {
   throw new Error(msg);
 }
 ```
+
+### 🪟 Call Signatures
+
+![Untitled](https://user-images.githubusercontent.com/110847597/220637736-d9ae0b64-a5a4-4168-a2f6-9914022e4aaa.png)
+
+- 함수 타입, argument 타입, 반환 타입을 명시 ✨
+- 함수위에 마우스를 올렸을 때 보게 되는 것
+- `장점`: 타입을 만들 수 있고, 함수의 작동방식을 서술 가능
+
+  ```tsx
+  type Add = (a: number, b: number) => number;
+
+  const add: Add = (a, b) => a + b;
+  ```
+
+  > 타스는 알고있다😎
+
+### Overloading
+
+- `Function(=Method) Overloading`은 직접 작성하기보다 외부 라이브러리에 자주 보이는 형태
+- 함수가 서로 다른 다수의 call signatures를 가지고 있을 때 발생
+
+```tsx
+type Add = {
+  (a: number, b: number): number;
+};
+
+const add: Add = (a, b) => a + b;
+```
+
+```tsx
+//nextjs
+Router.push({
+	path: "/home",
+	state: 1
+})
+
+.push("/home")
+
+type Config = {
+	(path:string):void,
+	//return nothing
+	state: object
+}
+
+type Push = {
+	(path:string):void
+	(config: Config):void;
+}
+
+const push:Push = (config) => {
+	if(typeof config  === "string"){ console.log(config)
+		} else	{
+		console.log(config.
+	}
+}
+```
+
+```tsx
+type Add = {
+  (a: number, b: number): number;
+  (a: number, b: number, c: number): number;
+};
+
+const add: Add = (a, b, c?: number) => {
+  if (c) return a + b + c;
+  return a + b;
+};
+
+add(1, 2);
+add(1, 2, 3);
+```
