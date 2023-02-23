@@ -6,8 +6,14 @@
   - Dynamic typing의 단점 개선
 - 코드 버그가 줄어듬
 - 생산성이 늘어남
-- 런타임 에러 (콘솔에서 일어남)
-  - 유저가 에러를 마주하게 됨
+
+|          | JavaScript                                 | TypeScript              |
+| -------- | ------------------------------------------ | ----------------------- |
+| 특징     | Dynamic typing (동적)                      | Static typing (정적)    |
+| 오류타입 | 런타임 에러                                | 컴파일 에러             |
+| 오류특징 | 최악의 경우 화면이 멈춤, 최악의 사용자경험 | 개발단계에서 핸들링가능 |
+
+- JavaScript의 치명적 오류 👇
 
 ```jsx
 console.log('' == 0);
@@ -19,12 +25,12 @@ console.log(1 < x < 3)[1] + true; //true
 
 ## <p align="center">🏃‍♀️ Run TypeScript </p>
 
-- node.js
+- ✨ `node.js`
 - `npm install -g typescript`
 - `tsc -w`
   - 컴파일 역할
 - `Ts` → `Js`
-  - 브라우저는 JavaScript만 읽을 수 있음
+  - 브라우저는 JavaScript만 읽을 수 있어 변환이 필요함
 
 ```tsx
 
