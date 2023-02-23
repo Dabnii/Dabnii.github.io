@@ -150,6 +150,6 @@ const [info, setInformation] = (useState < Information) | (null > null);
 
 ---
 
-- [🔗 제네릭 Generics ](<[https://www.typescriptlang.org/ko/docs/handbook/typescript-in-5-minutes.html?](https://www.typescriptlang.org/ko/docs/handbook/typescript-in-5-minutes.html?#%EC%A0%9C%EB%84%A4%EB%A6%AD-generics)>)
-- [🔗 Polymorphism With TypeScript (OOP) ](<[https://blog.bitsrc.io/polymorphism-in-typescript-oop-17646dcda307](https://blog.bitsrc.io/polymorphism-in-typescript-oop-17646dcda307)>)
-- [🔗 3. 타입스크립트로 리액트 상태 관리하기 ](<[https://react.vlpt.us/using-typescript/03-ts-manage-state.html](https://react.vlpt.us/using-typescript/03-ts-manage-state.html)>)
+- [🔗 제네릭 Generics](https://www.typescriptlang.org/ko/docs/handbook/typescript-in-5-minutes.html?)
+- [🔗 Polymorphism With TypeScript (OOP) ](https://blog.bitsrc.io/polymorphism-in-typescript-oop-17646dcda307)
+- [🔗 3. 타입스크립트로 리액트 상태 관리하기](https://react.vlpt.us/using-typescript/03-ts-manage-state.html)

@@ -64,7 +64,8 @@
 
 # 🖌️ TypeScript
 
-- [TypeScript 101 🏗️](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript101.md)
+- [TypeScript 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript101.md)
+- [TypeScript | generic](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_Generic.md)
 
 # 💻 Computer Science
 
