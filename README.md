@@ -12,12 +12,10 @@
 
 # 👩‍💻 Web Project
 
+- [Chat Web 🏗️](https://github.com/Dabnii/chatting-project)
 - [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/TeamProj%20CGW.md">2nd Team proj.CGW: 영화 예매</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/Westagram%20React.md">Westagram x React </a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/westagram.md">Westagram vanila js</a>
-- <a href="https://github.com/BongsikB/My-homepage/blob/main/README.md">Home page</a>
 
 # 🌳 Today I Learn
 
@@ -30,6 +28,9 @@
 
 # 📌 JavaScript
 
+<details>
+<summary>JS 101</summary>
+
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Array.md">Array</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Conditionals%20if.md">Conditional Statements</a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/Data%20type.md">Data type</a>
@@ -37,11 +38,20 @@
 - <a href= "https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/For%20loop.md">For Loop</a>
 - <a href ="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Logical%20Operation.md">Logical Operation </a>
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/Java%20Script/Object.md">Object</a>
+- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/string%3C-%3ENumber.md">String ←→ Number</a>
+
+</details>
+
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Optional%20Chaining.md">Optional Chaining</a>
 - [Promise](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Promise.md)
   - [async & await](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Promise-async%20await.md)
 - [Regular expression](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Regular%20Expression.md)
-- <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/string%3C-%3ENumber.md">String ←→ Number</a>
+
+# 🖌️ TypeScript
+
+- [TypeScript 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript101.md)
+- [TypeScript | generic](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_Generic.md)
+- [TypeScript | class](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_class.md)
 
 # 🧢 React
 
@@ -61,12 +71,6 @@
   </details>
 
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Class%20LifeCycle.md">React Class component LifeCycle</a>
-
-# 🖌️ TypeScript
-
-- [TypeScript 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript101.md)
-- [TypeScript | generic](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_Generic.md)
-- [TypeScript | class](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_class.md)
 
 # 💻 Computer Science
 
