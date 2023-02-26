@@ -118,6 +118,42 @@ lee.getFullName();
 - 필드가 외부에서 보호 됨
 - 다른 자식 클래스에서 사용가능
 
+```tsx
+type Words = {
+  [key: string]: string;
+  //property의 이름을 모르지만, 타입만을 알 때 사용함 [key:"string"]
+};
+
+class Dict {
+  private words: Words;
+  //1. words를 initializer 없이 선언
+  constructor() {
+    //2. constructor 수동으로 초기화
+    this.words = {};
+  }
+
+  add(word: Word) {
+    if (this.words[word.term] === undefined) {
+      this.words[word.term] = word.def;
+    }
+    //만약 등록되지 않은 term이라면 새로 add
+  }
+  def(term: string) {
+    return this.words[term];
+  }
+}
+
+class Word {
+  constructor(public term: string, public def: string) {}
+}
+
+const kimchi = new Word('kimchi', '한국전통음식');
+const dict = new Dict();
+
+dict.add(kimchi);
+dict.def('kimchi');
+```
+
 ---
 
 출처:
