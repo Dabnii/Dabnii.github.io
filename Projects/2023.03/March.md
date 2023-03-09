@@ -133,3 +133,51 @@ const PlayerImg = styled.img`
 
 - `isXPlayer` , `isOPlayer` 있다면 PlayerImg display의 show로 display
 - `styled-components`의 props를 사용
+
+## <p align="center"> 📆 3/8
+
+### 🍀 Re-load!
+
+```javascript
+location.reload();
+```
+
+```jsx
+const handleRefreshClick = () => {
+  window.location.reload();
+};
+```
+
+> Location.reload() 메서드는 새로고침 버튼처럼 현재 리소스를 다시 불러옵니다.
+
+출처:
+
+- [📎 location.reload MDN](https://developer.mozilla.org/ko/docs/Web/API/Location/reload)
+
+### 💡 Prevent click
+
+```jsx
+const changePlayer = index => {
+  if (board[index] !== null || isWinner) {
+    return;
+  }
+};
+```
+
+1. grid가 이미 클릭 되었거나 || 승자가 정해졌다면 → `아무런 행동을 하지 않음`
+
+## <p align="center"> 📆 3/9
+
+### 🤜 무승부! `every`
+
+```jsx
+const isTie = board.every(el => el !== null);
+```
+
+- `every()` 메서드는 배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트합니다. `Boolean 값을 반환`합니다.
+
+---
+
+출처:
+
+- [📎 every MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
