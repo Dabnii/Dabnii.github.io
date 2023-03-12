@@ -27,6 +27,9 @@ let arr = [1, 2, 3];
 
 # <p align="center">📆 3/11 Challenge</p>
 
+<details>
+<summary>📃 Homework 02</summary>
+
 ```typescript
 type Words = {
   [key: string]: string;
@@ -41,9 +44,9 @@ class Dict {
   add(word: Word) {
     if (this.words[word.term] === undefined) {
       this.words[word.term] = word.def;
-      console.log(`${word.term} added!`);
+      return console.log(`${word.term} added!`);
     } else {
-      console.log(`${word.term} already exists!`);
+      return console.log(`${word.term} already exists!`);
     }
   }
 
@@ -53,15 +56,15 @@ class Dict {
 
   del(term: string) {
     delete this.words[term];
-    console.log(`${term} deleted`);
+    return console.log(`${term} deleted`);
   }
 
   update(word: Word) {
-    if (this.words[word.term] !== undefined) {
+    if (this.words.hasOwnProperty(word.term)) {
       this.words[word.term] = word.def;
-      console.log(`${word.term} updated!`);
+      return console.log(`${word.term} updated!`);
     } else {
-      console.log(`${word.term} does not exists`);
+      return console.log(`${word.term} does not exists`);
     }
   }
 
@@ -74,20 +77,19 @@ class Dict {
   }
 
   upsert(word: Word) {
-    if (this.words[word.term] === undefined) {
-      this.words[word.term] = word.def;
-      console.log(`${word.term} added!`);
+    if (this.words.hasOwnProperty(word.term)) {
+      this.update(word);
+      return console.log(`${word.term} added!`);
     } else {
-      console.log(`${word.term} already exists`);
+      this.add(word);
+      return console.log(`${word.term} already exists`);
     }
   }
 
   exists(term: string) {
-    if (this.words[term] !== undefined) {
-      console.log(`${term} exists !`);
-    } else {
-      console.log(`${term} dose not exists 😢`);
-    }
+    this.words.hasOwnProperty(term)
+      ? console.log(`${term} exists !`)
+      : console.log(`${term} dose not exists 😢`);
   }
 
   bulkAdd(words: Word[]) {
@@ -115,6 +117,8 @@ const latte = new Word('Latte', 'coffee with milk');
 const dict = new Dict();
 ```
 
+</details>
+
 ```typescript
   exists(term: string){
     return (this.words.hasOwnProperty(term))? `${term} exists`: "${term} doesn't exist"
@@ -124,7 +128,7 @@ const dict = new Dict();
 > 백엔드빛의 code
 > 역시 빛...
 
-### `hasOwnProperty`
+### ✅ `hasOwnProperty`
 
 - `hasOwnProperty()` 메소드는 객체가 특정 프로퍼티를 가지고 있는지를 나타내는 불리언 값을 반환한다.
 
