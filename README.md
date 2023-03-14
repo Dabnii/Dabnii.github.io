@@ -53,6 +53,7 @@
 - [TypeScript 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript101.md)
 - [TypeScript | generic](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_Generic.md)
 - [TypeScript | class](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_class.md)
+- [TypeScript | interface & implement](https://github.com/Dabnii/Dabnii.github.io/blob/main/TypeScript/TypeScript_type%26interface.md)
 
 # 🧢 React
 
