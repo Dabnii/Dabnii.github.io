@@ -72,6 +72,17 @@ class Dict {
     for (let [key, value] of Object.entries(this.words))
       return console.log(`${key}: ${value}`);
   }
+
+  // 줍줍코드
+  //   showAll() {
+  //   let output = "\n--- Dictionary Content ---\n"
+  //   Object.keys(this.words).forEach((term) =>
+  //     output += `${term}: ${this.words[term]}\n`
+  //   );
+  //   output += "--- End of Dictionary ---\n"
+  //   console.log(output);
+  // }
+
   count() {
     return Object.keys(this.words).length;
   }
@@ -103,6 +114,13 @@ class Dict {
       this.del(term);
     }
   }
+  // 줍줍코드
+  //   bulkAdd(words: Word[]){
+  //   words.forEach(word => this.add(word.term, word.definition))
+  // }
+  // bulkDelete(terms: string[]){
+  //   terms.forEach(term => this.delete(term));
+  // }
 }
 
 class Word {
@@ -149,3 +167,5 @@ console.log(object1.hasOwnProperty('property1'));
 출처:
 
 - [📎 hasOwnProperty() MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+
+---

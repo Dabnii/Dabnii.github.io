@@ -1,5 +1,15 @@
 # <p align="center">👩‍🏫 Class | 클래스</p>
 
+### 💡 Class | 클래스
+
+- 타입스크립트의 클래스는 속성과 메소드가 있는 객체를 정의하는 데 사용됩니다.
+- 이것은 주로 행동이 연관된 `객체의 인스턴스를 만드는 데 사용`됩니다.
+- 클래스는 `캡슐화`, `상속` 및 `다형성과` 같은 객체 지향 프로그래밍(OOP) 개념을 구현하는 데 사용됩니다.
+- 구성요소
+  - `constructor`
+    - Class constructors are very similar to `functions`. You can `add parameters` with type `annotations`, `default values`, and `overloads`:
+  - `{}` 초기화
+
 ### 💡 접근 가능한 위치
 
 |           | 선언한 클래스 내 | 상속받은 클래스 내 | 인스턴스 |
