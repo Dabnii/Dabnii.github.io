@@ -169,3 +169,38 @@ console.log(object1.hasOwnProperty('property1'));
 - [📎 hasOwnProperty() MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
 
 ---
+
+# <p align="center">📆 3/15 Polymorphism & generic props</p>
+
+```typescript
+interface SStorage<T> {
+  [key: string]: T;
+  //  T가 존재함을 암시
+}
+
+class LocalStorage<T> {
+  private storage: SStorage<T> = {};
+  set(key: string, value: T) {
+    this.storage[key] = value;
+  }
+  remove(key: string) {
+    delete this.storage[key];
+  }
+  get(key: string): T {
+    return this.storage[key];
+  }
+  clear() {
+    this.storage = {};
+  }
+}
+
+const stringStorage = new LocalStorage<string>();
+
+stringStorage.get('key');
+stringStorage.set('hello', 'nice');
+
+const booleanStorage = new LocalStorage<boolean>();
+
+booleanStorage.get('XXX');
+booleanStorage.set('hello', true);
+```
