@@ -199,3 +199,39 @@ object1.property1 = 42;
 console.log(object1.hasOwnProperty('property1'));
 // Expected output: true
 ```
+
+## <p align="center"> 📆 3/21
+
+### 🚨 Too many re-renders!
+
+![Error](https://user-images.githubusercontent.com/110847597/226533984-15dbea2c-c167-4269-be2a-ed00ca6763bf.png)
+
+> 매번 함수가 실행 되면서 많은 리 렌더링을 야기하는 오류.
+> UseEffect를 사용하여 페이지가 마운트 될 때 마다 렌더링 하도록 수정!
+
+```javascript
+const [xWin, setXWin] = useState(0);
+const [oWin, setOWin] = useState(0);
+
+const winData = ['X', 'O', 'X', 'X', 'X'];
+
+const countWinner = winData => {
+  for (let i = 0; i < winData.length; i++) {
+    if (winData[i] === 'X') {
+      setXWin(prev => prev + 1);
+    } else if (winData[i] === 'O') {
+      setOWin(prev => prev + 1);
+    }
+  }
+};
+
+✨
+
+useEffect(() => {
+  countWinner(winData);
+}, []);
+
+//countWinner(winData);
+//이렇게 쓰면 안된다.
+
+```
