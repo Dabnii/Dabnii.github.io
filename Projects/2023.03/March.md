@@ -248,6 +248,7 @@ useEffect(() => {
 
 1. 첫 게임이 끝난 후 모달창을 닫는다
 2. 두번째 게임을 진행 하면 모달창(게임결과)이 뜨지 않는다.
+3. `Boolean`으로 관리되는 `setState` 이슈 같다.
 
 ### ✅ Solution
 
@@ -261,12 +262,34 @@ useEffect(() => {
 
 ### 🚨 problem
 
-1. `1+`씩 증가해야하는 점수가 불규칙적으로 증가한다
+1. `1+`씩 증가해야하는 점수가 불규칙적으로 증가
    ![scoreError](https://user-images.githubusercontent.com/110847597/227870301-1bbabd0a-7c06-4683-ad79-42d1c3497e24.gif)
    <img width="653" alt="scoreError2" src="https://user-images.githubusercontent.com/110847597/227870257-a9d9f9c4-722b-4868-aab6-a294c9d34f94.png">
+1. `setState`가 여러번 호출되는 이슈
+   1. `reduce` `{X:0 , O:0}` 수정 고려 대상
 
 ### ✅ Solution
 
 ```javascript
+//before
+const countWinner = winData => {
+  for (let i = 0; i < winData.length; i++) {
+    if (winData[i] === 'X') {
+      setXWin(prev => prev + 1);
+    } else if (winData[i] === 'O') {
+      setOWin(prev => prev + 1);
+    }
+  }
+};
+```
 
+```javascript
+//after
+const countWinner = winData => {
+  const xWon = winData.filter(winner => winner === 'X').length;
+  const oWon = winData.filter(winner => winner === 'O').length;
+
+  setXWin(xWon);
+  setOWin(oWon);
+};
 ```
