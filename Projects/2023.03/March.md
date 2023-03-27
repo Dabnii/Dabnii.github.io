@@ -235,3 +235,16 @@ useEffect(() => {
 //이렇게 쓰면 안된다.
 
 ```
+
+---
+
+## <p align="center"> 📆 3/27
+
+<img width="900" alt="스크린샷 2023-03-27 오후 4 06 42" src="https://user-images.githubusercontent.com/110847597/227865984-0a4719c3-28a5-4f5b-b3bb-71162bf60e42.png">
+
+## 💬 New game error
+
+### 🚨 problem
+
+1. 첫 게임이 끝난 후 모달창을 닫는다
+2. 두번째 게임을 진행 하면 모달창(게임결과)이 뜨지 않는다.
