@@ -248,3 +248,25 @@ useEffect(() => {
 
 1. 첫 게임이 끝난 후 모달창을 닫는다
 2. 두번째 게임을 진행 하면 모달창(게임결과)이 뜨지 않는다.
+
+### ✅ Solution
+
+```javascript
+
+```
+
+---
+
+## 💬 Score error
+
+### 🚨 problem
+
+1. `1+`씩 증가해야하는 점수가 불규칙적으로 증가한다
+   ![scoreError](https://user-images.githubusercontent.com/110847597/227870301-1bbabd0a-7c06-4683-ad79-42d1c3497e24.gif)
+   <img width="653" alt="scoreError2" src="https://user-images.githubusercontent.com/110847597/227870257-a9d9f9c4-722b-4868-aab6-a294c9d34f94.png">
+
+### ✅ Solution
+
+```javascript
+
+```
