@@ -252,8 +252,40 @@ useEffect(() => {
 
 ### ✅ Solution
 
-```javascript
+1. `0 === initial state`, `1 === win state`, `2 === tie state`
+1. 간단하게 state 하나의 값으로 설정하는 것이 아니었다.
 
+```jsx
+//before
+const newGame = () => {
+  if (isWinner) {
+    setScore(null);
+  }
+
+  setBoard(Array(9).fill(null));
+  winRecord(score);
+  setXPlayer(true);
+  setDisplayModal(false);
+};
+```
+
+```jsx
+//after
+const newGame = () => {
+  if (isWinner) {
+    setScore(null);
+  }
+
+  setBoard(Array(9).fill(null));
+  winRecord(score);
+  setXPlayer(true);
+  setNumGamesPlayed(prev => prev + 1);
+
+  if (numGamesPlayed === 1) {
+    setDisplayModal(true);
+    setNumGamesPlayed(0);
+  }
+};
 ```
 
 ---
@@ -262,9 +294,18 @@ useEffect(() => {
 
 ### 🚨 problem
 
+<img width="884" alt="스크린샷 2023-03-27 오후 4 53 25" src="https://user-images.githubusercontent.com/110847597/228174141-6b07e0b9-128b-46ea-9734-41098ee26a57.png">
+
+> `winData`에 데이터는 제대로 들어간다.
+> 그렇다면, 함수에 문제가 있는 것
+
+<img width="896" alt="스크린샷 2023-03-27 오후 4 51 09" src="https://user-images.githubusercontent.com/110847597/228174166-6a658358-205d-46bf-9ec8-686f1ce50623.png">
+
 1. `1+`씩 증가해야하는 점수가 불규칙적으로 증가
+
    ![scoreError](https://user-images.githubusercontent.com/110847597/227870301-1bbabd0a-7c06-4683-ad79-42d1c3497e24.gif)
    <img width="653" alt="scoreError2" src="https://user-images.githubusercontent.com/110847597/227870257-a9d9f9c4-722b-4868-aab6-a294c9d34f94.png">
+
 1. `setState`가 여러번 호출되는 이슈
    1. `reduce` `{X:0 , O:0}` 수정 고려 대상
 
