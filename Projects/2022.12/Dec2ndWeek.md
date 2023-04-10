@@ -70,7 +70,7 @@
 ```jsx
 // App.js
 
-import React from "react";
+import React from 'react';
 
 class App extends React.Component {
   render() {
@@ -105,12 +105,12 @@ console.log(columns);
 
 > 어쩐지... props로 어떤 값을 넣어도 오류가 났다.<br>
 > 당연함, 라이브러리의 명세를 확인 했어야했다.<br>
-> 오늘의 교훈, package-lock.json을 열심히 확인하고... 검색을 꼭 해보자.<br>
-> 둘쨋날... 사수께서 확인해보라던게 이런 라이브러리가 있다는 걸 보란거였다. 하지만 아는만큼 보인다고 응애인 나는 몰랐다. antd를 자체적으로 만든건 줄 알았다.. 오늘이라도 알아서 다행이다.
+> 오늘의 교훈, package.json을 열심히 확인하고... 검색을 꼭 해보자.<br>
+> 둘째 날... 사수께서 확인해보라던게 이런 라이브러리가 있다는 걸 보란거였다. 하지만 아는만큼 보인다고 응애인 나는 몰랐다. antd를 자체적으로 만든건 줄 알았다.. 오늘이라도 알아서 다행이다.
 
 ```jsx
 <Table
-  className="table table_small"
+  className='table table_small'
   rowSelection={rowSelection}
   columns={columns}
   dataSource={data}
@@ -206,7 +206,7 @@ _`Uncaught RefereceError:isStagingSchedulingTableShown`이 선언되지 않았�
 
 ```jsx
 //Counter.js
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Counter extends Component {
   constructor(props) {
@@ -395,7 +395,7 @@ try {
 try {
   hello.toUpperCase();
 } catch {
-  console.log("Error");
+  console.log('Error');
 }
 ```
 
@@ -404,7 +404,7 @@ function yell(msg) {
   try {
     console.log(msg.toUpperCase().repeat(3));
   } catch (e) {
-    console.log("try again");
+    console.log('try again');
   }
 }
 ```
@@ -415,13 +415,13 @@ function yell(msg) {
 //child
 //Try & Catch
 getTableApi = async ({ projectId, workspaceId, responseType }) => {
-  const authToken = localStorage.getItem("auth_token");
+  const authToken = localStorage.getItem('auth_token');
   try {
     const response = await fetch(`url`, {
-      method: "GET",
+      method: 'GET',
       headers: {
         Authorization: authToken,
-        "client-server": "application/json",
+        'client-server': 'application/json',
       },
     });
 
@@ -475,7 +475,7 @@ state = {
   columns={columns}
   dataSource={tagReadData.results}
   rowSelection={{
-    type: "radio",
+    type: 'radio',
     selectedRowKeys: this.state.keys,
     onChange: this.onRowKeysChange,
   }}
@@ -495,15 +495,15 @@ state = {
 
 ```jsx
 getTableApi = async ({ projectId, workspaceId, responseType }) => {
-  console.log("table api 통신 시작!!!");
-  const authToken = localStorage.getItem("auth_token");
+  console.log('table api 통신 시작!!!');
+  const authToken = localStorage.getItem('auth_token');
 
   try {
     const response = await fetch(`url`, {
-      method: "GET",
+      method: 'GET',
       headers: {
         Authorization: authToken,
-        "client-server": "application/json",
+        'client-server': 'application/json',
       },
     });
 
@@ -528,8 +528,8 @@ uploadTagCreate = async () => {
   console.log(keyDataFromChild);
   await api({
     url: `url`,
-    method: "post",
-    headers: { "content-type": "application/json" },
+    method: 'post',
+    headers: { 'content-type': 'application/json' },
     data: {
       tag_id: keyDataFromChild[0],
     },
@@ -552,8 +552,8 @@ sortTagsApi = async () => {
 
   await api({
     url: `url`,
-    method: "get",
-    headers: { "content-type": "application/json" },
+    method: 'get',
+    headers: { 'content-type': 'application/json' },
   }).then(response => {
     const { data } = response;
     this.setState({ schedulingTagList: data.results });
@@ -575,8 +575,8 @@ uploadTagCreate = async () => {
 
   await api({
     url: `url`,
-    method: "post",
-    headers: { "content-type": "application/json" },
+    method: 'post',
+    headers: { 'content-type': 'application/json' },
     data: {
       tag_id: keyDataFromChild[0],
     },
@@ -648,12 +648,12 @@ const getKeyData = value => {
 
 ```jsx
 state = {
-  matchingTag: "",
+  matchingTag: '',
   // 하나의 태그일 경우의 스테이트
-  matchingTags: "",
-  retrainingTag: "",
+  matchingTags: '',
+  retrainingTag: '',
   // 두가지 경우 일 때, retrainingTag 값을 담는 곳
-  batchPredictionTag: "",
+  batchPredictionTag: '',
   // 두가지 경우 일 때, batchPredictionTag 값을 담는 곳
 };
 
@@ -662,12 +662,12 @@ mapApiData = () => {
   const scheduleType = scheduleDetails.type;
   const scheduleTags = scheduleDetails.tags;
 
-  if (scheduleType === "retraining_batch") {
+  if (scheduleType === 'retraining_batch') {
     scheduleTags.map((el, i) => {
-      if (el.type === "retraining") {
+      if (el.type === 'retraining') {
         this.setState({ retrainingTag: el.tag });
       }
-      if (el.type === "batch_prediction") {
+      if (el.type === 'batch_prediction') {
         this.setState({ batchPredictionTag: el.tag });
       }
     });
@@ -680,30 +680,30 @@ mapApiData = () => {
 ```
 
 ```jsx
-<div className="ant-form-item-control-wrapper">
-  {scheduleDetails.type === "retraining_batch" ? (
+<div className='ant-form-item-control-wrapper'>
+  {scheduleDetails.type === 'retraining_batch' ? (
     //리액트에서 삼항 조건을 주어 렌더링 할 수 있음
     <>
       <input
-        className="tagInput"
-        name="name"
-        type="text"
+        className='tagInput'
+        name='name'
+        type='text'
         placeholder={this.state.retrainingTag}
         readOnly
       />
       <input
-        className="tagInput"
-        name="name"
-        type="text"
+        className='tagInput'
+        name='name'
+        type='text'
         placeholder={this.state.batchPredictionTag}
         readOnly
       />
     </>
   ) : (
     <input
-      className="tagInput"
-      name="name"
-      type="text"
+      className='tagInput'
+      name='name'
+      type='text'
       placeholder={this.state.matchingTag}
       readOnly
     />
@@ -771,10 +771,10 @@ useEffect(() => {
 //useEffect와 의존성 배열을 활용 한 ui 렌더
 
 <input
-  type="number"
-  className="delQuality"
+  type='number'
+  className='delQuality'
   placeholder={0}
-  id="delQuality"
+  id='delQuality'
   step={1}
   min={0}
   max={createCount}
@@ -804,14 +804,14 @@ const scheduleType = scheduleDetails.type;
 
 //index.js
 {
-  scheduleType && scheduleType.includes("prediction") ? (
-    <div className="studio-container_auto_del">
-      <div className="title-wrap">
-        <span className="title-wrap-text">Enable Prediction Auto-delete</span>
+  scheduleType && scheduleType.includes('prediction') ? (
+    <div className='studio-container_auto_del'>
+      <div className='title-wrap'>
+        <span className='title-wrap-text'>Enable Prediction Auto-delete</span>
       </div>
       {predictionAutoDeletion && (
         <ScheduleAutoDeleteViewOption
-          prediction={scheduleType.includes("prediction")}
+          prediction={scheduleType.includes('prediction')}
           createCount={schedulingOptions.createCount}
           predictionKeepModel={predictionKeepModel}
           setPredictionKeepModel={setPredictionKeepModel}
@@ -859,10 +859,10 @@ const MAX_KEEP = 6;
 const possibleMax = Math.min(MAX_KEEP, createCount);
 //...
 <input
-  type="number"
-  className="delQuality"
+  type='number'
+  className='delQuality'
   placeholder={1}
-  id="delQuality"
+  id='delQuality'
   step={1}
   min={1}
   max={possibleMax}
