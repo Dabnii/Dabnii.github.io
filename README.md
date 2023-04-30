@@ -82,6 +82,7 @@
   - [JavaScript | Process](https://github.com/Dabnii/Dabnii.github.io/blob/a9c44e1cf91dba920edfb06433d45fd3e6688093/Computer%20Science/JavaScript%20Process.md)
   - [JavaScript | Thread](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20%7C%20Thread.md)
 - [JavaScript | Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
+- [JavaScript | Execution Context](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Execution%20Context.md)
 - [JavaScript | This 🏗️]()
 - [JavaScript | Ajax 🏗️]()
 
