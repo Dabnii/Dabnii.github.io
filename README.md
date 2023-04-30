@@ -76,7 +76,7 @@
 
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/React/React%20Class%20LifeCycle.md">React Class component LifeCycle</a>
 
-# 💻 Computer Science
+# 💻 Modern JavaScript
 
 - [JavaScript | Synchronous, Single-threaded Language](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20Sync.md)
   - [JavaScript | Process](https://github.com/Dabnii/Dabnii.github.io/blob/a9c44e1cf91dba920edfb06433d45fd3e6688093/Computer%20Science/JavaScript%20Process.md)
