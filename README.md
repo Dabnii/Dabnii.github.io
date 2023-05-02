@@ -83,8 +83,8 @@
   - [JavaScript | Thread](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20%7C%20Thread.md)
 - [JavaScript | Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
 - [JavaScript | Execution Context](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Execution%20Context.md)
-- [JavaScript | This 🏗️]()
-- [JavaScript | Ajax 🏗️]()
+  <!-- - [JavaScript | This 🏗️]() -->
+  <!-- - [JavaScript | Ajax 🏗️]() -->
 
 # 🌐 Web dev skills up!
 
@@ -99,8 +99,8 @@
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
-  - [Add multiple classes 🏗️]()
-- [💅 Styled-components 🏗️]()
+    <!-- - [Add multiple classes 🏗️]() -->
+  <!-- - [💅 Styled-components 🏗️]() -->
 
 # 📚 Code tests
 
