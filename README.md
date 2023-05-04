@@ -83,8 +83,7 @@
   - [JavaScript | Thread](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20%7C%20Thread.md)
 - [JavaScript | Closure, Lexical, Scope](https://github.com/BongsikB/BongsikB.github.io/blob/main/Computer%20Science/Closure.md)
 - [JavaScript | Execution Context](https://github.com/Dabnii/Dabnii.github.io/blob/main/Java%20Script/Execution%20Context.md)
-  <!-- - [JavaScript | This 🏗️]() -->
-  <!-- - [JavaScript | Ajax 🏗️]() -->
+- [JavaScript | SPA | SSR | CSR | SEO](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/SPA%2C%20CSR%2C%20SSR%2C%20SEO.md)
 
 # 🌐 Web dev skills up!
 
