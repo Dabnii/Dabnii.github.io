@@ -1,6 +1,6 @@
 # <p align="center">👩‍🎨 Styled-component </p>
 
-## <p align="center">🏃 Install </p>
+### <p align="center">🏃 Install </p>
 
 > styled-components & styled-reset
 
