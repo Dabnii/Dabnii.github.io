@@ -1,4 +1,4 @@
-# <p align="center">👩‍🎨 Styled-component </p>
+# <p align="center">👩‍🎨 Styled-components </p>
 
 ### <p align="center">🏃 Install </p>
 
@@ -71,4 +71,40 @@ root.render(
     <Router />
   </React.StrictMode>
 );
+```
+
+# <p align="center"> 👩‍🎨 Styled-components</p>
+
+## <p align="center"> 📍 ＆: Parent Selectors</p>
+
+```jsx
+const Input = styled.input`
+  appearance: unset;
+  &:checked + ${Label} {
+    color: white;
+  }
+`;
+```
+
+## <p align="center"> 🎬 animation</p>
+
+1. `{ keyframes } from 'styled-components`
+2. `fadeOut` 애니메이션 값을 입력
+3. 사용할 요소에서 `${fadeOut}`값 입력
+
+```jsx
+import styled, { keyframes } from 'styled-components';
+
+const fadeOut = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
+const Example = styled.div`
+  animation: ${fadeOut} 0.2s ease-in-out 0s normal forwards;
+`;
 ```
