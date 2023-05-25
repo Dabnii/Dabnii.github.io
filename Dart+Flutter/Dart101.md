@@ -2,13 +2,20 @@
 
 ## <p align="center"> 🎯 Dart pros</p>
 
-- 💡 다중 플랫폼 개발 프레임워크
+- 💡 다중 플랫폼 개발 프레임워크 (ios + android)
 - `Flutter` 기반이 되는 언어
 - 클라이언트 최적화 언어
 - `Google` + `Flutter` + `Dart` = 🎉
   - flutter에서 최적화 하고 싶은 부분이 있으면 언어를 최적화 할 수 있음
 - Dart Native + Dart web의 조화 (모바일 개발에 유리)
 - 🏃‍♀️ 빠른 속도
+- `null safety`
+- Type 추론 지원
+- 단일 스레드로 비동기 방식 지원
+- UI에 최적화 된 언어
+- 동시성을 지원하지만 완벽하게 격리된(isolate)을 보장
+- 스프레드 연산자를 지원
+- 배열은 없고 컬렉션만 존재
 
 ## <p align="center">🎯 Dart platforms</p>
 
