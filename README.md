@@ -89,9 +89,11 @@
 
 - [Dart](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart101.md)
 
+- [Dart variables](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart_Variables.md)
+
 # ✈️ Flutter
 
-- []()
+- [Flutter 101 🏗️]()
 
 # 💻 Modern JavaScript
 
