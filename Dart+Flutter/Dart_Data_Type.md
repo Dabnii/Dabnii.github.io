@@ -124,3 +124,23 @@ void main() {
   print(players);
 }
 ```
+
+### 🎒 Set
+
+- Sequence(순서)가 있으며 모든 요소가 유니크 함
+- `Dart Set === JS in Set`
+  > A set in Dart is an unordered collection of `unique items`. Dart support for sets is provided by set literals and the `[Set](https://api.dart.dev/stable/dart-core/Set-class.html)`
+
+```dart
+1. var 사용
+var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+2. 자료형 명시
+Set halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+```
+
+---
+
+출처:
+
+- [https://dart.dev/language/collections#sets](https://dart.dev/language/collections#sets)
