@@ -35,6 +35,9 @@ void main() {
   - absolute positioning (web)
 - `Container`
 
+<details>
+<summary>✈️ Flutter widget categories</summary>
+
 ### ✈️ Flutter widget categories
 
 - Accessibility;
@@ -51,6 +54,7 @@ void main() {
 - Scrolling;
 - Styling;
 - Text;
+</details>
 
 ### <p align="center">✈️ Flutter widget 두 가지 특징</p>
 
@@ -58,6 +62,9 @@ void main() {
 1. Stateless widget
 2. Stateful widget
 ```
+
+<details> 
+<summary> Stateless Widget & Stateful Widget</summary>
 
 ### Stateless Widget
 
@@ -92,6 +99,140 @@ void main() {
 setState(() { _myState = newValue; });
 
 ```
+
+</details>
+
+# <p align="center">✈️ Flutter Naming Convention</p>
+
+### File Naming Convention
+
+- all 소문자
+- snake_case
+
+```dart
+product_detail.dart
+```
+
+### Class Naming Convention
+
+- 대문자로 시작
+- Camel_Case
+
+```dart
+HomePage
+```
+
+### Fnc & Variables Naming Convention
+
+- 소문자로 시작
+- CamelCase
+
+```dart
+userName;
+addTotal();
+```
+
+### Constant Naming Convention
+
+- All caps
+
+```dart
+MAX_LENGTH;
+MIN_LENGTH;
+```
+
+### Property Naming Convention
+
+- 소문자로 시작
+- CamelCase
+
+```dart
+name;
+age;
+```
+
+### Widget Naming Convention
+
+- 명사사용
+
+```dart
+Button
+TextField
+```
+
+# <p align="center">✈️ Flutter Files</p>
+
+## 🗂️ File Structure
+
+```
+flutter_app
+    android
+    ios
+    lib
+    └── components
+    │      └── login.dart
+    └── main.dart
+    test
+    web
+    ...
+    pubspec.lock
+    pubspec.yaml
+```
+
+### 🗽 `lib`
+
+```dart
+lib/components/
+```
+
+- app을 만들 떄 lib 폴더 안에서 작업
+
+### 📍 pubspec.yaml
+
+```dart
+pubspec.yaml
+```
+
+- Flutter 프로젝트의 메타 데이터를 정의하고 관리하는 파일로써, Node의 package.json 과 비슷한 역할
+  - 프로젝트의 버전, 프로젝트의 사용환경, dart 버전, 각종 dependency
+  - 들여쓰기 룰이 존재 (주의)
+    - `pub get` → `pubspec.yaml` 에 있는 내용을 다운로드, npm install와 비슷한 역할
+
+### 💡 `main.dart`
+
+```dart
+lib/main.dart
+```
+
+- ✦ entry point, 프로그램이 시작되는 곳
+- ✦ 가장 중요한 역할
+- 필요한 라이브러리 또는 패키지를 가져옴
+- 프로그램의 실행 흐름을 결정하는 코드 포함
+- `test`
+  - 제곧내, 테스트를 위함
+- `android`,`ios`
+  - 제곧내, 각 플랫폼에 맞게 앱플 배포하기 위함
+
+### `runApp`
+
+```dart
+void main() => runApp(MyApp());
+```
+
+- 플러터 최상단에 위치
+- 전달 되는 값이 위젯이어야 함
+- `myApp`
+  - 커스텀위젯
+
+### material.dart
+
+```dart
+import 'package:flutter/material.dart';
+```
+
+- 구글이 제공하는 가이드라인
+- flutter의 라이브러리
+- SDK에 포함된 기본 위젯과 material 디자인 요소들 사용
 
 ---
 
