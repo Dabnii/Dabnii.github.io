@@ -236,6 +236,29 @@ import 'package:flutter/material.dart';
 
 ---
 
+## 🖌️ Draw SVG files using Flutter.
+
+[flutter_svg | Flutter Package](https://pub.dev/packages/flutter_svg/install)
+
+```dart
+$ flutter pub add flutter_svg
+```
+
+```dart
+dependencies:
+  flutter_svg: ^2.0.6
+```
+
+```dart
+$ flutter pub get
+```
+
+```dart
+import 'package:flutter_svg/flutter_svg.dart';
+```
+
+---
+
 ### 📚 Ref
 
 - [Flutter](https://docs.flutter.dev/ui/widgets-intro)
