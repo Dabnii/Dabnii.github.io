@@ -166,6 +166,8 @@ TextField
 
 ```
 flutter_app
+    assets
+    └── images
     android
     ios
     lib
