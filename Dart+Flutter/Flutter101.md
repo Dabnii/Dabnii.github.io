@@ -261,6 +261,24 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 ---
 
+### Text → ✨ New text
+
+| old | ✨ new |
+| --- | --- |
+| headline1 | displayLarge |
+| headline2 | displayMedium |
+| headline3 | displaySmall |
+| headline4 | headlineMedium |
+| headline5 | headlineSmall |
+| bodyText1 | bodyLarge |
+| bodyText2 | bodyMedium |
+| subtitle1 | titleMedium |
+| subtitle2 | titleSmall |
+
+[📎 TextTheme](https://api.flutter.dev/flutter/material/TextTheme-class.html)
+
+---
+
 ### 📚 Ref
 
 - [Flutter](https://docs.flutter.dev/ui/widgets-intro)
