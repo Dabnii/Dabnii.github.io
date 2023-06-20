@@ -11,6 +11,33 @@
 |Cupertino(iOS)|Input|Interaction Models|Layout|Material Components|
 |Painting|Scrolling|Styling|Text|　|
 
+### 📝 Google Font [📎Flutter | Doc](https://pub.dev/packages/google_fonts)
+
+- `installing`
+
+    ```dart
+    $ flutter pub add google_fonts
+    ```
+
+    ```dart
+    //import
+    import 'package:google_fonts/google_fonts.dart';
+    ```
+
+    ```dart
+        Text(
+    'This is Google Fonts',
+    style: GoogleFonts.lato(),
+    ),
+    ```
+
+### 🖼 Asset 등록하기
+
+```dart
+assets:
+  - assets/
+  - assets/images
+```
 
 
 ### TextButton
