@@ -12,7 +12,7 @@
 
 # 👩‍💻 Web Project
 
-- [🐶 Social media Project](https://github.com/Dabnii/petTo)
+
 - [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/TeamProj%20CGW.md">2nd Team proj.CGW: 영화 예매</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a>
@@ -97,6 +97,10 @@
 - [Flutter 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter101.md)
 - [Flutter Widget 🏗️](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_Widget.md)
 
+# 🐍 Python
+
+- [Python 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/python/python101.md)
+
 # 💻 Modern JavaScript
 
 - [JavaScript | Synchronous, Single-threaded Language](https://github.com/Dabnii/Dabnii.github.io/blob/main/Computer%20Science/JavaScript%20Sync.md)
@@ -120,13 +124,5 @@
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
-    <!-- - [Add multiple classes 🏗️]() -->
-  - [💅 Styled-components](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Styled-components.md)
+  - [Styled-components](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Styled-components.md)
 
-<!-- # 📚 Code tests
-
-| 2022                                                                                                                         | 2023                                                                                                       |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20test_Oct%2022.md"> 📚 Code Test_Oct</a> | [📚 Programmers_Jan](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Programmers/Lv0.md)          |
-| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_1week.md"> 📚 Code Kata_1~5 </a>   | [📚 Programmers_Feb](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Programmers/Lv.0-1%20Feb.md) |
-| <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Code%20Kata/Code%20kata_2week.md"> 📚 Code Kata_6~10 </a>  | 🏗️                                                                                                         | -->

@@ -250,7 +250,8 @@ else:
 
 ## 🔃 Loops!
 
-![panda slide](https://www.reddit.com/r/gifs/comments/46r5nj/panda_slide/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)
+![Loop Animation](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/4fed8f0f-9b1e-412a-9095-b96f8bfc83c4)
+
 
 ```python
 # Iterating over a sequence
@@ -511,6 +512,8 @@ def is_prime_number(num):
             return print("value is not primeNumber")
     return print("value is PrimNumber")
 ```
+<details>
+<summary>dart: prim number</summary>
 
 ```dart
 //별안간 다트로 작성해본 primenumber 찾기
@@ -540,6 +543,9 @@ main() {
   }
 }
 ```
+
+</details>
+
 
 ## 📔 Dictionaries & nesting
 
