@@ -502,3 +502,69 @@ while not at_goal():
 ```
 
 ---
+## Prime number!
+
+```python
+def is_prime_number(num):
+    for i in range(2, num):
+        if num % i == 0:
+            return print("value is not primeNumber")
+    return print("value is PrimNumber")
+```
+
+```dart
+//별안간 다트로 작성해본 primenumber 찾기
+
+main() {
+  List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  
+  for (int num in numbers) {
+    bool isPrime = true;
+    
+    if (num < 2) {
+      isPrime = false;
+    } else {
+      for (int i = 2; i <= num % 2; i++) {
+        if (num % i == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+    }
+    
+    if (isPrime) {
+      print("$num is a prime number");
+    } else {
+      print("$num is not a prime number");
+    }
+  }
+}
+```
+
+## 📔 Dictionaries & nesting
+
+### 📔Dictionaries
+
+- `key:value` 를 가짐
+- `immutable` 한 키(key)와` mutable한 값(value)`으로 맵핑되어 있는 순서가 없는 집합
+- immutable data type as keys (e.g., strings, numbers, tuples)
+- 중복되는 값은 마지막 값으로 덮어씌워짐
+- `key`로 접근
+
+```python
+sample = {"Key": "value"}
+```
+
+```python
+# key에 접근
+sample["keyname"]
+
+# 값 추가
+d['ghi'] = 999
+d
+{'abc': 5, 'def': 2, 'ghi': 999}
+```
+
+---
+
+- [📎 Dictionary](https://wikidocs.net/16043)
