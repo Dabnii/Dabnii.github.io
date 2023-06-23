@@ -95,7 +95,8 @@
 # ✈️ Flutter
 
 - [Flutter 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter101.md)
-- [Flutter Widget 🏗️](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_Widget.md)
+- [Flutter Widget](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_Widget.md)
+- [Flutter Async](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_async.md)
 
 # 🐍 Python
 
@@ -125,4 +126,3 @@
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
   - [Styled-components](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Styled-components.md)
-
