@@ -513,7 +513,7 @@ def is_prime_number(num):
     return print("value is PrimNumber")
 ```
 <details>
-<summary>dart: prim number</summary>
+<summary>dart: prime number</summary>
 
 ```dart
 //별안간 다트로 작성해본 primenumber 찾기
@@ -571,6 +571,169 @@ d
 {'abc': 5, 'def': 2, 'ghi': 999}
 ```
 
+### ✨ Create empty dictionary
+
+```dart
+my_dict = dict()
+```
+
+```python
+sample = {"Key": "value"}
+```
+
+```python
+# key에 접근
+sample["keyname"]
+
+# 값 추가
+d['ghi'] = 999
+d
+{'abc': 5, 'def': 2, 'ghi': 999}
+```
+
+```dart
+for key in sample_dictionary:
+	print(key)
+	// key
+	print(sample_dictionary[key])
+	// value
+```
+
+```python
+student_scores = {
+  "Harry": 81,
+  "Ron": 78,
+  "Hermione": 99, 
+  "Draco": 74,
+  "Neville": 62,
+}
+
+for student in student_scores:
+  score = student_scores[student]
+  if score > 90:
+    student_grades[student] = "OutStanding"
+  elif score < 90 and score > 81:
+    student_grades[student] = "Exceds Expectations!"
+  elif score < 80 and score > 70:
+    student_grades[student] = "Acceptable"
+  else:
+    student_grades[student] = "Fail"    
+```
+
+### 📁Nesting
+
+```python
+nested_dict = {}
+nested_dict['person1'] = {}
+nested_dict['person1']['name'] = 'John'
+nested_dict['person1']['age'] = 30
+nested_dict['person1']['city'] = 'New York'
+
+nested_dict = {
+    'person1': {
+        'name': 'John',
+        'age': 30,
+        'city': 'New York'
+    },
+    'person2': {
+        'name': 'Alice',
+        'age': 25,
+        'city': 'London'
+    },
+    'person3': {
+        'name': 'Bob',
+        'age': 35,
+        'city': 'Paris'
+    }
+}
+```
+
+```python
+artist_dict = {
+    'Leonardo da Vinci': 'Mona Lisa',
+    'Vincent van Gogh': 'Starry Night',
+    'Pablo Picasso': 'Guernica',
+    'Michelangelo': 'David',
+    'Claude Monet': 'Water Lilies',
+    'Salvador Dali': 'The Persistence of Memory',
+    'Frida Kahlo': 'The Two Fridas',
+    'Edvard Munch': 'The Scream',
+    'Georgia O\'Keeffe': 'The Black Iris',
+    'Andy Warhol': 'Campbell\'s Soup Cans'
+}
+
+artist_dict['Kim'] = "untitle"
+# 'kim' : 'untitle'
+```
+
+### add items on list + dictionary
+
+- `append`
+
+```python
+travel_log = [
+    {
+        "country": "France",
+        "visits": 12,
+        "cities": ["Paris", "Lille", "Dijon"]
+    },
+    {
+        "country": "Germany",
+        "visits": 5,
+        "cities": ["Berlin", "Hamburg", "Stuttgart"]
+    },
+]
+
+def add_new_country(country_visited, times_visited, citied_visited):
+    new_country = {}
+    new_country["country"] = country_visited
+    new_country["visits"] = times_visited
+    new_country["cities"] = citied_visited
+    travel_log.append(new_country)
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
+```
+
 ---
 
 - [📎 Dictionary](https://wikidocs.net/16043)
+
+### The highest bidding!
+
+1. `Bool` → 옥션 진행 여부
+2. `bids` → `{name: bidding}` dictionary
+3. int `highest_bid`
+4. winner = `bidder`(`bidding_record Key == name`)
+
+```python
+bidding_finished = False
+bids = {}
+
+def find_highest_bidder(bidding_record):
+    highest_bid = 0
+    winner = ""
+    for bidder in bidding_record:
+        bid_amount = bidding_record[bidder]
+    if bid_amount > highest_bid:
+        highest_bid = bid_amount
+        winner = bidder
+    print(f"the winner is {winner} with ${highest_bid}")
+
+while not bidding_finished:
+    name = input("name?")
+    price = int(input("What is your bid?"))
+    bids[name] = price
+    should_continue = input("Are there any other bidders? 'Y' or 'N'.")
+
+    if should_continue == "N":
+        bidding_finished = True
+        find_highest_bidder(bids)
+    elif should_continue == "Y":
+        clear()
+```
+
+---
+
+- [📎 Dictionary](https://wikidocs.net/16043)
+
