@@ -737,3 +737,78 @@ while not bidding_finished:
 
 - [📎 Dictionary](https://wikidocs.net/16043)
 
+## 🏁 Return
+
+- `return` == 함수의 마지막
+- 하나 이상을 가질 수 있음
+    
+    ```python
+    def format_name(f_name, l_name):
+      if f_name == "" or l_name== "":
+        return "you didn't provide valid inputs."
+      formated_f_name = f_name.title()
+      formated_l_name = l_name.title()
+      return f"{formated_f_name} {formated_l_name}"
+    
+    print(format_name("lee", "john"))
+    ```
+    
+
+### 🌙 leap year refactor
+
+```python
+def is_leap(year):
+  if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+        return True
+      else:
+        return False
+    else:
+        return True
+  else:
+    return False
+    
+def days_in_month(year, month):
+  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  if month > 12 or month < 1:
+    return "Invalid month entered."
+  if month == 2 and is_leap(year):
+    return 29
+  return month_days[month - 1]
+
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
+```
+
+### 🧮 Calculator
+
+```python
+def add(n1, n2):
+    return n1 + n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+def takeaway(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+n1 = int(input("Enter the first number: "))
+purpose_symbol = input("Enter the operation symbol (+, -, *, /): ")
+n2 = int(input("Enter the second number: "))
+
+purpose = {"+": add, "-": takeaway, "*": multiply, "/": divide}
+
+# 💡
+if purpose_symbol not in purpose:
+    print("Invalid operation symbol.")
+else:
+    calculation_func = purpose[purpose_symbol]
+    answer = calculation_func(n1, n2)
+    print(f"{n1} {purpose_symbol} {n2} = {answer}")
+```
