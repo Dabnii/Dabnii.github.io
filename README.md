@@ -101,6 +101,7 @@
 # 🐍 Python
 
 - [Python 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/python/python101.md)
+- [Python Scope](https://github.com/Dabnii/Dabnii.github.io/blob/main/python/python_scope.md)
 
 # 💻 Modern JavaScript
 

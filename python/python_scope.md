@@ -1,7 +1,5 @@
 # <p align="center">🐍 Python | Scope</p>
 
-## <p align="center"> 🔭 Scope</p>
-
 ## 🔭 Scope
 
 - `유효범위`
