@@ -22,7 +22,7 @@
 <details>
 <summary>2023</summary>
 
-- [2023.July.1M]()
+- [2023.July.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-07.md)
 - [2023.June.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-06.md)
 - [2023.May.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-05.md)
 - [2023.Apr.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/2023.april.md)
@@ -99,6 +99,9 @@
 - [Flutter Widget](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_Widget.md)
 - [Flutter Async](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_async.md)
 - [Flutter Lifecycle](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_lifecycle.md)
+
+# ▶️ Next.js
+- [Next.js 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/Next.js/NextJs101.md)  
 
 # 🐍 Python
 
