@@ -23,6 +23,7 @@
 <summary>2023</summary>
 
 - [2023.July.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-07.md)
+  - [July.Pre-Onboarding](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023.07.Pre-Onboarding.md)
 - [2023.June.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-06.md)
 - [2023.May.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-05.md)
 - [2023.Apr.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/2023.april.md)
