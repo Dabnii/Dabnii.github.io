@@ -252,7 +252,6 @@ else:
 
 ![Loop Animation](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/4fed8f0f-9b1e-412a-9095-b96f8bfc83c4)
 
-
 ```python
 # Iterating over a sequence
 fruits = ["apple", "banana", "cherry"]
@@ -503,6 +502,7 @@ while not at_goal():
 ```
 
 ---
+
 ## Prime number!
 
 ```python
@@ -512,6 +512,7 @@ def is_prime_number(num):
             return print("value is not primeNumber")
     return print("value is PrimNumber")
 ```
+
 <details>
 <summary>dart: prime number</summary>
 
@@ -520,10 +521,10 @@ def is_prime_number(num):
 
 main() {
   List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  
+
   for (int num in numbers) {
     bool isPrime = true;
-    
+
     if (num < 2) {
       isPrime = false;
     } else {
@@ -534,7 +535,7 @@ main() {
         }
       }
     }
-    
+
     if (isPrime) {
       print("$num is a prime number");
     } else {
@@ -545,7 +546,6 @@ main() {
 ```
 
 </details>
-
 
 ## 📔 Dictionaries & nesting
 
@@ -603,7 +603,7 @@ for key in sample_dictionary:
 student_scores = {
   "Harry": 81,
   "Ron": 78,
-  "Hermione": 99, 
+  "Hermione": 99,
   "Draco": 74,
   "Neville": 62,
 }
@@ -617,7 +617,7 @@ for student in student_scores:
   elif score < 80 and score > 70:
     student_grades[student] = "Acceptable"
   else:
-    student_grades[student] = "Fail"    
+    student_grades[student] = "Fail"
 ```
 
 ### 📁Nesting
@@ -741,18 +741,17 @@ while not bidding_finished:
 
 - `return` == 함수의 마지막
 - 하나 이상을 가질 수 있음
-    
-    ```python
-    def format_name(f_name, l_name):
-      if f_name == "" or l_name== "":
-        return "you didn't provide valid inputs."
-      formated_f_name = f_name.title()
-      formated_l_name = l_name.title()
-      return f"{formated_f_name} {formated_l_name}"
-    
-    print(format_name("lee", "john"))
-    ```
-    
+
+  ```python
+  def format_name(f_name, l_name):
+    if f_name == "" or l_name== "":
+      return "you didn't provide valid inputs."
+    formated_f_name = f_name.title()
+    formated_l_name = l_name.title()
+    return f"{formated_f_name} {formated_l_name}"
+
+  print(format_name("lee", "john"))
+  ```
 
 ### 🌙 leap year refactor
 
@@ -768,7 +767,7 @@ def is_leap(year):
         return True
   else:
     return False
-    
+
 def days_in_month(year, month):
   month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   if month > 12 or month < 1:
@@ -811,4 +810,64 @@ else:
     calculation_func = purpose[purpose_symbol]
     answer = calculation_func(n1, n2)
     print(f"{n1} {purpose_symbol} {n2} = {answer}")
+```
+
+## 🎬 Sequence
+
+- 크기를 가지며, 0부터 시작하는 정수 인덱스
+- 항목에 접근할 수 있는 반복 가능한 컨테이너
+- 문자열, 리스트, 튜플이 해당됨
+
+### 시퀀스에 적용 가능한 연산
+
+| 연산             | 설명                                   |
+| ---------------- | -------------------------------------- |
+| `s + r`          | 연결                                   |
+| `s ≠ n`, `n ≠ s` | s에 대한 n개의 복사본을 생성, n은 정수 |
+| `s[i]`           | 인덱스                                 |
+| `s[i:j]`         | 슬라이스                               |
+| `s[i:j:stride]`  | 확장 슬라이스                          |
+| `len(s)`         | 길이                                   |
+
+## 💡 Tuple
+
+- **튜플에서는 `소괄호 "(, )"`를 이용하여 생성**
+- 값들을 `변경 불가능한 객체`로 묶을 수 있음
+- 내부의 값을 변경하거나 삭제할 수 없
+
+```python
+holding = ("Good", "Nice", "Day")
+address = ('www.google.com', 77)
+```
+
+- 비어있는 튜플 `()`
+- 값이 하나인 튜플 `(1,)`
+- 값의 중복이 됨
+- `Immutable`변경,삭제 불가 🙅
+
+## 📜 List
+
+- 임의 객체들의 시퀀스
+- 대괄호로 여러개의 값을 감싸서 리스트 생성
+- `[,]` 대괄호를 이용하여 생성
+- 변경가능 `Mutable`
+- 정렬됨
+
+```python
+names = ["kim", "Lee", "Park", "Choi"]
+```
+
+- `a = names[2]` #리스트의 세번째 항복인 ‘park’를 반환
+- `names[2] = ‘Tom’` #세 번째 항목을 ‘Tom’으로 교체
+- `print(name[-1])` # 마지막 항목 ‘Choi’ 출력
+
+## 📚 dictionary
+
+- 변경가능 `Mutable`
+- 정렬되지 않음
+- `{}`괄호를 사용함 `:` 콜론을 사용함
+- `key, value를 쌍으로 가짐`
+
+```jsx
+my_dict = { name: "John", age: 25 };
 ```
