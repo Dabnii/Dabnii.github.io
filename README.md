@@ -12,7 +12,6 @@
 
 # 👩‍💻 Web Project
 
-
 - [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/TeamProj%20CGW.md">2nd Team proj.CGW: 영화 예매</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a>
@@ -102,12 +101,14 @@
 - [Flutter Lifecycle](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_lifecycle.md)
 
 # ▶️ Next.js
-- [Next.js 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/Next.js/NextJs101.md)  
+
+- [Next.js 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/Next.js/NextJs101.md)
 
 # 🐍 Python
 
 - [Python 101](https://github.com/Dabnii/Dabnii.github.io/blob/main/python/python101.md)
 - [Python Scope](https://github.com/Dabnii/Dabnii.github.io/blob/main/python/python_scope.md)
+- [Python Class](https://github.com/Dabnii/Dabnii.github.io/blob/main/python/python_Class.md)
 
 # 💻 Modern JavaScript
 
