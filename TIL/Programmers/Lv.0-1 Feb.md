@@ -23,8 +23,8 @@ s에는 둘 이상의 정수가 공백으로 구분되어 있습니다.
 
 ```javascript
 //첫번째 풀이
-const solution = s => {
-  let num = s.split(/\s/g).map(digit => {
+const solution = (s) => {
+  let num = s.split(/\s/g).map((digit) => {
     return Math.floor(digit);
   });
   let min = Math.min(...num);
@@ -35,7 +35,7 @@ const solution = s => {
 
 ```javascript
 //두번째 풀이
-const solution = s => {
+const solution = (s) => {
   let num = s.split(/\s/g);
   return Math.min(...num) + " " + Math.max(...num);
 };
@@ -109,7 +109,7 @@ const solution = (my_string, letter) => {
 ## 🧩 My Answer
 
 ```javascript
-const solution = my_string => {
+const solution = (my_string) => {
   return (answer = my_string.toLowerCase().split("").sort().join(""));
 };
 ```
@@ -133,14 +133,14 @@ function solution(s) {
 
 ```javascript
 // 1차 시도
-const solution = n => {
+const solution = (n) => {
   return (answer = n % 7 === 0 ? Math.floor(n / 7) : Math.ceil(n / 7));
 };
 ```
 
 ```javascript
 //2차 시도!
-const solution = n => {
+const solution = (n) => {
   return (answer = Math.ceil(n / 7));
 };
 ```
@@ -150,7 +150,7 @@ const solution = n => {
 ## 🧩 My Answer
 
 ```javascript
-const solution = dot => {
+const solution = (dot) => {
   switch (true) {
     case dot[0] > 0 && dot[1] > 0:
       return 1;
@@ -198,7 +198,7 @@ function solution(dot) {
 ## 🧩 My Answer
 
 ```javascript
-const solution = sides => {
+const solution = (sides) => {
   let sorting = sides.sort((a, b) => a - b);
   return (answer = sorting[0] + sorting[1] > sorting[2] ? 1 : 2);
 };
@@ -272,7 +272,7 @@ const solution = (array, n) => {
 
 ```javascript
 const solution = (array, n) => {
-  return array.filter(el => el === n).length;
+  return array.filter((el) => el === n).length;
 };
 ```
 
@@ -297,7 +297,7 @@ const solution = (array, n) => {
 ## 🧩 My Answer
 
 ```javascript
-const solution = price => {
+const solution = (price) => {
   switch (true) {
     case price >= 500000:
       return (answer = price * 0.8);
@@ -320,7 +320,7 @@ const discounts = [
   [100000, 5],
 ];
 
-const solution = price => {
+const solution = (price) => {
   for (let discount of discounts) {
     if (price >= discount[0])
       return Math.ceil(price - (price * discount[1]) / 100);
@@ -344,7 +344,7 @@ const solution = price => {
 | "1a2b3c4d123"   | 16     |
 
 ```javascript
-const solution = my_string => {
+const solution = (my_string) => {
   let reg = /[a-zA-Z ]/gim;
   return my_string
     .replace(reg, "")
@@ -352,4 +352,27 @@ const solution = my_string => {
     .reduce((a, b) => a + Number(b), 0);
 };
 ```
-.
+
+## <p align="center">📚 배열의 유사도</p>
+
+> 두 배열이 얼마나 유사한지 확인해보려고 합니다. 문자열 배열 s1과 s2가 주어질 때 같은 원소의 개수를 return하도록 solution 함수를 완성해주세요.
+
+```
+1 ≤ s1, s2의 길이 ≤ 100
+1 ≤ s1, s2의 원소의 길이 ≤ 10
+s1과 s2의 원소는 알파벳 소문자로만 이루어져 있습니다
+s1과 s2는 각각 중복된 원소를 갖지 않습니다.
+```
+
+| s1              | s2                          | result |
+| --------------- | --------------------------- | ------ |
+| ["a", "b", "c"] | ["com", "b", "d", "p", "c"] | 2      |
+| ["n", "omg"]    | ["m", "dot"]                | 0      |
+
+```javascript
+const solution = (s1, s2) => {
+  return s1.filter((el) => s2.includes(el)).length;
+};
+
+solution(s1, s2);
+```
