@@ -16,7 +16,7 @@
 - JavaScript의 치명적 오류 👇
 
 ```jsx
-console.log('' == 0);
+console.log("" == 0);
 //true
 x = 10;
 console.log(1 < x < 3)[1] + true; //true
@@ -48,19 +48,19 @@ console.log(1 < x < 3)[1] + true; //true
 ### <p align="center"> string
 
 ```tsx
-let name: string = 'Lee';
+let name: string = "Lee";
 ```
 
 ```tsx
 let a: number[] = [1, 2, 3];
-let b: string[] = ['A', 'b', 'C'];
+let b: string[] = ["A", "b", "C"];
 let c: boolean[] = [true];
 ```
 
 ### <p align="center"> Types by Inference</p>
 
 ```tsx
-let helloWorld = 'Hello World';
+let helloWorld = "Hello World";
 //  ^?
 ```
 
@@ -68,7 +68,7 @@ let helloWorld = 'Hello World';
 
 ```tsx
 const user = {
-  name: 'Hayes',
+  name: "Hayes",
   id: 0,
 };
 ```
@@ -151,7 +151,7 @@ type Player = {
 };
 //
 const Kim: player = {
-  name: 'kim',
+  name: "kim",
   age: 16,
 };
 
@@ -170,7 +170,7 @@ function playerMaker(number: string): Player {
   };
 }
 
-const nico = playerMaker('Lee');
+const nico = playerMaker("Lee");
 const playerMaker = (name: string): Player => {
   name;
 };
@@ -222,7 +222,7 @@ class UserAccount {
     this.id = id;
   }
 }
-const user: User = new UserAccount('Murphy', 1);
+const user: User = new UserAccount("Murphy", 1);
 ```
 
 ### <p align="center"> Tuple </p>
@@ -240,7 +240,7 @@ type Member = {
   //모든 오브젝트 속성
 };
 
-let john: Member = { name: 'kim' };
+let john: Member = { name: "kim" };
 ```
 
 ### Readonly Tuple
@@ -255,7 +255,7 @@ type Member = {
   //모든 오브젝트 속성
 };
 
-let john: Member = { name: 'kim' };
+let john: Member = { name: "kim" };
 ```
 
 ### undefined, null, any
@@ -288,7 +288,7 @@ let a: unknown;
 
 ```tsx
 function hello() {
-  console.log('x');
+  console.log("x");
 }
 //function hello():void
 ```
@@ -399,3 +399,43 @@ add(1, 2, 3);
 출처:
 
 - [https://poiemaweb.com/typescript-typing](https://poiemaweb.com/typescript-typing)
+
+### TypeScript : `type asserstion`
+
+### 단점 💩
+
+1. 타입을 개발자가 명시적으로 지정
+1. 오직 컴파일 과정에서만 사용
+
+### 방법1: `angle-bracket`
+
+```typescript
+let someValue: any = "hello";
+let strLength: number = (<string>someValue).length;
+```
+
+### 방법2: `as`
+
+```typescript
+let someValue: any = "hello";
+let strLength: number = (someValue as string).length;
+```
+
+### 👍 pros
+
+- 유연성 :
+
+  - 특정 상황에서 유연성 제공
+  - 타임을 추론하기 어려울 때
+  - 외부 라이브러리에서 사용
+
+### 💩 cons
+
+- 타입 안정성 저하:
+  - 남용하여 타입 안정성을 저하시킬 수 있음
+- 가독성 저하
+- 🚨 잠재적 버그 유발
+
+  - `컴파일러가 타입 검사를 하지 않음`
+
+- [TypeScript Guidebook](https://yamoo9.gitbook.io/typescript/types/type-assertions)
