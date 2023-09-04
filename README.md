@@ -10,28 +10,18 @@
 
 ##### <p align="center"> Write documentation that is 📜<i> Read official documents, 🔍 inviting and clear, 💡skimmable </i></p>
 
-# 👩‍💻 Web Project
+<!-- # 👩‍💻 Web Project
 
 - [Internship Schedule program](https://github.com/Dabnii/internship-schedule-program)
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.12/TeamProj%20CGW.md">2nd Team proj.CGW: 영화 예매</a>
-- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a>
+- <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/TeamProj%2039cm.md">1st Team proj.39cm: Fashion e-commerce site</a> -->
 
 # 🌳 Today I Learn
 
-<details>
-<summary>2023</summary>
-
-- [2023.September.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-09.md)
-- [2023.August.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-08.md)
-- [2023.July.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-07.md)
-  - [July.Pre-Onboarding](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023.07.Pre-Onboarding.md)
-- [2023.June.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-06.md)
-- [2023.May.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-05.md)
-- [2023.Apr.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/2023.april.md)
-- [2023.Mar.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/March.md)
-- [2023.Feb.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.02/Feb.md)
-- [2023.Jan.1M](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.01/Jan.md)
-</details>
+|                                                                                    |                                                                                    |                                                                                      |                                                                                           |                                                                                        |                                                                                        |                                                                                        |                                                                                        |                                                                                        |     |     |     |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | --- | --- | --- |
+| Jan                                                                                | Feb                                                                                | Mar                                                                                  | Apr                                                                                       | May                                                                                    | Jun                                                                                    | Jul                                                                                    | Aug                                                                                    | Sep                                                                                    | Oct | Nov | Dec |
+| [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.01/Jan.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.02/Feb.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/March.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/2023.april.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-05.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-06.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-07.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-08.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-09.md) | .   | .   | .   |
 
 <details>
 <summary>2022</summary>
