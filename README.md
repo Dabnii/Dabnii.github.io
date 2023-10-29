@@ -91,6 +91,7 @@
 - [Flutter Widget](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_Widget.md)
 - [Flutter Async](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_async.md)
 - [Flutter Lifecycle](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Flutter_lifecycle.md)
+- [Flutter go_router package](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/go_router.md)
 
 # ▶️ Next.js
 
