@@ -68,3 +68,21 @@ E.O.D
 출처:
 
 - [Git interactive rebase no commits to pick](https://stackoverflow.com/questions/6485508/git-interactive-rebase-no-commits-to-pick)
+
+---
+
+## 🦄 git rebase `Reword`
+
+#### 이미 작성된 커밋메세지를 리베이스 하며 바꿔보자!
+
+1. `git rebase -i HEAD~number`
+   1. 변경하려는 각 커밋 메시지 앞에서 `pick`를 🪄`reword`로 변경
+2. `reword 0c39034 Better Commit message`
+3. `git push origin main -f`
+4. ✨ 끗-!
+
+Ref:
+
+- [이전 또는 여러 커밋 메시지 수정](https://docs.github.com/ko/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message#amending-older-or-multiple-commit-messages)
+
+---
