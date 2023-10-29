@@ -63,9 +63,7 @@ git rebase -i HEAD~7
 
 ---
 
-E.O.D
-
-출처:
+Ref:
 
 - [Git interactive rebase no commits to pick](https://stackoverflow.com/questions/6485508/git-interactive-rebase-no-commits-to-pick)
 
@@ -86,3 +84,5 @@ Ref:
 - [이전 또는 여러 커밋 메시지 수정](https://docs.github.com/ko/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message#amending-older-or-multiple-commit-messages)
 
 ---
+
+E.O.D
