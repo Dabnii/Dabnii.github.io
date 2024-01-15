@@ -41,7 +41,7 @@
 
 ### <p align="center"> 🛝 slider thumbnail 바꾸기<p>
 
-- 시작하기 앞서, 커스텀을 위하여 Custom class를 생성하여 슬라이더의 thumb을 사용자화 하기로 함
+- 시작하기에 앞서, 커스텀을 위하여 Custom class를 생성하여 슬라이더의 thumb을 사용자화 하기로 함
 - N차 오류 발생. 하나씩 뜯어보겠습니다. 🎉
 
 ### 1️⃣ Paint Issue
@@ -96,6 +96,8 @@ class _CustomThumbShape extends SfThumbShape {
 }
 ```
 
+- param으로 currenvalue를 전달 받지 못하는 것일까? 👉 변수명이 틀렸나? (사고의 흐름)
+  - 빌드를 여러번 해봐도 해결하지 못했다.
 - 괜찮습니다.. 🧐 천천히 오류 메세지를 읽어보면 됩니다.
 
 ### 💡 해결!
@@ -147,7 +149,9 @@ import 'dart:ui' as ui;
 
 해서 해결했습니다.
 끗—! 🥰
+run창이 부지런히 올라가고 빌드 성공!
 
+ㅎㅎ
 ㅎㅎ
 
 ### 🫨 는, 또 다른 이슈
@@ -160,4 +164,7 @@ import 'dart:ui' as ui;
 - 내일 할 일은 futurebuilder를 사용하요 비동기 처리를 해주는 것 입니다.
   - 얍삽하게 future~ late로 하면 안되나~ 했는데 될 리가 없다! 🫨
 - Flutter slider 클래스가 비동기 오류가 없다. 하지만 커스텀의 한계가 있어 아마 sfslider + FutureBuild의 조합으로 보완할 예정.
-- 난 그래도 순정 flutter class들이 더 좋다!
+- 난 그래도 순정 flutter class 사용을 지향.
+- 반나절을 쓴 고군분투 였지만, 기록하고 나니 생각보다 소소하다. 그래도 짧은시간 동안 집중해서 해결해냈음!
+
+---
