@@ -168,3 +168,76 @@ run창이 부지런히 올라가고 빌드 성공!
 - 반나절을 쓴 고군분투 였지만, 기록하고 나니 생각보다 소소하다. 그래도 짧은시간 동안 집중해서 해결해냈음!
 
 ---
+
+## <p align="center">📆 1/16</p>
+
+## 🪄 FutureBuilder
+
+#### 🥰 Solved!
+
+---
+
+![solved](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/d5ac2f3a-314b-4fde-89ea-517c386d2577)
+
+- 🙂 행복합니다.
+- 로직은 간단.
+
+```dart
+@override
+Widget build(BuildContext context) {
+  return FutureBuilder<ui.Image>(
+      future: _loadImage,
+      builder: (context, snapshot) {
+        if (snapshot.hasData || snapshot.data != null) {
+          // 기존 조건문은 3가지로 구분되어있어, 플리커 현상이 반복됐다.
+          // 여기서는 데이터가 있고, Null이라면 바로 이미지를 로드하도록 했다.
+          return SliderTheme(
+            data: SliderThemeData(
+              trackHeight: 28,
+              inactiveTrackColor: Colors.grey.shade300,
+              activeTrackColor: const Color(0xFFFFE900),
+              thumbShape: SliderThumbImage(snapshot.data!),
+              //이 부분 중요.
+            ),
+            child: Slider(
+	             // ...
+              onChanged: (value) {},
+            ),
+          );
+        }
+	      // null이면 플러터가 화낸다. 뭐라도 return 해야한다
+        return const SizedBox.shrink();
+      });
+}
+```
+
+#### 🦄 이미지 비동기 처리하기
+
+```dart
+Future<List<ui.Image>> loadImages(List<ImageProvider> providers) async {
+  //  다수의 이미지를 동시에 로드
+  final images = await Future.wait(
+    providers.map((ImageProvider provider) async {
+      final Completer<ui.Image> completer = Completer<ui.Image>();
+      final ImageStream stream = provider.resolve(ImageConfiguration());
+      ImageStreamListener? listener;
+
+      listener = ImageStreamListener((ImageInfo info, bool _) {
+        completer.complete(info.image);
+        stream.removeListener(listener!);
+      }, onError: (dynamic error, StackTrace? stackTrace) {
+        completer.completeError(error);
+        stream.removeListener(listener!);
+      });
+
+      stream.addListener(listener);
+      return completer.future;
+    }).toList(),
+  );
+  return images;
+}
+```
+
+Ref:
+
+- [Flutter change slider thumb to image](https://stackoverflow.com/questions/70786192/flutter-change-slider-thumb-to-image))
