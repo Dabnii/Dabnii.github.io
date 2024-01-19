@@ -240,4 +240,126 @@ Future<List<ui.Image>> loadImages(List<ImageProvider> providers) async {
 
 Ref:
 
-- [Flutter change slider thumb to image](https://stackoverflow.com/questions/70786192/flutter-change-slider-thumb-to-image))
+- [Flutter change slider thumb to image](https://stackoverflow.com/questions/70786192/flutter-change-slider-thumb-to-image)
+
+## <p align="center">📆 1/19</p>
+
+## `TextFormField` + `focusNode`
+
+1. 🫤 onChange를 활용할 때, 입력값이 계속 바뀌면서 예상과 다르게 작동
+1. `완료`, `저장` 할 때 두 값을 바꾸도록 사용성 개선!
+1. focusNode를 활용해서 포커스를 잃으면 적용.
+1. 💡 focus가 유지 된 채, 저장을 누르면 강제로 포커스를 해제하도록 함.
+1. 🥰 오예.
+
+![333](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/fe209bd0-ec4f-4efd-8193-c2ebc044e9ae)
+![2222](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/9316d4a9-f612-4c3b-b0c7-9153be7017ec)
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: MyWidget(),
+        ),
+      ),
+    );
+  }
+}
+
+class MyWidget extends StatefulWidget {
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController textController = TextEditingController();
+  FocusNode _focusNode = FocusNode();
+
+ @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(_focusListener);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _focusNode.dispose();
+  }
+
+  void _focusListener() {
+    if (!_focusNode.hasFocus) {
+      print('focus lost');
+    }
+  }
+
+
+  Future<void> _onSave() async {
+    if (FocusScope.of(context).hasFocus) {
+      FocusScope.of(context).unfocus();
+    }
+
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      print('👏 저장완료!');
+      print('saved ! ${textController.text}');
+    } else {
+      print('🫨 저장 실패');
+    }
+
+    _resetTextField();
+  }
+
+  void _resetTextField() {
+    textController.text = '';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(40),
+      height: 150,
+      width: 250,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: Colors.black, width: 2),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Form(
+        key: _formKey,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextFormField(
+                focusNode: _focusNode,
+                controller: textController,
+                validator: (String? value) {
+                  return (value == null || value.isEmpty) ? '다시 입력!' : null;
+                },
+              ),
+              TextButton(
+                onPressed: _onSave,
+                child: const Text('저장', style: TextStyle(color: Colors.white)),
+                style: TextButton.styleFrom(backgroundColor: Colors.black),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
