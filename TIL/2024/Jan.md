@@ -363,3 +363,9 @@ class _MyWidgetState extends State<MyWidget> {
   }
 }
 ```
+
+## <p align="center">📆 1/22</p>
+
+### TestFlight
+
+[TestFlight](https://developer.apple.com/kr/testflight/)
