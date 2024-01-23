@@ -364,8 +364,100 @@ class _MyWidgetState extends State<MyWidget> {
 }
 ```
 
-## <p align="center">📆 1/22</p>
+## <p align="center">📆 1/23</p>
 
-### TestFlight
+## ExpansionTile
 
-[TestFlight](https://developer.apple.com/kr/testflight/)
+- 펼쳐지는 타일을 구현했습니다.
+- 오늘도 많은 역경이 있었습니다.
+- [ExpansionTile class](https://api.flutter.dev/flutter/material/ExpansionTile-class.html)
+
+### Issue!
+
+- 구현을 하고 보니, 타이틀을 눌러도 expand 된다.
+- 원래 목적은 trailing의 버튼으로만 컨트롤 하는 것
+- 🧐 내가 생각한 방법은
+  - ListTile을 활용해, height를 조건부로 펼친다
+  - ignorePoint를 사용해, 타이틀 터치를 disabled
+  - ExpansionPanelList 사용하기...
+- 그리고 모든 방법이 다 적합하지 않음
+
+#### solution 1 : ListTile 활용하기
+
+- 문제:
+  - height를 하드코딩 해야한다.
+  - 반응형으로 높이가 달라질 것이라 탈락.
+
+```dart
+  //...
+  ListTile(
+    title: Text('Title'),
+  ),
+  //...
+  AnimatedContainer(
+        duration: Duration(milliseconds: 300),
+        height: _isExpanded ? 150.0 : 0.0,
+        // 🫨🫨🫨🫨🫨
+        child: _isExpanded ? CustomWidget() : SizedBox.shrink(),
+      ),
+```
+
+#### solution 2 : ListTile 활용하기
+
+- ignorePoint로 세부적인 컨트롤이 불가하다.
+  - 하위 위젯요소가 모두 disabled 됨
+  - 다른 widget이라면 적용이 가능했을 듯.
+  ```dart
+     IgnorePointer(
+            ignoring: true,
+            child: ExpansionTile(
+              title: Text('Title'),
+            )
+            //...
+  ```
+
+#### solution 3 : ExpansionPanelList 활용하기
+
+- 생각해보니, 이거 해보면 될거같다.
+
+```dart
+ExpansionPanelList(
+        expansionCallback: (int index, bool isExpanded) {
+          setState(() {
+            _isExpanded = !isExpanded;
+          });
+        },
+      )
+        //...
+```
+
+#### solution 4 : 그럴싸하게 기능 정리하기
+
+- title을 눌러서 expand 되는 것을 응용했다.
+- onExpansionChanged 활용
+
+```dart
+ExpansionTile(
+    controller: _expansionController, // 컨트롤러
+    onExpansionChanged: (bool expanding) {
+      setState(() {
+        _isExpanded = expanding;
+        _isSelected = expanding;
+      });
+    },
+),
+// 아이콘 버튼
+IconButton(
+  onPressed: () {
+    setState(() {
+      _isSelected = false;
+      _isExpanded = false;
+    });
+    return _expansionController.collapse();
+  },
+),
+```
+
+![해냄](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/dd59b23c-e726-4981-bc7c-916bc88f3cb0)
+
+- 타이틀, 버튼을 누르면 버튼도 같이 작동하도록 했다.
