@@ -465,4 +465,40 @@ IconButton(
 
 ## <p align="center">📆 1/24</p>
 
-- `Column + ListView.builder + Expand`
+- `SingleChildScrollView + ListView.builder`
+- expand 넣으면 SingleChildScrollView와 충돌한다.
+
+```dart
+Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                   // 스크롤뷰 충돌방지
+                  shrinkWrap: true,
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text('${items[index]}'),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: TextButton(
+              onPressed: () {},
+              child: Text('Button'),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+```
