@@ -418,7 +418,8 @@ class _MyWidgetState extends State<MyWidget> {
 
 #### solution 3 : ExpansionPanelList 활용하기
 
-- 생각해보니, 이거 해보면 될거같다.
+- ~~생각해보니, 이거 해보면 될거같다.~~
+- 취소합니다. trailing 커스텀 안됩니다.
 
 ```dart
 ExpansionPanelList(
@@ -461,3 +462,7 @@ IconButton(
 ![해냄](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/dd59b23c-e726-4981-bc7c-916bc88f3cb0)
 
 - 타이틀, 버튼을 누르면 버튼도 같이 작동하도록 했다.
+
+## <p align="center">📆 1/24</p>
+
+- `Column + ListView.builder + Expand`
