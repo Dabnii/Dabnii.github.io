@@ -502,3 +502,107 @@ Widget build(BuildContext context) {
     );
   }
 ```
+
+## <p align="center">📆 1/25</p>
+
+- widget 커스텀하기
+- ListTile trailing에 O,X 버튼을 넣고, 각 버튼에 맞는 메세지가 아래로 펼쳐진다.
+- 분명 디자인하면서, 쉽겠지! 하고 했는데... 쉽지 않았다.
+- 근데 내가 디자인한거라, 스스로를 탓 해야함.
+- 정말 솔직하게 나는 디자인보다 widget에 단점이 있다는 것에 고통스러웠다
+- ![걍이거나임](https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788960883727.jpg)
+- 진짜 안 됩니다. 안 될 뿐입니다.
+- 며칠전에 쓴 글과 같다
+
+| .                           | ExpansionTile | ExpansionTileList |
+| --------------------------- | ------------- | ----------------- |
+| Custom Trailing             | O             | X                 |
+| Expand Control              | ?             | O                 |
+| Control Each Tile Expansion | X             | O                 |
+
+Control Each Tile Expansion 이 부분이 가장 치명적인데, 동적으로 controller를 생성하려면 오류가 자꾸 생긴다.
+
+```dart
+ListView.builder(
+  physics: NeverScrollableScrollPhysics(),
+  shrinkWrap: true,
+  itemCount: 3,
+  itemBuilder: (BuildContext context, int index) {
+    return Stack(
+      children: [
+        CustomExpansionPanel(
+          header: Text('Question $index'),
+          body: ListTile(title: Text('answer $index \n hello')),
+          isExpand: _isExpand[index],
+          expansionCallback: (bool value) {
+            setState(() {
+              _isExpand[index] = !_isExpand[index];
+              //얘를 활용해 접고 펼침을 컨트롤
+            });
+          },
+        ),
+// ... 중략
+  IconButton(
+    onPressed: () {
+      setState(() {
+        _isExpand[index] = true;
+        //펼칠 수 있다
+      });
+    },
+    icon: Icon(Icons.check),
+  ),
+  IconButton(
+    onPressed: () {
+      setState(() {
+        _isExpand[index] = false;
+      });
+    },
+    icon: Icon(Icons.close),
+  ),
+],
+```
+
+```dart
+////// 내 입맛대로 커스텀 expansionTileList
+class CustomExpansionPanel extends StatelessWidget {
+  const CustomExpansionPanel(
+      {super.key,
+      required this.header,
+      required this.body,
+      this.title,
+      this.isExpand,
+      required this.expansionCallback});
+
+  final Widget header;
+  final Widget body;
+  final Widget? title;
+  final bool? isExpand;
+  final ValueChanged<bool>? expansionCallback;
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionPanelList(
+      expandIconColor: Colors.transparent,
+      //사실 이 부분에서 stack을 써야겠다고 다짐했다. 사라지지 않는다.
+      elevation: 0,
+      expansionCallback: (index, isExpanded) => expansionCallback!(isExpanded),
+      expandedHeaderPadding: const EdgeInsets.symmetric(vertical: 0),
+      animationDuration: Duration(milliseconds: 500),
+      children: [
+        ExpansionPanel(
+          backgroundColor: Colors.grey,
+          canTapOnHeader: false,
+          headerBuilder: (context, isExpanded) => ListTile(
+            contentPadding: const EdgeInsets.symmetric(vertical: 0),
+            tileColor: Colors.green,
+            title: Align(alignment: Alignment.centerLeft, child: header),
+            titleAlignment: ListTileTitleAlignment.center,
+          ),
+          body: body,
+          isExpanded: isExpand ?? false,
+        ),
+      ],
+    );
+  }
+}
+```
