@@ -509,18 +509,19 @@ Widget build(BuildContext context) {
 - ListTile trailing에 O,X 버튼을 넣고, 각 버튼에 맞는 메세지가 아래로 펼쳐진다.
 - 분명 디자인하면서, 쉽겠지! 하고 했는데... 쉽지 않았다.
 - 근데 내가 디자인한거라, 스스로를 탓 해야함.
-- 정말 솔직하게 나는 디자인보다 widget에 단점이 있다는 것에 고통스러웠다
+- 정말 솔직하게 나는 디자인보다 widget에 단점이 있다는 것에 고통스러웠다. (아래 표 참고)
 - ![걍이거나임](https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788960883727.jpg)
 - 진짜 안 됩니다. 안 될 뿐입니다.
-- 며칠전에 쓴 글과 같다
 
-| .                           | ExpansionTile | ExpansionTileList |
-| --------------------------- | ------------- | ----------------- |
-| Custom Trailing             | O             | X                 |
-| Expand Control              | ?             | O                 |
-| Control Each Tile Expansion | X             | O                 |
+| .                           | ExpansionTile | ExpansionPanelList |
+| --------------------------- | ------------- | ------------------ |
+| Custom Trailing             | O             | X                  |
+| Expand Control              | ?             | O                  |
+| Control Each Tile Expansion | X             | O                  |
 
 Control Each Tile Expansion 이 부분이 가장 치명적인데, 동적으로 controller를 생성하려면 오류가 자꾸 생긴다.
+즉 trailing을 넣은 ExpansionTile ListView.builder로 매핑하고, expansion을 제어하려면 오류가 뜬다.
+세세한 제어를 위해서는 ExpansionPanelList 써야하는데, 그러려면 trailing 커스텀에 한계가 있다.
 
 ```dart
 ListView.builder(
@@ -541,7 +542,7 @@ ListView.builder(
             });
           },
         ),
-// ... 중략
+  // ... 중략
   IconButton(
     onPressed: () {
       setState(() {
@@ -555,6 +556,7 @@ ListView.builder(
     onPressed: () {
       setState(() {
         _isExpand[index] = false;
+        //물론 이제 접을 수 도 있다 ㅠㅠㅠㅠㅠ
       });
     },
     icon: Icon(Icons.close),
@@ -606,3 +608,7 @@ class CustomExpansionPanel extends StatelessWidget {
   }
 }
 ```
+
+![화면-기록-2024-01-25-오후-11 31](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/0e1382ce-b234-45e3-bee4-6495ad537d0d)
+
+- 이 정도면... 됐다....
