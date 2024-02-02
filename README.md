@@ -11,14 +11,21 @@
 
 # 🌳 Today I Learn
 
-| Jan                     | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
-| ----------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [📝](./TIL/2024/Jan.md) |     |     |     |     |     |     |     |     |     |     |     |
+### 2024
+
+| Jan                     | Feb                     | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
+| ----------------------- | ----------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [📝](./TIL/2024/Jan.md) | [📝](./TIL/2024/Feb.md) |     |     |     |     |     |     |     |     |     |     |
+
+<details>
+<summary>2023</summary>
 
 |                                                                                    |                                                                                    |                                                                                      |                                                                                           |                                                                                        |                                                                                        |                                                                                        |                                                                                        |                                                                                        |                                                                                        |                                                                                        |                                     |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------- |
 | Jan                                                                                | Feb                                                                                | Mar                                                                                  | Apr                                                                                       | May                                                                                    | Jun                                                                                    | Jul                                                                                    | Aug                                                                                    | Sep                                                                                    | Oct                                                                                    | Nov                                                                                    | Dec                                 |
 | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.01/Jan.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.02/Feb.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/March.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023.03/2023.april.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-05.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-06.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-07.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-08.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-09.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-10.md) | [📝](https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2023/05/2023-11.md) | [📝](./Projects/2023/05/2023.12.md) |
+
+</details>
 
 <details>
 <summary>2022</summary>
