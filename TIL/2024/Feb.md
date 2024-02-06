@@ -70,3 +70,36 @@ class _MyWidgetState extends State<MyWidget> {
 }
 
 ```
+
+## <p align="center">📆 2/6</p>
+
+#### 순차적으로 하나씩 펼쳐진다! +`opacity`를 곁들임.
+
+![555](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/bc43426e-1b10-4a2d-966e-929d98059a8c)
+
+#### 이미 펼쳐진 타일, 그리고 닫을 때는 해당사항이 없다
+
+![001](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/1c0df8d7-340e-4464-ae38-c8d1e9914c73)
+
+- 간략한 로직:
+  - 데이터의 길이 만큼, `List<bool>`를 만든다. 초기값은 `false`
+  - `data[0]` 즉, 첫 번째 인덱스는 언제나 true가 되도록 초기화 한다.
+  - 인덱스가 list길이보다 짧다면 `index+1` = 즉 다음 tile을 `true`로 바꾼다.
+  ```dart
+    void _onVisibleTile(int index) {
+      setState(() {
+        if (index < _isVisible.length - 1) {
+          _isVisible[index + 1] = true;
+        }
+      });
+    }
+  ```
+
+```dart
+return AnimatedOpacity(
+    opacity: _isVisible[index] ? 1.0 : 0.0,
+    duration: const Duration(seconds: 1),
+    child: Stack(
+      children: [
+//...
+```
