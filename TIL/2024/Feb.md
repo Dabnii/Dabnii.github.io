@@ -172,3 +172,4 @@ class _MyExpansionPanelListState extends State<MyExpansionPanelList> {
 
 - 나의 첫 class 커스텀마이징
 - 과연 나의 expandedTile과의 인연은 언제까지 일까..
+- 사실 근본(?) 문제를 찾아 해결하니, 이전에 ignorePoint... Stack등 불필요한 코드들을 많이 제거할 수 있었다. 👏
