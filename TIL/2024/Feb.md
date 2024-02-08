@@ -173,3 +173,43 @@ class _MyExpansionPanelListState extends State<MyExpansionPanelList> {
 - 나의 첫 class 커스텀마이징
 - 과연 나의 expandedTile과의 인연은 언제까지 일까..
 - 사실 근본(?) 문제를 찾아 해결하니, 이전에 ignorePoint... Stack등 불필요한 코드들을 많이 제거할 수 있었다. 👏
+
+## <p align="center">📆 2/8</p>
+
+#### 코드를 고쳐 보았읍니다..
+
+```dart
+// 💩 굳이 if를 남발한 이유는? 중복코드 🫨
+  if (_hasYResponse(_isSelected)) {
+    return _myDialog(context, _answerY);
+  }
+
+  if (_hasNResponse(_isSelected)) {
+    return _myDialog(context, _answerN);
+  }
+```
+
+```dart
+// 🪄 한 결 나아진 코드!
+// 중복을 없애고, 변수명을 개선했다.
+ Future<void> _onSave() async {
+    if (!_hasResponse(_isSelected)) {
+      return myDialog(context);
+    }
+  }
+
+  void _showMyDialog(BuildContext context) {
+    String? _userRes;
+
+    if (_isYInclude(_isSelected)) {
+      _userRes = _answerY;
+    }
+    if (_isNInclude(_isSelected)) {
+      _userRes = _answerN;
+    }
+
+    if (_userRes != null) {
+      return _myDialog(context, _userRes);
+    }
+  }
+```
