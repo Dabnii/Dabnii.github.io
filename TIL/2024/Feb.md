@@ -213,3 +213,55 @@ class _MyExpansionPanelListState extends State<MyExpansionPanelList> {
     }
   }
 ```
+
+## <p align="center">📆 2/13</p>
+
+## syncfusion gauge 활용!
+
+- 조금 더 멋진 게이지바로 수정했슴.
+
+![gosoa!](https://github.com/Dabnii/Dabnii.github.io/assets/110847597/75c31760-dc5a-41a6-92ec-f7182b12ba7f)
+
+```dart
+Center(
+  child: SizedBox(
+    height: 150,
+    width: 150,
+    child: Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: Align(alignment: Alignment.bottomCenter, child: Text('10,000', style: TextStyle(fontSize: 20))),
+        ),
+        SfRadialGauge(axes: <RadialAxis>[
+          RadialAxis(
+            pointers: <GaugePointer>[
+              GaugeRangePointer(value: 6000) //value!
+            ],
+            annotations: <GaugeAnnotation>[
+              GaugeAnnotation(
+                  positionFactor: 0.1,
+                  angle: 90,
+                  widget: Text(
+                    '6,000',
+                    style: TextStyle(fontSize: 20),
+                  ))
+            ],
+            minimum: 0,
+            maximum: 100,
+            showLabels: false,
+            showTicks: false,
+            axisLineStyle: AxisLineStyle(
+              thickness: 0.2,
+              cornerStyle: CornerStyle.bothCurve,
+              color: Color.fromARGB(30, 0, 169, 181),
+              thicknessUnit: GaugeSizeUnit.factor,
+            ),
+          ),
+        ])
+      ],
+    ),
+  ),
+),
+
+```
