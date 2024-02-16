@@ -5,7 +5,7 @@
 - 터치를 제어 할 때 사용
 - ignorePointer와의 차이점은, 모든 터치를 `흡수` 하는 것!
 - 나는 텍스틀 쓰다가 터치를 잠구고 싶을 때 사용했다.
-  - opacity widget을 쓰면 disable 시각적 효과를 극대화 할 수 있다.
+  - opacity widget을 쓰면 d`is`able 시각적 효과를 극대화 할 수 있다.
 
 ![mov](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/a3781490-7097-4da8-9125-a9e4ec79f37b)
 
@@ -264,4 +264,87 @@ Center(
   ),
 ),
 
+```
+
+## <p align="center">📆 2/16</p>
+
+## 라우팅을 다뤄보자
+
+### 원했던 것:
+
+1. 원하는 조건이 성립 하면
+2. 다이얼로그가 등장
+3. 버튼을 눌러 원하는 곳으로 라우팅
+
+### 실제로 작동한 것:
+
+1. 라우팅이 되지 않고 `context.pop()` 만 정상 작동
+
+### 내가 추측 한 것:
+
+- `BuildContext`를 적절히 받지 못하나?
+- 그렇다면 `context.pop()`등 다른 함수를 작성해서 처리해야할까?
+
+### 그리고 코드!
+
+```dart
+// 수정 코드
+// 비동기처리
+Future<void> _displayDialog(BuildContext context) async {
+    String? result;
+
+    if (_isYInclude(_isSelected)) {
+//...
+
+    if (_isNInclude(_isSelected)) {
+      result = _answerN;
+    }
+    if (result != null) {
+      bool isDone = await showResultDialog(context, result); // 내가 만든 다이얼로그
+      if (!mounted) return;
+// 여기서 비동기 처리를 진행 해 주며
+// 라우팅 하는 로직으로 접근
+      if (isDone) {
+        while (context.canPop()) {
+          context.pop();
+        }
+        context.push('/');
+      }
+      return;
+    }
+  }
+```
+
+### 결론
+
+- dialog의 onTap context.go도 제대로 작동했다.
+- 하지만 모달창이 닫히지 않아서 라우팅 되는 것으로 안보였던것.
+- 고로 위의 로직을 추가하여 닫는다.
+
+---
+
+### 세로 화면으로 고정하자
+
+```dart
+/// 세로 화면으로 조정
+  void _setPortrait() {
+    if (MediaQuery.of(context).orientation == Orientation.landscape) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    }
+  }
+
+  /// 원래 화면 방향으로 복원
+  void _resetScreenType() {
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    }
+  }
 ```
