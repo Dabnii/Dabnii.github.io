@@ -348,3 +348,128 @@ Future<void> _displayDialog(BuildContext context) async {
     }
   }
 ```
+
+## <p align="center">📆 2/20</p>
+
+## UI를 Bottom-up으로 위로 쌓기
+
+- 그렇습니다. 아직 expandListTile 작업을 하고 있습니다..
+- 오늘의 수정사항은: 아래에서 위로 쌓기!
+- `SlideAnimation`사용
+
+```dart
+/// 커스텀 슬라이드 애니메이션
+class _SlideAnimationState extends State<_SlideAnimation> with SingleTickerProviderStateMixin {
+  //ticker 공급자 ^ 애니메이션에 사용
+
+  late AnimationController _controller;
+  late Animation<Offset> _offsetAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(duration: const Duration(milliseconds: 900), vsync: this);
+
+    //첫 타일의 애니메이션 무효화
+    if (widget.index == 0) {
+      _offsetAnimation = Tween<Offset>(begin: Offset.zero, end: Offset.zero).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    } else {
+      _offsetAnimation = Tween<Offset>(begin: const Offset(1.2, 0.0), end: Offset.zero).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+      _controller.forward();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _offsetAnimation,
+      child: _MyCustomWidget(
+      //...
+        myCallback: (bool value) {
+          setState(() {
+            widget.myCallback(value);
+            if (widget.index != 0) {
+              _controller.reset(); //초기화
+              _controller.forward(); //실행
+            }
+          });
+        },
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+  // 컨트롤러 해제
+}
+```
+
+```dart
+// 💡
+// 가장 겉을 감싸는 widget
+ListView.builder(
+    reverse: true,
+    //역순으로 쌓기 위함
+    physics: const NeverScrollableScrollPhysics(),
+    shrinkWrap: true,
+    itemCount: _myList.length,
+    itemBuilder: (BuildContext context, int index) {
+      return _isVisible[index]
+          ? _SlideAnimation(
+              index: index,
+              //index를 넘겨 내가 원하는 로직을 구현한다
+              myCallback: (bool value) {
+                setState(() {
+                   //.. 내 함수
+                });
+              },
+            )
+          : const SizedBox.shrink();
+          // 가장 작은 sizedBox를 생성하여 완성
+    },
+  ),
+```
+
+### 위젯으로 구분한 이유
+
+- 아래와 같이 구현 하면 오류가 발생한다.
+
+```shell
+🚨 error
+The following assertion was thrown during paint():
+RenderBox was not laid out: RenderTransform#12f09 relayoutBoundary=up4
+'package:flutter/src/rendering/box.dart':
+Failed assertion: line 1972 pos 12: 'hasSize'
+```
+
+```shell
+🚨 error
+Duplicate GlobalKey detected in widget tree.
+```
+
+- ListView.builder의 Stack은 최대 공간을 요구, AnimatedPositioned는 공간 제약X 하여 충돌
+- 동일한 GlobalKey가 위제트리에서 2회 이상 사용 되는 문제
+
+```dart
+//🚨
+ListView.builder(
+  itemCount: 10,
+  itemBuilder: (context, index) {
+    return Stack(
+      children: [
+        AnimatedPositioned(
+          duration: Duration(seconds: 1),
+          top: index * 10.0,
+//...
+```
+
+- ListView.builder의 lazyLoad유지
+- 우 > 좌로 들어오는 애니메이션 구현을 위하여 각 항목을 위젯으로 분리 하여 구현! 몹시 잘 된다.
+- `AnimatedPositioned`는 stack의 직접(?) 자손이 되어야하는데, 그러면 렌더링 자체가 되지 않았다.
+- 다양한 방법이 있어 고민하고 성공했다.
+- 잘 보이진 않지만, 위로 쌓이는 타일!
+- 애니메이션이 빠져있다. 완전한 gif로 교체할 예정
+  ![sswww](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/812f736b-d231-484f-8a5c-7d224d398ad3)
