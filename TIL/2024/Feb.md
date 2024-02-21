@@ -353,6 +353,8 @@ Future<void> _displayDialog(BuildContext context) async {
 
 ## UI를 Bottom-up으로 위로 쌓기
 
+![ddd](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/055cbaad-a9d4-47d3-a9d0-967639b933fd)
+
 - 그렇습니다. 아직 expandListTile 작업을 하고 있습니다..
 - 오늘의 수정사항은: 아래에서 위로 쌓기!
 - `SlideAnimation`사용
@@ -470,6 +472,27 @@ ListView.builder(
 - 우 > 좌로 들어오는 애니메이션 구현을 위하여 각 항목을 위젯으로 분리 하여 구현! 몹시 잘 된다.
 - `AnimatedPositioned`는 stack의 직접(?) 자손이 되어야하는데, 그러면 렌더링 자체가 되지 않았다.
 - 다양한 방법이 있어 고민하고 성공했다.
-- 잘 보이진 않지만, 위로 쌓이는 타일!
-- 애니메이션이 빠져있다. 완전한 gif로 교체할 예정
-  ![sswww](https://github.com/Dabnii/Dabnii.github.io/assets/134585116/812f736b-d231-484f-8a5c-7d224d398ad3)
+
+## <p align="center">📆 2/21</p>
+
+- `initState`와 `_initializeAnimation를` 분리 했다.
+- `_controller`는 반드시 생성해주고, dispose도 할 것!
+
+```dart
+void initState() {
+    super.initState();
+    _controller = AnimationController(duration: const Duration(milliseconds: 800), vsync: this);
+    _initializeAnimation();
+  }
+
+  ///첫 타일의 애니메이션 무효화
+  Animation<Offset> _initializeAnimation() {
+    if (widget.index == 0) {
+      _offsetAnimation = Tween<Offset>(begin: Offset.zero, end: Offset.zero).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    } else {
+      _offsetAnimation = Tween<Offset>(begin: const Offset(1.0, 0.0), end: Offset.zero).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+      _controller.forward();
+    }
+    return _offsetAnimation;
+  }
+```
