@@ -496,3 +496,48 @@ void initState() {
     return _offsetAnimation;
   }
 ```
+
+## <p align="center">📆 2/24</p>
+
+## GoLang
+
+### 선언
+
+- `const`
+- `var`
+  ```Go
+  surname := "kim"
+  ```
+
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func multiply(a, b int) int {
+	return a * b
+}
+
+// multy return
+func lenAndUpper(name string) (length int, uppercase string) {
+	defer fmt.Println("done!")
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
+}
+
+func main() {
+	totalLength, up := lenAndUpper("LEE")
+  // ------
+  // totalLength, upperName := lenAndUpper("LEE")
+  // lenAndUpper 함수의 반환값을 totalLength와 upperName 변수에 각각 할당
+  // var totalLength int
+  // var upperName string
+  // totalLength, upperName = lenAndUpper("LEE")
+  // ------
+	fmt.Println(totalLength, up)
+}
+```
