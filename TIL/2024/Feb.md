@@ -534,6 +534,7 @@ func main() {
   // ------
   // totalLength, upperName := lenAndUpper("LEE")
   // lenAndUpper 함수의 반환값을 totalLength와 upperName 변수에 각각 할당
+  // ---- 즉 아래와 같다
   // var totalLength int
   // var upperName string
   // totalLength, upperName = lenAndUpper("LEE")
@@ -541,3 +542,143 @@ func main() {
 	fmt.Println(totalLength, up)
 }
 ```
+
+## <p align="center">📆 2/26</p>
+
+### 🔨 코드 재개발
+
+- 다시 돌아온, expandTile 코드 시간
+- 구조와 변수명을 점검하는 시간.
+
+#### 👀 Key point
+
+1. 범용 코드 판별하기
+
+- 현재 범용으로 쓸 수 있도록 코드를 관리하고 있다. 하지만 단 한 곳에서 해당 함수를 사용하고 있다면 과감히 작업하는 파일에 이관한다.
+
+2. `함수명` 💡💡💡
+
+- 함수명이 중요한 것을 알아서 신중하게 작성했지만, 역시 실무의 코드는 더 간결해야했다.
+- prefix: `is~` 는 bool 일 때 사용한다.
+- List를 다룬다면 `_somethingList`
+  - 또는 `displayNextList` or `displayList`도 괜찮을 것 같다.
+
+3. 🔍 구조를 확인해 본다.
+
+   - 생각보다 사용하지 않는 함수들이 많았다. 확실히 flutter 자체의 클래스를 복사 붙여넣기 했던 expansionTile에서 대거 확인 되었다.
+   - 잡초를 뽑습니다 🌱
+
+4. context 걷어내기
+   - stateless widget에서 context는 없어도 되니 생략 가능!
+
+### 중복코드를 걷어내다
+
+```dart
+  /// answer 유무에 맞도록 display
+  void _isAnswerExist(int index) {
+    // 🫨 나의 멋-진 함수명
+    _questions[index]['answer'] != ''
+        ? setState(() {
+            _expandedList[index] = true;
+            _answerList[index] = 'Y';
+          })
+        : setState(() {
+            _answerList[index] = 'Y';
+          });
+  }
+
+  void _onYSelect(int index) {
+    _onVisibleTile(index);
+    _isAnswerExist(index);
+  }
+
+  void _onNSelect(int index) {
+    _onVisibleTile(index);
+    setState(() {
+      _expandedList[index] = false;
+      _answerList[index] = 'N';
+    });
+  }
+```
+
+### ^ 위 두 함수를 하나로 합치기
+
+- 늘 고치고 싶던 코드였는데 드디어 고칠 수 있어 기쁘다.
+
+```dart
+ void _onAnswered(int index, String value) {
+    _answerList[index] = value; // 답변 기록
+    // 다음 질문 display
+    if (_answerList[index] == '') return; // 답변 기록 안되면 리턴
+    setState(() {
+      if (index < _displayList.length - 1) {
+        _displayList[index + 1] = true; // 다음 index를 true로 변경하여 display
+      }
+    });
+  }
+```
+
+### 또 다른 구조 고치기!
+
+```dart
+ListView.builder(
+    itemCount: _questions.length,
+    itemBuilder: (BuildContext context, int index) {
+      return _displayList[index]
+      // 💡 여기 고친 함수명!
+          ? _SlideAnimation(
+              isAnimated: index != 0,
+              // 아래 코드에서 계속 ...
+              child: _CustomExpansionPanel(
+                index: index,
+                onAnswered: _onAnswered,
+              ),
+            )
+)//...
+// 바로 아래와 같이 관리하고 있습니다
+class _SlideAnimation extends StatefulWidget {
+  const _SlideAnimation({required this.child, this.isAnimated = true});
+  final bool isAnimated;
+  final Widget child;
+  //심지어 반복되던 구조도 child로 한번에 정리
+  //...
+  @override
+  // 빌드를 살펴보면 이러합니다
+  Widget build(BuildContext context) {
+    return SlideTransition(
+      position: _offsetAnimation,
+      child: widget.child,
+    );
+  }
+}
+//...
+```
+
+## 궁극의 버튼 기능 구현하기
+
+```dart
+  /// 사용자 응답 중 '' 포함 확인
+  bool _onValidate() {
+    return _answerList.contains('');
+  }
+  Button(
+  disabled: _onValidate(),
+  )
+  //..
+```
+
+```dart
+// 💩
+Button(
+  text: '확인 했어요',
+  onPressed: _onSave,
+  disabled: (_isEmptyList(_answerList)),
+  // 사실 이 코드가 말이 안되어서 시작한 리팩토링이다... 민망
+  )
+//
+```
+
+- 하나를 고치기 위해 전체를 손 봤는데 그 과정에서 가독성 좋은 구조를 고민하고 설계하는 방법을 습득했다.
+- 예컨대, 복잡한 class를 반복하여 작성 하여 자연스레 나는 불 필요한 코드를 쉽게 인지 하지 못했다. 변수명도 혼란했고 비슷한 기능을 가진 함수들이 많았다.
+- 다음엔 시간을 더 들여서 코드를 고쳐 보도록!
+- 👟 기존에 작성된 변수명들을 정리 해야겠다.
