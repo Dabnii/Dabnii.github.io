@@ -682,3 +682,33 @@ Button(
 - 예컨대, 복잡한 class를 반복하여 작성 하여 자연스레 나는 불 필요한 코드를 쉽게 인지 하지 못했다. 변수명도 혼란했고 비슷한 기능을 가진 함수들이 많았다.
 - 다음엔 시간을 더 들여서 코드를 고쳐 보도록!
 - 👟 기존에 작성된 변수명들을 정리 해야겠다.
+
+## <p align="center">📆 2/28</p>
+
+### syncfusionChart label 활용하기
+
+- x축은 요일, y축은 몸무게
+- 하지만 x 라벨에 y data를 매핑하기 위해 아래와 같이 썼다.
+
+```dart
+  axisLabelFormatter: (AxisLabelRenderDetails details) {
+    final label = weeklyData.where((data) => data.x == details.text).map((e) => e.weight).join('');
+    return ChartAxisLabel(label);
+  },
+```
+
+#### 🎨 특정 바 색상 바꾸기
+
+- 오늘이 월요일이면, 월요일 데이터 색을 바꾸고 싶었다.
+- 오늘 날짜 == 차트의 날짜가 같다면 색 변경 👇
+
+```dart
+SfCartesianChart(
+  pointColorMapper: (ThisWeekWeightData data, _) => _setBarColor(data.x),
+)
+
+Color _setBarColor(String dayOfWeek) {
+  String today = DateFormat('EEEE').format(DateTime.now()).toLowerCase();
+  return dayOfWeek.toLowerCase() == today ? Colors.red : Colors.grey;
+}
+```
