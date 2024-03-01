@@ -88,6 +88,7 @@
 - [Dart](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart101.md)
 - [Dart variables](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart_Variables.md)
 - [Dart data types](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart_Data_Type.md)
+- [Dart Class](./Dart+Flutter/Dart_class.md)
 
 # ✈️ Flutter
 
