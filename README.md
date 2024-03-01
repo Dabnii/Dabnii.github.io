@@ -13,9 +13,9 @@
 
 ### 2024
 
-| Jan                     | Feb                     | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
-| ----------------------- | ----------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [📝](./TIL/2024/Jan.md) | [📝](./TIL/2024/Feb.md) |     |     |     |     |     |     |     |     |     |     |
+| Jan                     | Feb                     | Mar                     | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec |
+| ----------------------- | ----------------------- | ----------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [📝](./TIL/2024/Jan.md) | [📝](./TIL/2024/Feb.md) | [📝](./TIL/2024/Mar.md) |     |     |     |     |     |     |     |     |     |
 
 <details>
 <summary>2023</summary>
@@ -88,7 +88,7 @@
 - [Dart](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart101.md)
 - [Dart variables](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart_Variables.md)
 - [Dart data types](https://github.com/Dabnii/Dabnii.github.io/blob/main/Dart%2BFlutter/Dart_Data_Type.md)
-- [Dart Class](./Dart+Flutter/Dart_class.md)
+- [Dart class](./Dart+Flutter/Dart_class.md)
 
 # ✈️ Flutter
 
