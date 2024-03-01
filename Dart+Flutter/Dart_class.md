@@ -116,12 +116,11 @@ class _MyAppState extends State<MyApp> {
 
 #### mixin ≠ extend
 
-| mixin                                                                            | extend                                  |
-| -------------------------------------------------------------------------------- | --------------------------------------- |
-| `with`                                                                           | `extend`                                |
-| 단순히 복붙 하듯 메소드를 본인의 것처럼 사용할 수 있는 것                        | super을 사용하여 부모에 접근            |
-| 부모 클래스가 부모, extend를 설정한 class는 자식이며 부모 클래스의 인스턴스가 됨 |
-| `class MyApp with NewApp{}`                                                      | `class MyApp extends StatefulWidget {}` |
+| mixin                                                     | extend                                                                                                        |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `with`                                                    | `extend`                                                                                                      |
+| 단순히 복붙 하듯 메소드를 본인의 것처럼 사용할 수 있는 것 | super을 사용하여 부모에 접근,부모 클래스가 부모, extend를 설정한 class는 자식이며 부모 클래스의 인스턴스가 됨 |
+| `class MyApp with NewApp{}`                               | `class MyApp extends StatefulWidget {}`                                                                       |
 
 ```dart
 mixin MyMixin {
