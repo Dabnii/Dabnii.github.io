@@ -14,7 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       //something
-      _getWidth();
+      _getWidth()
     });
   }
 ```
@@ -33,3 +33,31 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 - [addPostFrameCallback](https://api.flutter.dev/flutter/scheduler/SchedulerBinding/addPostFrameCallback.html)
+
+#### 오랜만에 돌아온 python
+
+```python
+from requests import Response, get
+
+results = {}
+
+websites = (
+    'google.com',
+    'airbnb.com',
+    'https://twitter.com',
+    'facebook.com',
+)
+
+for website in websites:
+  if not website.startswith('https://'):
+    website = f"https://{website}"
+  response = get(website)
+  if response.status_code == 200:
+    results[website] = 'ok'
+  else:
+    results[website] = 'failed'
+
+print(results)
+# 어째 일하면서 많이 본 코드다
+# {'https://google.com': 'ok', 'https://airbnb.com': 'failed', 'https://twitter.com': 'failed', 'https://facebook.com': 'ok'}
+```
