@@ -61,3 +61,26 @@ print(results)
 # 어째 일하면서 많이 본 코드다
 # {'https://google.com': 'ok', 'https://airbnb.com': 'failed', 'https://twitter.com': 'failed', 'https://facebook.com': 'ok'}
 ```
+
+## <p align="center">📆3/8</p>
+
+```zsh
+==> Next steps:
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/user/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+```
+
+- 무슨 말 인가 했더니..
+- 터미널에 순서대로 넣어주면 되는 것이다.
+
+```zsh
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/user/.zprofile
+```
+
+```zsh
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
