@@ -204,3 +204,54 @@ getTop20Movies();
 // [19위] <더 메뉴> 180만 원짜리 먹으러 와서 사레 걸린기분
 // [20위] 닭장을 나온 백호
 ```
+
+## <p align="center">📆3/17</p>
+
+### MongoDB와 친해지기
+
+1. 가입 후 connenct > uri (id+password+db) 내용을 넣고 연동
+   1. Seoul / AWS / Free plan
+1. 안된다면 currentIP를 입력해서 확인해준다
+
+```javascript
+const { MongoClient } = require("mongodb");
+const uri = "blahblah";
+const client = new MongoClient(uri);
+
+async function run() {
+  await client.connect();
+  const adminDB = client.db("test").admin();
+  const listDatabases = await adminDB.listDatabases();
+  console.log(listDatabases);
+  return "OK";
+}
+
+run()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+```
+
+- `run text.js` 해서 보면 아래와 같이 잘 나온다.
+- 내일은... CURD!
+
+```javascript
+{
+  databases: [
+    { name: 'sample_mflix', sizeOnDisk: NNNN, empty: false },
+    { name: 'admin', sizeOnDisk: NNNN, empty: false },
+    { name: 'local', sizeOnDisk: NNNN, empty: false }
+  ],
+  totalSize: //,
+  totalSizeMb: //,
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: new Timestamp({ t: TableNum, i: 4 }),
+    signature: {
+      hash: Binary.createFromBase64('~~ ~~=', 0),
+      keyId: new Long('~~')
+    }
+  },
+  operationTime: new Timestamp({ t: TableNum, i: 4 })
+}
+```
