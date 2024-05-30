@@ -188,3 +188,36 @@ children: [
 ```
 
 - 곧 더 명확한 코드로 돌아오겠습니다. 🙇‍♀️
+
+## <p align="center">📆5/30</p>
+
+## 🏞️ River pod! again
+
+### 🔨 refactoring
+
+```dart
+//before
+  Column(
+  children: [
+    Consumer(builder: (context, ref, child) {
+      // ref.watch 👀 지켜보도록 업데이트할 ui를 감싸준다
+      final state = ref.watch(myStateNotifierProvider);
+      return ChildWidget(
+        key: state['A'] ?? 'NEW A',
+        // A값이 변한다면, 전체 화면 깜빡임임 없이 갱신된다
+      );
+    }),
+  ],
+),
+```
+
+```dart
+//After
+    Consumer(builder: (context, ref, child) {
+      return ChildWidget(
+        //명명된 계산자로 넘겨 줄 때, 변수에 담지 않고 provide를 바로 주입가능
+        key: ref.watch(myStateNotifierProvider)['A'],
+      );
+    },
+  ),
+```
