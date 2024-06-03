@@ -213,8 +213,10 @@ children: [
 
 ```dart
 //After
-    Consumer(builder: (context, ref, child) {
-      return ChildWidget(
+    Consumer(
+      builder: (context, ref, child)
+      {
+         return ChildWidget(
         //명명된 계산자로 넘겨 줄 때, 변수에 담지 않고 provide를 바로 주입가능
         key: ref.watch(myStateNotifierProvider)['A'],
       );
