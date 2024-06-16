@@ -41,3 +41,32 @@ class MyStateProvider extends StateNotifier<MyClass> {
 class MyClass ...
 //..data
 ```
+
+## <p align="center">📆6/16</p>
+
+### copilot + mermaid , erdDiagram
+
+```mermaid
+erDiagram
+    SCHOOL {
+        INT grade
+        INT class
+        VARCHAR(50) teacher_name
+        VARCHAR(50) subject
+    }
+
+    STUDENT {
+        INT student_id
+        INT grade
+        INT class
+        VARCHAR(50) student_name
+    }
+
+    SUBJECT {
+        INT subject_id
+        VARCHAR(50) subject_name
+    }
+
+    STUDENT ||--|| SCHOOL : "Belongs to"
+    SCHOOL ||--|| SUBJECT : "Teaches"
+```
