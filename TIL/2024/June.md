@@ -105,3 +105,18 @@ print(issubclass(Bird, Wing))
 - 오답노트:
   - isSubClass는 내장된 함수임
   - 즉 Bird, Wing이 class인가를 확인하는 것
+
+## <p align="center">📆6/20</p>
+
+### 🚑 focus 해제 전 저장 이슈!
+
+```dart
+  Future<void> save() async {
+    //저장하기 전 focus를 해제
+    FocusScope.of(context).unfocus();
+    // focus를 해제 하기 전 아래의 save 로직이 실행됨
+    // 방지를 위하여 delay 사용
+    await Future.delayed(Duration.zero);
+    //do something foo
+  }
+```
