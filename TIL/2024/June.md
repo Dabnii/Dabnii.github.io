@@ -120,3 +120,31 @@ print(issubclass(Bird, Wing))
     //do something foo
   }
 ```
+
+## <p align="center">📆6/26</p>
+
+### 🐍 회문이 아니면 예외 발생시키기
+
+```python
+class NotPalindromeError(Exception):
+
+  def __init__(self):
+    super().__init__(f'{word} 회문아님!')
+
+def palindrome(word):
+  reversedWord = word.lower().replace(" ", '')
+  if reversedWord != reversedWord[::-1]:
+    raise NotPalindromeError()
+  return print(f'{reversedWord} 회문입니다!')
+
+try:
+  word = input()
+  palindrome(word)
+except NotPalindromeError as e:
+  print(e)
+# hwllo
+# hwllo 회문아님!
+ 
+# mom
+# mom 회문입니다!  
+```
