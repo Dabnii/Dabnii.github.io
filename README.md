@@ -13,9 +13,9 @@
 
 ### 2024
 
-| Jan                     | Feb                     | Mar                     | Apr                       | May                     | Jun                      | Jul | Aug | Sep | Oct | Nov | Dec |
-| ----------------------- | ----------------------- | ----------------------- | ------------------------- | ----------------------- | ------------------------ | --- | --- | --- | --- | --- | --- |
-| [📝](./TIL/2024/Jan.md) | [📝](./TIL/2024/Feb.md) | [📝](./TIL/2024/Mar.md) | [📝](./TIL/2024/April.md) | [📝](./TIL/2024/May.md) | [📝](./TIL/2024/June.md) |     |     |     |     |     |     |
+| Jan                     | Feb                     | Mar                     | Apr                       | May                     | Jun                      | Jul | Aug                     | Sep | Oct | Nov | Dec |
+| ----------------------- | ----------------------- | ----------------------- | ------------------------- | ----------------------- | ------------------------ | --- | ----------------------- | --- | --- | --- | --- |
+| [📝](./TIL/2024/Jan.md) | [📝](./TIL/2024/Feb.md) | [📝](./TIL/2024/Mar.md) | [📝](./TIL/2024/April.md) | [📝](./TIL/2024/May.md) | [📝](./TIL/2024/June.md) | 🏝️  | [📝](./TIL/2024/Aug.md) |     |     |     |     |
 
 <details>
 <summary>2023</summary>
@@ -35,6 +35,7 @@
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/3rdWeek.md">2022.Nov.3-4th</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/Projects/2022.11/1stWeek.md">2022.Nov.1~2nd</a>
 </details>
+<!--
 
 # 📌 JavaScript
 
@@ -131,4 +132,4 @@
 
 - <a href="https://github.com/BongsikB/BongsikB.github.io/blob/main/TIL/All%20about%20Position%20%26%20display.md">Display & position</a>
 - <a href="https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Sass%20101.md">SASS</a>
-  - [Styled-components](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Styled-components.md)
+  - [Styled-components](https://github.com/Dabnii/Dabnii.github.io/blob/main/TIL/Styled-components.md) -->
