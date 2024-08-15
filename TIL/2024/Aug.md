@@ -178,3 +178,33 @@ SELECT M.mem_id, M.mem_name, B.prod_name, M.addr
 	ON M.mem_id = B.mem_id	
 ORDER BY M.mem_id;
 ```
+
+
+### 기타조인: 상호조인
+
+### CROSS JOIN
+- cartesian product
+    - on 구문 사용할 수 없음
+    - 내용은 의미 X, 랜덤조회
+    - 테스트용 대용량 조회 목적
+
+```sql
+SELECT * 
+    FROM buy
+    CROSS JOIN member;
+```
+
+### 자체조인 
+
+### Self join
+
+- 1개로 조인 하는 것
+
+
+```sql
+SELECT <Col_list>
+FROM <Table> alias A
+    INNER JOIN <TABLE> alias B
+	ON <conditional>
+[WHERE search_conditional];
+```
