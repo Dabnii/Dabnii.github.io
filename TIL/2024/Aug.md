@@ -140,3 +140,41 @@ ORDER BY M.mem_id;
 ```sql
 SELECT DISTICT
 ```
+
+
+### 외부 조인
+
+- 한쪽 테이블에만 있어도 결과 추출 할 때 
+
+```sql
+SELECT <Col_list>
+FROM <1st T(left)>
+    <LEFT || RIGHT || FULL> OUTER JOIN <2ndT(RIGHT)>
+	ON <conditional>
+[WHERE search_conditional];
+```
+
+
+### LEFT JOIN
+
+- 왼쪽 테이블을 모두 출력한다
+
+```sql
+SELECT M.mem_id, M.mem_name, B.prod_name, M.addr
+	FROM buy B
+	LEFT OUTER JOIN member M
+	ON M.mem_id = B.mem_id	
+ORDER BY M.mem_id;
+```
+
+### RIGHT JOIN
+
+- 오른쪽 테이블을 모두 출력한다
+
+```sql
+SELECT M.mem_id, M.mem_name, B.prod_name, M.addr
+	FROM buy B
+	LEFT OUTER JOIN member M
+	ON M.mem_id = B.mem_id	
+ORDER BY M.mem_id;
+```
