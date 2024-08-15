@@ -88,3 +88,25 @@ SELECT 열_이름
     ORDER BY 열_이름
     LIMIT 숫자; -- 결과 제한
 ```
+
+## 내부조인
+
+- 일대다 (one to many)
+
+```sql
+SELECT <Col_list>
+FROM <1stT>
+	INNER JOIN <2ndT>
+	ON <conditional>
+[WHERE search_conditional]
+```
+
+```sql
+USE market_db;
+SELECT * 
+	FROM buy
+	INNER JOIN member
+	ON buy.mem_id = member.mem_id	
+WHERE buy.mem_id = 'GRL';
+-- '7', 'GRL', '혼공SQL', '서적', '15', '5', 'GRL', '소녀시대', '8', '서울', '02', '44444444', '168', '2007-08-02'
+```
