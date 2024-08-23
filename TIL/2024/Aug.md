@@ -243,3 +243,50 @@ END $$
 DELIMITER ;
 CALL ifProc2();
 ```
+
+
+## <p align="center">📆8/23</p>
+
+### Flutter version 변경
+
+- Fltuter upgrade 이후... downgrade를 시도
+- but beta channel 이라 실패 
+
+### stable 채널 이동
+
+```shell
+flutter downgrade X.XX.X
+flutter downgrade error - There is no previously recorded version for channel
+```
+
+```shell
+flutter channel stable
+```
+
+### 🤷‍♀️ channel 이동 오류가 생기거나 다운그레이드 할 수 없다면
+- Flutter SDK 디렉토리로 이동
+
+```
+cd <Flutter SDK 경로>
+git checkout X.XX.X
+flutter doctor
+```
+
+- 그래도 되지 않는다면..
+    - `flutter clean` 으로 기존 cache 삭제 
+    - flutter 버전을 다시 다운 받아 설치 & dir 복사 붙여넣기 
+
+
+## 🔍 안드로이드 스튜디오 재설치 후 변경 된 SHA1 찾기
+
+### `./gradlew signingReport`
+- Android studio 재설치 이후 당연히. key store도 삭제되었다.
+    - 즉... SHA1도 재등록 필요!
+
+### 변경된 SHA 1 찾기 
+- 작업중인 디렉토리로 이동
+
+```shell
+cd android
+./gradlew signingReport
+```
